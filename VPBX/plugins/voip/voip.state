@@ -1,0 +1,11 @@
+VOIP模块状态描述
+
+1. VoipStateIdle
+	设备初始状态和呼叫结束回到的状态
+	驱动该状态变化的有：
+		主叫或被叫请求 -> VoipStateIncall
+		
+2. VoipStateIncall
+	设备被占用状态
+	驱动该状态变化的有:
+		呼叫结束（主叫或被叫任何一方挂机） -> VoipStateIdle

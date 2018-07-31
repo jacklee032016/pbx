@@ -1,0 +1,100 @@
+# $Id: README,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+			ISDN EP状态README 
+					李志杰 2005.11.20
+
+状态机描述
+1、IDLE状态：公共状态
+1.1. 响应事件
+1.1. CallScheduler来的SETUP_CALL事件
+    发出NEW_CR消息和SETUP消息，进入SETUP_OUT状态
+1.2. 设备管理器来的来的CC_NEW_CR消息
+    作初始化工作，例如接入号码合法性的判断，CallId的取得等，不作状态转换
+1.3. 设备管理器来的SETUP消息
+    向CallScheduler发出SETUP_CALL事件，进入SETUP_IN状态
+
+2、SETUP_OUT状态：输出状态
+2.1. DeviceMgr来的RELEASE消息
+    向调度器发出RELEASE事件，返回IDLE状态
+2.2. DeviceMgr来的PROCEEDING消息
+    向调度器发出PROCEEDING事件，进入PROCEEDING_OUT状态
+    此时调度器不再响应PROCEEDING事件
+2.3. DeviceMgr来的ALERTING消息
+    向调度器发出ALERTING事件，进入ALERTING_OUT状态
+2.4. DeviceMgr来的CONNECT消息
+    向设备管理器发回CONNECT_ACK消息；向调度器发出CONNECT_ACK事件，直接进入CONNECT状态
+2.5. 调度器来的RELEASE事件
+    向设备管理器发回RELEASE消息；
+    进入DISCONNECT_OUT状态
+    
+
+3、SETUP_IN状态：输入状态
+3.1. CallScheduler来的RELEASE_EVENT事件
+    CallScheduler发现没有设备可以使用时，会发出这个事件；
+    发出RELEASE消息，进入IDLE状态
+3.2. CallScheduler来的PROCEEDING_EVENT事件
+    CallScheduler发现设备可用，即发出这个事件；所以CallScheduler实际上不响应对端发来的PROCEEDING_CALL
+    发出PROCEEDING消息，进入PROCEEDING_IN状态
+3.3. CallScheduler来的ALERTING_EVENT事件
+    CallScheduler只要在收到对端发来的ALERTING消息才发出此事件
+    发出ALERTING消息，进入ALERTING_IN状态
+3.4. CallScheduler来的CONNECT_EVENT事件
+    发出CONNECT消息，进入ALERTING_IN状态，准备继续响应CONNECT_ACK消息
+3.5.设备管理器来的RELEASE消息
+    此时，主叫方主动终止呼叫；
+    发出RELEASE_COMPLETE消息，清除所有状态，接入IDLE状态
+3.6. 设备管理器来的CONNECT_ACK消息
+    响应CONNECT事件，向设备发出CONNECT消息后，必须等待并响应设备来CONNECT_ACK消息，才能进入CONNECT状态
+        
+
+4、CONNECT状态：公共状态
+4.1. 设备管理器来的DISCONNECT消息
+    向调度器发出DISCONNECT事件；
+    向设备管理器发出RELEASE消息；
+    进入DISCONNECT_IN状态，等待设备管理器来的RELEASE_COMPLETE消息
+4.2. 调度器来的DISCONNECT事件
+    向设备管理器发出DISCONNECT消息；进入DISCONNECT_OUT状态
+    调度器发出DISCONNECT消息后，需要等待设备管理器来的RELEASE消息
+
+5、DISCONNECT_OUT状态
+5.1. 设备管理器发出的RELEASE事件
+    发出RELEASE_COMPLETE消息；接入WAIT_RELEASE状态
+
+6、DISCONNECT_IN状态
+6.1. 设备管理器的RELEASE_COMPLTET消息
+    接入WAIT_RELEASE状态
+    
+7、WAIT_CLEAR_CR状态：公共状态
+   唯一地响应RELEASE_CR信息：
+       DISCONNECT_OUT状态下，在接收到RELEASE并发出RELEASE_COMPLETE后，等待后面的RELEASE_CR信息
+       DISCONNECT_IN状态下，接收到RELEASE_COMPLETE后，还需要接收后续的RELEASE_CR信息
+   操作：清除所有状态变量，进入IDLE状态
+       
+8、其他
+其他状态PROCEEDING_IN/OUT、ALERTING_IN/OUT的操作与SETUP_IN/OUT类似
+
+注：
+    原则上，处理完某个消息，就进入某个状态，例如SETUP_CALL和SETUP_MSG处理
+    完成后，就进入SETUP_OUT/IN状态
+
+
+公共基类
+	--EpState
+		--EpStateIdle					空闲状态
+		--EpStateConnect				通话状态
+		--EpStateError					出错状态
+		--EpStateDest					被叫侧状态
+			--EpStateSetupIn				处理Setup消息
+			--EpStateAlertingIn				处理Alerting消息
+			--EpStateProceedingIn			处理Proceeding消息
+			--EpStateDisconnectIn			处理Disconnect消息
+		--EpStateSrc					主叫侧状态
+			--EpStateSetupOut
+			--EpStateAlertingOut
+			--EpStateProceedingOut
+			--EpStateDisconnectOut
+
+注：				
+1、被叫侧的状态处理的是由呼叫调度器发出的PbxDeviceEvent事件
+2、主叫侧的状态处理的是设备监控线程发出的PbxMsg事件
+3、其他状态需要处理两种事件
+			

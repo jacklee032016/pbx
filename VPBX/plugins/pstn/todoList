@@ -1,0 +1,14 @@
+# $Id: todoList,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+#
+	   PSTN todoList
+			李志杰 2005.12.17
+
+2005.12.17
+    删除PstnEpStateMachine中状态机的process函数定义
+    删除SLIC设备中，不必要的代码，只保留slic目录下的文件即可
+        SLIC设备不使用DSP功能
+    在span的operation一级保留与PCM总线设备的兼容就可以
+    DigitCollector对象的创建需要放在PSTN插件内部完成
+    可以使用DeviceCommandThread
+    继承AudioChannel，增加独立的语音处理类
+			

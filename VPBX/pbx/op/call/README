@@ -1,0 +1,12 @@
+			README
+						Li Zhijie
+pbx/op/Call
+		呼叫控制相关的操作
+
+
+所有由CallScheduler发给设备的CallEvent都包含CallInfo，而设备发给CallScheduler的CallEvent
+都不包含CallInfo：CallOperation中使用的CallInfo由CallScheduler在调用状态机之前，根据CallEvent
+的数据（CallId）来查找并设置。
+
+
+

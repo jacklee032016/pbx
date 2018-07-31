@@ -1,0 +1,16 @@
+# $Id: README,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+			ISDN IE类 README
+					李志杰
+
+本目录中，包含的是INS中没有定义的或者定义而不提供的IE，主要有：
+
+一、定义而不提供
+	IeComplete
+	IeDate
+
+二、未定义
+	IeFacility
+	IeConnectPN
+
+注：以上的类都是编译通过，可以准确解析的IE
+	

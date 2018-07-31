@@ -1,0 +1,15 @@
+		VPBX README
+				Li Zhijie, 2005.10.18
+
+Virtual PBX program for ISDN, PSTN, SIP and virtual console
+
+Name rule:
+	Pbx****			Common class in Virutal PBX environments
+	
+类的依赖关系与头文件的包含关系
+   全局实例 PbxAgent-->
+        PbxManager-->
+            PbxEvent-->
+               StateObject-->
+                   PbxState-->
+                        PbxOperator

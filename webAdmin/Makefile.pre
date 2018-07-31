@@ -1,0 +1,42 @@
+#
+# $Id$
+
+include $(ROOT_DIR)/Rules.mak
+
+# determine this package is build as a releasing or debug version 2007.03.15
+EDITION=debug
+# release
+
+C_FLAGS += -Wall
+C_FLAGS += -D__ARM_SNX__=1 
+CXX_FLAGS = -D__ARM_SNX__=1 
+
+ifeq ($(EDITION),release)
+	C_FLAGS += -D__SNX_RELEASE__
+endif 
+
+SHARED_HOME=$(ROOT_DIR)/../Shared
+
+C_FLAGS += -I$(ROOT_DIR)/include -I$(ROOT_DIR)/include/old -I$(SHARED_HOME)/include -I. $(OPTIONS)
+
+CXXFLAGS += $(C_FLAGS)
+
+LDFLAGS +=-L. -L$(SHARED_HOME)/Linux.bin.$(ARCH)/lib -L$(BIN_DIR)/lib
+
+
+BIN_DIR=$(ROOT_DIR)/Linux.bin.$(ARCH)
+OBJ_DIR=Linux.obj.$(ARCH)
+
+CGI_BIN_DIR=$(BIN_DIR)/var/admin/cgi-bin
+
+
+INSTALL			=	/usr/bin/install -c
+INSTALL_DIR		=	$(INSTALL) -d
+INSTALL_DATA	=	$(INSTALL) -m 644
+INSTALL_CONFIG	=	$(INSTALL) -m 640
+INSTALL_BIN		=	$(INSTALL) -m 755
+INSTALL_MAN		=	$(INSTALL) -m 644
+
+ARFLAGS		= crus
+
+GENERIC_INC_DIR = include

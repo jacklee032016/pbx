@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+	<specVersion>
+		<major>1</major>
+		<minor>0</minor>
+	</specVersion>
+	<device>
+		<deviceType>urn:schemas-upnp-org:device:Basic:1</deviceType>
+		<friendlyName>IP Camera SNX-C1</friendlyName>
+		<manufacturer>Sonix Technology Co., Ltd.</manufacturer>
+		<manufacturerURL>http://www.sonix.com.tw/</manufacturerURL>
+		<modelDescription>Sonix IP Camera</modelDescription>
+		<modelName>IP Camera</modelName>
+		<modelNumber>SNX-C1</modelNumber>
+		<modelURL>http://www.sonix.com.tw/ipcam_snx-c1.html</modelURL>
+		<serialNumber>IPCAM-SNX-C1-0001</serialNumber>
+		<UDN>uuid:30C60AA3-07FC-4795-9049-F07ACAA35AAD</UDN>
+		<UPC />
+		<serviceList>
+			<service>
+				<serviceType>urn:sonix-com-tw:service:IPCamService:1</serviceType>
+				<serviceId>urn:sonix-com-tw:serviceId:IPCamService1</serviceId>
+				<controlURL />
+				<eventSubURL />
+				<SCPDURL />
+			</service>
+		</serviceList>
+		<presentationURL>/</presentationURL>
+	</device>
+</root>

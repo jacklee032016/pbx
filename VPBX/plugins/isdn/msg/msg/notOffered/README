@@ -1,0 +1,15 @@
+#$Id: README,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+
+	ISDN 层三消息 README 
+				李志杰 2005.11.27
+
+本目录包含的是不使用的L3消息
+
+	MsgHold和MsgFacility待进一步确认						
+
+INS中，以下消息定义但是不提供
+	MsgSetupAck
+
+INS中没有定义的消息
+	MsgRetrieve	MT=0x31，还包括Retrieve及其相关的消息
+	

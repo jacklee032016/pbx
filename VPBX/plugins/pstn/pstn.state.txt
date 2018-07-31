@@ -1,0 +1,50 @@
+PSTN模块状态描述
+
+1. PstnStateIdle	
+	PstnEndPoint的初始状态和呼叫结束回到的状态
+	驱动该状态变化的事件有:
+		作为主叫摘机 -> PstnStateDialing
+		作为被叫收到请求 -> PstnStateRing
+	
+2. PstnStateDialing
+	主叫方拨号状态
+	驱动该状态变化的有:
+		主叫挂机 -> PstnStateIdle
+		主叫长时间不拨号 -> PstnStateError
+		拨号超时 -> PstnStateError
+		号码拨错 -> PstnStateError
+		号码正确 -> PstnStateTrying
+		
+		
+3. PstnStateRing
+	被叫时振铃状态
+	驱动该状态变化的有:
+		被叫无人接听 -> PstnStateIdle
+		主叫取消呼叫 -> PstnStateIdle
+		被叫忙 -> PstnStateIdle
+		被叫摘机 -> PstnStateIncall
+		
+4. PstnStateTrying
+	主叫等待对方响应状态
+	驱动该状态变化的有:
+		被叫无人接听 -> PstnStateError
+		被叫忙 -> PstnStateBusy
+		主叫挂机 -> PstnStateIdle
+		被叫应答 -> PstnStateIncall
+		
+5. PstnStateIncall
+	通话状态
+	驱动该状态变化的有:
+		主被叫挂机 -> 分别进入PstnStateIdle和PstnStateError
+		
+6. PstnStateBusy
+	设备忙状态
+	驱动该状态变化的有:
+		挂机 -> PstnStateIdle
+		
+7. PstnStateError
+	呼叫出错状态
+	驱动该状态变化的有:
+		挂机 -> PstnStateIdle
+
+

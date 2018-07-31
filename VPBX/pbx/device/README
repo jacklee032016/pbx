@@ -1,0 +1,18 @@
+# $Id: README,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+		README for device 
+				Li Zhijie, 2005.10.18
+
+All files in top level directory
+		Common objects used in PBX
+
+3 kind devices used in VPBX 
+dev		Device of D Channel, play a role of transmit services
+audio	Audio Channel device, such as B Channel in ISDN BRI
+ep		EndPoint for different call, such as ISDN, PSTN and VoIP				
+
+Directory List
+	ISDN		all devices for ISDN(TE and NT)
+	PSTN		all devices for PSTN(FXS/FXO)
+	SIP			all devices for VoIP based on SIP(vocal stack)
+	console		virtual console, for Branch phone number 
+	

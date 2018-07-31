@@ -1,0 +1,59 @@
+# $Id: README,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+			ISDN IE类 README
+					李志杰
+
+ToDo List：
+2005.12.03
+	增加必要的IE
+		IeRepeat
+		IeShift
+		IeRestart
+		IeLowLayerCompati
+		IeHighLayerCompati
+		IeEscape
+	查找补充协议规范中对RedirXX这几个IE的定义和使用
+
+说明
+	IeMoreDate		： INS中定义但是不提供
+	IeComplete		： INS中定义但是不提供
+	IeCongestion	： INS中定义但是不提供
+	IeSegmented		： INS中定义但是不提供 	
+	IeNetFacility	： INS中定义但是不提供（这个IE不是notOffered中的Facility）
+	IeDate/Time		： INS中定义但是不提供
+	Transit Network Select	： INS中定义但是不提供
+
+基类IsdnIe
+
+	IsdnIe
+		--IeBearer
+		--IeCause
+		--IeCentrex
+		--IeCallState
+		--IeChanId
+		--IeComplete				INS中说明这个IE是not offered	
+		--IeDate					INS中说明这个IE是not offered	
+		--IeNotify 
+		--IeProgress
+		--IeSignal
+		--IeContent		包含最大长度为256字符串的作为IE内容的IsdnIE
+			--IeDisplay
+			--IeFacility			INS中，没有定义这个IE
+			--IeKeypad
+			--IeCallId
+			--IeUserUser			独立的解析函数
+			--IeCallSub				独立的解析函数，CallingSub和CalledSub共用同一个类
+			--IeCalledPN			类型为Phone Number的IE，只要type、plan和phone Number字段
+				--IePN				以下四个类增加了present、screen字段，解析函数由IePN提供	
+					--IeCallingPN		
+					--IeConnectPN		解析函数同上，INS中没有这个IE（未定义），从编译中取消
+					--IeRedirDN			解析函数同上
+						--IeRedirNR			又增加reason字段，重载
+
+
+目录列表
+	notOffered	：	已经编译成功但是不再使用的IE
+	other		：	暂时没有使用的IE，这个目录最终需要删除
+	
+IE FACILITY
+	这个IE虽然在电路业务中，没有定义，但是在PBX中实际是使用的
+		

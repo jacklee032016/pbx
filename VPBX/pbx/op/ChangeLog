@@ -1,0 +1,31 @@
+
+#
+# $Author: lizhijie $
+# $Id: ChangeLog,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+#
+	OP ChangeLog for vpbx (PBX based on Virtual Switch)
+				Li Zhijie, 2005.12.01
+
+2005.12.01
+	增加pbx/op/isdn目录，存放所有的ISDN Operators
+
+2005.11.30
+	增加ISDN消息的编译，调试通过ISDN的启动流程
+
+2005.11.25
+	增加对ISDN IE的编译支持				
+
+wuaiwu	2005.11.24
+	系统初始化成功，现有线程能正常执
+修改的文件有：
+	pbx/device/mgr/IsdnDeviceMgr.cxx 
+	pbx/device/GatewayMgr.cxx
+	pbx/device/ctrl/IsdnCtrlDevice.cxx 
+	pbx/base/PbxManager.cxx
+
+2005.11.18
+	新的程序框架编译运行和启动完成
+	
+2005.07.29
+	建立初始的版本
+	

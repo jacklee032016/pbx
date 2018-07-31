@@ -1,0 +1,15 @@
+# $Id: todoList,v 1.1.1.1 2006/11/30 16:26:28 lizhijie Exp $
+		todo List for VPBX
+					Lizhijie
+
+支持
+    SJphone/1.60.289a (SJ Labs)
+    当前近支持SJLabs-SJphone/1.30.235d
+
+2005.11.18
+	修改PbxEvent的类体系
+	修改ask和asnt的日志代码，使用cpLog的形式
+	ISDN的消息处理函数的编码
+	修改asnt库的编译环境，使区分支持NT模式和不支持NT模式的条件编译
+	
+	

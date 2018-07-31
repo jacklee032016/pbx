@@ -1,0 +1,43 @@
+# $Id: README,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+
+				README
+					李志杰 2005.11.17
+
+状态机对象PbxStateMachine
+	功能：
+		保存所有的状态（PbxState）
+		查找可用的状态
+		处理PbxEvent，并将该事件中的对象PbxStateObject设置为需要的状态
+
+不同的PbxManager有不同的状态机对象，一个PbxManager只要一个状态机对象，系统中
+包含的状态机对象及其对应的PbxManager有：
+	Isdn状态机对象				IsdnDeviceMgr
+	PSTN状态机对象				对应CODEC/SLIC设备，待实现
+	呼叫的状态机对象			CallScheduler
+	VIOP的状态机对象			对应SIP，待实现
+	虚拟控制台的状态机对象		对应二次收号的虚拟控制台，待实现
+
+	GatewayMgr对象暂时还不需要状态机对象
+	
+
+状态机的类层次
+	PbxStateMachine
+		CallStateMachine
+		EpStateMachine
+			IsdnEpStateMachine
+			PstnEpStateMachine
+		
+
+被管对象（ManagedObject）的层次结构
+	ManagedObject			
+			保存所属的PbxManager
+		DigitCollector		
+			暂时没有这样实现
+		PbxStateObject		
+			系统中，包含当前状态（PbxState）、状态机对象
+			CallInfo		
+			系统中，由调度器管理的呼叫信息；维护CallId信息
+			EndPoint
+			
+
+				

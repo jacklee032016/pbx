@@ -1,0 +1,51 @@
+#
+# $Id: Makefile.src,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+#
+
+DRIVER_SRC += 	\
+	driver/ask/ask_device.c \
+	driver/ask/ask_layer.c \
+	driver/ask/ask_stack.c \
+	driver/ask/ask_status.c
+
+DRIVER_SRC  += \
+	driver/asnt/utils/asnt_debug.c \
+	driver/asnt/utils/as_msg.c 
+	
+ifeq ($(ISDN_NT),yes)
+DRIVER_SRC  += \
+	driver/asnt/layer3/asnt_nins_mgr.c \
+	driver/asnt/layer3/asnt_nins_data.c \
+	driver/asnt/layer3/asnt_nins_msg.c \
+	driver/asnt/layer3/asnt_nins_request.c \
+	driver/asnt/layer3/asnt_nins_utils.c \
+	driver/asnt/utils/as_nt_timer.cxx \
+	driver/asnt/as_nt_mgr.cxx  
+
+#	driver/asnt/utils/fsm.c \
+#	driver/asnt/layer2/asnt_l2_mgr.c \
+#	driver/asnt/layer2/asnt_l2.c \
+#	driver/asnt/layer2/asnt_l2_mux.c \
+#	driver/asnt/layer2/asnt_tei.c \
+#	driver/asnt/layer2/asnt_tei_mgr.c \
+	
+#	driver/asnt/mgr/asnt_ctrl.c \
+#	driver/asnt/mgr/asnt_ep.c \
+#	driver/asnt/asnt_mgr.c 
+#	driver/asnt/layer1/asnt_if.c \
+#	driver/asnt/mgr/asnt_mgr_init.c \
+	
+	ifeq ($(ARCH),arm)
+		DRIVER_SRC += driver/asnt/big_bitops.c
+	endif
+
+endif
+
+KINCLUDES:=/works/isdn/kernel/linux-2.4.x/drivers/assist/isdn 
+
+DRIVER_CFLAGS	:= -Idriver/include \
+	-I$(KINCLUDES) 
+
+ifeq ($(ISDN_NT),yes)
+	DRIVER_CFLAGS	+= -Idriver/asnt/utils -Idriver/asnt/layer2 -Idriver/asnt/layer3   
+endif

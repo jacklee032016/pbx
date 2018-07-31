@@ -1,0 +1,70 @@
+#$Id: BChannel.readme,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+
+		BChannel README
+				李志杰 2005.12.13
+
+1. B信道的配置
+1.1. B信道的设置
+    打开B信道RAW设备的设备文件
+    从D信道stackId的child[2]中获得两个B信道的stackId
+    获得驱动中的B信道L2协议的layerId
+    在各个B信道的协议栈上增加L3协议，L3协议为ISDN_PID_L3_B_TRANS，获得L3协议的地址
+    连接L3向下的接口到B信道协议栈的L2的layer上
+
+1.2. B信道的激活
+    以B信道L3向下的地址（IF_DOWN）为地址，原语为DL_ESTAB_REQ，dInfo和len为0,向控制
+    端口写入一个L2的帧（这是一个虚拟帧，所以写入驱动的信息非常简单）
+    驱动会在该地址上返回一个DL_ESTAB_CNF帧
+    最后，在数据通讯开始之前，向驱动发出PH_ACTIVATE | REQUEST原语
+
+1.3. B信道的去活
+    在B信道L3向下的地址（IE_DOWN）上，协议一个DL_RELEASE_REQ帧
+    驱动会返回一个DL_RELEASE_CNF帧
+    
+
+2. B信道的消息处理流程
+2.1. 接收消息的流程
+    ISDN设备管理器接收到帧FRAME后，查找FRAME对应的控制设备
+        不仅查找CtrlDevice的地址，同时也查找其所属的两个B信道的地址，如果任一条件
+        满足，均返回该CtrlDevice
+    接入该设备的kernelCommand函数处理，如果该函数未处理，则再交给B信道的kernelCommand
+    函数处理
+    
+    B信道的kernelCommand函数查看B信道是否与某个EndPoint绑定，如果绑定则交给EndPoint的
+    状态机处理，并修改B信道的状态
+
+2.2. 发出消息的流程
+    BChannel增加一个函数sendOutIsdnMsg，执行创建FRAME的任务
+        创建的帧中设定原语、地址和dInfo参数
+        帧的len参数由设备写线程在最后写入前，根据msg_t中的数据而写入
+        创建帧后，在增加PbxDeviceEvent来包含这个帧，发给设备写线程
+        PbxDeviceEvent必须在B形成已经绑定了一个EndPoint后，才可以实际地执行写任务
+            这一点，今后可以修改、增强
+    将创建的FRAME交给设备写线程的队列，由设备写线程完成写入任务
+
+
+3. BChannel的分配和释放
+3.1. BChannel的分配：呼叫的输入侧
+    在IsdnOpSetupMsg中，根据SETUP消息中解析的ChanID字段，向CtrlDevice提出申请
+    CtrlDevice根据ChanID查找B信道的状态为IDLE，然后将状态设置为ACTIVATING
+    完成EndPoint和AudioChannel的绑定：在EndPoint中设置AudioChannel，在AudioChannel中设置EndPoint
+
+3.2. BChannel的分配：呼叫的输出侧
+    在IsdnOpSetupCall中，请求CtrlDevice分配任意AudioChannel
+    分配成功：
+        将分配的BChannel和EndPoint绑定在一起
+        以分配的BChannel的ID，构造新的SETUP消息
+    分配不成功：
+        向呼叫调度器返回release事件，并说明原语CAUSE
+        
+    在分配阶段，分别执行两个BChannel的L2的激活原语操作        
+
+3.3. BChannel的激活
+    由呼叫调度器完成，参考呼叫调度器的状态机定义的README
+    激活后，BChannel进入真正的Active状态
+
+3.4. BChannel的去活
+    在CONNECT状态的exit操作中，增加专门的释放语音信道和相互关系的操作
+    同时在两个BChannel上发出L2的去活原语
+    解除EndPoint和AudioChanne的绑定
+        

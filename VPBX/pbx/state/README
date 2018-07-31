@@ -1,0 +1,114 @@
+# $Id: README,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+		呼叫（CallInfo）状态的README 
+					李志杰 2005.12.11
+
+2006.06.04
+    语音信道的激活
+        语音信道的激活由各个设备管理器自己完成。要求是在呼叫建立之前，即Call接入
+        Connect状态之前必须先激活语音信道。
+        
+        调度器在Call接入Connect状态时，设置语音信道的对端信道，在此之前各个设备管
+        理器必须首先激活语音信道。
+        
+        语音信道的去活，则必须在调度器将语音信道的对端设置为空之后，才能完成。因
+        为信道执行的同步问题，调度器发出Disconnect信息后，就可能会被其他线程抢占，
+        所以应该在调度器发出Disconnect信息之前，即执行语音信道对端信道的去活操作，
+        而不能再在Call的Connect状态的退出操作中，执行。
+        
+        调度器向对端的设备管理器转发DisConnect消息的同时，需要向源的设备管理器发出
+        一个ReleaseComplete消息：源的设备管理器在接收到这个消息后，才开始对自己的
+        语音信道去活；而不是在远端发出DisConnect消息后，立即去活语音信道。
+        否则，可能出现语音信道线程因为时间上的不同步而出现的段错误。
+        
+        调度器在执行设置语音信道对端的操作中，必须与语音信道互斥，即获取语音信道的锁。
+        
+        
+        关于语音信道的提前激活问题：
+            今后可以扩展调度器处理的消息类型，使能够单独处理语音信道的激活操作。
+            
+   
+   Call处于Connect状态下的号码事件的发送
+        在Connect状态下，可以处理_CallSetup         
+
+
+
+1、呼叫的创建
+    调度器线程收到PbxEvent事件，查找CallId对应的CallInfo是否存在（不管消息类型）。
+    如果不存在，则以此callID创建一个CallInfo，设其状态为IDLE，将CallInfo和事件
+    交呼叫状态机处理。
+
+2、IDLE状态
+    如果事件不是SETUP事件，则进入ERROR状态；
+    以SETUP事件查找路由、认证、授权操作；如果无路由或认证、授权未通过，发回RELEASE
+    事件给源端，并说明原因，进入ERROR状态。
+    否则，向源端发出PROCEEDING事件（今后就不再响应目的端发来的PROCEEDING）；发目的
+    端发出SETUP事件；进入SETUP状态（考虑是否需要直接进入PROCEEDING状态）
+    
+    IDLE状态也可以处理从源端发出的RELEASE事件
+
+3、SETUP状态
+处理从目的端来的：
+    RELEASE事件		：向源端转发RELEASE事件；进入ERROR状态
+    PROCEEDING事件	：简单返回DOWN状态（不再转发PROCEEDING），或直接进入PROCEEDING状态
+    ALERTING事件	：向源端转发ALERTING事件；进入ALERTING状态
+    CONNECT事件		：向源端转发CONNECT事件；进入CONNECT状态
+
+处理从源端来的：
+    RELEASE事件		：向目的端转发RELEASE；进入ERROR状态
+
+4、PROCEEDING状态
+    类似SETUP状态
+
+5、ALERTING状态
+    类似SETUP状态
+
+6、CONNECT状态
+    处理从两侧来的DISCONNECT事件（将DISCONNECT和RELEASE分为两个独立的事件，保证今后的扩展性）
+    向对端转发DISCONNECT事件
+    进入ERROR状态
+    
+    在进入CONNECT状态之前（即Enter操作）中，将两个语音信道绑定到一起，语音信道从Activating状态
+    真正进入Active状态
+    
+    在退出CONNECT状态之前（即Exit操作）中，解决两个语音信道绑定
+
+7、ERROR状态
+    使用一个Enter操作，在进入ERROR状态时，该操作向调度器发一个超时值为0的TimeroutEvent。
+    调度器首先判断事件类型是否为Timerout且CallInfo状态为ERROR，如果满足此条件，则立即删除这
+    个CallInfo，不进入状态机。
+    
+    删除CallInfo之前，调度器再向两侧发出一个ReleaseComplete事件；然后两侧的端点才清除EndPoint
+    的CallId。
+
+
+注：超时处理
+    呼叫状态机中不触发专门的超时事件，超时由各个设备管理器自行处理：设备管理器将超时事件转
+    换为呼叫事件，再传给呼叫状态机。
+    
+    呼叫状态机中唯一的超时事件就是ERROR状态中，用以删除呼叫的事件。
+    这个超时事件是PbxTimerEvent，不使用CallTiemrEvent。
+    
+    
+    超时处理的一般方法
+        1、所有事件操作进入的同时，首先取消当前已设置的超时事件
+        2、在事件操作中，如果需要切换状态，则启动设置一个新的Timerout事件
+        3、一般地，所有状态都应该包含一个处理超时事件的Ops（ERROR状态除外）
+        4、超时Ops根据状态不同分别进行不同的操作
+
+
+
+
+呼叫调度器连接两个CONSOLE呼叫的操作
+    接收到Slave端点发出的CONNECT_ACK呼叫事件
+    取出CONNECT_ACK中masterEP对应的CallInfo
+    取出CONNECT_ACK中slaveEP对应的CallInfo
+    将masterEP对应的CallInfo中的DestEP置换为slaveEP对应的CallInfo中的DestEP
+    删除slaveEP对应的CallInfo
+    向MasterEP和SlaveEP发出两个ConnectAck呼叫事件
+
+	
+
+注：
+    原则上，处理完某个消息，就进入某个状态，例如SETUP_CALL和SETUP_MSG处理
+    完成后，就进入SETUP_OUT/IN状态
+

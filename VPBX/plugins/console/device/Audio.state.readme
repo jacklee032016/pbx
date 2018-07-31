@@ -1,0 +1,31 @@
+# $Id: Audio.state.readme,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+#	
+	Console Audio Channel State README
+	         Li Zhijie, 2006.01.09
+
+控制台语音信道的状态分为以下几种：
+
+    console_audio_no
+        语音信道未激活时，处于这个状态
+        
+    console_audio_greeting
+        接通一次呼叫，语音信道开始激活处于此状态。由activate操作控制
+        
+    console_audio_dial_tone
+        播放完问候的语音后，自动进入此状态
+        
+    console_audio_parse_dtmf
+        解析到第一个DTMF号码后，进入此状态；由ConsoleEndPoint的DTMF解析函数实现
+        
+    console_audio_silence
+        开始二次呼叫时处于此状态；由ReDial操作控制进入此状态
+
+    console_audio_ringback
+        接收到二次呼叫的回铃音后，进入此状态；在OutCallAlerting中控制
+        
+    console_audio_busy
+        接收到错误信息：忙、超时等设置此状态
+	
+
+
+	         

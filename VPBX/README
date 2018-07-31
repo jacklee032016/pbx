@@ -1,0 +1,43 @@
+#
+# $Author: lizhijie $
+# $Id: README,v 1.1.1.1 2006/11/30 16:26:28 lizhijie Exp $
+#
+
+	
+		Readme for Virtual PBX
+				Li Zhijie, 2005.11.08
+				
+Function as Call Switch between ISDN, PSTN, VOIP(SIP) and Virtual Console
+
+
+需要的语音文件
+    /usr/etc/vpbx/tones/greeting.u
+    /usr/etc/vpbx/tones/ringback.tone.u（这个文件需要录制）
+    
+    需要将录音程序的录制目录指向这里
+
+
+编译公共API的测试程序
+    make test=api
+
+
+程序的使用
+	运行bin/mkdev.sh，创建驱动程序需要的设备文件
+	运行bin/start.sh脚本，加载驱动程序
+	上传isdn库和utils等库
+	上传配置文件vpbx.cfg到/usr/etc/vpbx 
+	
+	
+目录结构
+	--utils				从VOCAL中移植的C++的工具库，生成libvpbxutils.so
+	--drivers			驱动程序的接口代码
+		|--isdn			ISDN驱动的接口代码			生成libisdn.so
+	--pbx				vpbx的代码目录
+	--release			程序发布时的目录结构
+	--bin				编译生成的二进制库的目录，脚本程序的目录
+	
+默认时，
+	编译过程不编译两个库，而使用bin/lib下的已经编译生成的二进制形式的库
+	如果需要编译使用新的库，请修改本目录下的Makefile，取消两个目录的注释
+语句，编译过程优先使用Linux.bin.$(ARCH)目录下，新生成的库
+		

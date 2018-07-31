@@ -1,0 +1,16 @@
+				REAME for User Library of ISDN driver
+							Li Zhijie 2005.08.15
+
+logger.c
+	Add new Layer2 D channel protocol of User side, and write B Channel data
+	(DL_DATA_IND) to a file, print D channel frame in console
+
+test_l2.c
+	A sample call process with B channel support L2 only, D channel is L3 DSS1 USER
+
+test_con.c
+	A sample call process with B channel support L3, D channel is L3 DSS1 USER
+
+test_net.c
+	A sample call process with D channel is L3 DSS1 NET	
+						

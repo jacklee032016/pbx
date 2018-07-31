@@ -1,0 +1,34 @@
+#
+# $Author: lizhijie $
+# $Log$
+# $Revision$
+# $Id$
+#
+		README	for shared_lib
+				Li Zhijie, 2005.05.27
+
+共享库及使用共享库的程序
+
+目录：
+lib
+	共享库及其头文件
+	
+programs
+	使用共享库的各个程序，当前为
+	uartd
+	selftest
+	recorder
+	lcdtest
+
+
+GET /cgi-bin/services/ddns.cgi?op=config HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */*
+Referer: http://172.21.2.234/cgi-bin/navigate.cgi?op=base
+Accept-Language: zh-cn
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; MAXTHON 2.0)
+Host: 172.21.2.234
+Proxy-Connection: Keep-Alive
+Proxy-Authorization: Basic emhpamllX2xpOnNvbml4
+Authorization: Basic cm9vdDoxMjM=
+				

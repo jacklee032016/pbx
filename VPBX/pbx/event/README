@@ -1,0 +1,26 @@
+# $Id: README,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+
+		Event in VPBX README
+				Li Zhijie, 2005.10.21
+
+2005.12.01
+	新加PbxMsgIsdn，直接继承PbxEvent。不同的设备直接继承PbxEvent用于设备消息的各自需求
+	这样暂时可以不再使用PbxMsg类
+
+2005.10.21
+PbxEvent
+	|--PbxTimerEvent		：定时器事件
+		|--EpTimerEvent		：设备管理一侧的关于控制的定时器事件
+		|--CallTimerEvent	: 调度器一侧的关于呼叫的定时器事件
+	
+	|--PbxSignal			：设备发给调度器的虚拟呼叫的信令
+	
+	|--PbxMsg				：由设备管理线程产生的设备一侧处理的消息
+	
+	|--PbxDeviceEvent		：呼叫调度器发给设备管理线程的队列、由设备管理线程完成进一步呼叫处理的事件
+	
+	|--PbxHwEvent			：所有发给设备写线程的事件
+	
+	|--DigitTimeoutEvent	：PSTN收号的超时事件
+	
+	

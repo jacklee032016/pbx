@@ -1,0 +1,30 @@
+#$Author: lizhijie $
+#$Id: README,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+
+			README
+						Li Zhijie
+pbx/op/isdn
+		ISDN呼叫控制相关的操作
+
+
+ISDN被叫方（代码中CallInfo的SRC EP的状态）状态机
+	STATE_IN_SETUP状态	:	接收到 ISDN的SETUP消息后，加入此状态
+		处理的事件
+			Proceeding CallEvent	：	进入STATE_IN_PROCEEDING状态
+			Alerting CallEnent	：	进入STATE_IN_ALERTING状态
+			Connect CallEvent	：	进入STATE_CONNECT状态
+			ISDN Release消息	：	进入STATE_ERROR状态
+	
+	STATE_IN_PROCEEDING
+		处理的事件
+			Alerting CallEnent	：	进入STATE_IN_ALERTING状态
+			Connect CallEvent	：	进入STATE_CONNECT状态
+			ISDN Release消息	：	进入STATE_ERROR状态
+			
+	STATE_IN_ALERTING
+		处理的事件
+			Connect CallEvent	：	进入STATE_CONNECT状态
+			ISDN Release消息	：	进入STATE_ERROR状态
+
+ISDN主叫方（代码中CallInfo的DEST EP的状态）
+

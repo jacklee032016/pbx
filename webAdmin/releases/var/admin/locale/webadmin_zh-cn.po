@@ -1,0 +1,3484 @@
+# "$Id: webadmin.header,v 1.1.1.1 2006/11/29 17:06:59 lizhijie Exp $"
+# 
+#   Message catalog template for the Common UNIX Printing System (CUPS).
+#   li Zhijie, Sonix Technology,Chengdu
+#         WWW: http://www.sonix.com.tw
+# #, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SnxWebAdmin-1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-21 15:40+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: modules/network/route/net_routes.h:16
+msgid "Network Route Configuration"
+msgstr "网络路由配置"
+
+#: modules/wizard/wizard.h:30
+msgid "Install Wizard"
+msgstr "安装向导"
+
+#: modules/wizard/wizard.h:31
+msgid "Prepare"
+msgstr "准备"
+
+#: modules/wizard/wizard.h:32
+msgid "Hardware Check"
+msgstr "硬件检测"
+
+#: modules/wizard/wizard.h:33
+msgid "Disk Partition"
+msgstr "磁盘分区"
+
+#: modules/wizard/wizard.h:34
+msgid "Disk Format"
+msgstr "磁盘格式"
+
+#: modules/wizard/wizard.h:35
+msgid "Update"
+msgstr "更新"
+
+#: include/cgiLib.h:270
+msgid "Error"
+msgstr "错误"
+
+#: include/cgiLib.h:271 lib/process/cgi_upload_file.c:443
+msgid "Success"
+msgstr "成功"
+
+#: include/cgiLib.h:272
+msgid "Save"
+msgstr "保存"
+
+#: include/cgiLib.h:273
+msgid "Add"
+msgstr "添加"
+
+#: include/cgiLib.h:274
+msgid "Delete"
+msgstr "删除"
+
+#: include/cgiLib.h:275
+msgid "Activate"
+msgstr "激活"
+
+#: include/cgiLib.h:276
+msgid "Deactivate"
+msgstr "无效"
+
+#: include/cgiLib.h:277
+msgid "Modify"
+msgstr "修改"
+
+#: include/cgiLib.h:278
+msgid "Default"
+msgstr "默认"
+
+#: include/cgiLib.h:279
+msgid "Reset"
+msgstr "复位"
+
+#: include/cgiLib.h:280
+msgid "Submit"
+msgstr "提交"
+
+#: include/cgiLib.h:281
+msgid "Management"
+msgstr "管理"
+
+#: include/cgiLib.h:283
+msgid "Stop"
+msgstr "停止"
+
+#: include/cgiLib.h:284
+msgid "Running"
+msgstr "运行"
+
+#: include/cgiLib.h:286
+msgid "Note"
+msgstr "注意"
+
+#: include/cgiLib.h:287
+msgid "Device"
+msgstr "设备"
+
+#: include/cgiLib.h:288
+msgid "Type"
+msgstr "打印"
+
+#: include/cgiLib.h:290
+msgid "Yes"
+msgstr "是"
+
+#: include/cgiLib.h:291
+msgid "No"
+msgstr "否"
+
+#: include/cgiLib.h:292
+msgid "YES"
+msgstr "是"
+
+#: include/cgiLib.h:293 include/cgiLib.h:424
+msgid "NO"
+msgstr "否"
+
+#: include/cgiLib.h:294
+msgid "On"
+msgstr "开启"
+
+#: include/cgiLib.h:295
+msgid "Off"
+msgstr "关闭"
+
+#: include/cgiLib.h:296
+msgid "Enable"
+msgstr "使能"
+
+#: include/cgiLib.h:297
+msgid "Disable"
+msgstr "使无效"
+
+#: include/cgiLib.h:298
+msgid "Begin"
+msgstr "开始"
+
+#: include/cgiLib.h:299
+msgid "End"
+msgstr "结束"
+
+#: include/cgiLib.h:300
+msgid "Exit"
+msgstr "退出"
+
+#: include/cgiLib.h:301
+msgid "Play"
+msgstr "播放"
+
+#: include/cgiLib.h:302
+msgid "Record"
+msgstr "记录"
+
+#: include/cgiLib.h:303
+msgid "Thanks"
+msgstr "谢谢"
+
+#: include/cgiLib.h:305
+msgid "Restore Default"
+msgstr "默认备份恢复"
+
+#: include/cgiLib.h:307
+msgid "Name"
+msgstr "名称"
+
+#: include/cgiLib.h:308
+msgid "System User"
+msgstr "系统用户"
+
+#: include/cgiLib.h:309
+msgid "User Name"
+msgstr "用户姓名"
+
+#: include/cgiLib.h:310
+msgid "Password"
+msgstr "密码"
+
+#: include/cgiLib.h:312
+msgid "Next"
+msgstr "下一步"
+
+#: include/cgiLib.h:313
+msgid "Status"
+msgstr "状态"
+
+#: include/cgiLib.h:314
+msgid "All"
+msgstr "全部"
+
+#: include/cgiLib.h:315
+msgid "Index"
+msgstr "目录"
+
+#: include/cgiLib.h:317
+msgid "DHCP Configuration"
+msgstr "DHCP配置"
+
+#: include/cgiLib.h:319
+msgid "LAN Configuration"
+msgstr "LAN 配置"
+
+#: include/cgiLib.h:320
+msgid "Ethernet Configuration"
+msgstr "网卡配置"
+
+#: include/cgiLib.h:321
+msgid "Protocol"
+msgstr "协议"
+
+#: include/cgiLib.h:322
+msgid "IP Address"
+msgstr "IP地址"
+
+#: include/cgiLib.h:323
+msgid "Netmask"
+msgstr "子网掩码"
+
+#: include/cgiLib.h:324
+msgid "Gateway"
+msgstr "网关"
+
+#: include/cgiLib.h:325
+msgid "Phone Number"
+msgstr "电话"
+
+#: include/cgiLib.h:327
+msgid "Network Address"
+msgstr "网址"
+
+#: include/cgiLib.h:329
+msgid "Partition"
+msgstr "分区"
+
+#: include/cgiLib.h:330
+msgid "Authority"
+msgstr "负责人"
+
+#: include/cgiLib.h:331
+msgid "Authentication"
+msgstr "授权"
+
+#: include/cgiLib.h:333
+msgid "has exist"
+msgstr "已经存在"
+
+#: include/cgiLib.h:334
+msgid "is not exist"
+msgstr "不存在"
+
+#: include/cgiLib.h:335
+msgid "Some Errors in your releases"
+msgstr "版本错误"
+
+#: include/cgiLib.h:336
+msgid "Please Waiting....."
+msgstr "请等待"
+
+#: include/cgiLib.h:337
+msgid "Waiting"
+msgstr "等待"
+
+#: include/cgiLib.h:339
+msgid "parameter"
+msgstr "参数"
+
+#: include/cgiLib.h:341
+msgid "ARE YOU SURE"
+msgstr "确定"
+
+#: include/cgiLib.h:342
+msgid "Sorry"
+msgstr "对不起"
+
+#: include/cgiLib.h:343
+msgid "Warning"
+msgstr "警告"
+
+#: include/cgiLib.h:344
+msgid "Failed"
+msgstr "失败"
+
+#: include/cgiLib.h:346
+msgid "Reboot"
+msgstr "重启"
+
+#: include/cgiLib.h:347
+msgid "Upload"
+msgstr "上传"
+
+#: include/cgiLib.h:348
+msgid "are set on this page"
+msgstr "在此页设置"
+
+#: include/cgiLib.h:350
+msgid "Save Configuration"
+msgstr "保存配置"
+
+#: include/cgiLib.h:352
+msgid "SPEED_DIAL"
+msgstr "快速拨号"
+
+#: include/cgiLib.h:353
+msgid "INTERNAL_DIAL"
+msgstr "国内拨号"
+
+#: include/cgiLib.h:354
+msgid "NORMAL_DIAL"
+msgstr "正常拨号"
+
+#: include/cgiLib.h:355
+msgid "LOCAL_DIAL"
+msgstr "本地拨号"
+
+#: include/cgiLib.h:356
+msgid "CALL_RETURN"
+msgstr "回拨"
+
+#: include/cgiLib.h:357
+msgid "URL_DIAL"
+msgstr "URL拨号"
+
+#: include/cgiLib.h:358
+msgid "PSTN_DIAL"
+msgstr "PSTN拨号"
+
+#: include/cgiLib.h:359
+msgid "DIRECT_DIAL"
+msgstr "直接拨号"
+
+#: include/cgiLib.h:362
+msgid "WAN Port"
+msgstr "WAN端口"
+
+#: include/cgiLib.h:363
+msgid "LAN Port"
+msgstr "LAN端口"
+
+#: include/cgiLib.h:364
+msgid "WIFI Port"
+msgstr "WIFI端口"
+
+#: include/cgiLib.h:365
+msgid "MESH Port"
+msgstr "MESH 端口"
+
+#: include/cgiLib.h:368
+msgid "Prev"
+msgstr "上一步"
+
+#: include/cgiLib.h:369
+msgid "Skip"
+msgstr "跳过"
+
+#: include/cgiLib.h:370
+msgid "Step"
+msgstr "步骤"
+
+#: include/cgiLib.h:372
+msgid "Mode"
+msgstr "模式"
+
+#: include/cgiLib.h:373
+msgid "MAC Address"
+msgstr "MAC地址"
+
+#: include/cgiLib.h:374
+msgid "Source Address"
+msgstr "源地址"
+
+#: include/cgiLib.h:375
+msgid "Destination Address"
+msgstr "目标地址"
+
+#: include/cgiLib.h:377
+msgid "Quick Install"
+msgstr "快速安装"
+
+#: include/cgiLib.h:378
+msgid "will be provided in future version"
+msgstr "会在将来版本中提供"
+
+#: include/cgiLib.h:380
+msgid "Startup when boot"
+msgstr "开机自动启动"
+
+#: include/cgiLib.h:381
+msgid "Firewall Middle Configuration"
+msgstr "防火墙设置"
+
+#: include/cgiLib.h:382
+msgid "No This Operation"
+msgstr "无此操作"
+
+#: include/cgiLib.h:383
+msgid "Without Configuration File"
+msgstr "无配置文件"
+
+#: include/cgiLib.h:385
+msgid "DNS Server"
+msgstr "DNS服务器"
+
+#: include/cgiLib.h:386
+msgid "First DNS Server"
+msgstr "首选DNS"
+
+#: include/cgiLib.h:387
+msgid "Second DNS Server"
+msgstr "备用DNS"
+
+#: include/cgiLib.h:389
+msgid "Partition Info"
+msgstr "分区信息"
+
+#: include/cgiLib.h:391
+msgid "MESH Device"
+msgstr "MESH设备"
+
+#: include/cgiLib.h:392
+msgid "Work Mode"
+msgstr "工作模式"
+
+#: include/cgiLib.h:393
+msgid "Ad Hoc"
+msgstr "Ad Hoc"
+
+#: include/cgiLib.h:394
+msgid "PHY Mode"
+msgstr "PHY模式"
+
+#: include/cgiLib.h:395
+msgid "Start AODV"
+msgstr "启动AODV"
+
+#: include/cgiLib.h:396
+msgid "ESSID(Extended Service ID)"
+msgstr "ESSID"
+
+#: include/cgiLib.h:397
+msgid "Nick Name"
+msgstr "Nick Name"
+
+#: include/cgiLib.h:398
+msgid "Rate"
+msgstr "比率"
+
+#: include/cgiLib.h:399
+msgid "Channel(Fequency)"
+msgstr "通道1（频率）"
+
+#: include/cgiLib.h:400
+msgid "Channel"
+msgstr "通道1"
+
+#: include/cgiLib.h:401
+msgid "Auto"
+msgstr "自动"
+
+#: include/cgiLib.h:403
+msgid "Seconds"
+msgstr "秒"
+
+#: include/cgiLib.h:404
+msgid "ms"
+msgstr "毫秒"
+
+#: include/cgiLib.h:405
+msgid "SIP URL"
+msgstr "SIP网址"
+
+#: include/cgiLib.h:406
+msgid "Basic Configuration"
+msgstr "基本配置"
+
+#: include/cgiLib.h:408
+msgid "FF Server"
+msgstr "FF服务器"
+
+#: include/cgiLib.h:409
+msgid "SIP UA Daemon"
+msgstr "SIP UA 后台程序"
+
+#: include/cgiLib.h:410
+msgid "PBX MGR Task"
+msgstr "PBX MGR任务"
+
+#: include/cgiLib.h:411
+msgid "PBX Signal Task"
+msgstr "PBX信号任务"
+
+#: include/cgiLib.h:413
+msgid "Alert Voice"
+msgstr "报警声音"
+
+#: include/cgiLib.h:415
+msgid "ID"
+msgstr "ID"
+
+#: include/cgiLib.h:416
+msgid "Start Cylinder"
+msgstr "启动Cylinder"
+
+#: include/cgiLib.h:417
+msgid "End Cylinder"
+msgstr "结束Cylinder"
+
+#: include/cgiLib.h:418
+msgid "Mount Point"
+msgstr "挂载"
+
+#: include/cgiLib.h:420
+msgid "Chinese"
+msgstr "中文"
+
+#: include/cgiLib.h:421
+msgid "Japanese"
+msgstr "日文"
+
+#: include/cgiLib.h:422
+msgid "English"
+msgstr "英文"
+
+#: include/cgiLib.h:425
+msgid "ALLOW"
+msgstr "允许"
+
+#: include/cgiLib.h:426
+msgid "DENY"
+msgstr "拒绝"
+
+#: include/cgiLib.h:427
+msgid "FLUSH"
+msgstr "刷新"
+
+#: include/cgiLib.h:428
+msgid "DEATTACH"
+msgstr "附属"
+
+#: include/cgiLib.h:430
+msgid "Test Result"
+msgstr "测试结果"
+
+#: include/cgiLib.h:431
+msgid "Daemon"
+msgstr "后台程序"
+
+#: include/cgiLib.h:433
+msgid "Log Configuration"
+msgstr "日志配置"
+
+#: include/cgiLib.h:434
+msgid "Log File"
+msgstr "日志文件"
+
+#: include/cgiLib.h:435
+msgid "Log Level"
+msgstr "日志水平"
+
+#: include/cgiLib.h:436
+msgid "Configuration"
+msgstr "配置"
+
+#: include/cgiLib.h:437
+msgid "Port"
+msgstr "端口"
+
+#: include/cgiLib.h:439
+msgid "Help has not defined for this"
+msgstr "还未提供关于此方面的帮助信息"
+
+#: include/cgiLib.h:440
+msgid "In this page you can config"
+msgstr "在此页能进行配置"
+
+#: include/cgiLib.h:442
+msgid "System Time Configuration"
+msgstr "系统时间配置"
+
+#: include/cgiLib.h:444
+msgid "Current System Time"
+msgstr "当前系统时间"
+
+#: include/cgiLib.h:445
+msgid "System Internal Error"
+msgstr "系统内部错误"
+
+#: include/cgiLib.h:446
+msgid "Time Zone"
+msgstr "时区"
+
+#: include/cgiLib.h:447
+msgid "Time Mode"
+msgstr "时间模式"
+
+#: include/cgiLib.h:448
+msgid "Current"
+msgstr "当前"
+
+#: include/cgiLib.h:449
+msgid "NTP Server"
+msgstr "NTP服务器"
+
+#: include/cgiLib.h:451
+msgid "Server"
+msgstr "服务器"
+
+#: include/cgiLib.h:453
+msgid "Local"
+msgstr "当地"
+
+#: include/cgiLib.h:454
+msgid "Remote"
+msgstr "远程"
+
+#: include/cgiLib.h:461
+msgid "DDNS Client"
+msgstr "DDNS客户端"
+
+#: include/cgiLib.h:469
+msgid "Select"
+msgstr "选择"
+
+#: include/sipUa.h:27
+msgid "SipServer"
+msgstr "SIP服务器"
+
+#: include/sipUa.h:29
+msgid "blackList"
+msgstr "黑名单"
+
+#: include/sipUa.h:30
+msgid "NoDisturbF"
+msgstr "NoDisturbF"
+
+#: modules/network/wifi/wifiStations.c:82
+msgid "TX Packets"
+msgstr "发送包"
+
+#: modules/network/wifi/wifiStations.c:82
+msgid "RX Packets"
+msgstr "接收包"
+
+#: modules/network/wifi/wifiStations.c:82
+msgid "Failed Packets"
+msgstr "失败包"
+
+#: modules/network/wifi/wifiStations.c:110
+msgid "Current Associated Stations Information"
+msgstr "当前连接位置信息"
+
+#: modules/network/wifi/wifiInfo.c:23
+msgid "PHY"
+msgstr "PHY"
+
+#: modules/network/wifi/wifiInfo.c:36
+msgid "Channel(Frequency)"
+msgstr "通道1（频率）"
+
+#: modules/network/wifi/wifiInfo.c:38
+msgid "Cell"
+msgstr "电池"
+
+#: modules/network/wifi/wifiInfo.c:38 lib/wireless/cgi_wireless_mode.c:12
+msgid "AP(Access Point)"
+msgstr "AP(Access Point)"
+
+#: modules/network/wifi/wifiInfo.c:42
+msgid "Bit Rate"
+msgstr "波特率"
+
+#: modules/network/wifi/wifiInfo.c:46
+msgid "TX Power"
+msgstr "发送功率"
+
+#: modules/network/wifi/wifiInfo.c:56
+msgid "RTS Thrushold"
+msgstr "发送请求控制"
+
+#: modules/network/wifi/wifiInfo.c:65
+msgid "Fragment Thrushold"
+msgstr "片断控制"
+
+#: modules/network/wifi/wifiInfo.c:75
+msgid "Signal level"
+msgstr "信号水平"
+
+#: modules/network/wifi/wifiInfo.c:84
+msgid "Noise level"
+msgstr "噪声水平"
+
+#: modules/network/wifi/wifiInfo.c:98
+msgid "Mode Configuration of WiFi"
+msgstr "WiFi模式配置"
+
+#: modules/network/wifi/wifiInfo.c:98
+msgid "Basic parameters of WiFi are set here"
+msgstr "WiFi基本参数设置"
+
+#: modules/network/wifi/wifiInfo.c:104
+msgid "Parameters Info of WiFi"
+msgstr "WiFi参数信息"
+
+#: modules/network/wifi/wifiAodvCtrl.c:31
+msgid "AODV Debug"
+msgstr "AODV调试"
+
+#: modules/network/wifi/wifiAodvCtrl.c:31
+msgid "Click button below, then AODV debug info will be Open/Close"
+msgstr "点击下面按钮，打开或关闭AODV的调试信息"
+
+#: modules/network/wifi/wifiAodvCtrl.c:33
+msgid "Open AODV Debug"
+msgstr "打开AODV调试"
+
+#: modules/network/wifi/wifiAodvCtrl.c:33
+msgid "Close AODV Debug"
+msgstr "关闭AODV调试"
+
+#: modules/network/wifi/wifiAodvCtrl.c:37
+msgid "AODV Route Management"
+msgstr "AODV路由管理"
+
+#: modules/network/wifi/wifiAodvCtrl.c:37
+msgid "Click button below, then all AODV route will be deleted"
+msgstr "点击下面按钮，所有的AODV路由将被删除"
+
+#: modules/network/wifi/wifiAodvCtrl.c:38
+msgid "Clear All Route Items"
+msgstr "清除所用路由条目"
+
+#: modules/network/wifi/wifiAodvCtrl.c:67
+msgid "Wireless AODV Control"
+msgstr "无线AODV控制"
+
+#: modules/network/wifi/wifiAodvCtrl.c:67
+msgid "Debug AODV or Clear all AODV Routes"
+msgstr "调试AODV或清除所有AODV路由"
+
+#: modules/network/wifi/wifiAcl.c:64 modules/network/wifi/wifiAcl.c:136
+#: modules/network/wifi/wifiAcl.c:161 modules/network/wifi/wifiAuthen.c:73
+#: modules/network/wifi/wifiAuthen.c:89 lib/wireless/cgi_wireless_utils.c:56
+#: lib/wireless/cgi_wireless_utils.c:62
+msgid "Wireless Operation Failed"
+msgstr "无线操作失败"
+
+#: modules/network/wifi/wifiAcl.c:106
+msgid "Has Exist when add"
+msgstr "添加时已经存在"
+
+#: modules/network/wifi/wifiAcl.c:118
+msgid "Not exist when delete"
+msgstr "删除时已不存在"
+
+#: modules/network/wifi/wifiAcl.c:225 modules/network/wifi/wifiAcl.c:277
+msgid "MAC Filter Policy"
+msgstr "MAC地址过滤策略"
+
+#: modules/network/wifi/wifiAcl.c:321
+msgid "MAC Filter Configuration of WiFi"
+msgstr "WIFI的MAC地址过滤配置"
+
+#: modules/network/wifi/wifiAcl.c:343
+msgid "ACL Filter is saving"
+msgstr "ACL过滤正在保存"
+
+#: modules/network/wifi/wifiAodvInfo.c:24
+msgid "Destionation"
+msgstr "目的地"
+
+#: modules/network/wifi/wifiAodvInfo.c:24
+msgid "Sequence"
+msgstr "顺序"
+
+#: modules/network/wifi/wifiAodvInfo.c:24
+msgid "Hop Count"
+msgstr "Hop计数"
+
+#: modules/network/wifi/wifiAodvInfo.c:24
+msgid "Next Hop"
+msgstr "下一个Hop"
+
+#: modules/network/wifi/wifiAodvInfo.c:24
+#: modules/network/route/net_routes.c:37
+#: modules/network/route/net_routes.c:160
+#: modules/network/route/net_routes.c:308
+msgid "Route Type"
+msgstr "路由类型"
+
+#: modules/network/wifi/wifiAodvInfo.c:57
+msgid "Address"
+msgstr "地址"
+
+#: modules/network/wifi/wifiAodvInfo.c:57
+msgid "Link"
+msgstr "连接"
+
+#: modules/network/wifi/wifiAodvInfo.c:57
+msgid "Valid"
+msgstr "有效"
+
+#: modules/network/wifi/wifiAodvInfo.c:57
+msgid "Lifetime"
+msgstr "寿命"
+
+#: modules/network/wifi/wifiAodvInfo.c:87
+#: modules/network/wifi/wifiAodvInfo.c:117
+msgid "Second/msecond"
+msgstr "秒/毫秒"
+
+#: modules/network/wifi/wifiAodvInfo.c:87
+msgid "Retries"
+msgstr "重试"
+
+#: modules/network/wifi/wifiAodvInfo.c:117
+msgid "Flood ID"
+msgstr "溢出IP"
+
+#: modules/network/wifi/wifiAodvInfo.c:181
+msgid "Status Information of Wireless AODV"
+msgstr "无线AODV的状态信息"
+
+#: modules/network/wifi/wifiMain.c:54
+msgid "WiFi"
+msgstr "WiFi"
+
+#: modules/network/wifi/wifiAuthen.c:9
+msgid "OPEN(None,Default)"
+msgstr "打开（无，默认）"
+
+#: modules/network/wifi/wifiAuthen.c:10
+msgid "SharedKey"
+msgstr "共享密匙"
+
+#: modules/network/wifi/wifiAuthen.c:11
+msgid "802.1X"
+msgstr "802.1X"
+
+#: modules/network/wifi/wifiAuthen.c:12
+msgid "AUTO"
+msgstr "自动"
+
+#: modules/network/wifi/wifiAuthen.c:13
+msgid "WPA(Wireless Protected Access)"
+msgstr "WPA"
+
+#: modules/network/wifi/wifiAuthen.c:112
+msgid "Authentication Mode"
+msgstr "授权模式"
+
+#: modules/network/wifi/wifiAuthen.c:123
+msgid "Please input the key:"
+msgstr "请输入密匙"
+
+#: modules/network/wifi/wifiAuthen.c:124
+msgid "Shared Key are 5 ASCII Charactors"
+msgstr "共享密匙为5个字符"
+
+#: modules/network/wifi/wifiAuthen.c:124
+msgid "used in 64 bits Authentication and Cryption Key"
+msgstr "用64位的授权密匙"
+
+#: modules/network/wifi/wifiAuthen.c:125
+msgid "128 bits Key can be supported in future"
+msgstr "将来会支持128位的密匙"
+
+#: modules/network/wifi/wifiAuthen.c:130
+msgid "Key"
+msgstr "密匙"
+
+#: modules/network/wifi/wifiAuthen.c:144
+msgid "Now only Open and Shared Key can be used"
+msgstr "现在只能用公开的或者共享的密匙"
+
+#: modules/network/wifi/wifiAuthen.c:144
+msgid "More features can be supported in future!"
+msgstr "将来会支持更多的特性"
+
+#: modules/network/wifi/wifiAuthen.c:162
+msgid "Authentication Configuration of WiFi"
+msgstr "WiFi的授权配置"
+
+#: modules/network/wifi/wifiAuthen.c:169
+msgid "Authentication Info is saving"
+msgstr "授权信息正在保存"
+
+#: modules/network/route/net_routes.c:47
+msgid "Operator"
+msgstr "操作者"
+
+#: modules/network/route/net_routes.c:59
+#: modules/network/route/net_routes.c:214
+#: modules/network/route/net_routes.c:253
+msgid "Destination"
+msgstr "目的地"
+
+#: modules/network/route/net_routes.c:109
+msgid "is invalidate value"
+msgstr "是无效的值"
+
+#: modules/network/route/net_routes.c:164
+#: modules/network/route/net_routes.c:203
+msgid "Network Route"
+msgstr "网络路由"
+
+#: modules/network/route/net_routes.c:166
+#: modules/network/route/net_routes.c:197
+msgid "Host Route"
+msgstr "主机路由"
+
+#: modules/network/route/net_routes.c:168
+#: modules/network/route/net_routes.c:191
+msgid "Default Route"
+msgstr "默认路由"
+
+#: modules/network/route/net_routes.c:232
+msgid "WAN"
+msgstr "WAN"
+
+#: modules/network/route/net_routes.c:253
+msgid "Flags"
+msgstr "标记"
+
+#: modules/network/route/net_routes.c:253
+msgid "Cast"
+msgstr "广播"
+
+#: modules/network/route/net_routes.c:296
+msgid "Route Operation Failed"
+msgstr "路由功能失败"
+
+#: modules/network/route/net_routes.c:314
+msgid "Add Route"
+msgstr "添加路由"
+
+#: modules/network/route/net_routes_update.c:140
+msgid "Update Route now"
+msgstr "现在更新路由"
+
+#: modules/help/help_cgi.c:31
+msgid "Help Failed"
+msgstr "帮助信息失败"
+
+#: modules/help/help_cgi.c:31
+msgid "Some Errors in your releases for HELP function"
+msgstr "帮助功能在您的版本中出现错误"
+
+#: modules/help/help_cgi.c:48 lib/cgi_pages_lib.c:138
+msgid "Help"
+msgstr "帮助"
+
+#: modules/help/help_cgi.c:54
+msgid "No Help information for this menu"
+msgstr "此项没有帮助信息"
+
+#: modules/help/help_msg.c:18
+msgid "With upload function"
+msgstr "利用上传功能"
+
+#: modules/help/help_msg.c:19
+msgid "the crupted system can be restored or patched packages"
+msgstr "崩溃的系统可以重新加载或打补丁"
+
+#: modules/help/help_msg.c:20
+msgid "can be upgrade system"
+msgstr "还可以对系统进行升级"
+
+#: modules/help/help_msg.c:25
+msgid "All Services in our system are list here"
+msgstr "系统所有服务都被列出"
+
+#: modules/help/help_msg.c:30
+msgid "System user admin"
+msgstr "系统用户管理"
+
+#: modules/help/help_msg.c:35
+msgid "hostname and Domain admin"
+msgstr "主机名和域名管理"
+
+#: modules/help/help_msg.c:41
+msgid "config the WAN IP"
+msgstr "配置WAN IP"
+
+#: modules/help/help_msg.c:46
+msgid "WAN static IP config"
+msgstr "WAN 静态IP配置"
+
+#: modules/help/help_msg.c:51
+msgid "config the PPPOE"
+msgstr "PPPOE配置"
+
+#: modules/help/help_msg.c:77
+msgid "Update/Restore involved 3 steps"
+msgstr "更新/恢复分为三步"
+
+#: modules/help/help_msg.c:78
+msgid "Login in our web site with your browser(or contact with us)"
+msgstr "登录我们的网站或与我们联系"
+
+#: modules/help/help_msg.c:79
+msgid "and get the package you need"
+msgstr "找到你需要的文件"
+
+#: modules/help/help_msg.c:80
+msgid "Select the menu item of 'Upgrade Software'"
+msgstr "选择“软件升级”
+
+#: modules/help/help_msg.c:81
+msgid "After update, you should reboot system"
+msgstr "更新后，请重新启动系统"
+
+#: modules/help/help_msg.c:87
+msgid "In order to config a server yuo must know the state of services"
+msgstr "为了配置某个服务器，你必须知道各个服务的状态"
+
+#: modules/help/help_msg.c:88
+msgid "in there we can look over all state of services in our system"
+msgstr "我们可以看到系统中每个服务的状态"
+
+#: modules/help/help_msg.c:89
+msgid "you can stop or runing every services in our system"
+msgstr "你可以运行或停止系统中的每个服务"
+
+#: modules/help/help_msg.c:90
+msgid "you can choose upload or no services when the system startup"
+msgstr "你可以在系统启动时选择上传或无服务"
+
+#: modules/help/help_msg.c:95
+msgid "the usename and password in webadmin"
+msgstr "用户名和密码在webadmin"
+
+#: modules/help/help_msg.c:96
+msgid "Username: generally used numeral,Letter and special characte"
+msgstr "用户名：通常是数字，字母和特殊字符"
+
+#: modules/help/help_msg.c:97
+msgid "Password: composed by the numeral and letter"
+msgstr "密码：由数字和字母构成"
+
+#: modules/help/help_msg.c:98 modules/help/help_msg.c:108
+msgid "Note: it is differ to capital letter and small letter"
+msgstr "注意：大小写字母意义不同"
+
+#: modules/help/help_msg.c:103
+msgid "the hostname and domain"
+msgstr "主机名和域名"
+
+#: modules/help/help_msg.c:104
+msgid "Homename and WAN IP address are correspond mutually"
+msgstr "主机名和IP地址相互对应"
+
+#: modules/help/help_msg.c:105
+msgid "Hostname and domain generally used numeral,letter and special characte"
+msgstr "主机名和域名通常是数字，字母和特殊字符"
+
+#: modules/help/help_msg.c:106
+msgid "If you want to used WWW and MAIL services you must used this domain"
+msgstr "使用这个域名来上网和发邮件"
+
+#: modules/help/help_msg.c:107
+msgid "and hostname which you already applied and registed"
+msgstr "主机名已经被注册"
+
+#: modules/help/help_msg.c:109
+msgid "In order to FQDN can use, must config the DNS server correctly"
+msgstr "为了使用FQDN，请务必正确配置DNS服务器"
+
+#: modules/help/help_msg.c:115
+msgid "the way to connect the Internat"
+msgstr "连接网络的方式"
+
+#: modules/help/help_msg.c:116
+msgid "we have 3 way to connect to internet:static IP,DHCP,PPPOE"
+msgstr "可用static IP,DHCP,PPPOE三种方式连接网络"
+
+#: modules/help/help_msg.c:117
+msgid "you choice anyone you want"
+msgstr "访问不受任何限制"
+
+#: modules/help/help_msg.c:118
+msgid "click 'ok' to start config"
+msgstr "选择“确定”来启动配置"
+
+#: modules/help/help_msg.c:119
+msgid "if you choice DHCP may obtain IP automatically from ISP"
+msgstr "选择DHCP可以自动获得IP地址"
+
+#: modules/help/help_msg.c:124
+msgid "the static wan IP"
+msgstr "静态WAN IP"
+
+#: modules/help/help_msg.c:125
+msgid "WAN IP provides by ISP"
+msgstr "ISP提供的WAN IP"
+
+#: modules/help/help_msg.c:126
+msgid "WAN netmask generally used 255.255.255.0"
+msgstr "子网掩码通常是255.255.255.0"
+
+#: modules/help/help_msg.c:127
+msgid "Gateway IP namely goal address"
+msgstr "网关IP就是目标地址"
+
+#: modules/help/help_msg.c:128 modules/help/help_msg.c:141
+msgid "First DNS Server provides by ISP"
+msgstr "ISP提供的首选DNS"
+
+#: modules/help/help_msg.c:129 modules/help/help_msg.c:142
+msgid "Second DNS Server provides by ISP also may not fill in"
+msgstr "ISP提供的备用DNS也可以不填"
+
+#: modules/help/help_msg.c:134
+msgid "the PPPOE"
+msgstr "PPPOE"
+
+#: modules/help/help_msg.c:135
+msgid "PPPOE is ADSL"
+msgstr "PPPOE就是ADSL"
+
+#: modules/help/help_msg.c:136
+msgid "usedname and password is provides by ISP"
+msgstr "ISP提供的用户名和密码"
+
+#: modules/help/help_msg.c:136 modules/help/help_msg.c:137
+msgid "if you don't know can ask ISP"
+msgstr "如没有可以向ISP索取"
+
+#: modules/help/help_msg.c:137
+msgid "ISP Server and ISP server name is provides by ISP"
+msgstr "ISP服务器和名字都由ISP提供"
+
+#: modules/help/help_msg.c:138
+msgid "you have two way to get DNS server"
+msgstr "有两种方式可以得到DNS服务器"
+
+#: modules/help/help_msg.c:138
+msgid "Set by User and Set by server"
+msgstr "用户设定和服务器设定"
+
+#: modules/help/help_msg.c:139
+msgid "if you choice set by user"
+msgstr "如果你选择由用户设置"
+
+#: modules/help/help_msg.c:139
+msgid "you must set First DNS Server and Second DNS Server"
+msgstr "首选DNS和备用DNS均要填写"
+
+#: modules/help/help_msg.c:140
+msgid "if you choice set by server you can not set that"
+msgstr "如果选择由服务器设置你就不用设定DNS"
+
+#: modules/help/help_msg.c:143
+msgid "Note: ISP can alloca IP address dynamocly for ADSL"
+msgstr "ISP可以动态为ADSL分配IP地址"
+
+#: modules/help/help_msg.c:144
+msgid "so you can not set ISP server and ISP server name"
+msgstr "所以不用设置ISP服务器和名字"
+
+#: modules/wizard/wizardUtils.c:16
+msgid "NINGBO ASSIST, Inc."
+msgstr "宁波 助手 "
+
+#: modules/wizard/wizardUtils.c:35
+msgid "NingBo Assist Technology Co.,Ltd"
+msgstr "宁波助手科技有限公司"
+
+#: modules/wizard/wizardUtils.c:37 modules/system/sysInfo/sysInfoVersions.c:70
+msgid "Version"
+msgstr "版本"
+
+#: modules/wizard/wizardFormat.c:22
+msgid "is formatting as"
+msgstr "正在格式化"
+
+#: modules/wizard/wizardFormat.c:41
+msgid "is mounting on"
+msgstr "正在挂载 "
+
+#: modules/wizard/wizardFormat.c:66 lib/process/cgi_upload_file.c:43
+msgid "File can not be NULL"
+msgstr "文件不能为空"
+
+#: modules/wizard/wizardFormat.c:94 modules/wizard/wizardHardware.c:137
+#: modules/wizard/wizardFdisk.c:142
+#: modules/servers/services/servicesMiscConfig.c:113
+msgid "is not found"
+msgstr "没有找到"
+
+#: modules/wizard/wizardFormat.c:107
+msgid "Partition and Format Result"
+msgstr "分区和格式化结果"
+
+#: modules/wizard/wizardFormat.c:116
+msgid "Now, it is time for upload File System image with Browser."
+msgstr "现在，现在可以通过浏览器上传文件系统备份"
+
+#: modules/wizard/wizardWan.c:16 modules/system/syscfg/syscfg_eth.c:141
+msgid "WAN IP Address"
+msgstr "WAN IP 地址"
+
+#: modules/wizard/wizardWan.c:22 modules/system/syscfg/syscfg_eth.c:146
+msgid "WAN Netmask"
+msgstr "WAN 掩码"
+
+#: modules/wizard/wizardWan.c:82 modules/system/syscfg/syscfg_eth.c:101
+msgid "DHCP"
+msgstr "DHCP（自动分配IP）"
+
+#: modules/wizard/wizardWan.c:86 modules/system/syscfg/syscfg_eth.c:98
+msgid "static"
+msgstr "static（静态）"
+
+#: modules/wizard/wizardWan.c:91 modules/system/syscfg/syscfg_eth.c:104
+msgid "PPPOE"
+msgstr "PPPOE（拨号上网）"
+
+#: modules/wizard/wizardWan.c:98
+msgid "In order to update from Internet"
+msgstr "为了通过网络进行升级更新"
+
+#: modules/wizard/wizardWan.c:98
+msgid "your WAN configuration must be correct"
+msgstr "网络配置必须正确"
+
+#: modules/wizard/wizardWan.c:99
+msgid "After WAN configuration"
+msgstr "网络配置以后"
+
+#: modules/wizard/wizardWan.c:99
+msgid "System must be reboot to make the configuration activating"
+msgstr "必须重启系统以使设置生效"
+
+#: modules/wizard/wizardWan.c:100 modules/system/sysInfo/sysInfoTime.c:184
+msgid "Suggestion"
+msgstr "建议"
+
+#: modules/wizard/wizardWan.c:100
+msgid "Update your system in LAN environments"
+msgstr "在局域网中更新你的系统"
+
+#: modules/wizard/wizardWan.c:108
+msgid "Return"
+msgstr "返回"
+
+#: modules/wizard/wizardWan.c:126
+msgid "Saving WAN Configuration now"
+msgstr "保存WAN网络设置"
+
+#: modules/wizard/wizardHardware.c:15
+msgid "has no partitions, so fdisk it first!"
+msgstr "没有分区信息，请先分区"
+
+#: modules/wizard/wizardHardware.c:32
+msgid "Blocks"
+msgstr "块"
+
+#: modules/wizard/wizardHardware.c:37
+msgid "System"
+msgstr "系统"
+
+#: modules/wizard/wizardHardware.c:42
+msgid "File System"
+msgstr "文件系统"
+
+#: modules/wizard/wizardHardware.c:62
+msgid "Disk Info"
+msgstr "磁盘信息"
+
+#: modules/wizard/wizardHardware.c:66
+msgid "Device of Current Root File System"
+msgstr "当前文件系统下的设备"
+
+#: modules/wizard/wizardHardware.c:66
+msgid "which can not used as install device"
+msgstr "不能当作设备来安装"
+
+#: modules/wizard/wizardHardware.c:71
+msgid "Restore On This Device"
+msgstr "在这个设备上备份"
+
+#: modules/wizard/wizardHardware.c:75
+msgid "Capacity"
+msgstr "容量"
+
+#: modules/wizard/wizardHardware.c:105
+msgid "Mass Storage Disk has been detected"
+msgstr "检测到大存储量磁盘"
+
+#: modules/wizard/wizardHardware.c:106
+msgid "In order to restore system"
+msgstr "为了恢复系统"
+
+#: modules/wizard/wizardHardware.c:106
+msgid "you must select the device which Wizard will use"
+msgstr "你必须选择引导使用的设备"
+
+#: modules/wizard/wizardHardware.c:107
+msgid "The device will be repartitioned and format as our requirement"
+msgstr "这个设备会根据需求重新分区和格式化"
+
+#: modules/wizard/wizardFdisk.c:20
+msgid "root partition is on this disk"
+msgstr "在这个磁盘上启动分区"
+
+#: modules/wizard/wizardFdisk.c:20
+msgid "Disk"
+msgstr "磁盘"
+
+#: modules/wizard/wizardFdisk.c:20
+msgid "can not be fdisk"
+msgstr "不能分区"
+
+#: modules/wizard/wizardFdisk.c:25
+msgid "is umounting"
+msgstr "正在挂载"
+
+#: modules/wizard/wizardFdisk.c:44
+msgid "is deleting"
+msgstr "正在检测"
+
+#: modules/wizard/wizardFdisk.c:72
+msgid "is creating a new partition"
+msgstr "正在创建一个新的分区"
+
+#: modules/wizard/wizardFdisk.c:84 modules/wizard/wizardFdisk.c:102
+msgid "about"
+msgstr "关于"
+
+#: modules/wizard/wizardFdisk.c:91
+msgid "Left Space"
+msgstr "剩余空间"
+
+#: modules/wizard/wizardFdisk.c:160
+msgid "The HD Disk has been repartitioned now"
+msgstr "硬盘已经被重新分区"
+
+#: modules/wizard/wizardFdisk.c:161
+msgid "In order to install new system"
+msgstr "为了安装一个新系统"
+
+#: modules/wizard/wizardFdisk.c:161
+msgid "it must be format by WIZARD in next step"
+msgstr "下一步必须根据向导进行格式化"
+
+#: modules/wizard/wizardUpload.c:22
+msgid "No Partition is not found now"
+msgstr "没有找到分区"
+
+#: modules/wizard/wizardUpload.c:29
+msgid "is mount on"
+msgstr "已经挂载"
+
+#: modules/wizard/wizardUpload.c:31
+msgid "has been upload onboard"
+msgstr "已经被上传目标板上"
+
+#: modules/wizard/wizardUpload.c:32
+msgid "Now, it is time for extract File System image file transfered just now"
+msgstr "现在，对系统备份文件进行解压"
+
+#: modules/wizard/wizardUpload.c:66
+msgid "No FileSystem File uploaded is found"
+msgstr "没有找到上传的文件系统文件"
+
+#: modules/wizard/wizardUpload.c:70 lib/process/cgi_upload_file.c:374
+msgid "is extracting"
+msgstr "正在解压"
+
+#: modules/wizard/wizardUpload.c:77 lib/process/cgi_upload_file.c:383
+msgid "is removing"
+msgstr "正在移除"
+
+#: modules/wizard/wizardUpload.c:98
+msgid "Now, it is time for reboot with new File System just update"
+msgstr "现在，重启系统以更新文件系统"
+
+#: modules/wizard/wizardUpload.c:99
+msgid "The device just used must be use as root device"
+msgstr "已经用过的设备必须用作启动设备"
+
+#: modules/wizard/wizardUpload.c:123
+msgid "Reboot will cost 1 minuts or more"
+msgstr "系统重启需要至少1分钟"
+
+#: modules/wizard/wizardUpload.c:124 modules/system/syscfg/syscfg_reboot.c:34
+msgid "it is determined by the services you selected"
+msgstr "取决于你选择的服务"
+
+#: modules/wizard/wizardUpload.c:126
+msgid "If you can not return the WebAdmin of Newly installed System"
+msgstr "如果不能从新安装的系统中返回网管网页"
+
+#: modules/wizard/wizardUpload.c:126
+msgid "please repeat the install process again"
+msgstr "请重复安装步骤"
+
+#: modules/wizard/wizardUpload.c:135
+msgid "Good Luck for you! Thanks!"
+msgstr "祝你好运，谢谢"
+
+#: modules/wizard/wizardUpload.c:155
+msgid "Not initial data is found in WIZARD"
+msgstr "在向导中没有找到原始数据"
+
+#: modules/wizard/wizardUpload.c:161
+msgid "This is not a File System Image File"
+msgstr "这不是一个文件系统的备份文件"
+
+#: modules/wizard/wizardUpload.c:166
+msgid "File System Image is not packaged correctly!"
+msgstr "文件系统备份打包不正确"
+
+#: modules/wizard/wizardUpload.c:172
+msgid "is upload now"
+msgstr "开始上传"
+
+#: modules/wizard/wizardUpload.c:179
+msgid "The System Image is about 16M bytes"
+msgstr "系统备份大约为16M字节"
+
+#: modules/wizard/wizardUpload.c:179
+msgid "so it will cast some time to complete this transfer"
+msgstr "这将花费一些时间完成文件传送"
+
+#: modules/wizard/wizardUpload.c:180
+msgid "How long it will cast will be determined by the network condition"
+msgstr "快慢取决于网络状况"
+
+#: modules/wizard/wizardUpload.c:181
+msgid "Please Waiting more patiently"
+msgstr "请耐心等待"
+
+#: modules/wizard/wizardMain.c:42
+msgid "No Restore configuration file"
+msgstr "没有恢复配置文件"
+
+#: modules/wizard/wizardMain.c:53
+msgid "No Disk is check in this system"
+msgstr "系统中没有检测到磁盘"
+
+#: modules/wizard/wizardMain.c:80
+msgid "Ningbo Assist AS600 system software and data"
+msgstr "宁波助手公司的AS600系统和数据"
+
+#: modules/wizard/wizardMain.c:80
+msgid "should be installed on CompactFlash card, Flash Disk or Hard Disk"
+msgstr "可以安装在CF卡，优盘和硬盘上"
+
+#: modules/wizard/wizardMain.c:81
+msgid "Main purpose of WIZARD is install or update system remotely"
+msgstr "向导的主要作用是远程安装或升级更新系统"
+
+#: modules/wizard/wizardMain.c:82
+msgid "Please click 'Hardware Check' to begin the install porcess"
+msgstr "请点击“硬件检测”来开始安装程序"
+
+#: modules/wizard/wizardMain.c:93
+msgid "No Disk is found"
+msgstr "没有找到磁盘"
+
+#: modules/wizard/wizardMain.c:156
+msgid "Wizard Error"
+msgstr "向导出错"
+
+#: modules/wizard/wizardMain.c:156 modules/system/syscfg/syscfgMain.c:68
+msgid "No command for this menu"
+msgstr "此项没有命令"
+
+#: modules/wizard/wizardMain.c:160
+msgid "Wizard"
+msgstr "向导"
+
+#: modules/video/videoMotionDetect.c:22
+msgid "Sensitivity Configuration"
+msgstr "敏感度配置"
+
+#: modules/video/videoMotionDetect.c:25
+msgid "Enabled or Disabled Motion Detection"
+msgstr "使能或关闭运动检测功能"
+
+#: modules/video/videoMotionDetect.c:25
+msgid "Motion Detection"
+msgstr "运动检测"
+
+#: modules/video/videoMotionDetect.c:30
+msgid "Sensitivity is value from 0~xx"
+msgstr "敏感度的值可从0到99"
+
+#: modules/video/videoMotionDetect.c:30
+msgid "Sensitivity"
+msgstr "敏感度"
+
+#: modules/video/videoMotionDetect.c:32
+msgid "Threshold is value from 0~xx"
+msgstr "临界值从0到99"
+
+#: modules/video/videoMotionDetect.c:32
+msgid "Threshold"
+msgstr "临界值"
+
+#: modules/video/videoMotionDetect.c:39
+msgid "Mail Configuration"
+msgstr "邮件设置"
+
+#: modules/video/videoMotionDetect.c:42
+msgid "Enabled or Disabled Mail Alert"
+msgstr "使能或关闭邮件警告"
+
+#: modules/video/videoMotionDetect.c:42
+msgid "Mail Alert"
+msgstr "邮件警告"
+
+#: modules/video/videoMotionDetect.c:47
+msgid "no more than 20 words"
+msgstr "不超过20个字"
+
+#: modules/video/videoMotionDetect.c:47
+msgid "Mail Subject"
+msgstr "邮件主题"
+
+#: modules/video/videoMotionDetect.c:49
+msgid "Mail Address, such as abcd@efgh.com"
+msgstr "邮件地址，例如abcd@efgh.com"
+
+#: modules/video/videoMotionDetect.c:49
+msgid "Mail Recipients"
+msgstr "收件人"
+
+#: modules/video/videoMotionDetect.c:51
+msgid "IP Address or FQDN of Mail Server"
+msgstr "IP地址或邮件服务器的FQDN"
+
+#: modules/video/videoMotionDetect.c:51
+msgid "Mail Server"
+msgstr "邮件服务器"
+
+#: modules/video/videoMotionDetect.c:54
+msgid "Account on this mail server"
+msgstr "邮件服务器的帐户"
+
+#: modules/video/videoMotionDetect.c:54 modules/video/videoMotionDetect.c:75
+#: modules/system/syscfg/syscfg_user.c:95
+msgid "User Name can not be NULL"
+msgstr "用户名不能为空"
+
+#: modules/video/videoMotionDetect.c:55
+msgid "Pass word for this mail account"
+msgstr "邮件帐户的密码"
+
+#: modules/video/videoMotionDetect.c:57 modules/video/videoMotionDetect.c:78
+#: modules/system/syscfg/syscfg_user.c:99
+msgid "Password can not be NULL"
+msgstr "密码不能为空"
+
+#: modules/video/videoMotionDetect.c:64
+#: modules/servers/services/servicesMiscFtp.c:111
+msgid "FTP Configuration"
+msgstr "FTP配置"
+
+#: modules/video/videoMotionDetect.c:67
+msgid "Enabled or Disabled FTP Alert"
+msgstr "使能或关闭FTP警告"
+
+#: modules/video/videoMotionDetect.c:67
+msgid "FTP Alert"
+msgstr "FTP警告"
+
+#: modules/video/videoMotionDetect.c:72
+msgid "IP Address or FQDN of FTP Server"
+msgstr "IP地址或FTP服务器的FQDN"
+
+#: modules/video/videoMotionDetect.c:72
+msgid "FTP Server"
+msgstr "FTP服务器"
+
+#: modules/video/videoMotionDetect.c:75
+msgid "FTP Account name"
+msgstr "FTP帐户姓名"
+
+#: modules/video/videoMotionDetect.c:76
+msgid "Pass word for this FTP account"
+msgstr "FTP帐户密码"
+
+#: modules/video/videoMotionDetect.c:81
+msgid "Path name in remote FTP server"
+msgstr "远程FTP服务器的路径名称"
+
+#: modules/video/videoMotionDetect.c:81
+msgid "Remote Path"
+msgstr "远程路径"
+
+#: modules/video/videoMotionDetect.c:99 modules/video/videoSelect.c:281
+#: modules/video/videoButtons.c:118 modules/navigate/cgi_navigate.c:137
+msgid "Media Configuration"
+msgstr "媒体配置"
+
+#: modules/video/videoMotionDetect.c:99
+msgid "Basic parameters of Motion Detection are set here"
+msgstr "设置运动检测的基本参数"
+
+#: modules/video/videoView.c:75
+msgid "View of Media Stream"
+msgstr "观看媒体流"
+
+#: modules/video/videoView.c:75
+msgid "IP Camera"
+msgstr "网络摄像头"
+
+#: modules/video/videoSelect.c:281 modules/video/videoButtons.c:118
+msgid "Basic parameters of Media are set here"
+msgstr "设置媒体的基本参数"
+
+#: modules/video/videoRecord.c:71
+msgid "Camera Record is starting....."
+msgstr "摄像头记录功能正在启动"
+
+#: modules/video/videoRecord.c:92
+msgid "Camera Record is stopping....."
+msgstr "摄像头记录功能正在关闭"
+
+#: modules/video/videoRecord.c:145
+msgid "Camera Record"
+msgstr "摄像记录"
+
+#: modules/video/videoRecord.c:154
+msgid "can not startup because of Camera Server is not running now"
+msgstr "不能启动是因为摄像头服务器还未运行"
+
+#: modules/video/videoRecord.c:158
+msgid "Recorded Movie Files"
+msgstr "已记录的文件"
+
+#: modules/video/videoRecord.c:178
+msgid "Status of Web Camera Record"
+msgstr "网络摄像头记录的状态"
+
+#: modules/video/videoRecord.c:178
+msgid "Web Camera Record"
+msgstr "网络摄像头记录"
+
+#: modules/video/videoNot.c:29
+msgid "Load Camera System when boot"
+msgstr "启动时加载摄像系统"
+
+#: modules/video/videoNot.c:54
+msgid "Camera"
+msgstr "摄像头"
+
+#: modules/video/videoNot.c:56
+msgid "Sensor"
+msgstr "传感器"
+
+#: modules/video/videoNot.c:58
+msgid "Image Format"
+msgstr "备份的格式"
+
+#: modules/video/videoNot.c:86
+msgid "Grabbing"
+msgstr "正在抓图"
+
+#: modules/video/videoNot.c:106
+msgid "Port Number"
+msgstr "端口数目"
+
+#: modules/video/videoNot.c:111
+msgid "Need Record"
+msgstr "需要记录"
+
+#: modules/video/videoNot.c:126
+msgid "File Length"
+msgstr "文件长度"
+
+#: modules/video/videoNot.c:126
+msgid "Minutes"
+msgstr "分钟"
+
+#: modules/video/videoNot.c:154
+msgid "When hardware has been changed, you should reconfig it in this page!"
+msgstr "硬件改动，需要重新配置"
+
+#: modules/video/videoNot.c:155 modules/video/videoNot.c:159
+msgid "Basic Parameters of Video"
+msgstr "视频基本参数"
+
+#: modules/video/videoNot.c:155
+msgid "Camera Configuration will be take effective when next boot"
+msgstr "摄像头配置在下次启动时生效"
+
+#: modules/video/videoMain.c:25
+msgid "Media setup is saveing!"
+msgstr "媒体设置正在保存"
+
+#: modules/video/videoMain.c:46
+msgid "Video Driver is not loaded now"
+msgstr "视频驱动未加载"
+
+#: modules/video/videoMain.c:52
+msgid "Video Configuration File is not found"
+msgstr "视频配置文件没有找到"
+
+#: modules/video/videoMain.c:58
+msgid "Motion Detection Configuration File is not found"
+msgstr "运动检测配置文件没有找到"
+
+#: modules/video/videoMain.c:70
+msgid "No USB Video Hardware is found"
+msgstr "没有找到USB硬件"
+
+#: modules/video/videoMain.c:86
+msgid "Driver Version"
+msgstr "驱动版本"
+
+#: modules/video/videoMain.c:162
+msgid "Media Stream"
+msgstr "媒体流"
+
+#: modules/servers/ddns/cgiDdnsConfig.c:40
+msgid "DDNS Server Configuration"
+msgstr "DDNS服务器配置"
+
+#: modules/servers/ddns/cgiDdnsConfig.c:51
+msgid "User Configuration"
+msgstr "用户配置"
+
+#: modules/servers/ddns/cgiDdnsConfig.c:60
+msgid "Local UDP Port"
+msgstr "本地UDP端口"
+
+#: modules/servers/ddns/cgiDdnsConfig.c:63
+#: modules/servers/ddns/cgiDdnsConfig.c:67
+#: modules/servers/ddns/cgiDdnsConfig.c:101
+#: modules/servers/ddns/cgiDdnsTest.c:27
+msgid "Registered FQDN"
+msgstr "已经注册的正式域名"
+
+#: modules/servers/ddns/cgiDdnsConfig.c:98
+msgid "Multiple FQDNs can be registered by any user"
+msgstr "任何用户都可以注册多个正式域名"
+
+#: modules/servers/ddns/cgiDdnsConfig.c:98
+msgid "Normally, only one FQDN can be activated by any device"
+msgstr "但正常情况下，任何设备都只能激活一个正式域名"
+
+#: modules/servers/ddns/cgiDdnsConfig.c:101
+msgid "only can modified in page of"
+msgstr "只能在“主机名”网页进行更改"
+
+#: modules/servers/ddns/cgiDdnsConfig.c:101
+#: modules/navigate/cgi_navigate.c:179
+#: modules/system/syscfg/syscfg_hostname.c:84
+msgid "Host Name"
+msgstr "主机名"
+
+#: modules/servers/ddns/cgiDdnsTest.c:30
+msgid "Resolved IP Address"
+msgstr "解析后的IP地址"
+
+#: modules/servers/ddns/cgiDdnsTest.c:35
+msgid "Resolved FQDN Failed"
+msgstr "解析域名失败"
+
+#: modules/servers/ddns/cgiDdnsTest.c:35
+msgid "Please check your configuration carefully"
+msgstr "请仔细检查你的配置"
+
+#: modules/servers/ddns/cgiDdnsTest.c:40
+msgid "has been resolved as IP address"
+msgstr "已被解析成IP地址"
+
+#: modules/servers/ddns/cgiDdnsTest.c:55
+#: modules/system/sysInfo/sysInfoProcs.c:75
+msgid "is not running now"
+msgstr "现在没有运行"
+
+#: modules/servers/ddns/cgiDdnsMain.c:19
+msgid "Operation Failed"
+msgstr "操作失败"
+
+#: modules/servers/services/servicesMiscUpnp.c:12
+msgid "No Debug"
+msgstr "没有问题"
+
+#: modules/servers/services/servicesMiscUpnp.c:13
+msgid "SysLog"
+msgstr "系统日志"
+
+#: modules/servers/services/servicesMiscUpnp.c:49
+msgid "UPNP Server Status"
+msgstr "UPNP服务器状态"
+
+#: modules/servers/services/servicesMiscUpnp.c:52
+msgid "Net Neighbour"
+msgstr "网上邻居"
+
+#: modules/servers/services/servicesMiscUpnp.c:54
+msgid "Port Forward"
+msgstr ""
+
+#: modules/servers/services/servicesMiscUpnp.c:74
+msgid "Debug Mode"
+msgstr "调试模式"
+
+#: modules/servers/services/servicesMiscUpnp.c:84
+msgid "Up Bit Rate"
+msgstr "上传波特率"
+
+#: modules/servers/services/servicesMiscUpnp.c:86
+msgid "Down Bit Rate"
+msgstr "下载波特率"
+
+#: modules/servers/services/servicesMiscUpnp.c:98
+#: modules/navigate/cgi_navigate.c:355
+msgid "UPNP Configuration"
+msgstr "UPNP配置"
+
+#: modules/servers/services/servicesMiscUpnp.c:111
+msgid "UPNP(Internet Gateway Device) Configuration"
+msgstr "UPNP（内网网关设备）配置"
+
+#: modules/servers/services/servicesMiscFtp.c:38
+msgid "FTP Server Status"
+msgstr "FTP服务器状态"
+
+#: modules/servers/services/servicesMiscFtp.c:66
+msgid "Global Configuration"
+msgstr "全局配置"
+
+#: modules/servers/services/servicesMiscFtp.c:68
+msgid "MAX Clients"
+msgstr "最多客户端"
+
+#: modules/servers/services/servicesMiscFtp.c:70
+msgid "MAX Clients Per IP"
+msgstr "每个IP最多客户端"
+
+#: modules/servers/services/servicesMiscFtp.c:72
+msgid "Timeout after Idle"
+msgstr "空闲后暂停"
+
+#: modules/servers/services/servicesMiscFtp.c:75
+msgid "Local User Configuration"
+msgstr "本地用户配置"
+
+#: modules/servers/services/servicesMiscFtp.c:77
+msgid "Local User Login"
+msgstr "本地用户登录"
+
+#: modules/servers/services/servicesMiscFtp.c:79
+msgid "Change Root After Local Login"
+msgstr "本地登录后改变Root"
+
+#: modules/servers/services/servicesMiscFtp.c:82
+msgid "Anonymous User Configuration"
+msgstr "匿名用户配置"
+
+#: modules/servers/services/servicesMiscFtp.c:84
+msgid "Anonymous Login"
+msgstr "匿名登录"
+
+#: modules/servers/services/servicesMiscFtp.c:86
+msgid "No Password for Anonynous"
+msgstr "匿名用户不需密码"
+
+#: modules/servers/services/servicesMiscFtp.c:92
+msgid "In order to take effective after change config"
+msgstr "为了在改变配置后起作用"
+
+#: modules/servers/services/servicesMiscFtp.c:92
+msgid "FTP Server must be reboot"
+msgstr "FTP服务器必须重启"
+
+#: modules/servers/services/servicesMiscFtp.c:93
+msgid "In order to terminate FTP server"
+msgstr "为了终止FTP服务器"
+
+#: modules/servers/services/servicesMiscFtp.c:93
+msgid "all FTP clients must be quit firstly"
+msgstr "所有的FTP客户端必须都退出"
+
+#: modules/servers/services/servicesMiscFtp.c:121
+msgid "Save FTP Config File"
+msgstr "保存FTP配置文件"
+
+#: modules/servers/services/servicesMiscConfig.c:43
+msgid "Action"
+msgstr "动作"
+
+#: modules/servers/services/servicesMiscConfig.c:43
+msgid "Startup When Boot"
+msgstr "开机时自动启动"
+
+#: modules/servers/services/servicesMiscConfig.c:58
+#: modules/system/sysInfo/sysInfoProcs.c:131
+msgid "Start"
+msgstr "启动"
+
+#: modules/servers/services/servicesMiscConfig.c:113
+msgid "Service Name"
+msgstr "服务器名"
+
+#: modules/servers/services/servicesMiscConfig.c:114
+msgid "Service Error"
+msgstr "服务器错误"
+
+#: modules/servers/services/servicesMiscConfig.c:147
+#: modules/servers/services/servicesMiscConfig.c:172
+msgid "Service List"
+msgstr "服务器列表"
+
+#: modules/servers/services/servicesMiscConfig.c:165
+msgid "Service Update"
+msgstr "服务器更新"
+
+#: modules/servers/services/servicesMiscConfig.c:165
+msgid "Service is updating, please waiting...."
+msgstr "服务正在更新，请等待"
+
+#: modules/servers/services/servicesMiscSysLog.c:40
+msgid "Emergence"
+msgstr "出现"
+
+#: modules/servers/services/servicesMiscSysLog.c:41
+msgid "Alert"
+msgstr "警告"
+
+#: modules/servers/services/servicesMiscSysLog.c:42
+msgid "Critical"
+msgstr "关键的"
+
+#: modules/servers/services/servicesMiscSysLog.c:45
+msgid "Notice"
+msgstr "注意"
+
+#: modules/servers/services/servicesMiscSysLog.c:46
+msgid "Information"
+msgstr "消息"
+
+#: modules/servers/services/servicesMiscSysLog.c:47
+msgid "Debug"
+msgstr "调试"
+
+#: modules/servers/services/servicesMiscSysLog.c:48
+msgid "None"
+msgstr "无"
+
+#: modules/servers/services/servicesMiscSysLog.c:54
+msgid "OS"
+msgstr "操作系统"
+
+#: modules/servers/services/servicesMiscSysLog.c:55
+msgid "Crond"
+msgstr "Crond"
+
+#: modules/servers/services/servicesMiscSysLog.c:56
+msgid "FTP"
+msgstr "FTP"
+
+#: modules/servers/services/servicesMiscSysLog.c:57
+msgid "Printer"
+msgstr "打印机"
+
+#: modules/servers/services/servicesMiscSysLog.c:58
+msgid "Mail"
+msgstr "邮件"
+
+#: modules/servers/services/servicesMiscSysLog.c:59
+msgid "Syslog"
+msgstr "系统日志"
+
+#: modules/servers/services/servicesMiscSysLog.c:115
+msgid "Save Syslog Config File"
+msgstr "保存系统日志"
+
+#: modules/servers/services/servicesMiscSysLog.c:147
+msgid "OS Log Daemon Status"
+msgstr "操作系统日志后台程序状态"
+
+#: modules/servers/services/servicesMiscSysLog.c:149
+msgid "SysLog Daemon Status"
+msgstr "系统日志后台程序状态"
+
+#: modules/servers/services/servicesMiscSysLog.c:168
+msgid "MAX Size of File"
+msgstr "文件最大容量"
+
+#: modules/servers/services/servicesMiscSysLog.c:171
+msgid "Log Root Directry"
+msgstr "日志导入目录"
+
+#: modules/servers/services/servicesMiscSysLog.c:174
+msgid "Facility"
+msgstr "工具"
+
+#: modules/servers/services/servicesMiscSysLog.c:210
+msgid "Syslogd Configuration"
+msgstr "系统日志配置"
+
+#: modules/servers/services/servicesMiscMain.c:24
+msgid "Services Operation Failed"
+msgstr "服务操作失败"
+
+#: modules/navigate/content_cgi.c:22
+msgid "SoNiX technolocy co ltd"
+msgstr "松翰科技有限公司"
+
+#: modules/navigate/content_cgi.c:31
+msgid "SoNiX IP Cam"
+msgstr "松翰网络摄像头"
+
+#: modules/navigate/content_cgi.c:33
+msgid "Model No."
+msgstr "型号"
+
+#: modules/navigate/content_cgi.c:33
+msgid "SoNiX"
+msgstr "松翰"
+
+#: modules/navigate/content_cgi.c:40
+msgid "SoNiX SoC"
+msgstr "松翰　片上系统"
+
+#: modules/navigate/content_cgi.c:44
+msgid "support RTSP, RTP,PPPoE,DHCP,ICMP,NAT,UPnP,WiFi"
+msgstr "支持RTSP, RTP,PPPoE,DHCP,ICMP,NAT,UPnP,WiFi"
+
+#: modules/navigate/content_cgi.c:45
+msgid "support JPEG, MJPEP, MPEG4, Motion Detection etc."
+msgstr "支持JPEG, MJPEP, MPEG4, Motion Detection等"
+
+#: modules/navigate/content_cgi.c:47
+msgid "The functions of system monitoring and control has been suppored"
+msgstr "适用于监控系统"
+
+#: modules/navigate/content_cgi.c:48
+msgid "Suppor the DHCP automatic assignment IP addresses"
+msgstr "支持DHCP自动分配IP地址"
+
+#: modules/navigate/content_cgi.c:49
+msgid "Support MAIL and FTP alert"
+msgstr "支持邮件和FTP报警功能"
+
+#: modules/navigate/content_cgi.c:51
+msgid "The powerful Web management function"
+msgstr "具有强大的网络管理功能"
+
+#: modules/navigate/content_cgi.c:51
+msgid "and support i18n framework"
+msgstr "并支持i18n框架"
+
+#: modules/navigate/content_cgi.c:52
+msgid "configuration web in same time"
+msgstr "同时可通过网络"
+
+#: modules/navigate/content_cgi.c:52
+msgid "support upgrade management software online"
+msgstr "在线更新软件，"
+
+#: modules/navigate/content_cgi.c:52
+msgid " and remote management and system log"
+msgstr "远程管理系统和系统日志"
+
+#: modules/navigate/cgi_navigate.c:38
+msgid "Network Management"
+msgstr "网络管理"
+
+#: modules/navigate/cgi_navigate.c:48
+msgid "Dynamic DNS"
+msgstr "动态DNS"
+
+#: modules/navigate/cgi_navigate.c:58
+msgid "System Management"
+msgstr "系统管理"
+
+#: modules/navigate/cgi_navigate.c:68
+msgid "Environs Backup/Restore"
+msgstr "外部备份/恢复"
+
+#: modules/navigate/cgi_navigate.c:77 modules/navigate/cgi_navigate.c:269
+msgid "Software Update"
+msgstr "软件升级"
+
+#: modules/navigate/cgi_navigate.c:87
+msgid "Environs Backup"
+msgstr "外部备份"
+
+#: modules/navigate/cgi_navigate.c:96
+msgid "Environs Restore"
+msgstr "外部备份恢复"
+
+#: modules/navigate/cgi_navigate.c:106
+msgid "System Services"
+msgstr "系统服务"
+
+#: modules/navigate/cgi_navigate.c:115
+msgid "Services Configuration"
+msgstr "服务配置"
+
+#: modules/navigate/cgi_navigate.c:126
+msgid "Wifi Device Configuration"
+msgstr "无线设备配置"
+
+#: modules/navigate/cgi_navigate.c:146
+msgid "Video Configuration"
+msgstr "视频配置"
+
+#: modules/navigate/cgi_navigate.c:155
+msgid "Video Dynamic Configuration"
+msgstr "视频动态配置"
+
+#: modules/navigate/cgi_navigate.c:164
+msgid "Media Monitor"
+msgstr "媒体监视器"
+
+#: modules/navigate/cgi_navigate.c:180
+msgid "Address and FQDN of host"
+msgstr "主机的地址和正式域名"
+
+#: modules/navigate/cgi_navigate.c:189
+msgid "Setup the Internet Connection on Ethernet Port"
+msgstr "对网卡进行网络连接的设置"
+
+#: modules/navigate/cgi_navigate.c:199
+msgid "DDNS Configuration"
+msgstr "DDNS配置"
+
+#: modules/navigate/cgi_navigate.c:200
+msgid "Client of Dynamic DNS"
+msgstr "DDNS客户端"
+
+#: modules/navigate/cgi_navigate.c:208
+msgid "DDNS Test"
+msgstr "DDNS测试"
+
+#: modules/navigate/cgi_navigate.c:209
+msgid "Test Ddns After DDNS Client Daemon has started"
+msgstr "DDNS客户端后台程序启动后测试DDNS"
+
+#: modules/navigate/cgi_navigate.c:218
+msgid "Route Configuration"
+msgstr "路由配置"
+
+#: modules/navigate/cgi_navigate.c:219
+msgid "Setup network routing table"
+msgstr "网络路由表设置"
+
+#: modules/navigate/cgi_navigate.c:229
+msgid "System Information"
+msgstr "系统信息"
+
+#: modules/navigate/cgi_navigate.c:230 modules/navigate/cgi_navigate.c:259
+#: modules/navigate/cgi_navigate.c:337
+msgid "System Version and releases Information"
+msgstr "系统版本信息"
+
+#: modules/navigate/cgi_navigate.c:239
+msgid "Language Setup"
+msgstr "语言安装"
+
+#: modules/navigate/cgi_navigate.c:240
+msgid "Setup Language of WebAdmin,Such Chinese or Japanese"
+msgstr "网管网页，可以进行语言的安装，如中文和日文"
+
+#: modules/navigate/cgi_navigate.c:248
+msgid "System Time Setup"
+msgstr "系统时间设置"
+
+#: modules/navigate/cgi_navigate.c:249
+msgid "Setup System Current Time"
+msgstr "当前时间设置"
+
+#: modules/navigate/cgi_navigate.c:258 modules/system/syscfg/syscfg_user.c:177
+msgid "System User Management"
+msgstr "系统用户管理"
+
+#: modules/navigate/cgi_navigate.c:270
+msgid "Update a Software Package or the Whole System handly"
+msgstr "手动更新软件包或整个系统"
+
+#: modules/navigate/cgi_navigate.c:278
+msgid "System Install"
+msgstr "系统安装"
+
+#: modules/navigate/cgi_navigate.c:279
+msgid "Install the Whole System on new Mass Storage Device"
+msgstr "在大容量存储设备上安装整个系统"
+
+#: modules/navigate/cgi_navigate.c:288
+msgid "Local Backup"
+msgstr "本地备份"
+
+#: modules/navigate/cgi_navigate.c:289
+msgid "Backup runtime or configration Data to Client Local"
+msgstr "运行时间和配置数据备份到当地客户端"
+
+#: modules/navigate/cgi_navigate.c:297
+msgid "Server Backup"
+msgstr "服务器备份"
+
+#: modules/navigate/cgi_navigate.c:298
+msgid "Backup runtime or configration Data to Server"
+msgstr "运行时间和配置数据备份到服务器"
+
+#: modules/navigate/cgi_navigate.c:306
+msgid "Local Restore"
+msgstr "本地数据恢复"
+
+#: modules/navigate/cgi_navigate.c:307
+msgid "Restore System from the Backup Data Saved in Client"
+msgstr "用备份到客户端的数据恢复系统"
+
+#: modules/navigate/cgi_navigate.c:315
+msgid "Data Restore"
+msgstr "服务器数据恢复"
+
+#: modules/navigate/cgi_navigate.c:316
+msgid "Restore System from the Backup Data Saved in Server"
+msgstr "用备份到服务器的数据恢复系统"
+
+#: modules/navigate/cgi_navigate.c:324
+msgid "Default Restore"
+msgstr "默认恢复"
+
+#: modules/navigate/cgi_navigate.c:325
+msgid "Restore System to the State of Factory Default"
+msgstr "将系统恢复至出场设置状态"
+
+#: modules/navigate/cgi_navigate.c:336
+msgid "Services Management"
+msgstr "服务管理"
+
+#: modules/navigate/cgi_navigate.c:346
+msgid "Syslog Configuration"
+msgstr "系统日志配置"
+
+#: modules/navigate/cgi_navigate.c:347
+msgid "System Log for different application"
+msgstr "不同应用的系统日志"
+
+#: modules/navigate/cgi_navigate.c:356
+msgid "Configuration of Universal PnP Gateway Device"
+msgstr "通用PnP网关设备配置"
+
+#: modules/navigate/cgi_navigate.c:367
+msgid "Basic Configration"
+msgstr "基本配置"
+
+#: modules/navigate/cgi_navigate.c:368
+msgid "Use Mode(Ad Hoc/AP) of Wireless Device"
+msgstr "无线设备的使用模式（Ad Hoc/AP）"
+
+#: modules/navigate/cgi_navigate.c:376
+msgid "Wireless NIC Configration"
+msgstr "无线网卡配置"
+
+#: modules/navigate/cgi_navigate.c:377
+msgid "IP Configuration of Wifi NIC"
+msgstr " Wifi网卡的IP配置"
+
+#: modules/navigate/cgi_navigate.c:385
+msgid "MAC Filter"
+msgstr "MAC地址过滤"
+
+#: modules/navigate/cgi_navigate.c:386
+msgid "Station MAC Address that be Denied/Allowed"
+msgstr "拒绝/接受的MAC地址"
+
+#: modules/navigate/cgi_navigate.c:394
+msgid "Authen&Crypto"
+msgstr "授权和密令"
+
+#: modules/navigate/cgi_navigate.c:395
+msgid "Wifi User Authentication and Data Crypto"
+msgstr "无线用户的授权和密令"
+
+#: modules/navigate/cgi_navigate.c:404
+msgid "Wifi Crypto"
+msgstr ""
+
+#: modules/navigate/cgi_navigate.c:405
+msgid "Crypt the frame with WEP or WPA"
+msgstr ""
+
+#: modules/navigate/cgi_navigate.c:414
+msgid "Wifi Status"
+msgstr " Wifi状态"
+
+#: modules/navigate/cgi_navigate.c:415 modules/navigate/cgi_navigate.c:425
+msgid "Status Of Wireless Host"
+msgstr "无线主机的状态"
+
+#: modules/navigate/cgi_navigate.c:424
+msgid "Wifi Scan"
+msgstr " Wifi扫描"
+
+#: modules/navigate/cgi_navigate.c:434
+msgid "Station Infos"
+msgstr "站点信息"
+
+#: modules/navigate/cgi_navigate.c:435
+msgid "Status Of Associated Stations"
+msgstr "相关站点的状态"
+
+#: modules/navigate/cgi_navigate.c:447
+msgid "Quality Config"
+msgstr "质量配置"
+
+#: modules/navigate/cgi_navigate.c:448
+msgid "Quality Configuration of Video Device"
+msgstr "视频设备质量"
+
+#: modules/navigate/cgi_navigate.c:456
+msgid "Flicker Config"
+msgstr "Flicker配置"
+
+#: modules/navigate/cgi_navigate.c:457
+msgid "Flicker Configuration of Video Device"
+msgstr "视频设备的Flicker配置"
+
+#: modules/navigate/cgi_navigate.c:477
+msgid "Bitrate Config"
+msgstr "波特率配置"
+
+#: modules/navigate/cgi_navigate.c:478
+msgid "Bitrate Configuration of Video Device"
+msgstr "视频设备的波特率配置"
+
+#: modules/navigate/cgi_navigate.c:486
+msgid "FrameRate Config"
+msgstr "帧率配置"
+
+#: modules/navigate/cgi_navigate.c:487
+msgid "FrameRate Configuration of Video Device"
+msgstr "视频设备的帧率配置"
+
+#: modules/navigate/cgi_navigate.c:495
+msgid "Brightness Config"
+msgstr "亮度配置"
+
+#: modules/navigate/cgi_navigate.c:496
+msgid "Brightness Configuration of Video Device"
+msgstr "视频设备的亮度配置"
+
+#: modules/navigate/cgi_navigate.c:504
+msgid "Contrast Config"
+msgstr "对比度配置"
+
+#: modules/navigate/cgi_navigate.c:505
+msgid "Contrast Configuration of Video Device"
+msgstr "视频设备的对比度配置"
+
+#: modules/navigate/cgi_navigate.c:513
+msgid "Saturation Config"
+msgstr "饱和度配置"
+
+#: modules/navigate/cgi_navigate.c:514
+msgid "Saturation Configuration of Video Device"
+msgstr "视频设备的饱和度配置"
+
+#: modules/navigate/cgi_navigate.c:522
+msgid "Hue Config"
+msgstr "色调配置"
+
+#: modules/navigate/cgi_navigate.c:523
+msgid "Hue Configuration of Video Device"
+msgstr "视频设备的色调配置"
+
+#: modules/navigate/cgi_navigate.c:531
+msgid "Sharpness Config"
+msgstr "锐化配置"
+
+#: modules/navigate/cgi_navigate.c:532
+msgid "Sharpness Configuration of Video Device"
+msgstr "视频设备的锐化配置"
+
+#: modules/navigate/cgi_navigate.c:541
+msgid "View Size"
+msgstr "分辨率"
+
+#: modules/navigate/cgi_navigate.c:542
+msgid "Size of Media View"
+msgstr "观看画面尺寸"
+
+#: modules/navigate/cgi_navigate.c:550
+msgid "Audio Config"
+msgstr "音频配置"
+
+#: modules/navigate/cgi_navigate.c:551
+msgid "Disable or Enable Audio Stream"
+msgstr "关闭或使能音频流"
+
+#: modules/navigate/cgi_navigate.c:561
+msgid "Media View"
+msgstr "媒体观看"
+
+#: modules/navigate/cgi_navigate.c:562
+msgid "Realtime View of Media Stream"
+msgstr "媒体流的实时观测"
+
+#: modules/navigate/cgi_navigate.c:571
+msgid "Media Record"
+msgstr "媒体记录"
+
+#: modules/navigate/cgi_navigate.c:572
+msgid "Record Media Stream as AVI"
+msgstr "以AVI的格式记录媒体流"
+
+#: modules/navigate/cgi_navigate.c:580
+msgid "Image Capture"
+msgstr "图像捕捉"
+
+#: modules/navigate/cgi_navigate.c:581
+msgid "Capture a frame as a picture"
+msgstr "抓图"
+
+#: modules/navigate/cgi_navigate.c:590
+msgid "Media Status"
+msgstr "媒体状态"
+
+#: modules/navigate/cgi_navigate.c:591
+msgid "Status of Media Server"
+msgstr "媒体服务器状态"
+
+#: modules/navigate/cgi_navigate.c:600
+msgid "Motion Detect"
+msgstr "运动检测"
+
+#: modules/navigate/cgi_navigate.c:601
+msgid "Parameters of Motion Detection"
+msgstr "运动检测的参数"
+
+#: modules/navigate/cgi_navigate.c:613
+msgid "In order to activate configuration, please reboot"
+msgstr "为了激活配置，请重启"
+
+#: modules/system/sysInfo/sysInfoMain.c:38
+msgid "System Information Operation Failed"
+msgstr "系统信息操作失败"
+
+#: modules/system/sysInfo/sysInfoLocale.c:28
+msgid "Current Lanaguage"
+msgstr "当前语言"
+
+#: modules/system/sysInfo/sysInfoLocale.c:56
+msgid "Please Select the Language used"
+msgstr "请选择应用的语言"
+
+#: modules/system/sysInfo/sysInfoLocale.c:70
+msgid "In order to activate the configuration"
+msgstr "为了激活此配置"
+
+#: modules/system/sysInfo/sysInfoLocale.c:70
+msgid "please reboot"
+msgstr "请重启"
+
+#: modules/system/sysInfo/sysInfoLocale.c:88
+#: modules/system/sysInfo/sysInfoTime.c:198 lib/process/cgi_syscfg.c:626
+msgid "Locale Operation Failed"
+msgstr "本地操作失败"
+
+#: modules/system/sysInfo/sysInfoLocale.c:88
+msgid "No Configuration File for Locale"
+msgstr "没有本地的配置文件"
+
+#: modules/system/sysInfo/sysInfoLocale.c:103
+msgid "Language setup is saveing!"
+msgstr "语言配置正在保存"
+
+#: modules/system/sysInfo/sysInfoLocale.c:121
+msgid "Language Configuration"
+msgstr "语言配置"
+
+#: modules/system/sysInfo/sysInfoTime.c:54
+msgid "Current Time Zone"
+msgstr "当前时区"
+
+#: modules/system/sysInfo/sysInfoTime.c:58
+#: modules/system/sysInfo/sysInfoTime.c:109
+msgid "CHINA-SHANGHAI"
+msgstr "中国-上海"
+
+#: modules/system/sysInfo/sysInfoTime.c:60
+#: modules/system/sysInfo/sysInfoTime.c:105
+msgid "JAP-TOKYO"
+msgstr "日本-东京"
+
+#: modules/system/sysInfo/sysInfoTime.c:62
+#: modules/system/sysInfo/sysInfoTime.c:112
+msgid "AMERICA-NEWYORK"
+msgstr "美国-纽约"
+
+#: modules/system/sysInfo/sysInfoTime.c:69
+#: modules/system/sysInfo/sysInfoTime.c:125
+msgid "Hardware RTC"
+msgstr "硬件实时时钟"
+
+#: modules/system/sysInfo/sysInfoTime.c:146
+msgid "Year"
+msgstr "年"
+
+#: modules/system/sysInfo/sysInfoTime.c:148
+msgid "Month"
+msgstr "月"
+
+#: modules/system/sysInfo/sysInfoTime.c:150
+msgid "Day"
+msgstr "日"
+
+#: modules/system/sysInfo/sysInfoTime.c:153
+msgid "Hour"
+msgstr "时"
+
+#: modules/system/sysInfo/sysInfoTime.c:155
+msgid "Minute"
+msgstr "分"
+
+#: modules/system/sysInfo/sysInfoTime.c:178
+msgid "NTP Server IP Address"
+msgstr "NTP服务器IP地址"
+
+#: modules/system/sysInfo/sysInfoTime.c:184
+msgid "In China, NTP Server can be set as"
+msgstr "在中国，NTP服务器设置为"
+
+#: modules/system/sysInfo/sysInfoTime.c:185
+msgid "In Japan, NTP Server can be set as"
+msgstr "在日本，NTP服务器设置为"
+
+#: modules/system/sysInfo/sysInfoTime.c:198 lib/process/cgi_syscfg.c:626
+msgid "No Configuration for System Time"
+msgstr "无系统时间配置"
+
+#: modules/system/sysInfo/sysInfoTime.c:213
+msgid "No IP Address of NTP Server is defined"
+msgstr "NTP服务器的IP地址没有定义"
+
+#: modules/system/sysInfo/sysInfoTime.c:224
+msgid "Get Time From NTP Server"
+msgstr "从NTP服务器得到时间"
+
+#: modules/system/sysInfo/sysInfoTime.c:243
+msgid "Some Fields are not defined"
+msgstr "一些区域没有定义"
+
+#: modules/system/sysInfo/sysInfoTime.c:253
+msgid "Reset Current System Time"
+msgstr "重设当前系统时间"
+
+#: modules/system/sysInfo/sysInfoTime.c:268
+msgid "No This command is defined"
+msgstr "无定义命令"
+
+#: modules/system/sysInfo/sysInfoTime.c:286
+msgid "Input"
+msgstr "输入"
+
+#: modules/system/sysInfo/sysInfoProcs.c:50
+msgid "Task Can not be Found"
+msgstr "不能找到任务"
+
+#: modules/system/sysInfo/sysInfoProcs.c:101
+msgid "has been in running now"
+msgstr "已经在运行"
+
+#: modules/system/sysInfo/sysInfoProcs.c:122
+msgid "Task Name"
+msgstr "任务名称"
+
+#: modules/system/sysInfo/sysInfoProcs.c:139
+msgid "When stop "
+msgstr "在停止时"
+
+#: modules/system/sysInfo/sysInfoProcs.c:140
+msgid " and it's registered on SIP Server"
+msgstr "已经在SIP服务器上注册"
+
+#: modules/system/sysInfo/sysInfoProcs.c:141
+msgid "stop will cost some more time"
+msgstr "停止会花费一些时间"
+
+#: modules/system/sysInfo/sysInfoProcs.c:141
+msgid "So you may wait this page refreshing several times to get the result"
+msgstr "你可能需要刷新几次页面得到结果"
+
+#: modules/system/sysInfo/sysInfoProcs.c:161
+#: modules/system/sysInfo/sysInfoProcs.c:173
+msgid "System Task"
+msgstr "系统任务"
+
+#: modules/system/sysInfo/sysInfoProcs.c:161
+#: modules/system/data/cgiDataBackup.c:145
+msgid "Please waiting"
+msgstr "请等待"
+
+#: modules/system/sysInfo/sysInfoProcs.c:173
+msgid "Status of System Task"
+msgstr "系统任务状态"
+
+#: modules/system/sysInfo/sysInfoVersions.c:17
+msgid "Platform Info"
+msgstr "平台信息"
+
+#: modules/system/sysInfo/sysInfoVersions.c:21
+msgid "FF Server Info"
+msgstr "FF server信息"
+
+#: modules/system/sysInfo/sysInfoVersions.c:25
+msgid "IpSet Task"
+msgstr "IP设置任务"
+
+#: modules/system/sysInfo/sysInfoVersions.c:29
+msgid "Web Admin"
+msgstr "网络管理"
+
+#: modules/system/sysInfo/sysInfoVersions.c:67
+msgid "version of System Task"
+msgstr "系统任务版本"
+
+#: modules/system/sysInfo/sysInfoVersions.c:70
+msgid "Software Name"
+msgstr "软件名称"
+
+#: modules/system/sysInfo/sysInfoVersions.c:85
+msgid "Software Version Info"
+msgstr "软件版本信息"
+
+#: modules/system/upload/admin_upload.c:22
+msgid "Upload backup file saved in your computer"
+msgstr "上传电脑中的备份文件"
+
+#: modules/system/upload/admin_upload.c:24
+msgid "Upload Admin Package"
+msgstr "上传Admin数据包"
+
+#: modules/system/data/cgiDataBackup.c:21
+msgid "is packaging"
+msgstr "正在打包"
+
+#: modules/system/data/cgiDataBackup.c:28
+msgid "Packaging Data Failed"
+msgstr "数据打包失败"
+
+#: modules/system/data/cgiDataBackup.c:60
+msgid "Backup package is sending to server"
+msgstr "备份包正在向服务器发送"
+
+#: modules/system/data/cgiDataBackup.c:67
+msgid "TFTP transfer failed"
+msgstr "TFTP传输失败"
+
+#: modules/system/data/cgiDataBackup.c:79
+msgid "Data has been back to server"
+msgstr "数据已经备份到服务器"
+
+#: modules/system/data/cgiDataBackup.c:93
+msgid "Data Backup to TFTP Server"
+msgstr "把数据备份到TFTP服务器"
+
+#: modules/system/data/cgiDataBackup.c:113
+msgid "Download Backup "
+msgstr "下载备份"
+
+#: modules/system/data/cgiDataBackup.c:113
+msgid "Please click following link"
+msgstr "请点击下面的链接"
+
+#: modules/system/data/cgiDataBackup.c:116
+msgid "SONiX IP Camera Configuration Backup"
+msgstr "松翰网络摄像头配置备份"
+
+#: modules/system/data/cgiDataBackup.c:145
+#: modules/system/data/cgiDataBackup.c:150
+msgid "Backup to Local"
+msgstr "备份到本地"
+
+#: modules/system/data/cgiDataUtils.c:52
+msgid "Input IP Address of TFTP Server which"
+msgstr "在TFTP服务器中输入IP地址"
+
+#: modules/system/data/cgiDataUtils.c:52
+msgid "save your backup"
+msgstr "保存备份"
+
+#: modules/system/data/cgiDataUtils.c:52
+msgid "get your backup"
+msgstr "取得备份"
+
+#: modules/system/data/cgiDataUtils.c:59
+msgid "Server IP Address"
+msgstr "服务器IP地址"
+
+#: modules/system/data/cgiDataUtils.c:86
+msgid "Read Device ID from Flash Device"
+msgstr "从闪存设备读取设备号"
+
+#: modules/system/data/cgiDataUtils.c:92
+msgid "Device ID read failed"
+msgstr "读取设备号失败"
+
+#: modules/system/data/cgiDataUtils.c:92
+msgid "Please contact the support of Assist Corp."
+msgstr "请求助帮手公司"
+
+#: modules/system/data/cgiDataUtils.c:99
+msgid "Device ID is"
+msgstr "设备号是"
+
+#: modules/system/data/cgiDataRestore.c:22
+msgid "is getting from"
+msgstr "来自"
+
+#: modules/system/data/cgiDataRestore.c:27
+#: modules/system/data/cgiDataRestore.c:44
+msgid "Access File Failed"
+msgstr "访问文件失败"
+
+#: modules/system/data/cgiDataRestore.c:40
+msgid "local file is checking"
+msgstr "本地文件正在检查"
+
+#: modules/system/data/cgiDataRestore.c:53
+msgid "is invalidate"
+msgstr "是无效的"
+
+#: modules/system/data/cgiDataRestore.c:53
+msgid "So removed"
+msgstr "所以删除"
+
+#: modules/system/data/cgiDataRestore.c:78
+msgid "is unpackaging"
+msgstr "正在解压"
+
+#: modules/system/data/cgiDataRestore.c:86
+msgid "is not *.tar or *.tar.gz"
+msgstr "不是 *.tar or *.tar.gz"
+
+#: modules/system/data/cgiDataRestore.c:126
+msgid "Trying"
+msgstr "正在尝试"
+
+#: modules/system/data/cgiDataRestore.c:126
+msgid "Times"
+msgstr "次数"
+
+#: modules/system/data/cgiDataRestore.c:154
+msgid "Data has been restored from server"
+msgstr "数据已经从服务器恢复"
+
+#: modules/system/data/cgiDataRestore.c:168
+msgid "Data Restore from Server"
+msgstr "从服务器恢复数据"
+
+#: modules/system/data/cgiDataMain.c:42
+msgid "After reboot, configuration will restored to the factory default."
+msgstr "重启后，配置会恢复成出厂设置"
+
+#: modules/system/data/cgiDataMain.c:44
+msgid "Please reboot now"
+msgstr "请立刻重启"
+
+#: modules/system/data/cgiDataMain.c:54
+msgid "Data&Software Operation Failed"
+msgstr "数据和软件操作失败"
+
+#: modules/system/data/cgiDataMain.c:84
+msgid "Data&Software"
+msgstr "数据和软件"
+
+#: modules/system/syscfg/syscfg_pppoe.c:28
+msgid "ADSL Device"
+msgstr "ADSL设备"
+
+#: modules/system/syscfg/syscfg_pppoe.c:32
+#: modules/system/syscfg/syscfg_pppoe.c:79
+msgid "Local IP Address"
+msgstr "本地IP地址"
+
+#: modules/system/syscfg/syscfg_pppoe.c:34
+#: modules/system/syscfg/syscfg_pppoe.c:81
+msgid "Peer IP Address"
+msgstr "同等IP地址"
+
+#: modules/system/syscfg/syscfg_pppoe.c:36
+#: modules/system/syscfg/syscfg_pppoe.c:83
+msgid "Primary DNS Server"
+msgstr "首选DNS服务器"
+
+#: modules/system/syscfg/syscfg_pppoe.c:38
+msgid "Secondary DNS Server"
+msgstr "备用DNS服务器"
+
+#: modules/system/syscfg/syscfg_pppoe.c:43
+msgid "Connection(Seconds)"
+msgstr "连接（秒）"
+
+#: modules/system/syscfg/syscfg_pppoe.c:45
+msgid "Send(Bytes)"
+msgstr "发送（字节）"
+
+#: modules/system/syscfg/syscfg_pppoe.c:47
+msgid "Rcvd(Bytes)"
+msgstr "接收（字节）"
+
+#: modules/system/syscfg/syscfg_pppoe.c:64
+#: modules/system/syscfg/syscfg_pppoe.c:112
+msgid "User/Password error"
+msgstr "用户名或密码错误"
+
+#: modules/system/syscfg/syscfg_pppoe.c:68
+msgid "Current PPPOE Configuration"
+msgstr "当前的PPPOE设置"
+
+#: modules/system/syscfg/syscfg_pppoe.c:99
+msgid "Timeout"
+msgstr "暂停"
+
+#: modules/system/syscfg/syscfg_pppoe.c:100
+msgid "Maybe your network cable is not connected"
+msgstr "可能是网线没有连上"
+
+#: modules/system/syscfg/syscfg_pppoe.c:101
+msgid "Or PPPOE Server is not available"
+msgstr "或者是PPPOE服务器不可用"
+
+#: modules/system/syscfg/syscfg_pppoe.c:120
+msgid "Authentication Failed"
+msgstr "授权失败"
+
+#: modules/system/syscfg/syscfg_pppoe.c:142
+msgid "PPPOE is not startup until now"
+msgstr "PPPOE还没有启动"
+
+#: modules/system/syscfg/syscfg_pppoe.c:145
+msgid "Please wait a moment and recheck it with"
+msgstr "请稍候"
+
+#: modules/system/syscfg/syscfg_pppoe.c:184
+msgid "ISP Server"
+msgstr "ISP服务器"
+
+#: modules/system/syscfg/syscfg_pppoe.c:189
+msgid "ISP Service Name"
+msgstr "ISP服务器名字"
+
+#: modules/system/syscfg/syscfg_pppoe.c:198
+msgid "DNS Mode"
+msgstr "DNS模式"
+
+#: modules/system/syscfg/syscfg_pppoe.c:201
+msgid "Set By User"
+msgstr "由用户设置"
+
+#: modules/system/syscfg/syscfg_pppoe.c:203
+msgid "Set By Server"
+msgstr "由服务器设置"
+
+#: modules/system/syscfg/syscfg_pppoe.c:240
+#: modules/system/syscfg/syscfg_pppoe.c:258
+msgid "PPPOE Configuration"
+msgstr "PPPOE配置"
+
+#: modules/system/syscfg/syscfg_pppoe.c:240
+msgid "Set all parameters need for PPPOE connection in this page"
+msgstr "设置PPPOE所需的所有参数"
+
+#: modules/system/syscfg/syscfg_pppoe.c:251
+msgid "PPPOE is connecting to server....."
+msgstr "PPPOE正在连接网络"
+
+#: modules/system/syscfg/syscfg_eth.c:31
+msgid "DHCP Fail"
+msgstr "DHCP失败"
+
+#: modules/system/syscfg/syscfg_eth.c:32
+msgid "Maybe no DHCP Server is available"
+msgstr "可能没有可用的DHCP服务器"
+
+#: modules/system/syscfg/syscfg_eth.c:33
+msgid "Or cable is not connected"
+msgstr "或者网线未连接"
+
+#: modules/system/syscfg/syscfg_eth.c:39
+msgid "DHCP WAN Configuration"
+msgstr "DHCP WAN 配置"
+
+#: modules/system/syscfg/syscfg_eth.c:53
+msgid "Static WAN Configuration"
+msgstr "Static WAN 配置"
+
+#: modules/system/syscfg/syscfg_eth.c:92
+msgid "Select Protocol for WAN Port"
+msgstr "为WAN选择协议"
+
+#: modules/system/syscfg/syscfg_eth.c:110
+msgid "OK"
+msgstr "确定"
+
+#: modules/system/syscfg/syscfg_eth.c:166
+msgid "WWW Server will reboot after WAN configration"
+msgstr "进行WAN配置后网络服务器要重启"
+
+#: modules/system/syscfg/syscfg_eth.c:218
+msgid "Current Ethernet Configuration"
+msgstr "当前网卡配置"
+
+#: modules/system/syscfg/syscfg_eth.c:226
+msgid "No Protocol is selected for WAN port"
+msgstr "没有为WAN端口选择协议"
+
+#: modules/system/syscfg/syscfg_eth.c:232
+msgid "Static Configuration"
+msgstr "静态配置"
+
+#: modules/system/syscfg/syscfg_eth.c:304
+msgid "Not supportted command in WAN configuration"
+msgstr "网络设置时不支持命令"
+
+#: modules/system/syscfg/syscfg_reboot.c:33
+msgid "Reboot will cost 0.5 minuts or more"
+msgstr "重启至少需要半分钟"
+
+#: modules/system/syscfg/syscfg_reboot.c:35
+msgid "Rebooting....."
+msgstr "正在重启"
+
+#: modules/system/syscfg/syscfg_reboot.c:45
+msgid "Welcome return your our Web Admin!"
+msgstr "欢迎回到网管页面"
+
+#: modules/system/syscfg/syscfg_reboot.c:46
+msgid "If your have change configuration, please check it carefully"
+msgstr "如果你改变了配置，请仔细检查"
+
+#: modules/system/syscfg/syscfg_reboot.c:47
+msgid "Reboot OK now!"
+msgstr "重启完成"
+
+#: modules/system/syscfg/syscfg_reboot.c:52
+msgid "Not supportted command when reboot"
+msgstr "不支持命令重启"
+
+#: modules/system/syscfg/syscfg_user.c:101
+msgid "RePassword"
+msgstr "确认密码"
+
+#: modules/system/syscfg/syscfg_user.c:103
+msgid "RePassword can not be NULL"
+msgstr "确认密码不能为空"
+
+#: modules/system/syscfg/syscfg_user.c:134
+#, c-format
+msgid "No System User Name is provided"
+msgstr "没有提供系统用户名"
+
+#: modules/system/syscfg/syscfg_user.c:155
+#, c-format
+msgid "Password can not be null when add user"
+msgstr "密码不能为空"
+
+#: modules/system/syscfg/syscfg_user.c:160
+#, c-format
+msgid "Twice Password is not the same"
+msgstr "两个密码不相同"
+
+#: modules/system/syscfg/syscfg_hostname.c:29
+#: modules/system/syscfg/syscfg_hostname.c:32
+msgid "Hostname"
+msgstr "主机名"
+
+#: modules/system/syscfg/syscfg_hostname.c:29
+#: modules/system/syscfg/syscfg_hostname.c:32
+msgid "FQDN"
+msgstr "正式域名"
+
+#: modules/system/syscfg/syscfg_hostname.c:90
+msgid "Domain Name"
+msgstr "域名"
+
+#: modules/system/syscfg/syscfg_hostname.c:100
+msgid "When DDNS such as Peant Hull is activating"
+msgstr "当DDNS（例如花生壳）被启动时"
+
+#: modules/system/syscfg/syscfg_hostname.c:100
+msgid "FQDN input here will be used by our DDNS program"
+msgstr "在这里输入的正式域名将被DDNS程序使用"
+
+#: modules/system/syscfg/syscfg_hostname.c:122
+#: modules/system/syscfg/syscfg_hostname.c:130
+msgid "Not Found"
+msgstr "未找到"
+
+#: modules/system/syscfg/syscfg_hostname.c:122
+msgid "Field of hostname is not found"
+msgstr "主机名未找到"
+
+#: modules/system/syscfg/syscfg_hostname.c:130
+msgid "Field of domainname is not found"
+msgstr "域名未找到"
+
+#: modules/system/syscfg/syscfg_hostname.c:138
+msgid "Host and Domain Configuration"
+msgstr "主机和域名配置"
+
+#: modules/system/syscfg/syscfgMain.c:68
+msgid "System Configuration Error"
+msgstr "系统配置错误"
+
+#: lib/lan/cgi_lan_setup.c:50
+msgid "DHCP Service"
+msgstr "DHCP服务"
+
+#: lib/lan/cgi_lan_setup.c:62 lib/lan/cgi_lan_dhcp.c:39
+#: lib/lan/cgi_lan_dhcp.c:42
+msgid "DHCP Server Status"
+msgstr "DHCP服务器状态"
+
+#: lib/lan/cgi_lan_setup.c:92
+msgid "Start DHCP Service"
+msgstr "开启DHCP服务"
+
+#: lib/lan/cgi_lan_setup.c:101
+msgid "WebAdmin will reboot after LAN configration"
+msgstr "在局域网设置后将重启"
+
+#: lib/lan/cgi_lan_setup.c:216
+msgid "Congratulation"
+msgstr "祝贺"
+
+#: lib/lan/cgi_lan_setup.c:218
+msgid "For other Information"
+msgstr "其它信息"
+
+#: lib/lan/cgi_lan_setup.c:220
+msgid "Please consult the user manual provided by Assist Corp"
+msgstr "请参考帮手公司的用户手册"
+
+#: lib/lan/cgi_lan_setup.c:224
+msgid "Quick Install Finished"
+msgstr "快速安装完成"
+
+#: lib/lan/cgi_lan_dhcp.c:36
+msgid "All Parameters of DHCP"
+msgstr "DHCP的所有参数"
+
+#: lib/lan/cgi_lan_dhcp.c:58
+msgid "Start IP Address"
+msgstr "起始IP地址"
+
+#: lib/lan/cgi_lan_dhcp.c:60
+msgid "End IP Address"
+msgstr "结束IP地址"
+
+#: lib/lan/cgi_lan_dhcp.c:68
+msgid "Release Duration"
+msgstr "版本期限"
+
+#: lib/lan/cgi_lan_dhcp.c:70
+msgid "Interface"
+msgstr "接口"
+
+#: lib/lan/cgi_lan_dhcp.c:80
+msgid "Finish"
+msgstr "完成"
+
+#: lib/lan/cgi_lan_dhcp.c:183
+msgid "Save DHCP Config File"
+msgstr "保存DHCP配置文件"
+
+#: lib/wireless/cgi_wireless_utils.c:29
+msgid "No Wifi Hardware is found"
+msgstr "没有Wifi硬件"
+
+#: lib/wireless/cgi_wireless_utils.c:47
+msgid "Drivers is not load now"
+msgstr "驱动未加载"
+
+#: lib/wireless/cgi_wireless_mode.c:20
+msgid "Mobile Station"
+msgstr "流动站点"
+
+#: lib/wireless/cgi_wireless_mode.c:37
+msgid "802.11B"
+msgstr "802.11B"
+
+#: lib/wireless/cgi_wireless_mode.c:41
+msgid "802.11G"
+msgstr "802.11G"
+
+#: lib/wireless/cgi_wireless_mode.c:45
+msgid "Turbo"
+msgstr "Turbo"
+
+#: lib/wireless/cgi_wireless_mode.c:62 lib/wireless/cgi_wireless_mode.c:96
+msgid "1M"
+msgstr "1M"
+
+#: lib/wireless/cgi_wireless_mode.c:67 lib/wireless/cgi_wireless_mode.c:101
+msgid "2M"
+msgstr "2M"
+
+#: lib/wireless/cgi_wireless_mode.c:72 lib/wireless/cgi_wireless_mode.c:106
+msgid "5.5M"
+msgstr "5.5M"
+
+#: lib/wireless/cgi_wireless_mode.c:77 lib/wireless/cgi_wireless_mode.c:111
+msgid "11M"
+msgstr "11M"
+
+#: lib/wireless/cgi_wireless_mode.c:116
+msgid "6M"
+msgstr "6M"
+
+#: lib/wireless/cgi_wireless_mode.c:121
+msgid "9M"
+msgstr "9M"
+
+#: lib/wireless/cgi_wireless_mode.c:126
+msgid "12M"
+msgstr "12M"
+
+#: lib/wireless/cgi_wireless_mode.c:131
+msgid "18M"
+msgstr "18M"
+
+#: lib/wireless/cgi_wireless_mode.c:136
+msgid "24M"
+msgstr "24M"
+
+#: lib/wireless/cgi_wireless_mode.c:141
+msgid "36M"
+msgstr "36M"
+
+#: lib/wireless/cgi_wireless_mode.c:146
+msgid "48M"
+msgstr "48M"
+
+#: lib/wireless/cgi_wireless_mode.c:151
+msgid "54M"
+msgstr "54M"
+
+#: lib/wireless/cgi_wireless_mode.c:167
+msgid "Select Wireless Mode"
+msgstr "选择无线网络模式"
+
+#: lib/wireless/cgi_wireless_mode.c:230
+msgid "AODV can only be used when Ad-Hoc Mode"
+msgstr "AODV只能在Ad-Hoc 模式下应用"
+
+#: lib/wireless/cgi_wireless_mode.c:231
+msgid "When AODV is enabled, WIFI is in Ad-hoc no matter when you set"
+msgstr "当AODV被使能，不论怎么设置都工作在Ad-Hoc模式 "
+
+#: lib/wireless/cgi_wireless_mode.c:246
+msgid "Set Wireless Basic Parameters"
+msgstr "设置无线网络基本参数"
+
+#: lib/wireless/cgi_wireless_mode.c:305
+msgid "Channel Parameter can be set only when drivers have been loaded"
+msgstr "通道参数只有在加载了驱动后才能设置"
+
+#: lib/wireless/cgi_wireless_mode.c:327
+msgid "Wireless Basic Parameters"
+msgstr "无线网络基本参数"
+
+#: lib/wireless/cgi_wireless_mode.c:391
+msgid "Mode Configuration of Wireless"
+msgstr "无线网络模式配置"
+
+#: lib/wireless/cgi_wireless_mode.c:391 lib/wireless/cgi_wireless_mode.c:399
+msgid "Basic parameters of Wireless are set here"
+msgstr "设置无线网络的基本参数"
+
+#: lib/wireless/cgi_wireless_mode.c:399 lib/wireless/cgi_wireless_mode.c:405
+msgid "Basic Parameters of Wireless"
+msgstr "无线网络基本参数"
+
+#: lib/cgi_lib.c:1380 lib/cgi_lib.c:1385
+msgid "Network Interface Configuration"
+msgstr "网路接口配置"
+
+#: lib/cgi_lib.c:1380 lib/cgi_lib.c:1385
+msgid "is not a validate IP address"
+msgstr "不是合法的IP地址"
+
+#: lib/cgi_nic.c:165
+msgid "Please Check your network carefully"
+msgstr "请仔细检查你的网络"
+
+#: lib/cgi_nic.c:165
+msgid "Try Network configuration again"
+msgstr "重试网络配置"
+
+#: lib/cgi_nic.c:167
+msgid "Network start failed"
+msgstr "网络启动失败"
+
+#: lib/cgi_pages_lib.c:86
+msgid "Invalidate Operation"
+msgstr "非法操作"
+
+#: lib/process/cgi_services.c:222
+msgid "Invalidate"
+msgstr "无效"
+
+#: lib/process/cgi_upload_file.c:25
+msgid "Remote Update can be implemented by this function"
+msgstr "远程更新可以通过这个功能实现"
+
+#: lib/process/cgi_upload_file.c:30
+msgid "Upload the Web pages package for your Internet WWW Server"
+msgstr "通过网络上传文件"
+
+#: lib/process/cgi_upload_file.c:35
+msgid "Upload the PBX Firmware for update"
+msgstr "上传PBX固件更新"
+
+#: lib/process/cgi_upload_file.c:45
+msgid "Note : Only file which size is below 10M can be upload here"
+msgstr "上传文件不能超过10Mbyte"
+
+#: lib/process/cgi_upload_file.c:142
+msgid "Upload will consume some time on transfering and extracting files"
+msgstr "上传需要一些时间"
+
+#: lib/process/cgi_upload_file.c:143
+msgid "this is determined by the size of transfered file"
+msgstr "这取决于文件的大小"
+
+#: lib/process/cgi_upload_file.c:220
+msgid "is saving"
+msgstr "正在保存"
+
+#: lib/process/cgi_upload_file.c:428
+msgid "File Length is not validate"
+msgstr "文件长度不合法"
+
+#: lib/process/cgi_upload_file.c:432
+msgid "File has a wrong format, file .tar, .tar.gz or .rar expected"
+msgstr "文件格式错误，只能是tar, .tar.gz或 .rar"
+
+#: lib/process/cgi_upload_file.c:436
+msgid "File is too long,max long 10M"
+msgstr "文件太大，已超过10M"
+
+#: lib/process/cgi_upload_file.c:440
+msgid "File is not exist"
+msgstr "文件不存在"
+
+#: lib/process/cgi_upload_file.c:444
+msgid "File upload ok!"
+msgstr "文件上传完成"
+
+#: lib/process/cgi_syscfg.c:122 lib/process/cgi_syscfg.c:139
+msgid "IP Address is set as"
+msgstr "IP地址被设置为"
+
+#: lib/process/cgi_syscfg.c:122 lib/process/cgi_syscfg.c:322
+msgid "in WAN port"
+msgstr "在WAN端口"
+
+#: lib/process/cgi_syscfg.c:124 lib/process/cgi_syscfg.c:324
+msgid "Maybe WWW can be access with different URL in your browser"
+msgstr "可以利用浏览器通过不同的URL来访问网络"
+
+#: lib/process/cgi_syscfg.c:139
+msgid "in LAN port"
+msgstr "在局域网端口"
+
+#: lib/process/cgi_syscfg.c:141
+msgid "Maybe WebAdmin can be access with different URL in your browser"
+msgstr "可以利用你的浏览器通过URL来访问网络管理网页"
+
+#: lib/process/cgi_syscfg.c:182 lib/process/cgi_syscfg.c:189
+msgid "Network Configuration"
+msgstr "网络配置"
+
+#: lib/process/cgi_syscfg.c:182
+msgid "Protocol is not defined"
+msgstr "协议未定义"
+
+#: lib/process/cgi_syscfg.c:189
+msgid "Net Device is not defined"
+msgstr "网络设备没有定义"
+
+#: lib/process/cgi_syscfg.c:322
+msgid "Detecting DHCP Server "
+msgstr "探测DHCP服务器"
+
+#: modules/navigate/cgi_navigate.c:365
+msgid "IPSET"
+msgstr "IPSET配置"
+
+#: modules/navigate/cgi_navigate.c:486
+msgid "Audiosr Config"
+msgstr "采样率配置"
+
+#: modules/navigate/cgi_navigate.c:486
+msgid "AudioE Config"
+msgstr "开启/关闭声音"
+
+#: modules/navigate/cgi_navigate.c:486
+msgid "Audioch Config"
+msgstr "单/双声道"
+
+#: modules/navigate/cgi_navigate.c:486
+msgid "Stream desc"
+msgstr "流媒体描述"
+
+#: modules/navigate/cgi_navigate.c:486
+msgid "Stream config"
+msgstr "流媒体配置"
+#: modules/video/videoSelect.c:486
+msgid "stream description"
+msgstr "流媒体描述"
+
+msgid "stream configuration"
+msgstr "流媒体配置"
+
+msgid "Format"
+msgstr "格式"
+
+msgid "save"
+msgstr "保存"
+
+msgid "enauth"
+msgstr "是否认证"
+
+msgid "enwatchdog"
+msgstr "是否WatchDog"
+
+msgid "mediaserver log"
+msgstr "媒体服务器日志"
+
+msgid "CustomLog"
+msgstr "用户日志"
+
+msgid "MaxLogSize"
+msgstr "最大容量"
+
+msgid "log level"
+msgstr "日志等级"
+
+msgid "mediaserverlog"
+msgstr "媒体服务器日志"
+
+msgid "port"
+msgstr "端口号"
+
+msgid "RTSPPort"
+msgstr "RTSP端口号"
+
+msgid "MaxClients"
+msgstr "最大连接数"
+
+msgid "MaxBandwidth"
+msgstr "最大带宽(KB)"
+
+msgid "Stream select:"
+msgstr "媒体流"
+
+msgid "Operation:"
+msgstr "操作"
+
+msgid "Range:"
+msgstr "范围"
+
+msgid "AddACL"
+msgstr "添加"
+
+msgid "ACL Configuration"
+msgstr "ACL配置"
+
+msgid "Stream1:"
+msgstr "媒体流1:"
+
+msgid "Stream2:"
+msgstr "媒体流2:"
+
+msgid "Stream3:"
+msgstr "媒体流3:"
+
+msgid "Mirror Image"
+msgstr "水平镜像"
+
+msgid "VFlip Image"
+msgstr "垂直镜像"
+
+msgid "Record history"
+msgstr "已有记录文件"
+
+msgid "Record config"
+msgstr "配置选项"
+
+msgid "Autorecord"
+msgstr "自动记录"
+
+msgid "Manurecord"
+msgstr "手动记录"
+
+msgid "Timelength"
+msgstr "时间长度"
+
+msgid "Size"
+msgstr "文件大小"
+
+msgid "filename"
+msgstr "名称"
+
+msgid "modifytime"
+msgstr "时间"
+
+msgid "filesize"
+msgstr "大小"
+
+msgid "record"
+msgstr "设置"
+
+msgid "stop"
+msgstr "停止记录"
+
+msgid "Start:"
+msgstr "开始时间"
+
+msgid "End:"
+msgstr "停止时间"
+
+msgid "Record config history"
+msgstr "已有记录计划"
+
+msgid "timelength:"
+msgstr "时间长度："
+
+msgid "starttime:"
+msgstr "开始时间："
+
+msgid "minutes"
+msgstr "分钟"
+
+msgid "Min"
+msgstr "分"
+
+msgid "PLAN CONFLICT , PLEASE CHECK AND RETRY!!!"
+msgstr "录像任务有冲突，请重新设定"
+
+msgid "TIMELENGTH  RANGE WRONG!!!"
+msgstr "时间长度参数输入范围有误"
+
+msgid "WRONG     INPUT ,  PLEASE CHECK AND RETRY!!!"
+msgstr "参数输入有误，请重新设定"
+
+msgid "TIMELENGTH  CAN  NOT  BE  NULL!!!"
+msgstr "时间长度参数不能为空"
+
+msgid "MINUTES  CAN  NOT  BE  NULL!!!"
+msgstr "分钟参数不能为空"
+
+msgid "HOUR  CAN  NOT  BE  NULL!!!"
+msgstr "小时参数不能为空"
+
+msgid "HOUR"
+msgstr "时"
+
+msgid "MIN"
+msgstr "分"
+
+msgid "configuring ,please wait......"
+msgstr "正在进行配置，请稍候..."
+
+msgid "deleting ,please wait...."
+msgstr "正在删除，请稍候..."
+
+msgid "ACL Configuration increct :invalid IP Address"
+msgstr "ACL配置错误，IP地址输入有误，请检查后重试..."

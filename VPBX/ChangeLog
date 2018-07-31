@@ -1,0 +1,127 @@
+
+#
+# $Author: lizhijie $
+# $Id: ChangeLog,v 1.1.1.1 2006/11/30 16:26:28 lizhijie Exp $
+#
+	ChangeLog for vpbx(PBX based on Virtual Switch)
+				Li Zhijie, 2005.07.30
+
+2006.06.11
+     所有模块可以同时工作
+
+2006.05.30
+     增加DSP的配置接口：从配置文件中读取DSP引擎的本地化参数
+     修改、优化Console的二次收号机制
+     FXO是否接线的判断：如果没有接线，拨打外线出现忙音
+     增加Console问候音文件的配置接口，可以指定语音文件的位置和名称，方便录音和网管程序
+     不再需要ringbacktone.u文件
+
+
+2006.05.27
+     增加公共的动态线程的架构
+     增加二次拨号的框架代码和配置文件的修改
+         可以配置使用的方式是否支持二次拨号
+         PSTN和ISDN需要支持二次拨号
+     插件模块和线程有配置文件决定    
+
+2006.05.26
+     优化类的包含关系和头文件声明
+     删除多余的类和头文件
+
+
+2006.05.23
+     统一各个模块的Operator和State的定义（VOIP除外）
+     增加其他的pstn功能			
+
+2006.05.08
+     增加并合并公共API
+
+2006.03.20
+     去掉pstn插件中的接口代码，全部使用libpstn.so库
+          增加build/assist_lib.h和bin/arm/libpstn.so文件，这两个文件作为函数库和头文件
+			
+			
+2006.03.02		tangr
+	呼叫的稳定性：
+		NT模式段错误
+		主叫挂机被叫不停止振铃TE/NT
+		呼一个未连接号码退出等
+				
+wuaiwu	2006.2.21
+	完成二次收号简单呼叫流程				
+				
+		
+chenke 2006.01.21
+   完善和统一拨号规则效验处理
+   pbx/device/DialingValidator.cxx
+   pbx/device/DialingValidator.hxx
+   以及:
+   pbx/device/GatewayMgr.xxx
+   pbx/op/EpOpAddDigit.cxx
+   中原来和DialingValidator相关代码.
+   
+   
+		
+wuaiwu	2006.01.13
+	对公共模块的改动：
+		在AudioChannel类中增加一个数据成员(playBusy，用于FXO设备忙音通知)和
+		相关操作
+	PSTN模块：增加FXO设备的呼叫
+	VOIP模块：删除与设备相关的操作
+	 	  改进呼叫流程
+	
+					
+
+2006.01.10
+	将DSP功能移到pbx模块下，增加对DTMF号码的数据读取操作
+	优化pbx模块下的Operators
+	去掉调试开关，重新编译utils库，
+				
+wuaiwu	2005.12.31
+	增加VOIP模块
+	修改的公共部分代码有：
+	将pbx/vpbx下的CallInfo.*改为PbxCallInfo.*
+	              CallContainer.*改为PbxCallInfo.*
+	修改其他用到这2个类的地方
+					
+				
+wuaiwu  2005.12.21
+	修改PSTN模块，适应 plugin模式
+	修改AudioChannel语音处理
+
+wuaiwu  2005.12.16
+	增加PSTN模块
+				
+wuaiwu	2005.12.02
+	增加公共消息(CommonMsg),公共消息构造类(CallMsgBuilder)的定义
+		pbx/msg 
+	
+	增加PstnEvent, VoipEvent的定义
+		pbx/event/
+		
+	修改PbxSingal为 CallEvent; PbxMsgIsdn为IsdnEvent
+		pbx/event/
+
+2005.12.01
+	增加pbx/op/isdn目录，存放所有的ISDN Operators
+
+2005.11.30
+	增加ISDN消息的编译，调试通过ISDN的启动流程
+
+2005.11.25
+	增加对ISDN IE的编译支持				
+
+wuaiwu	2005.11.24
+	系统初始化成功，现有线程能正常执
+修改的文件有：
+	pbx/device/mgr/IsdnDeviceMgr.cxx 
+	pbx/device/GatewayMgr.cxx
+	pbx/device/ctrl/IsdnCtrlDevice.cxx 
+	pbx/base/PbxManager.cxx
+
+2005.11.18
+	新的程序框架编译运行和启动完成
+	
+2005.07.29
+	建立初始的版本
+	

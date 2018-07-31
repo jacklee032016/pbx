@@ -1,0 +1,15 @@
+		Readme for i4lnet
+				Li Zhijie, 2005.07.30
+
+
+ÃüÃû¹æÔò
+
+ask_		Assist Kernel dependent
+
+asnt_		Assist NT associated Library
+	asnt_if_		Interface with ASK in Assist NT Library(used by Layer 2)
+	asnt_l2_tei_	TEI functions for Assist NT Layer 2
+	asnt_l2_		Other Layer 2 in Assist NT Library
+	asnt_l3_		All Layer 3 functions in Asisst NT Library
+
+

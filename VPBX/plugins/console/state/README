@@ -1,0 +1,73 @@
+	CONSOLE State Machine README
+				Li Zhijie, Jan,3rd,2006
+
+虚拟控制台状态机
+
+1. 公共状态
+1.1. IDLE状态
+    接收CallScheduler来的SetupCall呼叫，返回AlertingCall，启动定时器，接入ALERTING状态
+
+1.2. CONNECT状态
+    输入端点进入这个状态时，不作任何处理
+    输出端点进入这个状态时，向调度器发出专门的事件：CONNECT_ACK_CALL
+    1.2.1. 调度器一侧事件
+        CONNECT_ACK，两个端点都收到这个事件，表示两个呼叫已经连接到一起，可以开始真正的通话
+
+   Master端点接收Slave端点发出的ALERTING_CALL消息
+        不作状态EndPoint变化，只改变AudioChannel的状态，是开始播放回铃音
+
+2. 输入EndPoint（即Master端点）的状态	
+2.1.  IN_ALERTING状态
+    接收定时器返回的超时事件，发出ConnectCall消息，接入GREETING状态
+    接收呼叫调度器来的DISCONNECT CALL事件，返回IDLE状态
+   
+2.2. IN_GREETING状态
+    播放公司的问候语，结束后，放拨号音，等待拨号
+    
+    2.2.1. 调度器来的
+        Slave发出的RELEASE_CALL消息
+        调度器来的给Master的DISCONNECT_CALL消息
+        Slave发出的ALERTING消息
+    2.2.2. AnswerTimer事件
+        进入CONNECT状态，启动Slave端点上的二次拨号
+        不改AudioChannel的状态，继续播放Silence
+
+
+3. 输出EndPoint（即Slave端点）的状态
+3.1. OUT_CALLING
+    输入端点上播放silence音
+    3.1.1. 调度器一侧的消息
+        RELEASE_CALL消息：
+            向Master转发RELEASE_CALL消息,清除开始呼叫设置的CallingTimerOut定时器
+            
+        PROCEEDING_CALL消息：不作任何处理，简单丢弃此消息
+        
+        ALERTING_CALL消息：
+            向Master转发ALERTING_CALL消息（或不向Master转发ALERTING_CALL消息，直接
+            修改Master的语音信道的语音状态，使播放回铃音）
+            清除当前设置的CallingTimer定时器
+        
+        CONNECT_CALL消息：
+        
+    3.1.2. 输入端点一侧的消息
+        DISCONNECT_CALL消息
+    
+    3.1.3. 自己发出的消息
+        超时消息
+
+3.2. OUT_ALERTING状态
+    输入端点上播放回铃音
+    3.2.1. 调度器一侧的消息
+        RELEASE_CALL消息
+        CONNECT_CALL消息
+    3.2.2. 输入端点一侧的消息
+        DISCONNECT_CALL消息
+    3.1.3. 自己发出的消息
+        超时消息
+
+
+注：
+    是否可以在Master和Slave端点之间，不转发消息，直接通过调用操作彼此的状态
+    这样会破坏状态机的完整性
+
+    

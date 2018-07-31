@@ -1,0 +1,122 @@
+#
+# $Id: Makefile.pre,v 1.1.1.1 2006/11/30 16:26:28 lizhijie Exp $
+#
+
+# for release 
+BUILDTIME := $(shell TZ=UTC date -u "+%Y_%m_%d-%H_%M")
+ASSIST_RELEASES_NAME=assist_isdn_$(BUILDTIME).tar 
+
+ARCH=arm
+
+VOIPS_DIR=$(TOP_DIR)/voips
+DRIVER_HOME_DIR=$(TOP_DIR)/drivers
+
+ASSIST_SHARED=yes
+RELEASES_DIR=../releases
+C_CFLAGS = -Wall -DASSIST_USE_DEPRECATED
+
+
+ifeq ($(ARCH),arm)
+	C_CFLAGS += -mbig-endian -D__ARM_IXP__=1 
+	C_FLAGS += -mbig-endian -D__ARM_IXP__=1 
+	CXX_FLAGS = -mbig-endian -D__ARM_IXP__=1 
+	CROSS_COMPILER=arm-linux-
+	LDFLAGS+= -mbig-endian 
+	#ASSIST_SHARED= 
+	flag=-mbig-endian
+else
+	ARCH=i686
+endif
+
+	
+ifeq ($(test),api)
+	C_FLAGS += -DAPI
+	COMPILE_OPTIONS += -DAPI
+endif
+	
+
+
+BIN_DIR=$(ROOT_DIR)/Linux.bin.$(ARCH)
+OBJ_DIR=Linux.obj.$(ARCH)
+
+
+CC		= $(CROSS_COMPILER)gcc
+CXX 	= $(CROSS_COMPILER)g++ 
+STRIP	= $(CROSS_COMPILER)strip
+LD		= $(CROSS_COMPILER)ld
+RANLIB 	= $(CROSS_COMPILER)ranlib
+STRIP 	= $(CROSS_COMPILER)strip
+AR 		= $(CROSS_COMPILER)ar
+
+RM		= rm -r -f
+MKDIR	= mkdir -p
+MODE	= 700
+OWNER	= root
+CHOWN	= chown
+CHMOD	= chmod
+COPY	= cp
+MOVE	= mv
+
+ARFLAGS		= crus
+
+C_FLAGS+= \
+	-O2 -Wall \
+	-I. -I$(TOP_DIR)/include  
+
+
+GENERIC_INC_DIR = include
+BUILD		= $(TOP_DIR)/include/build
+UTILS_DIR	= $(TOP_DIR)/include/util
+VPBX_DIR	= $(TOP_DIR)/pbx
+
+# LIBS_DIR	= $(TOP_DIR)/shared_lib
+
+DRIVER_INC_DIR += -I$(KINCLUDES) -I$(TOP_DIR) \
+		 
+		 
+
+ifeq ($(ISDN_NT),yes)
+	DRIVER_INC_DIR += -I$(TOP_DIR)/plugins/isdn/driver/asnt/net 
+endif
+
+################################################
+####   include file 
+################################################
+
+UTILS_INC_DIR+=-I$(BUILD) \
+	-I$(UTILS_DIR) \
+	-I$(UTILS_DIR)/threads \
+	-I$(UTILS_DIR)/logging \
+	-I$(UTILS_DIR)/crypto \
+	-I$(UTILS_DIR)/statistics \
+	-I$(UTILS_DIR)/snmp \
+	-I$(UTILS_DIR)/signals \
+	-I$(UTILS_DIR)/behavior \
+	-I$(UTILS_DIR)/io \
+	-I$(UTILS_DIR)/services \
+	-I$(UTILS_DIR)/transport \
+	-I$(UTILS_DIR)/config \
+	-I$(UTILS_DIR)/dnssrv \
+	-I$(UTILS_DIR)/deprecated \
+	-I$(UTILS_DIR)/adt 
+	
+PBX_INC_DIR = \
+	-I$(VPBX_DIR)/ \
+	-I$(VPBX_DIR)/base \
+	-I$(VPBX_DIR)/device \
+	-I$(VPBX_DIR)/device/ep \
+	-I$(VPBX_DIR)/device/mgr \
+	-I$(VPBX_DIR)/event \
+	-I$(VPBX_DIR)/event/timer \
+	-I$(VPBX_DIR)/state \
+	-I$(VPBX_DIR)/state/call \
+	-I$(VPBX_DIR)/op \
+	-I$(VPBX_DIR)/op/call \
+	-I$(VPBX_DIR)/vpbx \
+	-I$(VPBX_DIR)/msg \
+	-I$(VPBX_DIR)/dsp 
+
+ifeq ($(test),api)
+	PBX_INC_DIR += -I$(VPBX_DIR)/api
+endif
+BUILD_INC_DIR 		+= -I$(BUILD) 

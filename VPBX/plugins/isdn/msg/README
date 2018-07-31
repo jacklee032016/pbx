@@ -1,0 +1,45 @@
+#
+# $Id: README,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+#
+		Messages for Circuit-mode Connection Control
+
+Call Establishment messages
+	Alerting
+	Proceeding
+	Connect
+	Connect Ack
+	Progress
+	Setup
+	Setup Ack(not offered)
+
+Call Information Phase messages
+	Resume
+	Resume Ack
+	Resume Reject
+	Suspend
+	Suspend Ack
+	Suspend Reject
+
+Call Clearing Messages
+	Disconnect
+	Release
+	Release Complete
+
+Miscellaneous Messages
+	Infomation
+	Notify
+	Status
+	Status Enquiry
+	
+使用的文件（类）说明
+	IsdnMsg.hxx				所有三层的ISDN消息的基类，子类在msg子目录
+	IsdnIE.hxx				所有ISDN的L3 IE的基类，子类在IEs子目录
+	IsdnMsgFactory.hxx
+	IsdnParserMode.hxx		控制解析消息过程中的例外的抛出
+	MsgDecoder.hxx			L3消息解密器
+	MsgDecoderTe.hxx		TE侧的消息解码器
+	MsgDecoderNT.hxx		NT侧的消息解码器（暂时没有使用）
+
+	其余的文件暂时都没有使用	
+	
+	

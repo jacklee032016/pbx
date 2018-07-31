@@ -1,0 +1,10 @@
+# $Id: ChangeLog,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+
+				ChangeLog for pbx module of VPBX 
+				             Li Zhijie 2006.05
+
+2006.05.23
+配置文件增加
+    FXO拨号模式：DP10/DP20/PB
+    PSTN话机直接跳转到外线的号码链表
+				             

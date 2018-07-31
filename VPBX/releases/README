@@ -1,0 +1,20 @@
+#
+# $Author: lizhijie $
+# $Id: README,v 1.1.1.1 2006/11/30 16:26:29 lizhijie Exp $
+#
+
+	
+		Readme for Virtual PBX
+				Li Zhijie, 2005.11.08
+
+2005.12.16
+     增加文件isdn_TE_test_release.tar.gz
+     使用方式：上载文件到测试系统的根目录下，解压，参考其中的test.readme文件，就可以测试ISDN的硬件和驱动
+				
+Function as Call Switch between ISDN, PSTN, VOIP(SIP) and Virtual Console
+
+程序列表
+	greeting.u，问候的U律的语音
+	greeting2.u，加长的、问候的U律的语音
+	usr/etc/vpbx.cfg，VPBX的配置文件	
+		
