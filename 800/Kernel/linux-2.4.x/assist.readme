@@ -1,0 +1,29 @@
+# $Id: assist.readme,v 1.1.1.1 2006/11/30 16:27:49 lizhijie Exp $
+	Assist多种板子的条件编译
+			李志杰 2006.01.19
+
+1、RTC芯片的支持
+System Type
+    |----  IXP425 Implementation Options
+        |---- Assist RTC-1302 support
+		可以决定是否增加对RTC1302的支持
+		这个模块必然是捆绑到kernel中的
+		
+
+2、支持交换芯片的NPE驱动
+Network device support
+    |----  Ethernet (10 or 100Mbit)
+       |---- Intel IXP425 Ethernet Device+ADM6996 Switch support
+               在不支持交换芯片的板子上，使用不支持此功能的NPE驱动
+               这个模块只能作为核心模块的方式使用
+ 
+3、FLash大小的支持           
+Memory Technology Devices (MTD)
+    |---- Mapping drivers for chip access
+        |---- CFI Flash device mapped on IXP425 
+          可以选择使用的FLASH芯片的大小和各个分区的大小
+          
+          
+3、Assist板卡支持
+Assist Board Support subsystem
+		

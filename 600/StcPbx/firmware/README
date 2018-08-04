@@ -1,0 +1,12 @@
+# $Id: README,v 1.1 2007/08/05 21:08:59 lizhijie Exp $
+          README for CPLD Program
+                        Li Zhijie, 2007.08.03
+安装软件
+   MaxPlus II 10.2
+   使用licence.dat数据文件
+   
+   安装驱动：音视频设备byteblaster，重新启动系统
+   
+打开图形编辑文件ip.gdf
+   编辑
+   

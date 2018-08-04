@@ -1,0 +1,19 @@
+	UA work log
+			Li Zhijie 2005.02.04
+
+2005.02.07
+	增加op和state两个子目录，修改原有ua代码的目录结构
+
+2005.02.06
+	增加assist/dsp子目录和增益调试的代码
+
+2005.02.05
+	增加assist子目录，建立基本的测试程序
+
+2005.02.04
+	增加AssistCheckHardware.hxx，删除CheckHardware.hxx
+
+NewSoundCard
+	包含循环内存的管理
+SoundCardDevice
+	包含RTP得到transfer的操作	

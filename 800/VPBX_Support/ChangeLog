@@ -1,0 +1,10 @@
+#$Id: ChangeLog,v 1.1.1.1 2006/11/30 16:27:09 lizhijie Exp $
+#$Author: lizhijie $
+#
+
+			ChangeLog for VPBX support library
+			                Li Zhijie
+
+2006.06.03
+    重新分割目录，建立源文件和头文件分离的机制
+			                

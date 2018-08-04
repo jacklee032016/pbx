@@ -1,0 +1,17 @@
+CC = gcc
+CXX = g++
+CFLAG = -O2
+CXXFLAG = -O2
+APP_LIBS = -L. 
+SO_LIBS = -L. -llink
+INCPATH = -I.
+LFLAGS = -Wl,-rpath,/usr/local/lib -shared -Wl
+all: updatednsip
+
+clean:
+	rm -f *.o
+	rm -f updatednsip
+
+updatednsip: updatednsip.cpp bitstream.cpp blowfish.cpp coder.cpp md5.cpp generate.cpp base64.cpp
+	$(CXX) $(CXXFLAG) $(INCPATH) $(APP_LIBS) -o updatednsip updatednsip.cpp bitstream.cpp blowfish.cpp coder.cpp md5.cpp  generate.cpp base64.cpp
+	

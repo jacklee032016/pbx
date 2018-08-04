@@ -1,0 +1,1 @@
+#undef  CONFIG_ASSIST_PHONE_HW_DSP

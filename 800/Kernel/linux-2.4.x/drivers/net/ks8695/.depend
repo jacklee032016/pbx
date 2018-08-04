@@ -1,0 +1,108 @@
+ks8695_cache.o: ks8695_cache.c \
+   ks8695_drv.h \
+   ks8695_cache.h
+ks8695_cache.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   ks8695_drv.h
+	@touch ks8695_cache.h
+ks8695_chipdef.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   platform.h
+	@touch ks8695_chipdef.h
+ks8695_drv.h: \
+   ks8695_kcompat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   ks8695_chipdef.h \
+   ks8695_fxhw.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/malloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/capability.h
+	@touch ks8695_drv.h
+ks8695_fxhw.o: ks8695_fxhw.c \
+   ks8695_drv.h \
+   ks8695_chipdef.h \
+   ks8695_ioctrl.h \
+   ks8695_cache.h
+ks8695_fxhw.h: \
+   ks8695_drv.h
+	@touch ks8695_fxhw.h
+ks8695_ioctrl.h: \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/link/type.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/station/ex.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/switch/get.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/switch/set.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/switch/subid.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/on.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/port/vlan.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/priority.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/adv/link/selection.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/adv/ctrl.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/adv/mirroring.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/adv/threshold.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/adv/dscp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/internal/led.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/internal/misc.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/internal/spanningtree.h)
+	@touch ks8695_ioctrl.h
+ks8695_kcompat.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h
+	@touch ks8695_kcompat.h
+ks8695_main.o: ks8695_main.c \
+   ks8695_drv.h \
+   ks8695_ioctrl.h \
+   ks8695_cache.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mach/lite300.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/link/type.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/station/ex.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/switch/get.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/switch/set.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/switch/subid.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/on.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/port/vlan.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/priority.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/adv/link/selection.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/adv/ctrl.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/adv/mirroring.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/adv/threshold.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/adv/dscp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/internal/led.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/internal/misc.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sw/subid/internal/spanningtree.h)
+.PRECIOUS:	ks8695_cache.h \
+	ks8695_chipdef.h \
+	ks8695_drv.h \
+	ks8695_fxhw.h \
+	ks8695_ioctrl.h \
+	ks8695_kcompat.h \
+

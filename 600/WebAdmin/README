@@ -1,0 +1,99 @@
+$Id: README,v 1.1.1.1 2006/11/29 17:06:59 lizhijie Exp $
+
+                  Web  Administration for IPX422
+
+直接执行make完成编译
+直接执行make install将在Linux.bin.arm目录下生成可以上载IXP4XX的包
+
+注意：
+     共享库更新后，需要更新
+             releases/lib/libaslib.so文件
+             shared_lib/libs/include的对应文件
+             
+                  
+本程序主要有2部分组成：
+
+     1、 C程序部分：有多个功能模块
+              各模块均以源码形式发布，修改后需重新编译              
+     2、 Web网页部分：网管网页
+              C程序模块均有对应的网页，同时存放3套不同语言的网页以实现产品国际化
+              以网页形式发布的，存放在release/var/www/目录下
+     
+编译过程：
+     1、代码准备
+              CheckOut这个模块（WebAdmin）             
+     2、生成422动态代码：make ARCH=arm
+        生成422静态代码：make ARCH=arm LINK=static
+        生成pc动态代码：make 
+        生成pc静态代码：make LINK=static
+        生成busybox上运行的pc动态代码（用于pc测试机）：make ARCH= SH=bb
+        生成busybox上运行的pc静态代码（用于pc测试机）：make ARCH= SH=bb　LINK=static
+        生成国际化代码的翻译文件：　make res
+ 
+安装：
+     make install
+     会在网管顶层目录生成assist_web_xxx.tar，把它放到板上或测试机上执行
+     tar xvf assist_web_xxx.tar -C /
+     即可
+     
+运行： 
+     网页在/var/www
+     CGI代码在/var/www/cgi-bin
+     PBX后台程序：/usr/bin/cgipbx，在进行PBX页面设置时此程序应首先运行
+     cron定时服务程序：在iptables定时配置中 要先启用cron
+
+目录结构说明：
+
+     顶级目录（WebAdmin）
+           |---- include  : cgi_lib使用的头文件
+           |---- cgi_lib  ：cgi函数库相关代码
+           |---- cgisource ：已作废的无用代码库
+       
+           |---- services ：服务列表
+                    包含实现启动和关闭系统提供服务的相关代码 ，主要是启动和杀死服务进程      
+           |---- nat     
+                    包含实现NAT配置、防火墙配置和定时器配置功能的相关代码，主要是读写修改配
+                    置文件、读写防火墙规则、定时器规则和解析输出配置网页
+           |---- pppoe
+                    包含实现PPPOE各参数配置的相关代码，其主要是对配置文件的读写修改
+           |---- dhcp
+                    包含实现DHCP各参数配置的相关代码，其主要是对配置文件的读写修改
+           |---- ftp
+                    包含实现FTP参数配置的相关代码，其主要是对配置文件的读写修改
+           |---- misc ：系统配置和网络配置模块
+                    包含实现系统程序配置、用户管理、上传升级包、主机名配置、WAN配置、LAN配置
+                    和IP路由功能开否的相关代码；配置相关的模块就是读写修改配置文件，用户管理是
+                    管理用户信息
+           |---- route ：路由配置功能
+                    实现查看、添加、删除路由项的相关代码 
+                            
+           |---- pbx  
+                    包含实现PBX配置、分机配置、外线配置、账号配置、入中继配置、特服配置等功能
+                    的相关代码以及生成cgipbx的相关代码，cgipbx是PBX运行的后台程序，配置相关的
+                    模块就是读写修改配置文件
+       
+           |---- phone ：暂时未使用
+                    包含实现话机设置的相关代码，配置相关的模块就是读写修改配置文件
+           |---- sip  
+                    包含实现SIP协议各参数配置、拨号模式设置、快速拨号、本地拨号和用户拒接拒拨的号
+                    码管理功能的相关代码；主要是读写修改配置文件代码和管理功能代码
+       
+           |---- releases  ：WebAmin发布文件夹
+                              |----etc  ：保存一些配置文件
+                                                |----WEB ：保存服务配置和启动进程的文件
+                              |----lib                                   
+                              |----var  包含网页                     
+                                                |----www ：保存网页和网页格式文件
+                                                                  |----cgi-bin :保存CGI程序
+                                                                  |----pbx : pbx设置相对应网页
+                                                                  |----phone ：话机配置对应的网页
+                                                                  |----service ：服务配置对应的网页
+                                                                  |----sip : sip设置对应的网页
+                                                                  |----systemconfig ：系统对应的网页
+                                                                  |----locale ：国际化所需要的文件
+                                                                  |----wizard ：公用网页
+                                                                  |----ja  :一套日语webAdmin网页
+                                                                  |----zh_CN.GB2312 ：一套中文webadmin网页
+           |---- doc 
+                    包含VOIPS使用手册、系统测试用例和国际化文档
+

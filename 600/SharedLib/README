@@ -1,0 +1,37 @@
+#
+# $Author: lizhijie $
+# $Log: README,v $
+# Revision 1.1.1.1  2006/11/29 08:35:29  lizhijie
+# AS600 Shared Library
+#
+# Revision 1.1.1.1  2006/07/12 09:12:52  lizhijie
+# rebuild as600 shared library
+#
+# Revision 1.3  2005/08/30 08:34:53  wuaiwu
+# no message
+#
+# Revision 1.2  2005/07/15 08:30:05  wuaiwu
+# no message
+#
+# Revision 1.1.1.1  2005/05/27 08:43:37  lizhijie
+# add shared library and programs depend on it
+#
+# $Revision: 1.1.1.1 $
+# $Id: README,v 1.1.1.1 2006/11/29 08:35:29 lizhijie Exp $
+#
+		README	for shared_lib
+				Li Zhijie, 2005.05.27
+
+共享库及使用共享库的程序
+
+目录：
+lib
+	共享库及其头文件
+	
+programs
+	使用共享库的各个程序，当前为
+	uartd
+	selftest
+	recorder
+	lcdtest
+				

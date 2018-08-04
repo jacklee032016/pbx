@@ -1,0 +1,25 @@
+		---------README	for shared_lib/libs-----------
+				     wangwei, 2005.11.30
+				    
+
+
+/********************************************/
+---读写93LC66相关程序--- 
+相关程序：
+	src/m93lc66/as_93lc66.c
+	src/test/test_read_93lc66.c
+	src/test/test_write_93lc66.c
+编译条件：
+	WITH_93LC66=yes (默认条件)
+	WITH_93LC66=no
+
+--wangwei,2005.11.30
+/********************************************/
+2005.08.02	wuaiwu
+	测试程序的源码和目标文件路径已改变
+	代码路径：~libs/src/test
+	目标文件路径：~libs/bin/$(ARCH).test
+
+
+/pbx
+	包括看门狗和蜂鸣器的驱动程序，可生成测试程序 test_beep 进行测试

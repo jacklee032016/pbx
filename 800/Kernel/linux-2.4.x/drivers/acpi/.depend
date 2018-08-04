@@ -1,0 +1,246 @@
+ac.o: ac.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/compatmac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h
+acpi_ksyms.o: acpi_ksyms.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/acpi.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acpi/interpreter.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acpi/bus.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acpi/pci.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acpi/ec.h)
+asus_acpi.o: asus_acpi.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h
+battery.o: battery.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/compatmac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h
+blacklist.o: blacklist.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/acpi.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h
+bus.o: bus.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/x86.h) \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acinterp.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ldm.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acpi/debug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acpi/ec.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acpi/pci.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pm.h)
+button.o: button.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/compatmac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h
+ec.o: ec.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/compatmac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/actypes.h
+fan.o: fan.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/compatmac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h
+numa.o: numa.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/acpi.h
+osl.o: osl.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/nmi.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acpi/efi.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/efi.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acpi/pci.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ia64.h)
+pci_bind.o: pci_bind.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/acpi.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h
+pci_irq.o: pci_irq.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/acpi.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/x86/io/apic.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/iosapic.h) \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/x86.h)
+pci_link.o: pci_link.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h
+pci_root.o: pci_root.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/acpi.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h
+power.o: power.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/compatmac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h
+processor.o: processor.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pm.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/compatmac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smp.h)
+system.o: system.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysrq.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/compatmac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pm.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/x86.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acpi/sleep.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mc146818rtc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/irq.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pm.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/magic/sysrq.h)
+tables.o: tables.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/acpi.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bootmem.h
+thermal.o: thermal.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/compatmac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h
+toshiba_acpi.o: toshiba_acpi.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h
+utils.o: utils.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_drivers.h

@@ -1,0 +1,532 @@
+****************************************
+ChangLog for PBX 
+****************************************
+2007.09.11
+    解决IP呼入分机，然后分机使用拍叉转移到其他分机后，被转移分机不能挂机的问题
+
+2007.09.08
+    修改DSP引擎中，增益控制的实现机制：以整数形式实现，并去掉PBX中的G711和DTMF程序模块，
+    只使用共享库中相应的的模块
+    修改增益控制中，增益为1时的实现机制：即不使用增益控制
+    默认的增益配置为1，即不使用软件DSP机制
+    默认发布时外线修改为全部打开
+    优化PCM模块的调试输出信息
+    
+2007.09.03
+    增加IP侧的增益控制，默认增益为2倍，以解决IP呼叫时的音量过小的问题
+    
+2007.09.02
+    增加对PCM设备作为被叫时来电显示的支持
+
+
+2007.05.12
+    增加对外线接口是否插入外线的支持，使其能够准确地完成到PSTN外线的呼叫
+        修改ua.conf配置文件
+        修改UaConfiguration.xxx
+        修改AssistDevice.xxx
+    修改想STC发出号码时，对号码“0”的错误处理
+
+2007.05.06
+    增加对新版STC PBX的支持
+
+2006.2.20 tangr
+版本号	01.0.06-05
+	注册时间有较大改变时，修改原来的退出错误
+
+2005.12.30	tangr
+版本号	01.0.06-04
+	bugfix：
+	1.	多个接口的注册报文未能在每个接口上正确注册
+	2.	作被叫时，当主叫拨完号马上挂机，被叫持续振铃
+	3.	作被叫时，当某些主叫UA（如老版1.30的sjphone）在拨完号马上挂机，会向被叫送BYE报文，被叫缺少对BYE的判断会退出
+	文件列表：
+		ua/RegistrationManager.cxx
+		op/OpRingCancel.cxx
+		op/OpStopRinging.cxx
+		op/OpStopPbxRinging.cxx
+
+
+2005.12.29 chenke
+版本号	01.0.06-03
+pbx/ua/assist/AssistNullDevice.cxx:
+修改PSTN, 状态栏等等LCD 输出代码.
+pbx/ua/ua.cxx
+LCD 输出代码.
+
+
+2005.12.06 chenke
+版本号	01.0.06-02
+pbx/ua/assist/AssistNullDevice.cxx:
+   增加as_lcd_clear(),msleep().修改LCD输出处理；
+pbx/ua/ua.cxx: 
+   修改LCD输出处理；
+pbx/include/pbx_globals.h:
+   增加as_lcd_clear(),msleep()声明.
+
+
+2005.11.24	wuaiwu
+版本号		01.0.06-01
+规范化PBX中SIP协议
+修改的内容：
+
+SIP消息完整性：
+ 	在FROM中加入tag字
+ 	在VIA中加入branch字段
+
+SIP会话流程完整性：
+ 	在呼叫流程中增加405 Response
+ 	增加UNREGISTER，保证在PBX退出后服务器能正确响应对PBX用户的呼叫
+ 	CANCEL/BYE操作不存在的呼叫时，回送481
+ 	增加100 Trying响应
+ 	修改Register消息，使其在一次reset循环中Call-ID按设备唯一，CSeq递增
+
+其他
+ 	认证修改（PBX与VOCAL取的用户名不一致）
+
+
+2005.11.18 tangr
+版本号  01.0.06-00
+	在呼叫流程里装填sip报头时正确填入多宿主机的路由地址 
+	文件列表：
+		op/OpAnswerCall.cxx
+		op/OpAuthentication.cxx
+		op/OpBeingXferred.cxx
+		op/OpBlindXferHoldOk.cxx
+		op/OpBusyHere.cxx
+		op/OpConferencing.cxx
+		op/OpConfTargetOk.cxx
+		op/OpDeviceIdle.cxx
+		op/OpInCallInvite.cxx
+		op/OpInviteUrl.cxx
+		op/OpReinvite.cxx
+		op/OpRevert.cxx
+		op/OpSecondCall.cxx
+		op/OpStartCallWaiting.cxx
+		op/OpSwapCalls.cxx
+		op/OpTerminateCall.cxx
+		op/OpXferComplete.cxx
+		op/OpXferHold.cxx
+		op/OpXferTargetHoldOk.cxx
+		ua/RegistrationManager.cxx
+		ua/Uaconfiguration.cxx
+		ua/assist/AssistNullDevice.cxx
+
+2005.10.27	wuaiwu
+版本号  01.0.05-00
+
+修改assert的错误用法
+修改assert引起的相关呼叫流程错误
+修改内存泄漏	
+
+2005.10.20	tangr
+版本号 01.0.04-01
+	修改sip报文中的网络地址封装
+	通过rtcp增强断线的判断条件
+	临时屏蔽slic的外线错误
+	去掉部份编译警告
+	文件列表：
+		assist/assist_init.c
+		include/assist_version
+		releases/usr/etc/ua.cfg
+		ua/UaConfiguration.cxx
+		ua/UaDevice.cxx
+		ua/assist/AssistDevice.cxx
+		ua/assist/AssistDeviceInfo.cxx
+		ua/assist/AssistRtpTransVad.hxx
+
+2005.09.29	wuaiwu
+版本号  01.0.04-00
+修改 pbx日志功能
+	* cpLog.h增加宏cpDebug
+	* 修改所有.cxx文件，替换cpLog等级大于LOG_NOTICE的为cpDebug
+	* 修改pbx,voips/util,voips/sipstack,voips/rtp,voips/sdp 的Makefile.per文件
+
+2005.09.29	tangr
+版本号 01.0.03-02
+	修改当rtp未能完整建立就关闭语音时的出错
+	修改拨号规则里，在部份匹配成功的情况下，后继拨出错误号码却未能检测到的问题，例如快速拨号的＃1＃......
+	文件列表：
+		include/assist_version.h
+		ua/DigitCollector.cxx
+		ua/assist/AssistDevice.cxx
+
+2005.09.27	wuaiwu
+版本号 01.0.03-01
+
+修改	* AssistNullDevice.cxx
+		修改函数reportDeviceInfo中PSTN设备的ID显示
+		
+	* UaConfiguration.cxx
+		修改函数instance,当打开配置文件或打开pid文件失败时返回
+		
+	* Ua.cxx
+		修改函数main, 当UaConfiguration实例不存在时返回。
+		
+
+2005.09.08	wuaiwu
+版本号 01.0.03-00
+
+修改
+	* ResGwDevice.hxx 
+		修改reportDeviceInfo接口
+		
+	* AssistNullDevice.hxx/AssistNullDevice.cxx
+		修改reportDeviceInfo接口
+		修改reportDeviceInfo的实现
+		
+	* UaCallContainer.cxx/UaStateMachine.cxx
+		修改reportDeviceInfo的调用
+		
+	* RegistrationManager.hxx/RegistrationManager.cxx
+		对多线程共享代码加锁，函数flushRegistrationList和findRegistration
+		修改handleRegistrationResponse的返回值，支持LCD显示注册状态
+		
+	* UaBulid.cxx 
+		handleStatusMs中增加LCD显示注册状态代码
+		
+	* Ua.cxx
+		增加程序初始化时显示信息的代码
+	
+
+2005.08.29	tangr
+版本号 01.0.02-13
+	解决VAD开启时多路噪音问题。相关文件列表：
+		assist/dsp/assist_dsp_vad.c　代码转入c++，文件移到not_used/
+		include/assist_dsp_vad.h 同上
+		ua/assist/AssistRtpTransVad.cxx 1.2
+		ua/assist/AssistRtpTransVad.hxx 1.2
+		assist/Makefile 1.8
+		releases/sbin/pbx_setup 启动pbx之前创建log目录
+		include/assist_version　版本号改为01.0.02-13
+
+2005.08.25	lijie
+版本号 01.0.02.12
+修改
+	1．	include/pbx_globals.h 修改struct AS_SPAN 的定义
+	2．	ua/UaBuilder.cxx 修改processSipEvent的实现
+	
+更新	1.	ua/assist/AssistDevice.cxx 
+	2．	ua/assist/AssistNullDevice.cxx ua/assist/AssistNullDevice.hxx 新增接口的定义
+	3．	ua/ResGwDevice.cxx ua/ResGwDevice.hxx 新增接口的定义
+	4．	ua/UaCallContainer.hxx ua/UaCallContainer.cxx 呼叫产生和消亡时，记录有关信息
+	5．	ua/UaStateMachine.cxx 呼叫状态切换时，记录有关信息
+
+添加
+	1．	ua/assist/AssistInvalidDevice.hxx ua/assist/AssistInvalidDevice.cxx 与非法呼叫相关的虚拟设备定义
+	
+	*	在呼叫的产生和消亡，状态变迁时，记录有关信息
+
+	
+2005.08.24	lijie
+版本号 01.0.02.11
+修改
+	1．	State\pbx\StatePbxDialing.cxx OpStopPbxDialing 改为exit operator而不是entry operator.
+	2．	ua\DigitCollector.cxx Direct_Dial 时加入打入本机的判断
+	3．	ua\assist\AssistDevice.cxx 修改releaseRtpPort， getSendBackTone的实现
+	4．	ua\assist\AssistDeviceInfo.cxx 修改ProcessRtp 的实现
+	5．	ua\assist\AssistPbxDevice.cxx 修改ProcessPbxRtp的实现
+
+	*	二次收号时，提高播放提示音的语音质量
+	*	二次收号时，修正主叫端有时不能听到播放的提示音的错误
+
+
+2005.08.11	wuaiwu
+版本号 01.0.02.10
+修改
+	* DigitCollector.cxx, 
+	  OpInviteUrl.cxx 
+	  AssistNullDevice.cxx	
+	  AssistDeviceInfo.cxx	    消除PSTN与零配置拨号之间的冲突,统一PSTN拨号方式
+更新
+	* DigitCollector.cxx 增加零配置拨号功能
+	
+	
+2005.08.11	wuaiwu
+版本号 01.0.01.10
+修改
+	* AssistDevice.cxx, 初始化AssistDevice的指针
+	* DigitColletcor.hxx / DigitCollector.cxx 代码优化
+	* UaConfiguration.hxx / UaConfiguration.cxx 修改自身静态指针的初始化方式
+	
+
+2005.08.05 lijie
+版本号01.0.01.09
+
+修改
+	* SIP URL的用户名从以前的设备名改为话机号码
+更新
+	* SLIC/PCM设备拨打PSTN功能增加
+	 
+	
+2005.07.14 wuaiwu
+版本号 01.0.01.08 
+
+修改 
+	* 按定义顺序重新初始化UaConfiguration的所有成员变量。
+	* 修改OpReInviteAuthenticated, 使当PBX被认证时能正确处理
+
+更新
+	* 增加OpAuthentication和OpAuthorziation两个Op
+	* 在StateIdle中插入2个OP的处理（根据配置文件）
+	* 在UaConfiguration中加入认证开关和存储用户信息的容器
+	* 修改voips模块（见voips模块ChangeLog）
+
+
+2005.07.11 lijie
+版本号01.0.00.07
+1.Digital collector bug修改
+2.串口模块修改
+3.看门狗功能添加
+4.atexit接口添加
+5.通话异常处理
+6.自关闭功能添加
+
+
+2005.06.30 wuaiwu
+版本号 01.6.00-00
+* 修改REGISTER 流程BUG
+  /CVS/ixp_works/pbx/ua/Registeration.hxx & Registration.cxx
+  /CVS/ixp_works/pbx/ua/RegistrationManager.cxx
+  
+* 修改AUTHENTICATION BUG
+  /CVS/ixp_works/pbx/voips/sipstack/SipParameterList.cxx
+  
+* 支持REGISTER
+ /CVS/ixp_works/pbx/ua/RegistrationManager.cxx
+ /CVS/ixp_works/pbx/ua/UaConfiguration.hxx & UaConfiguration.cxx
+
+Revision 1.13  2005/06/29 06:21:06  lijie
+
+/CVS/ixp_works/pbx/assist/assist_utils.c,v  <--  assist_utils.c
+new revision: 1.3; previous revision: 1.2
+
+/CVS/ixp_works/pbx/assist/assist_init.c,v  <--  assist_init.c
+new revision: 1.5; previous revision: 1.4
+
+/CVS/ixp_works/pbx/assist/pcm/assist_pcm_state.c,v  <--  assist_pcm_state.c
+new revision: 1.7; previous revision: 1.6
+
+/CVS/ixp_works/pbx/include/assist_version.h,v  <--  assist_version.h
+new revision: 1.5; previous revision: 1.6
+
+/CVS/ixp_works/pbx/ua/ua.cxx,v  <--  ua.cxx
+new revision: 1.4; previous revision: 1.3
+
+/CVS/ixp_works/pbx/docs/test_case_pbx_call.doc,v  <--  test_case_pbx_call.doc
+new revision: 1.3; previous revision: 1.2
+/CVS/ixp_works/pbx/releases/usr/etc/ua.cfg,v  <--  ua.cfg
+new revision: 1.5; previous revision: 1.4
+
+/CVS/ixp_works/pbx/releases/lib/libstdc++.so.5,v  <--  libstdc++.so.5
+initial revision: 1.1
+
+/CVS/ixp_works/pbx/Makefile,v  <--  Makefile
+new revision: 1.9; previous revision: 1.6
+
+/CVS/ixp_works/pbx/releases/usr/etc/ua.cfg,v  <--  ua.cfg
+new revision: 1.8; previous revision: 1.6
+
+/CVS/ixp_works/pbx/releases/sbin/pbx_setup,v  <--  pbx_setup
+initial revision: 1.2
+
+Revision 1.12  2005/06/21 01:31:06  lijie
+Makefile.pre,v  <--  Makefile.pre
+new revision: 1.4; previous revision: 1.3
+assist/pcm/assist_pcm_state.c 共享库接口改变
+new revision: 1.5; previous revision: 1.4
+include/assist_globals.h 有关数据结构定义移动到共享库中
+new revision: 1.3; previous revision: 1.2
+include/assist_version.h 版本号修改
+new revision: 1.5; previous revision: 1.4
+ua/Makefile,v  <--  Makefile
+new revision: 1.4; previous revision: 1.3
+
+Revision 1.11  2005/06/09 05:24:17  tangr
+版本号：01.0.00-03
+/CVS/ixp_works/pbx/Makefile.pre,v  <--  Makefile.pre 支持库的头文件指向voips/include
+new revision: 1.3; previous revision: 1.2
+/CVS/ixp_works/pbx/include/assist_version.h,v  <--  assist_version.h
+new revision: 1.4; previous revision: 1.3
+
+Revision 1.10  2005/06/07 03:10:40  wuaiwu
+加入CDR功能，具体如下：
+1. CDR server在目录pbx/assist/cdr下
+2. CDR client在PBX代码中为simulateDB.cxx和RecordThread.cxx
+   文件在pbx/ua/assist/下
+3. 在以下OP中获取CDR数据,通过simulateDB的接口发送给server
+   OpStartAudioDuplex
+   OpEndCall
+   OpTerminateCall
+   OpRing
+   OpRingCancel
+
+Revision 1.9  2005/06/03 10:13:11  lijie
+完成功能:
+1.二次收号功能完善
+2.设备加入多线程保护
+3.呼叫等待相关代码修改
+4.UA其它bug修改
+
+Revision 1.8  2005/05/17 01:57:10  tangr
+
+版本号：01.0.00-01
+/CVS/ixp_works/pbx/Makefile,v  <--  Makefile 增加make install
+new revision: 1.2; previous revision: 1.1
+/CVS/ixp_works/pbx/README,v  <--  README 修改编译说明
+new revision: 1.4; previous revision: 1.3
+/CVS/ixp_works/pbx/op/OpStopRinging.cxx,v  <--  OpStopRinging.cxx　修改释放端口的逻辑
+new revision: 1.3; previous revision: 1.2
+/CVS/ixp_works/pbx/releases/usr/etc/ua.cfg,v  <--  ua.cfg　增加jitterbuffer配置项
+new revision: 1.3; previous revision: 1.2
+/CVS/ixp_works/pbx/ua/UaConfiguration.cxx,v  <--  UaConfiguration.cxx　处理jitterbuffer配置
+new revision: 1.5; previous revision: 1.4
+/CVS/ixp_works/pbx/ua/UaConfiguration.hxx,v  <--  UaConfiguration.hxx
+new revision: 1.5; previous revision: 1.4
+/CVS/ixp_works/pbx/ua/assist/AssistDevice.cxx,v  <--  AssistDevice.cxx　增加加入jitterbuffer的逻辑
+new revision: 1.4; previous revision: 1.3
+/CVS/ixp_works/pbx/ua/assist/AssistDevice.hxx,v  <--  AssistDevice.hxx
+new revision: 1.4; previous revision: 1.3
+
+Revision 1.7  2005/04/29 09:03:02  tangr
+版本01.0.00-00
+
+增加版本信息
+ -assist/assist_utils.c 1.3          			版本处理
+ -include/assist_version.h　1.1　   		版本号宏
+ -ua/ua.cxx      1.3            				增加版本信息，配置放回/releases/usr/etc
+- README     1.3            				模块说明
+
+VAD特性
+C++与模块的接口代码
+ -ua/assist/AssistRtpTransVad.cxx   1.1 	VAD处理类
+ -ua/assist/AssistRtpTransVad.hxx   1.1
+ -ua/assist/AssistRtpTransmitter.cxx  1.1 	发送基类，直接转原有发送过程
+ -ua/assist/AssistRtpTransmitter.hxx　1.1
+ -ua/UaConfiguration.cxx       1.4    		增加解析VAD配置，获取/设置VAD开关
+ -ua/UaConfiguration.hxx　　1.4　　　　
+ -ua/assist/AssistDevice.cxx      1.3   		增加VAD处理的切入点
+ -ua/assist/AssistDevice.hxx　  1.3　　
+ -ua/assist/AssistDeviceInfo.cxx     1.3  	修改发送语音过程
+
+C代码，VAD功能的具体实现
+ -assist/dsp/assist_dsp_vad.c     1.1	 	静音检测代码
+ -include/assist_dsp_vad.h           1.1
+
+配置文件
+-releases/usr/etc/ua.cfg　　　　1.2　　　	增加VAD配置项
+
+编译文件
+-assist/Makefile				1.2		新增源文件
+-ua/Makefile				1.2		新增源文件
+
+ChangeLog文件
+-ChangeLog
+
+VAD设计文档
+-docs/VAD设计文档.doc
+
+pbx测试用例
+-docs/test_case_pbx_call.doc
+
+Revision 1.6  2005/04/22 06:25:48  lijie
+解决了以下问题
+* 单个呼叫，对端忙，无忙音
+* 单个呼叫，对端久叫未接，无忙音
+* 单个呼叫，对方拒绝接听，本地仍然回铃
+* 单个呼叫，本端挂机，对端仍然振铃
+* 一路在呼叫中，另一路拨打呼叫中的任一方，没有忙音仍然回铃
+* 一路在通话中，另一路扭打通话中的任一方，死机
+* 多路通话，挂机后死机
+
+作了以下修改：
+
+1) assist_pcm_state.c pcm_Thread(void *p)函数中while循环中添加睡眠1ms的语句
+2）assist_slic_state.c 新增加slic_init(), as_device_query_status(), as_device_get_status()函数
+3）assist_init.c slic_ops，pcm_ops中添加ops
+4) DeviceEvent.hxx 添加DeviceEventIdle, DeviceEventBusy的定义
+5）pbx_globals.h as_operations_t中添加几个函数指针以查询和获得硬件状态，
+6）op目录下的Makefile 添加OpQueryStatus, OpDeviceIdle, OpDeviceBusy, OpTimeOver的编译内容
+7）OpAnsweCall.cxx callWatingId的获得需要deviceId, removeCallWaitingId也需要deviceId, 加入判断当前话机能否被接通的逻辑
+8）OpConvertCw.cxx  callWatingId 的获得需要deviceId
+9) OpCwRing 获得和删除callWaitingId 需要deviceId, 设置callId需要 deviceId, DeviceSignalRingStart需要修改为DeviceSignalQueryStatus
+10) OpDeviceBusy.hxx OpDeviceBusy.cxx 为处理设备无法接通事件的操作
+11）OpEndCall.cxx callWaitingId与deviceId相关
+12）OpHoldTargetOk.cxx callWaitingId与deviceId相关
+13）OpOnHook callWaitingId与deviceId相关
+14）OpQueryStatus.hxx OpQueryStatus.cxx 为查询设备是否能够接通的操作
+15）OpReDirect.cxx 在StatusMsg不为重定向状态码时，更新contact信息
+16）OpReRing.cxx callWaitingId与DeviceId相关
+17）OpRing.cxx 去除发送180/183报文的部分
+18）OpRingCancel.cxx 增加从calllist或者callWaitinglist删除callid的操作，添加停止振铃或者呼叫等待音的操作
+19)OpRingInvite.cxx 用发100消息替换180消息
+20）OpSecondCall.cxx callWaitingList 与deviceId相关
+21）OpStartCallWaiting.cxx callWaitingList 与deviceId相关
+22）OpStartRingbackTone.cxx 去掉关闭计时器的语句
+23）OpStopRingbackTone.cxx 加入判断当前设备是否被接通的逻辑
+24）OpStopRinging.cxx callWaitingList与deviceId相关，加入判断当前设备是否被接通的逻辑
+25）OpSwapCalls.cxx  callWaitinglist与deviceId相关
+26）OpTerminateCall.cxx  callWaitinglist与deviceId相关
+27）OpTerminateTrying.cxx 加入计时器事件的处理
+28）OpTimeOut.cxx 取消判断对方是否振铃的逻辑
+29)  OpTimeOver.cxx OpTimeOver.hxx 被叫久叫不接时的操作
+30）StateRinging.cxx 去掉OpStartRinging，增加OpStartTimer,OpQueryStatus, OpDeviceIdle,OpDeviceBusy, OpTimeOver, OpCancelTimer
+31）ResGwDevice.cxx ResGwDevice.hxx 去掉有关callWaitinglist的操作
+32）UaBuilder.cxx 添加总机被叫时，总机太忙时，呼叫进入StateBusyHere的逻辑
+33）UaCallContainer.cxx UaCallInfoKey类的>,<操作符重载错误
+34）UaCallInfo.cxx UaCallInfo.hxx 定义设置和获得设备是否能被接通的函数
+35）UaDevice.cxx 如果设备为slic时，需要对slic作些初始化工作
+36）UaDeviceEvent.hxx 添加查询设备状态的枚举
+37）AssistDevice.cxx AssistDevice.hxx 添加callwaitinglist的操作
+38）AssistDeviceInfo.cxx AssistDeviceInfo.hxx 添加query status 的操作
+39) AssistNullDevice.cxx ,AssitNullDevice.hxx添加query Status，report device状态的操作
+40）AssistPbxDevice.cxx AssistPbxDevice.hxx 添加query status的操作
+
+Revision 1.5  2005/04/18 10:13:29  wuaiwu
+no message
+
+Revision 1.4  2005/04/18 09:55:27  wuaiwu
+
+	* 新增回拨功能
+	* 新增和单键快拨功能
+
+Revision 1.3  2005/04/15 07:11:06  jaym
+*** empty log message ***
+
+Revision 1.2  2005/04/11 02:17:59  tangr
+ChangeLog文件格式更新
+2005.4.15        SIP的动态配置          Tangbiao
+         *实现动态加载本地拨号
+         *实现动态加载快速拨号
+         *实现动态加载拨号规则
+         *实现动态更改摘机超时时间
+         *实现动态更改按键间隔时间 
+         *实现动态更改日志文件路径
+         *实现动态更改日志记录等级
+
+2005.03.08
+	调试完成A律的二次收号
+	修改注册中contact字段的错误
+	增加对总机号码的注册
+	增加对符合规则号码，但是又不存在号码的判断，并提示忙音
+	建立A律和U律的忙音、回铃音、拨号音文件，并根据配置的PCM律使用不同格式的文件
+	
+2005.03.03
+	增加SLIC驱动中对A律的支持（slic/driver/fxsx/as_fxs_proslic.c）：只是作为测试功能使用	
+
+2005.02.24
+	增加对RTP来的语音形式DTMF信号的二次收号（U律）
+	删除配置文件、UaConfiguration和其他文件中对LoadGen的支持，将CJTime移入not_used目录
+	重写软件DSP的框架
+
+2005.02.23
+	支持全局唯一的收号定时器线程
+	支持通道增益的设置
+	支持编码方式的配置数据（通道编码和RTP编码的配合需要进一步调试）
+	配置文件中增加PBX二次收号方式的设定
+	配置文件中增加最近呼入的URL数目的设定
+	
+2005.02.22
+	将多余文件移入not_used目录，并且修改相应的源码和Makefile文件
+	去掉命令行的支持
+	去掉LoadGen相关的应用
+	将调试开关从命令行中转移到配置文件

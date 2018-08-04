@@ -1,0 +1,434 @@
+/*$Id: assist_pcm_state.c_back,v 1.1.1.1 2006/11/29 09:50:50 lizhijie Exp $*/
+#include <stdio.h>
+#include <sys/ioctl.h>
+#include <unistd.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <sys/sem.h>
+#include <pthread.h>
+#include <sys/msg.h>
+
+#include "assist_globals.h"
+
+static pthread_mutex_t mutStatus = PTHREAD_MUTEX_INITIALIZER;
+static pthread_mutex_t mutPcm = PTHREAD_MUTEX_INITIALIZER;
+
+static CHANNEL_INFO bufChanInfo[AS_DEVICE_MAX];
+static int rcvMsg;
+static int sndMsg;
+
+
+static void pcm_init()
+{
+	int i;
+	key_t	key;
+
+	key = ftok(EMSG_FILE, 'a' );
+	if(key == -1)
+	{
+		as_error_msg("get key error on file of , '%s'!\r\n" ,EMSG_FILE ,strerror(errno) );
+		exit(1);
+	}	
+
+	rcvMsg = msgget(key, 0777|IPC_CREAT);	
+	if(rcvMsg == -1)
+	{
+		as_error_msg("create rcvmsg error, because of '%s'!\r\n" , strerror(errno) );
+		exit(1);
+	}
+	
+	key = ftok(RMSG_FILE, 'a');
+	if(key == -1)
+	{
+		as_error_msg("get key error on file of , '%s'!\r\n" ,RMSG_FILE ,strerror(errno) );
+		exit(1);
+	}
+
+	sndMsg = msgget(key, 0777|IPC_CREAT);	
+	if(sndMsg == -1)
+	{
+		as_error_msg("create sndmsg error, because of '%s'!\r\n" , strerror(errno) );
+		exit(1);
+	}
+
+	as_error_msg("sndMsg is %d rcvMsg is %d\r\n", sndMsg, rcvMsg);
+	
+	memset(bufChanInfo, 0x00, sizeof(bufChanInfo));
+	for(i=0; i<AS_DEVICE_MAX; i++)
+	{
+		bufChanInfo[i].state = AS_DEVICE_STATE_INVALIDATE;
+		bufChanInfo[i].channel = 0XFF;
+	}
+	
+}
+
+
+static int send_pbx_cmd_2(char cmd, int devId, char *buf )
+{
+	int res;	
+	char chanel;
+	int try_send = 0;
+	msg_type   msg;	
+	as_span_t *span;
+	
+	msg.mtype = SIP_MSGTYPE;
+	msg.pbx_cmd.cmd_id = 0;
+	msg.pbx_cmd.cmd_op = cmd;
+
+	
+	span = as_get_MasterSpan();
+	pthread_mutex_lock(&mutPcm);
+	chanel = bufChanInfo[span->devs[devId]->phyId].channel;
+	pthread_mutex_unlock(&mutPcm);
+
+	memset(msg.pbx_cmd.cmd_value, 0XFF, CMD_VALUE_MAX);
+	msg.pbx_cmd.cmd_value[0] = devId;
+
+	printf("now the send channel is %d\r\n", devId );
+	
+	if(buf)
+		strcpy(msg.pbx_cmd.cmd_value+1, buf);
+	do
+	{
+		res = msgsnd(sndMsg, &msg, sizeof(msg_type)-sizeof(long),  IPC_NOWAIT);	
+		try_send++;
+	}while(res==-1 && try_send<3);
+
+	if(res <0 )	
+	{	
+		printf("snd msg to pbx error, error is '%s'\r\n" ,strerror(errno));	
+		return -1;		
+	}	
+	
+	return 1;
+	
+}
+
+
+static int send_pbx_cmd(char cmd, int devId, char *buf )
+{
+	int res;	
+	char chanel;
+	int try_send = 0;
+	msg_type   msg;	
+	as_span_t *span;
+	
+	msg.mtype = SIP_MSGTYPE;
+	msg.pbx_cmd.cmd_id = 0;
+	msg.pbx_cmd.cmd_op = cmd;
+
+	
+	span = as_get_MasterSpan();
+	pthread_mutex_lock(&mutPcm);
+	chanel = bufChanInfo[span->devs[devId]->phyId].channel;
+	pthread_mutex_unlock(&mutPcm);
+
+	memset(msg.pbx_cmd.cmd_value, 0XFF, CMD_VALUE_MAX);
+	msg.pbx_cmd.cmd_value[0] = chanel;
+
+	printf("send channel is '%d'\r\n", chanel);
+	
+	if(buf)
+		strcpy(msg.pbx_cmd.cmd_value+1, buf);
+	do
+	{
+		res = msgsnd(sndMsg, &msg,sizeof(msg_type)-sizeof(long),  IPC_NOWAIT);	
+		try_send++;
+	}while(res==-1 && try_send<3);
+
+	if(res <0 )	
+	{	
+		printf("snd msg to pbx error, error is '%s'\r\n" ,strerror(errno));	
+		return -1;		
+	}	
+	
+	return 1;
+	
+}
+
+void *pcm_Thread(void *P)
+{
+	int i, j;
+	char code;
+	ssize_t ret;
+	SIP_MSG_SIG msg;
+		
+	pcm_init();
+
+	while(1)
+	{
+		ret = msgrcv(rcvMsg, &msg, sizeof(msg), 0, IPC_NOWAIT);
+
+		if(ret>0)
+		{
+			assert(msg.channelId < AS_DEVICE_MAX);
+			
+			switch(msg.msgtype)
+			{
+				case OFFHOOK_MSG:
+					as_error_msg("PBX CALLER : the %dth phone off hook on device %d\r\n", msg.phoneId, msg.channelId );
+					assert(msg.phoneId < AS_DEVICE_MAX);
+
+					pthread_mutex_lock(&mutPcm);
+					bufChanInfo[msg.phoneId].channel = msg.channelId;
+					bufChanInfo[msg.phoneId].state = AS_DEVICE_STATE_OFFHOOK;
+					pthread_mutex_unlock(&mutPcm);
+					/*unlock status mutex directly when as a caller offhook the phone*/
+//					pthread_mutex_unlock(&mutStatus);
+					break;
+					
+				case CALLEE_OFFHOOK_MSG:
+					/* no pcm_channel eg. phone is needed when CALLEE_OFFHOOK */
+					as_error_msg("PBX CALLEE : the %dth phone off hook on device %d\r\n", msg.phoneId, msg.channelId );
+					assert(msg.phoneId < AS_DEVICE_MAX);
+
+					pthread_mutex_lock(&mutPcm);
+					bufChanInfo[msg.phoneId].channel = msg.channelId;
+					bufChanInfo[msg.phoneId].state = AS_DEVICE_STATE_OFFHOOK;
+					pthread_mutex_unlock(&mutPcm);
+					/*lock the status mutex, so only when recved can construct msg, the device's status can be accessed*/
+//					pthread_mutex_lock(&mutStatus);
+					break;
+
+				case ONHOOK_MSG:
+				case PRI_ONHOOK_MSG:
+					as_error_msg("PBX CALLE/CALLEE : the %dth phone on-hook on device %d\r\n", msg.phoneId, msg.channelId );
+//					pthread_mutex_unlock(&mutStatus);
+					pthread_mutex_lock(&mutPcm);
+					for(i=0; i<AS_DEVICE_MAX; i++)
+					{
+						/*found the correct channel*/
+						if(bufChanInfo[i].channel == msg.channelId)
+						{
+							printf("the %dth phone on hook\r\n", i);
+							bufChanInfo[i].channel = 0XFF;
+							bufChanInfo[i].state = AS_DEVICE_STATE_ONHOOK;
+							break;
+						}
+					}
+					pthread_mutex_unlock(&mutPcm);
+					break;
+
+				case DIAL_DIG_MSG:
+					printf("dial dig msg ok\r\n");
+					i = 0;
+					while(msg.dial_digital[i] != 0xFF)
+					{
+						code = msg.dial_digital[i];			
+						if(code<10)
+							msg.dial_digital[i] = msg.dial_digital[i]+'0';
+						else if(code == 11)
+							msg.dial_digital[i] = '*';
+						else	if(code == 12)
+							msg.dial_digital[i] ='#';
+						else
+							assert(0);
+						i++;
+					}	
+					pthread_mutex_lock(&mutPcm);
+					for(j=0; j<AS_DEVICE_MAX; j++)
+					{
+						/*found the correct channel*/
+						if(bufChanInfo[j].channel == msg.channelId)
+						{
+							printf("the code will be add is %c\r\r\n", msg.dial_digital[0]);
+							memcpy(bufChanInfo[j].telCode.buf+bufChanInfo[j].telCode.iLen, msg.dial_digital, i);
+							bufChanInfo[j].telCode.iLen += i;
+							break;
+						}
+					}
+					pthread_mutex_unlock(&mutPcm); 
+					break;	
+
+				case ALLOC_MSG:
+					printf("alloc channel ok\r\n");
+					break;
+
+				case NO_CHAN_MSG:
+					printf("no valid chan\r\n");
+					break;
+
+				case CAN_CONSTRUCT_MSG:
+					printf("can construct channel\r\n");
+					/*only when phone as callee send a can counstruct msg ,the status mutex is unlocked*/
+//					pthread_mutex_unlock(&mutStatus);
+					break;
+
+				case CALLEE_SENDCHANNEL_MSG:
+					printf("callee send channel msg\r\n");
+					pthread_mutex_lock(&mutPcm);
+					bufChanInfo[msg.pcm_channel].state = AS_DEVICE_STATE_ONHOOK;
+					pthread_mutex_unlock(&mutPcm);
+					break;
+				case CALLEE_BUSY_MSG:
+					printf("callee busy msg\r\n");
+					pthread_mutex_lock(&mutPcm);
+					for(i=0; i<AS_DEVICE_MAX; i++)
+					{
+						if(bufChanInfo[i].channel == msg.channelId)
+						{
+							/*set state busy to tell the caller terminal, the phone is in busy state*/
+							bufChanInfo[i].state = AS_DEVICE_STATE_BUSY;
+							break;
+						}
+					}	
+					pthread_mutex_unlock(&mutPcm);
+					break;
+				default:
+					as_error_msg("rcv msg Without corresponding handler\r\n");
+			
+			}
+		}
+	}
+}
+
+
+/* device must be in ON_HOOK for ring */
+int pcm_ring_start( int  phyId, const char *devicename )
+{
+	return pcm_start_ring(phyId);
+}
+
+/* device must be in ON_HOOK for ring */
+int pcm_ring_stop( int  phyId, const char *devicename )
+{
+	return pcm_open_channel(phyId);
+}
+
+int pcm_dev_ring_start(as_device_t *dev)
+{
+//	int iRet;
+	as_state_t state;
+	
+	printf("pcm dev ring start\r\n");
+	state = pcm_device_check_status(dev);
+
+	if(state != AS_DEVICE_STATE_OFFHOOK)		
+		return pcm_ring_start(dev->phyId, dev->name);
+	return -1;
+}
+
+int pcm_dev_ring_stop(as_device_t *dev)
+{
+	printf("pcm dev ring stop\r\n");
+	return pcm_ring_stop(dev->phyId, dev->name);
+}
+
+
+/* this function is only used when no ringing, for example, when our program is startup */
+as_state_t  pcm_device_check_state_on_startup(int devId, const char *name)
+{
+	return AS_DEVICE_STATE_INVALIDATE;
+}
+
+
+as_state_t pcm_device_check_status(as_device_t *dev )
+{
+	as_state_t state;
+
+	//printf("will check pcm device statius\n");
+#if 0	
+	if(pthread_mutex_trylock(&mutStatus) == EBUSY)
+		return dev->state;
+	else
+#endif	
+	{
+		pthread_mutex_lock(&mutPcm);
+		state = bufChanInfo[dev->phyId].state;
+		pthread_mutex_unlock(&mutPcm);
+//		pthread_mutex_unlock(&mutStatus);
+		return state;
+	}	
+}
+
+unsigned char  pcm_dtmf_get_digit(as_device_t *dev)
+{
+	unsigned char code;
+
+	code = 0xFF;
+	//printf("will get digit from pcm devices\n");
+	
+	pthread_mutex_lock(&mutPcm);
+	//printf("dev phy id is %d\n", dev->phyId);
+	if(bufChanInfo[dev->phyId].telCode.iLen)
+	{
+		code = bufChanInfo[dev->phyId].telCode.buf[0];
+		bufChanInfo[dev->phyId].telCode.iLen--;
+	}
+	pthread_mutex_unlock(&mutPcm);	
+	return code;
+}
+
+int pcm_query_channel(int devId)
+{
+	printf("pcm query channel\r\n");
+	return(send_pbx_cmd(QUERY_CHANNEL_CMD, devId, NULL));
+}
+
+int pcm_start_tone(int devId)
+{
+	printf("pcm start tone\r\n");
+	return(send_pbx_cmd(START_TONE_CMD, devId, NULL));
+}
+
+int pcm_dial_code(int devId, char code)
+{
+	char buf[3];
+	buf[0] = code;
+	buf[1] = 0xFF;
+	buf[2] = 0;
+	printf("pcm dial code\r\n");
+	return(send_pbx_cmd(DIAL_CODE_CMD, devId, buf));
+}
+
+int pcm_start_ring(int devId)
+{
+	printf("pcm start ring\r\n");
+	return(send_pbx_cmd_2(START_RING_CMD, devId, NULL));
+}
+
+int pcm_dial_valid(int devId)
+{
+	printf("pcm dial valid\r\n");
+	return(send_pbx_cmd(DIAL_VALID_CMD, devId, NULL));
+}
+
+int pcm_dial_invalid(int devId)
+{
+	printf("pcm dial invalid\r\n");
+	return(send_pbx_cmd(DIAL_VALID_CMD, devId, NULL));	
+}
+
+int pcm_ip_busy(int devId)
+{
+	printf("pcm ip busy(0X13): Note PBX busy here(Phone number is not exist ot others)\r\n");
+	return(send_pbx_cmd(IP_BUSY_CMD, devId, NULL));
+}
+
+int pcm_ip_idle(int devId)
+{
+	printf("pcm ip idle(0X14), used to note PBX begin to ringback\r\n");
+	return(send_pbx_cmd(IP_IDLE_CMD, devId, NULL));
+}
+
+
+int pcm_open_channel(int devId)
+{
+	printf("pcm open channel\r\n");
+	return(send_pbx_cmd(OPEN_CHANEL_CMD, devId, NULL));
+}
+
+int pcm_ip_transfer(int devId)
+{
+	printf("pcm ip transfer\r\n");
+	return(send_pbx_cmd(IP_TRANSFER_CMD, devId, NULL));
+}
+
+int pcm_ip_onhook(int devId)
+{
+	printf("pcm ip onhook\r\n");
+	return(send_pbx_cmd(IP_ONHOOK_CMD, devId, NULL));
+}
+

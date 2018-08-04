@@ -1,0 +1,61 @@
+# $Id: readme,v 1.1.1.1 2006/11/30 16:22:45 lizhijie Exp $
+# $Author: lizhijie $
+#
+
+		README for PSTN APIs
+		      Mar,2006  John,Lee    Assist Corp.   
+
+Version Info:
+     00.8.00.00
+     The version info is in the format of 'Major.Minor.Release.Modification'
+     Current version information, refer to include/as_version.h
+
+
+Directories List
+root
+   |--lib
+   |     |--device    APIs for FXS/FXO firmware
+   |     |--dsp       APIs for Assist Corp. DSP Software 
+   |     |--utils     APIs for our APIs and test program
+   |
+   |--include         Header files which can be refered by client program
+   |
+   |--unit_test
+   |     |--device    APIs test programs for FXS/FXO device
+   |        |--car    FXO/FXS CAR test program
+   |        |--fxo    FXO line status detect
+   |     |--dsp       APIs test programs for Assist Corp. DSP software
+   |        |--busy   BT(Bust Tone) Detect program() 
+   |        |--dp     FXO DP10/20 test program
+   |        |--fsk    FSK Modulator and Demodulator
+   |        |--ntt    FSK Modulator and Demodulator
+   |        |--progress   BT(Bust Tone) Detect
+   |         
+   |--binary
+         |--driver    Firmware
+         |--library   Binary library
+         |--test      Binary Test programs              
+
+Build Environment
+     This package has been compile and execute in the cross-compile development
+     environments of IXP4xx.
+     
+     It has been test in the hardware platform and firmware producted by Assist 
+     Corp. So it is dependent on the version of hardware and formware. 
+     
+     It is releaseed with the firmware in binary format.
+     
+     In order to build the package, just input 'make' in the root of this package.
+     After that, a shares library 'libpstn.so' is created in directory of 
+     'Linux.bin.arm' .
+     All test programs are also created in this directory.
+     
+     How about the test, please refer to the 'readme' file in 'test' sub-directory.
+
+
+Support
+     Please contact : lizhijie@assistcn.com 
+                      sky_chen@assistcn.com
+     Phone number   : 86-28-66054104
+     Mobile         : 86-28-13350061100
+		      

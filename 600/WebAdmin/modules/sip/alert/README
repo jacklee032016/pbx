@@ -1,0 +1,18 @@
+# $Id: README,v 1.1 2007/03/27 11:22:51 lizhijie Exp $
+          README for Alert Voice Record
+                     Li Zhijie, 2007.03.27
+
+录音步骤
+    摘机检查
+        CGI的事件：
+            用户的Begin事件
+            网页的超时事件
+                检查是否摘机
+            用户的退出事件
+                向录音程序发出Timeout消息
+        录音程序的事件
+            串口的摘机事件
+            摘机的超时事件
+        
+        
+        

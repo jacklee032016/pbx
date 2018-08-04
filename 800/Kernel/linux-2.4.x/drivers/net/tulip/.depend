@@ -1,0 +1,60 @@
+21142.o: 21142.c \
+   tulip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h
+eeprom.o: eeprom.c \
+   tulip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h
+interrupt.o: interrupt.c \
+   tulip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net/hw/flowcontrol.h)
+media.o: media.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mii.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   tulip.h
+pnic2.o: pnic2.c \
+   tulip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h
+pnic.o: pnic.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   tulip.h
+timer.o: timer.c \
+   tulip.h
+tulip_core.o: tulip_core.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   tulip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mii.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ethtool.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net/hw/flowcontrol.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tulip/mwi.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ddb5476.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ddb5477.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mips/cobalt.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pm.h)
+tulip.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tulip/mmio.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net/hw/flowcontrol.h)
+	@touch tulip.h
+.PRECIOUS:	tulip.h \
+

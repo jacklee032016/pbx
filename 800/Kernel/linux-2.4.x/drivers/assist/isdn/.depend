@@ -1,0 +1,8 @@
+asISDN.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h
+	@touch asISDN.h
+.PRECIOUS:	asISDN.h \
+

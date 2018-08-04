@@ -1,0 +1,66 @@
+# 
+# $Log: README,v $
+# Revision 1.1.1.1  2006/11/30 16:22:45  lizhijie
+# AS800 PstnAPI
+#
+# Revision 1.1  2006/03/17 07:56:25  lizhijie
+# no message
+#
+# $Author: lizhijie $
+#
+		README for Busy Detect
+		        Assist Corp.  Li Zhijie,2006.03.16
+
+算法说明
+    基本原理是检测静音和tone音（noise）切换的次数和频率
+    
+    1. 检测的步骤：
+        分成两个步骤，以加速忙音的检查
+        
+    1.1. 预检测：判断可能发生忙音，以提高效率
+        1.1.1. 首先检测一个周期的数据的能量等级，确定是静音还是tone音
+        
+        1.1.2. 如果当前检测的静音/tone音结果与上一次不一样，则认为发生了一次切换，记录下前一个周期的时间长度
+            如果是从静音切换到tone音，则比较前两次静音时间是否相似，如果相似，则认为有可能是忙音（因为
+            用户通话过程中，经常会发生静音，即不说话的情况）
+            
+            如果是从tone音切换到静音，则认为可能是忙音（是否也可以检查前两次的tone音时间，以减少执行第
+            二步骤的概率）
+            
+   1.2. 实际检查：只要在前一步骤中，已经认为可能发生忙音时，才执行此步骤
+        1.2.1. 计算静音和tone音的平均时间
+            总时间除以切换次数
+        1.2.2. 逐个比较静音和tone音时间与平均时间的区别，分布统计实际静音和忙音的发生次数
+            如果该时间与平均时间的差别在10%（参数可设置）以内，则认为该音确实发生了一次
+        1.2.3. 决策，判断静音是否实际发生
+            三个条件：
+                平均静音和tone音时间在设置的最大（1100ms）、最小范围（75ms）内
+                静音发生次数大于需要的门限并且Tone音发生次数大于需要的门限
+                平均静音时间和平均tone音时间的差别小于10%
+            满足三个条件，则认为发生忙音事件
+
+
+   2. 参数设置
+        可以设置的参数有：
+            检测忙音发生的周期，也就是每个步骤处理的数据长度
+            区别静音和tone音信号功率的门限
+            静音和tone时间的最大和最小时间门限
+            静音和tone音发生次数的门限
+   
+   3. 性能调优             
+        被应用程序在通话过程中使用的效率
+    
+        
+测试用例
+    Test Case 1:
+        Detect a normal disk file of busy tone
+    
+    Test Case 2:
+        Receive a call in FXO port, and hang up the phone make this call firstly. 
+        Then PBX send busy tone to our FXO port, detect it and then on-hook the FXO
+        port.    
+
+    Test Case 3:
+        Fault Torlance test: speak on<-->off just similiar BT periodically.
+        
+        

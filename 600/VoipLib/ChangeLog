@@ -1,0 +1,119 @@
+# $Id: ChangeLog,v 1.3 2007/06/05 06:08:54 lizhijie Exp $
+ChangeLog for lib voips
+
+2007.06.05
+    解决使用TCP协议时，作为主叫和被叫都出现的语音不能发到对方的问题
+        SDP协议解析不正确，造成RTP无法知道对方的地址和端口号，从而
+        造成语音只能从外部的对端到自己而不能双向同时。
+        
+        TCP原始报文的接受是正确的，只是接受后会根据报文的性质来判断
+        报文接收是否完整。
+        修改SipTcpConnection.cxx->getContentLength()
+        该函数错误地将"content-length:"之后的非数字形式的字符当作结
+        束字符，而不能处理真实数字之前的空格。
+
+2007.06.04
+    TCP协议时，SDP报文接受不完整，造成sdp解析错误，从而使语音无法听到的问题
+    调试UDP接受信息的接口
+        transport/UdpStack.cxx:820 ：接受的地址
+        SipUdp_impl.cxx.receiveMain():105 完整报文
+
+2007.06.03 lizhijie
+    修改解决TCP连接到本地的SIP服务器上时，可能造成配置的服务器地址和UA的TCP客户
+    使用的服务器地址不一致的问题
+    
+    这是由于创建客户端的socket时是从NetworkAddress的getHostname取得的主机名或
+    主机域名，而没有使用getIpName（例如LAN地址）。
+    这样可能造成在将主机名或主叫域名解析为IP地址时，根据/etc/hosts文件的配置的
+    不同而解析出不同的IP地址，例如解析出WAN地址。
+    这样就可能造成服务器是的TCP插件无法找到该SIP UA的输出的socket。
+    修改文件：utils/transport/Tcp_ClientSocket.cxx 52行
+ 
+2005.11.18		tangr
+	解决多宿机的路由选择，并正确装填sip报头
+	文件列表：
+		//修改获取路由
+		include/sipstack/SystemInfo.hxx
+		sipstack/SystemInfo.cxx
+
+		//去掉编译警告
+		sipstack/EmbeddedObj.cxx
+		sipstack/SipMsg.cxx
+
+		//修改装填本地地址
+		sipstack/InfoMsg.cxx
+		sipstack/InviteMsg.cxx
+		sipstack/MessageMsg.cxx
+		sipstack/NotifyMsg.cxx
+		sipstack/OptionsMsg.cxx
+		sipstack/RegisterMsg.cxx
+		sipstack/SubscribeMsg.cxx
+		sipstack/UnknownExtensionMsg.cxx
+
+2005.10.20		tangr
+	与pbx版本号 01.0.04-01同步
+	修改sip报文中的网络地址封装
+	通过rtcp增强断线的判断条件
+	文件列表：
+		include/rtp/RtpSession.hxx
+		include/sipstack/SystemInfo.hxx
+		rtp/RtpSession.cxx
+		sipstack/SystemInfo.cxx
+
+2005.09.29		tangr
+	更正sdp处理密钥字段的错误，此错误在与windows messenger互打作为被叫时出现。列表：
+		sdp/sdp2/Sdp2Encryptkey.cxx
+
+2005.07.14		tangr
+	更新各模块Makefile.post，只生成共享库，不再生成静态库
+	更新发布共享库
+
+2005.07.14	wuaiwu
+版本 01.0.01.08
+更新
+	* MD5算法 （util/crypto/vmd5.h | vmd5.c）
+	* MD5调用接口(include/util/crypto/Md5.hxx)
+
+2005.07.04		tangr
+	更新bin/发布库
+
+Revision 1.1.1.1  2005/06/09 05:37:05  tangr
+version: 01.0.00-00
+ -new voips libs and includes
+ -extract include files into include/
+ -update Makefiles in subdirs
+
+Revision 1.6  2005/04/30 05:47:08  lijie
+no message
+
+Revision 1.5  2005/04/30 05:46:10  lijie
+no message
+
+Revision 1.4  2005/04/29 08:55:52  lijie
+修改内容:
+voips/bin/arm/librtp.a 1.6
+voips/bin/arm/librtp.so 1.6
+voips/bin/arm/libsdp.a 1.6
+voips/bin/arm/libsdp.so 1.6
+voips/bin/arm/libsipstack.a 1.6
+voips/bin/arm/libsipstack.so 1.6
+voips/bin/arm/libvutil.a 1.6
+voips/bin/arm/libvutil.so 1.6
+voips/bin/i686/librtp.a 1.6
+voips/bin/i686/librtp.so 1.6
+voips/bin/i686/libsdp.a 1.6
+voips/bin/i686/libsdp.so 1.6
+voips/bin/i686/libsipstack.a 1.6
+voips/bin/i686/libsipstack.so 1.6
+voips/bin/i686/libvutil.a 1.6
+voips/bin/i686/libvutil.so 1.6
+voips/rtp/RtpReceiver.cxx 1.2  482行LOG_ERR修改为LOG_DEBUG_STACK
+readme 1.2 文件中加入功能说明
+
+
+
+ChangeLog for VOIPS common packages	基于VOCAL的VOIP应用的公共模块	2005.03.08	
+sipStack/InviteMsg.cxx更新Subjust的名字为“Assist_SIP_INVITE”		2005.03.07	
+sipStack/SystemInfo.cxx更新Session的名字为“Assist”		        2005.02.24	
+更新rtp/RtpSession中发送RFC2833消息的功能，使基于该RTP栈的2833收发都正常		
+

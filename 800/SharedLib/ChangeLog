@@ -1,0 +1,18 @@
+#
+# $Author: lizhijie $
+# $Log: ChangeLog,v $
+# Revision 1.1.1.1  2006/11/30 16:24:17  lizhijie
+# AS800 SharedLib
+#
+# Revision 1.1.1.1  2005/05/27 08:43:37  lizhijie
+# add shared library and programs depend on it
+#
+# $Revision: 1.1.1.1 $
+# $Id: ChangeLog,v 1.1.1.1 2006/11/30 16:24:17 lizhijie Exp $
+#
+	ChangeLog 
+				Li Zhijie, 2005.05.26
+
+
+2005.05.27	
+	创建共享库及其程序的基本目录，并上载到CVS上

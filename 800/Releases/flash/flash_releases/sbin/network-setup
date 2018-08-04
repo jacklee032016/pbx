@@ -1,0 +1,49 @@
+# Shell script to config static IP address for both eth0 and eth1
+# Li Zhijie  2005.01.04
+
+IFCONFIG=/sbin/ifconfig
+
+# Set to "C" locale so we can parse messages from commands
+LANG=C
+export LANG
+
+CONFIG_HW_ETH0=/etc/sys/hwcfg-eth0
+if [ ! -f "$CONFIG_HW_ETH0" -o ! -r "$CONFIG_HW_ETH0" ] ; then
+	$ECHO " LAN interface use default hardware interface '00:02:B3:01:01:01'" >& 2
+else
+	. $CONFIG_HW_ETH0
+    	$IFCONFIG $DEVICE hw ether $HWADDR
+fi
+
+CONFIG_HW_ETH1=/etc/sys/hwcfg-eth1
+if [ ! -f "$CONFIG_HW_ETH1" -o ! -r "$CONFIG_HW_ETH1" ] ; then
+	$ECHO " WAN interface use default hardware interface '00:02:B3:02:02:02'" >& 2
+else
+	. $CONFIG_HW_ETH1
+    	$IFCONFIG $DEVICE hw ether $HWADDR
+fi
+
+
+
+CONFIG_ETH0=/etc/sys/ifcfg-eth0
+if [ ! -f "$CONFIG_ETH0" -o ! -r "$CONFIG_ETH0" ] ; then
+	$ECHO " WAN interface use DHCP client to config" >& 2
+	/sbin/udhcpc -h `hostname` -i eth0 1>/dev/null 2>&1 &
+#	exit 1
+else
+	. $CONFIG_ETH0
+    	$IFCONFIG $DEVICE $IPADDR broadcast $BROADCAST netmask $NETMASK
+fi
+
+
+CONFIG_ETH1=/etc/sys/ifcfg-eth1
+
+if [ ! -f "$CONFIG_ETH1" -o ! -r "$CONFIG_ETH1" ] ; then
+	$ECHO " LAN interface use DHCP client to config" >& 2
+	/sbin/udhcpc -h `hostname` -i eth1 1>/dev/null 2>&1 &
+#	exit 1
+else
+	. $CONFIG_ETH1
+    	$IFCONFIG $DEVICE $IPADDR broadcast $BROADCAST netmask $NETMASK
+fi
+

@@ -1,0 +1,17 @@
+# $Id: todoList,v 1.3 2007/05/13 20:49:37 lizhijie Exp $
+
+               todo List for PBX
+                      Li Zhijie 2007.03.02
+
+2007.05.12
+    外线的允许与否状态的配置接口（网管）
+
+
+
+注册到PartySip的SIP服务器
+
+打开Register操作时，CTRL+C，总是重新加载Register/Proxy信息，不能退出pbx进程
+
+不能使用快速拨号的直接拨号方式
+
+                      

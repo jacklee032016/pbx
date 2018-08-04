@@ -1,0 +1,435 @@
+ambassador.o: ambassador.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   ambassador.h
+ambassador.h: \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/ambassador/debug.h)
+	@touch ambassador.h
+atmdev_init.o: atmdev_init.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/zatm.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/nicstar.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/ambassador.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/horizon.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/fore200e.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/lanai.h)
+atmtcp.o: atmtcp.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm_tcp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h
+eni.o: eni.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sonet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/time.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/uio.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm_eni.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   tonga.h \
+   midway.h \
+   suni.h \
+   eni.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/eni/tune/burst.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/eni/debug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/eni/burst/rx/16w.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/eni/burst/rx/8w.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/eni/burst/rx/4w.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/eni/burst/rx/2w.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/eni/burst/tx/16w.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/eni/burst/tx/8w.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/eni/burst/tx/4w.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/eni/burst/tx/2w.h)
+eni.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sonet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/time.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   midway.h
+	@touch eni.h
+firestream.o: firestream.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sonet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/uio.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/capability.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   firestream.h
+fore200e.o: fore200e.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/capability.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sonet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm_suni.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/page.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/dma.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/fore200e/sba.h) \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   fore200e.h \
+   suni.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/fore200e/debug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/fore200e/pca.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/fore200e/tx/retry.h)
+fore200e.h: \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/fore200e/sba.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/fore200e/pca.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h
+	@touch fore200e.h
+he.o: he.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sonet.h \
+   he.h \
+   suni.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm_he.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ia64/sgi/sn2.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tsra.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tsrb.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tsrc.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tsrd.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tpdrq/size.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/rcmabr.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/rbps/bufsize.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/rbps/size.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/rbps/thresh.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/rbpl/bufsize.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/rbpl/size.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/rbpl/thresh.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/rbrq/size.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/rbrq/thresh.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tbrq/size.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tbrq/thresh.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irq/size.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irq/thresh.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/default/vcibits.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/default/vpibits.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tmabr.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tpdba.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/numtpds.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/he/use/suni.h)
+he.h: \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irq/size.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tpdrq/size.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/rbrq/size.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tbrq/size.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/rbpl/size.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/rbps/size.h)
+	@touch he.h
+horizon.o: horizon.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sonet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/time.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/uio.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   horizon.h
+horizon.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/horizon/debug.h)
+	@touch horizon.h
+idt77105.o: idt77105.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sonet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/capability.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm_idt77105.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/param.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   idt77105.h
+idt77105.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmioc.h
+	@touch idt77105.h
+idt77252.o: idt77252.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/idt77252/use/suni.h) \
+   suni.h \
+   idt77252.h \
+   idt77252_tables.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/idt77252/debug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/idt77252/rcv/all.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/idt77252/send/idle.h)
+idt77252.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ptrace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/idt77252/debug.h)
+	@touch idt77252.h
+iphase.o: iphase.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sonet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/time.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/uio.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   iphase.h \
+   suni.h
+iphase.h: \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/ia/debug.h)
+	@touch iphase.h
+lanai.o: lanai.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+nicstar.o: nicstar.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   nicstar.h \
+   nicstarmac.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/nicstar/use/suni.h) \
+   suni.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/nicstar/use/idt77105.h) \
+   idt77105.h \
+   nicstarmac.c
+nicstar.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/uio.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm_nicstar.h
+	@touch nicstar.h
+suni.o: suni.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sonet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/capability.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm_suni.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/param.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   suni.h
+suni.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmioc.h
+	@touch suni.h
+uPD98402.o: uPD98402.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sonet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   uPD98402.h
+zatm.o: zatm.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sonet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/uio.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm_zatm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/capability.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   uPD98401.h \
+   uPD98402.h \
+   zeprom.h \
+   zatm.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/zatm/exact/ts.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/zatm/debug.h)
+zatm.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sonet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/zatm/exact/ts.h)
+	@touch zatm.h
+.PRECIOUS:	ambassador.h \
+	eni.h \
+	fore200e.h \
+	he.h \
+	horizon.h \
+	idt77105.h \
+	idt77252.h \
+	iphase.h \
+	nicstar.h \
+	suni.h \
+	zatm.h \
+

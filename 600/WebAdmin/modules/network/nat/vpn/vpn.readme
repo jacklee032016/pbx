@@ -1,0 +1,82 @@
+# $Id: vpn.readme,v 1.2 2006/12/11 18:21:25 lizhijie Exp $
+#
+		VPN Masquerade README
+			Li Zhijie 2006.12.11
+
+PPTP (1723/tcp and 47/ip):
+pptp是控制通道，GRE是数据通道
+/sbin/iptables -t nat -A PREROUTING -i eth1 -p tcp --dport 1723 -j DNAT --to 192.168.0.5
+/sbin/iptables -t nat -A PREROUTING -i eth1 -p 47 -j DNAT --to 192.168.0.5
+
+
+/sbin/iptables -A INPUT -p tcp --dport 1723 -j ACCEPT
+/sbin/iptables -A INPUT -p tcp --dport 47 -j ACCEPT
+/sbin/iptables -A INPUT -p gre -j ACCEPT
+
+输入方向
+/usr/sbin/iptables -t nat -D PREROUTING -i eth0 -d %s -p tcp --dport 1723  -j DNAT --to %s:1723",proute->gateway,proute->pc_ip);
+/usr/sbin/iptables -t nat -D PREROUTING -i eth0 -d %s -p 47 -j DNAT --to %s",proute->gateway,proute->pc_ip);
+
+/usr/sbin/iptables -t nat -A PREROUTING -i eth0 -d %s -p tcp --dport 1723  -j DNAT --to %s:1723",proute->gateway,proute->pc_ip);
+/usr/sbin/iptables -t nat -A PREROUTING -i eth0 -d %s -p 47 -j DNAT --to %s",proute->gateway,proute->pc_ip);
+操作：
+    1. 所有从eth0上进入，目的地址为IXP外网地址的，端口为1723的TCP或IP层的GRE协议的报文
+    2. 进行DNAT操作（即转换目的地址为内网的PPTP客户端或服务器的地址，再进行路由：DNAT是先作转换，后作路由）
+
+
+输出方向
+/usr/sbin/iptables -t nat -D POSTROUTING -o eth0 -s %s -p tcp --dport 1723  -j SNAT --to %s:1723",proute->pc_ip,proute->gateway);
+/usr/sbin/iptables -t nat -D POSTROUTING -o eth0 -s %s -p 47 -j SNAT --to %s",proute->pc_ip,proute->gateway);
+/usr/sbin/iptables -t nat -A POSTROUTING -o eth0 -s %s -p tcp --dport 1723  -j SNAT --to %s:1723",proute->pc_ip,proute->gateway);
+/usr/sbin/iptables -t nat -A POSTROUTING -o eth0 -s %s -p 47 -j SNAT --to %s",proute->pc_ip,proute->gateway);
+
+/usr/sbin/iptables -t nat -A POSTROUTING -o eth0 -s %s -p tcp --dport 1723  -j SNAT --to %s:1723",proute->pc_ip,proute->gateway);
+/usr/sbin/iptables -t nat -A POSTROUTING -o eth0 -s %s -p 47 -j SNAT --to %s",proute->pc_ip,proute->gateway);
+操作：
+    1. 从源地址为内网的PPTP客户端或服务器上来的报文
+    2. 执行正常的路由操作
+    3. 执行SNAT：
+
+
+双向
+
+/usr/sbin/iptables -t nat -D PREROUTING -i eth0 -d %s -p tcp --dport 1723  -j DNAT --to %s:1723",proute->gateway,proute->pc);
+/usr/sbin/iptables -t nat -D PREROUTING -i eth0 -d %s -p 47 -j DNAT --to %s",proute->gateway,proute->pc);
+/usr/sbin/iptables -t nat -A PREROUTING -i eth0 -d %s -p tcp --dport 1723  -j DNAT --to %s:1723",proute->gateway,proute->pc);
+/usr/sbin/iptables -t nat -A PREROUTING -i eth0 -d %s -p 47 -j DNAT --to %s",proute->gateway,proute->pc);
+
+
+/usr/sbin/iptables -t nat -D POSTROUTING -o eth0 -s %s -p tcp --dport 1723  -j SNAT --to %s:1723",proute->pc_ip,proute->gateway);
+/usr/sbin/iptables -t nat -D POSTROUTING -o eth0 -s %s -p 47 -j SNAT --to %s",proute->pc_ip,proute->gateway);
+
+/usr/sbin/iptables -t nat -A POSTROUTING -o eth0 -s %s -p tcp --dport 1723  -j SNAT --to %s:1723",proute->pc_ip,proute->gateway);
+/usr/sbin/iptables -t nat -A POSTROUTING -o eth0 -s %s -p 47 -j SNAT --to %s",proute->pc_ip,proute->gateway);
+
+
+
+注释：
+    NAT表 (-t nat), 增加rule (-A)
+    -s 源地址
+    -d 目的地址
+    -i 输入接口，用于PREROUTING
+    -o 输出接口，用于POSTROUTING和OUTPUT
+    
+    192.168.0.5 是内网PPTP服务器的地址
+    
+
+参考：
+    http://www.impsec.org/linux/masquerade/VPN-howto/VPN-Masquerade.html    
+
+
+
+设计：
+     任何时候只能有一个VPN的配置是生效的，因为网关只有一个WAN口
+         后一个规则的定义一定使前一个失效
+     网关地址，即外网地址是动态的，是不能直接指定的
+     输入方向必须明确指定内网的PPTP主机（客户或服务器）地址
+     输出方向：已经使用了Masquerade地址欺骗，还需要明确地定义吗
+
+
+检查：
+     可以使用命令"iptables -L -t nat"查看所有配置的规则
+

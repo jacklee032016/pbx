@@ -1,0 +1,58 @@
+alloc.o: alloc.c \
+   hpfs_fn.h
+anode.o: anode.c \
+   hpfs_fn.h
+buffer.o: buffer.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   hpfs_fn.h
+dentry.o: dentry.c \
+   hpfs_fn.h
+dir.o: dir.c \
+   hpfs_fn.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h
+dnode.o: dnode.c \
+   hpfs_fn.h
+ea.o: ea.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   hpfs_fn.h
+file.o: file.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   hpfs_fn.h
+hpfs_fn.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hpfs_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   hpfs.h
+	@touch hpfs_fn.h
+inode.o: inode.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   hpfs_fn.h
+map.o: map.c \
+   hpfs_fn.h
+name.o: name.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   hpfs_fn.h
+namei.o: namei.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   hpfs_fn.h
+super.o: super.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   hpfs_fn.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h
+.PRECIOUS:	hpfs_fn.h \
+

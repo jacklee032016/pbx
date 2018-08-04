@@ -1,0 +1,200 @@
+#ifndef AGENT_API_MIB_VARS_H_
+#define AGENT_API_MIB_VARS_H_
+/*
+ * $Id: AgentApiMibVars.hxx,v 1.2 2007/03/01 20:04:30 lizhijie Exp $
+ */
+
+
+/* from all mibs for now it's here, later read from config file */
+typedef enum
+{
+    agentApiMibVarFirstEntry = 0,   /* make sure this is the first entry */
+    /* debug level of all processes on a machine */
+    DebugLevel,
+    /* trap notifications */
+    ServerUp,
+    ServerDown ,
+    /* RS specific Mib objects
+     * not in mib. may be used to speed up processing between snmpd and RsAgent.  Get a bulk
+     * transfer from the RS of the server info
+     */
+    AllServerInfo ,
+    SysStatsTotalServers ,
+    SysStatsTotalSubscribers,
+    SysStatsTotalProcessDeaths,
+    SysStatsTotalProcessRestarts,
+    /* MS specific Data */
+
+    /* FS Specific Data */
+
+    /* Sip Specific Mib Objects */
+    sipSummaryInRequests,
+    sipSummaryOutRequests,
+    sipSummaryInResponses,
+    sipSummaryOutResponses,
+    sipSummaryTotalTransactions,
+    sipStatsInviteIns,
+    sipStatsInviteOuts,
+    sipStatsAckIns,
+    sipStatsAckOuts,
+    sipStatsByeIns,
+    sipStatsByeOuts,
+    sipStatsCancelIns,
+    sipStatsCancelOuts,
+    sipStatsOptionsIns,
+    sipStatsOptionsOuts,
+    sipStatsRegisterIns,
+    sipStatsRegisterOuts,
+    /* the following have been grouped into SIPSTATSINFOCLASSINS/SIPSTATSINFOCLASSOUTS */
+    /* in the 7/2000 sip mib. */
+    sipStatsInfoIns,
+    sipStatsInfoOuts,
+    sipStatsInfoTryingIns,
+    sipStatsInfoTryingOuts,
+    sipStatsInfoRingingIns,
+    sipStatsInfoRingingOuts,
+    sipStatsInfoForwardedIns,
+    sipStatsInfoForwardedOuts,
+    sipStatsInfoQueuedIns,
+    sipStatsInfoQueuedOuts,
+    sipStatsInfoSessionProgIns,
+    sipStatsInfoSessionProgOuts,
+    /* the following have been renamed to sipStatssuccessClassIns / sipStatssuccessClassOuts */
+    sipStatsSuccessOkIns,
+    sipStatsSuccessOkOuts,
+    /* the following have been grouped into sipStatsRedirClassIns / sipStatsRedirClassOuts */
+    sipStatsRedirMultipleChoiceIns,
+    sipStatsRedirMultipleChoiceOuts,
+    sipStatsRedirMovedPermIns,
+    sipStatsRedirMovedPermOuts,
+    sipStatsRedirMovedTempIns,
+    sipStatsRedirMovedTempOuts,
+    sipStatsRedirSeeOtherIns,
+    sipStatsRedirSeeOtherOuts,
+    sipStatsRedirUseProxyIns,
+    sipStatsRedirUseProxyOuts,
+    sipStatsRedirAltServiceIns,
+    sipStatsRedirAltServiceOuts,
+    /* the following have been grouped into sipStatsReqFailClassIns / sipStatsReqFailClassOuts */
+    sipStatsClientBadRequestIns,
+    sipStatsClientBadRequestOuts,
+    sipStatsClientUnauthorizedIns,
+    sipStatsClientUnauthorizedOuts,
+    sipStatsClientPaymentReqdIns,
+    sipStatsClientPaymentReqdOuts,
+    sipStatsClientForbiddenIns,
+    sipStatsClientForbiddenOuts,
+    sipStatsClientNotFoundIns ,
+    sipStatsClientNotFoundOuts,
+    sipStatsClientMethNotAllowedIns,
+    sipStatsClientMethNotAllowedOuts,
+    sipStatsClientNotAcceptableIns,
+    sipStatsClientNotAcceptableOuts,
+    sipStatsClientProxyAuthReqdIns,
+    sipStatsClientProxyAuthReqdOuts,
+    sipStatsClientReqTimeoutIns,
+    sipStatsClientReqTimeoutOuts,
+    sipStatsClientConflictIns,
+    sipStatsClientConflictOuts,
+    sipStatsClientGoneIns,
+    sipStatsClientGoneOuts,
+    sipStatsClientLengthRequiredIns,
+    sipStatsClientLengthRequiredOuts,
+    sipStatsClientReqEntTooLargeIns,
+    sipStatsClientReqEntTooLargeOuts,
+    sipStatsClientReqURITooLargeIns,
+    sipStatsClientReqURITooLargeOuts,
+    sipStatsClientNoSupMediaTypeIns,
+    sipStatsClientNoSupMediaTypeOuts,
+    sipStatsClientBadExtensionIns,
+    sipStatsClientBadExtensionOuts,
+    sipStatsClientTempNotAvailIns,
+    sipStatsClientTempNotAvailOuts,
+    sipStatsClientCallLegNoExistIns,
+    sipStatsClientCallLegNoExistOuts,
+    sipStatsClientLoopDetectedIns,
+    sipStatsClientLoopDetectedOuts,
+    sipStatsClientTooManyHopsIns,
+    sipStatsClientTooManyHopsOuts,
+    sipStatsClientAddrIncompleteIns,
+    sipStatsClientAddrIncompleteOuts,
+    sipStatsClientAmbiguousIns,
+    sipStatsClientAmbiguousOuts,
+    sipStatsClientBusyHereIns,
+    sipStatsClientBusyHereOuts,
+    /* the following have been grouped into sipStatsServerFailClassIns / sipStatsServerFailClassOuts */
+    sipStatsServerIntErrorIns,
+    sipStatsServerIntErrorOuts,
+    sipStatsServerNotImplementedIns,
+    sipStatsServerNotImplementedOuts,
+    sipStatsServerBadGatewayIns,
+    sipStatsServerBadGatewayOuts,
+    sipStatsServerServiceUnavailIns,
+    sipStatsServerServiceUnavailOuts,
+    sipStatsServerGatewayTimeoutIns,
+    sipStatsServerGatewayTimeoutOuts,
+    sipStatsServerBadSipVersionIns,
+    sipStatsServerBadSipVersionOuts ,
+    /* the following have been grouped into sipStatsGlobalFailClassIns / sipStatsGlobalFailClassOuts */
+    sipStatsGlobalBusyEverywhereIns,
+    sipStatsGlobalBusyEverywhereOuts,
+    sipStatsGlobalDeclineIns,
+    sipStatsGlobalDeclineOuts,
+    sipStatsGlobalNotAnywhereIns,
+    sipStatsGlobalNotAnywhereOuts,
+    sipStatsGlobalNotAcceptableIns,
+    sipStatsGlobalNotAcceptableOuts,
+    /* the new higher level statistics are shown below: */
+    sipStatsInfoClassIns,
+    sipStatsInfoClassOuts,
+    sipStatsSuccessClassIns,
+    sipStatsSuccessClassOuts,
+    sipStatsRedirClassIns,
+    sipStatsRedirClassOuts,
+    sipStatsReqFailClassIns,
+    sipStatsReqFailClassOuts,
+    sipStatsServerFailClassIns,
+    sipStatsServerFailClassOuts,
+    sipStatsGlobalFailClassIns,
+    sipStatsGlobalFailClassOuts,
+    /* done with the grouping of statistics messages */
+    sipCurrentTransactions,
+    sipTransTo,
+    sipTransFrom,
+    sipTransCallId,
+    sipTransCSeq,
+    sipTransState,
+    sipTransOutstandingBranches,
+    sipTransExpiry,
+    sipTransCallingPartyContentType,
+    sipTransCalledPartyContentType,
+    sipNumUnsupportedUris,
+    /* this next group is the sipCommonConfigGroup */
+    sipProtocolVersion,
+    sipServiceOperStatus,
+    sipServiceAdminStatus,
+    sipServiceStartTime,
+    sipServiceLastChange,
+    sipTransport,
+    sipPortStatus,
+    sipUriSupported,
+    sipFtrSupported,
+    sipOrganization,
+    sipMaxTransactions,
+    sipRequestDfltExpires,
+    sipHideOperation,
+    sipUserLocationServerAddr,
+
+    /* Network Application MIB */
+    applIndex,
+    applName,
+    applDirectoryName,
+    applVersion,
+    applUpTime,
+    applOperStatus,
+    applLastChange,
+
+    agentApiMibVarLastEntry   /* make sure this is the last entry */
+} AgentApiMibVarT;
+
+#endif /*AGENT_API_MIB_VARS_H */

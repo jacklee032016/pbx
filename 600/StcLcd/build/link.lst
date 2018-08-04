@@ -1,0 +1,39 @@
+src\main.obj,
+src\lcdIsr.obj,
+src\lcdTimerTask.obj,
+
+src\hw\lcdInit.obj,
+src\hw\lcdHwCtrl.obj,
+
+src\draw\ascii5x8.obj,
+src\draw\ascii12x16.obj,
+src\draw\arrow.obj,
+src\draw\lcdDraw.obj,
+src\draw\strings.obj,
+
+src\state\lcdStateMachine.obj,
+src\state\lcdStates.obj,
+
+src\uart\lcdUartRx.obj,
+src\uart\lcdUartTx.obj
+
+TO a.abs
+
+
+RAMSIZE(256)
+
+OVERLAY (
+_lcdStateHandle ! 
+	(lookupStateBtnMenu, lookupStateBtnUp, 
+	lookupStateBtnDown, lookupStateUartNotify, 
+	lookupStateTimeout,
+	modifyStateTimeout,modifyStateBtnMenu,
+	modifyStateBtnUp, modifyStateBtnDown,
+	modifyStateBtnMenuNext,
+	lcdUartSendVerInfo,
+	initStateUartNotify,
+	allStateRefreshTimeout,
+	idleStateBtn)  ) 
+
+SPEEDOVL
+

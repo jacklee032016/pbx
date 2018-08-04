@@ -1,0 +1,66 @@
+# $Log: Makefile.post,v $
+# Revision 1.1.1.1  2006/11/29 09:28:02  lizhijie
+# AS600 VoipLib
+#
+# Revision 1.1.1.1  2006/07/12 14:44:46  lizhijie
+# rebuild
+#
+# Revision 1.3  2005/07/18 05:26:38  tangr
+# reserve only shared libs in bin
+#
+# Revision 1.2  2005/07/05 07:27:56  tangr
+# update Makefile.pre and Makefile.post for bin releases
+#
+# Revision 1.1.1.1  2005/06/09 05:37:05  tangr
+# version: 01.0.00-00
+#  -new voips libs and includes
+#  -extract include files into include/
+#  -update Makefiles in subdirs
+#
+# Revision 1.1.1.1  2005/03/14 07:15:16  lizhijie
+# common software packages for VOIPS
+#
+# Revision 1.1.1.1  2005/02/01 03:55:10  lizhijie
+# VOIP protocols soruces code from VOCAL
+#
+# $Id: Makefile.post,v 1.1.1.1 2006/11/29 09:28:02 lizhijie Exp $
+
+
+OBJS = $(patsubst %.c,$(OBJ_DIR)/%.o,$(patsubst %.cxx,$(OBJ_DIR)/%.o,$(SRC))) $(EXTRA_OBJS)
+
+all:$(BIN_DIR) $(OBJ_DIR) $(LOCAL_ALL) $(TARGET_LIB)
+
+$(OBJ_DIR):
+	-if [ -d $(OBJ_DIR) ] ; then : ; else $(MKDIR) $(OBJ_DIR); fi
+ifdef CODE_SUBDIRS
+	-@ for subdir in $(CODE_SUBDIRS) ; do ( mkdir -p $(OBJ_DIR)/$$subdir ) ; done
+endif
+
+$(BIN_DIR):
+	-if [ -d $(BIN_DIR) ] ; then : ; else $(MKDIR) $(BIN_DIR); fi
+#ifdef CODE_SUBDIRS
+#	-@ for subdir in $(CODE_SUBDIRS) ; do ( mkdir -p $(BIN_DIR)/$$subdir ) ; done
+#endif
+
+clean:$(LOCAL_CLEAN)
+	-if [ -d $(BIN_DIR) ] ; then $(RM) $(BIN_DIR) ; fi
+	-if [ -d $(OBJ_DIR) ] ; then $(RM) $(OBJ_DIR) ; fi
+
+$(TARGET_LIB):$(OBJS)
+#	$(AR) $(ARFLAGS) $@.a $^ 
+#	$(RANLIB) $@.a
+	$(CC) -Wl,-shared -o  $@.so $^ $(LDFLAGS)
+	$(STRIP)  $@.so
+#	$(MOVE) $(TARGET_LIB).a $(BIN_DIR)/
+#	$(MOVE) $(TARGET_LIB).so $(BIN_DIR)/
+
+$(OBJ_DIR)/%.o:%.cxx
+	$(CXX) $(CXXFLAGS) $(C_CFLAGS) $(CC_CFLAGS) -c  $< -o $(OUTPUT_FLAG)$@ 
+
+$(OBJ_DIR)/%.o:%.c 
+	$(CC)  $(C_CFLAGS) -c $< -o $(OUTPUT_FLAG)$@ 
+
+.o.cxx :
+	$(CXX) $(C_CFLAGS) $(CC_CFLAGS) -g $(CFLAGS) -c $<
+
+	

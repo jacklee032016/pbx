@@ -1,0 +1,8 @@
+inode.o: inode.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h

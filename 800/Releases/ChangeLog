@@ -1,0 +1,55 @@
+#
+#
+#	for flash releases
+#
+#
+#
+
+
+2005.10.22		tangr
+	在flash镜像文件中（普通的flash和支持usb的flash），增加对崩溃恢复（wizard）的支持，主要增加了库文件，web服务和一些配置
+	文件列表：
+		mkj.sh　生成普通flash镜像的脚本
+		mkju.sh　生成支持usb的flash4usb镜像的脚本
+		flashgeneral.tar.gz　生成普通的flash镜像的文件系统
+		flash4usb.tar.gz　生成支持usb的flash4usb镜像的文件系统
+
+2005.09.28		tangr
+	修改flash4usb的启动脚本，在usb检测出错时转向flash启动，文件列表：
+		flash4usb.tar.gz
+
+2005.09.14		tangr
+	增加制作for usb启动的flash文件系统，文件列表：
+		mkj.sh
+		flash4usb.tar.gz
+
+Revision 1.2  2005/06/17 01:23:38  tangr
+本次修订：
+- 增加mkcf，制作文件系统
+
+Revision 1.1  2005/02/02 14:12:51  tangr
+本次修订：
+* 删除readme.txt，其1.6之前的改动移到本文件
+* mkdev.sh增加3个伪终端，总共可提供4个telnet或4个ppp
+* etc/应gua的要求增加文件protocols
+
+Revision 1.6  2005/01/28 09:05:23  tangr
+rename mkcompactlfash_releases.sh to mkcompactflash_releases.sh
+
+Revision 1.5  2005/01/28 09:00:51  tangr
+revised script /sbin/network-setup in assist_common_releases_05_01_28.tar.gz
+
+Revision 1.4  2005/01/28 08:57:44  tangr
+add ixp425_eth.o in assist_common_releases_05_01_28.tar.gz
+
+Revision 1.3  2005/01/28 08:55:35  tangr
+1 add assist_common_releases_05_01_28.tar.gz, delete 01_04 and 01_07
+2 add boa and vsftpd in rcS
+3 add file hosts in etc
+
+Revision 1.2  2005/01/07 10:05:06  tangr
+<assist_common_releases_05_01_07.tar.gz> add libcap.so
+
+
+				
+

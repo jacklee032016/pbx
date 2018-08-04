@@ -1,0 +1,37 @@
+act2000.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tqueue.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mman.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ctype.h
+	@touch act2000.h
+act2000_isa.o: act2000_isa.c \
+   act2000.h \
+   act2000_isa.h \
+   capi.h
+capi.o: capi.c \
+   act2000.h \
+   capi.h
+module.o: module.c \
+   act2000.h \
+   act2000_isa.h \
+   capi.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h
+.PRECIOUS:	act2000.h \
+

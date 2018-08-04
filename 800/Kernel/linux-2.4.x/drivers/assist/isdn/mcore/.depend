@@ -1,0 +1,90 @@
+as_file_ops.o: as_file_ops.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/core.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/bchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/as_isdn_ctrl.h
+as_frame_if.o: as_frame_if.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/core.h
+as_frame_ops.o: as_frame_ops.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/core.h
+as_frame_timer.o: as_frame_timer.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stddef.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/core.h
+as_raw_device.o: as_raw_device.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stddef.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/core.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/bchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/as_isdn_ctrl.h
+bchannel.o: bchannel.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/asISDN.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/bchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h
+core.o: core.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stddef.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/core.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smp.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/as_isdn_version.h
+dchannel.o: dchannel.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/asISDN.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dchannel.h
+debug.o: debug.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/asISDN.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h
+fsm.o: fsm.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/fsm.h
+helper.o: helper.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/asISDN.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h
+l3helper.o: l3helper.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/asISDN.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dss1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h
+memdbg.o: memdbg.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stddef.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/asISDN.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bugs.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h
+stack.o: stack.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/core.h
+udevice.o: udevice.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stddef.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/core.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h

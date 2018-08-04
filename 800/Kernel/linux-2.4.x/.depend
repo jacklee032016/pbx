@@ -1,0 +1,80 @@
+init/do_mounts.o: init/do_mounts.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/unistd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ctype.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/nfs_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/nfs_fs_sb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/nfs_mount.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/minix_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ext2_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/romfs_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/cramfs_fs.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/initrd.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/s390.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/root/nfs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/ram.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/fd.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ppc/iseries.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/devfs/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/all/ppc.h) \
+   /works/isdn/kernel/linux-2.4.x/include/../lib/inflate.c
+init/main.o: init/main.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/unistd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ctype.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/utsname.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hdreg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/iobuf.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bootmem.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/file.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bugs.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/s390.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acpi.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/acpi.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pci.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/dio.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/dio.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/zorro.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/zorro.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mtrr.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/nubus.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/nubus.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/isapnp.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isapnp.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/x86/local/apic.h) \
+   /works/isdn/kernel/linux-2.4.x/include/asm/smp.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/v850e.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/nios.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tc.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sysvipc.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/modules.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/initrd.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sysctl.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acpi/interpreter.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sbus.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ppc.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mca.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/acorn.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pcmcia.h)
+init/version.o: init/version.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/uts.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/utsname.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h

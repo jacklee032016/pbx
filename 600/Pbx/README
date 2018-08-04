@@ -1,0 +1,102 @@
+
+[模块说明]
+
+pbx：assist sip User Agent
+
+
+2005.06.27
+	增加动态库的编译选项：动态编译可以运行，静态没有测试
+
+
+[编译、安装和使用]
+	
+1、代码准备
+	checkout这个模块（pbx）后，
+		a. 在模块的根目录下checkout出voips模块
+		b. 在模块的根目录下checkout出drivers模块
+
+2、编译
+	make 			生成PC机代码
+	make ARCH=arm	生成422代码
+	
+3、安装
+	make install
+	将在模块根目录生成assist_pbx_xxx.tar，释放到目标板（机）上的根文件系统下
+
+
+
+[其它说明]
+
+本程序由两个部分组成
+	1、主程序：本模块
+		以源码形式发布，所有代码都必须重新编译
+	2、协议栈：voips模块
+		很少更新、修改；主要以二进制形式发布；二进制代码分别在
+		voips/bin/arm和voips/bin/i686中；
+		
+目录结构说明：
+ 顶级目录
+   |----- drivers
+ 			|---pcm：pcm驱动的头文件
+ 			|---slic：slic驱动的头文件
+   |---- voips：vocal源码中稳定的、不需要编译的部分（源码和二进制库）
+   |---- docs
+			|---model: UML model docs
+   |---- assist：assist的支持公共特性（SLIC和PCM共享的）的代码
+   			|---dsp：所有软件DSP相关部分代码
+   			|---slic：
+   			|---uart：
+   			|---cdr:
+   			|---include：不需要为C++环境使用的头文件，即本assist目录使用的头文件
+   |---- base：VOCAL中与SIP呼叫过程相关的代码
+   |---- op：原有ua中operation相关的代码
+   |---- state：原有ua中state相关的代码
+   |---- ua
+   			|---assist：assist与VOCAL的C++接口和C++的代码
+   |---- include：全局使用（VOCAL的C++环境）的头文件
+   
+   
+		User Agent from VOCAL 1.5.0
+				Li Zhijie 2005.02.04
+2005.06.07
+	加入cdr（assist/cdr）目录				
+2005.04.18
+	支持回拨和快速拨号
+
+2005.02.17
+	支持所有分机在服务器上号码的注册
+	支持slic设备之间的互打
+
+2005.02.16
+	支持从IP到设备的一次拨号的并发呼入
+
+2005.02.15
+	修改设备类的框架和体系，能够支持
+		1、从设备发出的多个主叫呼叫
+		2、接收从网络上到达的呼叫，完成模拟摘机
+
+2005.02.08
+	将op和state从原来的ua子目录移出，以加快开发时的编译、测试过程
+	增加AssistNullDevice类，并开始修改ResGwDevice的程序架构
+
+2005.02.07
+	创建根下的assist子目录和assist子目录的目录结构、文件、编译和测试框架
+
+2005.02.06
+	删除libmedia和libsipua两个模块，及其所有的编译相关内容
+
+2004.02.05
+	增加Assist的硬件模块，编译通过，并打通
+	增加增益控制的代码，解决延迟的问题
+	增加DSP的代码
+
+2005.02.04
+	创建基本的目录结构、编译命令并运行通过
+
+
+
+
+
+
+
+

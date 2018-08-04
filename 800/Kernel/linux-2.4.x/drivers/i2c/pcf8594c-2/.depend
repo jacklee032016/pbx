@@ -1,0 +1,36 @@
+ixp425Eeprom.o: ixp425Eeprom.c \
+   os.h \
+   ixp425I2c.h \
+   ixp425Eeprom.h
+ixp425I2c.o: ixp425I2c.c \
+   os.h \
+   ixp425I2c.h
+ixp425-nvram.o: ixp425-nvram.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/miscdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   os.h \
+   ixp425Eeprom.h
+os.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/types.h
+	@touch os.h
+pcf8594c2_demo.o: pcf8594c2_demo.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   os.h \
+   ixp425Eeprom.h
+syms.o: syms.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   os.h \
+   ixp425I2c.h \
+   ixp425Eeprom.h
+.PRECIOUS:	os.h \
+

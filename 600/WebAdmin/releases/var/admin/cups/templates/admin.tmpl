@@ -1,0 +1,77 @@
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%" SUMMARY="Administration Tasks">
+<TR><TD VALIGN="TOP" NOWRAP>
+
+<H2 CLASS="title">Printers</H2>
+
+<P>
+<A HREF="/cgi-bin/admin.cgi?op=add-printer"><IMG
+SRC="/cups/images/button-add-printer.gif" ALT="Add Printer" CLASS="button"></A>
+<A HREF="/cgi-bin/printers.cgi"><IMG SRC="/cups/images/button-manage-printers.gif"
+ALT="Manage Printers" CLASS="button"></A>
+{have_samba?<A HREF="/cgi-bin/admin.cgi?op=export-samba"><IMG
+SRC="/cups/images/button-export-samba.gif" ALT="Export Printers to Samba"
+CLASS="button"></A>:}
+</P>
+
+{#device_uri=0?:<P><B>New Printers Found:</B></P><UL>{[device_uri]
+<LI><A HREF="/cgi-bin/admin.cgi?op=add-printer&amp;{device_options}"><IMG
+SRC="/cups/images/button-add-this-printer.gif" ALT="Add This Printer" CLASS="button"
+ALIGN="MIDDLE"></A>
+{device_make_and_model} ({device_info})</LI>
+}</UL>}
+
+<H2 CLASS="title">Classes</H2>
+
+<P>
+<A HREF="/cgi-bin/admin.cgi?op=add-class"><IMG SRC="/cups/images/button-add-class.gif"
+ALT="Add Class" CLASS="button"></A>
+<A HREF="/cgi-bin/classes.cgi"><IMG SRC="/cups/images/button-manage-classes.gif"
+ALT="Manage Classes" CLASS="button"></A>
+</P>
+
+<H2 CLASS="title">Jobs</H2>
+
+<P>
+<A HREF="/cgi-bin/jobs.cgi"><IMG SRC="/cups/images/button-manage-jobs.gif" ALT="Manage
+Jobs" CLASS="button"></A>
+</P>
+
+</TD><TD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD VALIGN="TOP">
+
+<H2 CLASS="title">Server</H2>
+
+<P>
+<A HREF="/cgi-bin/admin.cgi?op=config-server"><IMG
+SRC="/cups/images/button-edit-configuration-file.gif" ALT="Edit Configuration
+File" CLASS="button"></A>
+<A HREF="/cgi-bin/admin.cgi?op=log&file=access_log" TARGET="_blank"><IMG
+SRC="/cups/images/button-view-access-log.gif" ALT="View Access Log"
+CLASS="button"></A>
+<A HREF="/cgi-bin/admin.cgi?op=log&file=error_log" TARGET="_blank"><IMG
+SRC="/cups/images/button-view-error-log.gif" ALT="View Error Log"
+CLASS="button"></A>
+<A HREF="/cgi-bin/admin.cgi/log/page_log" TARGET="_blank"><IMG
+SRC="/cups/images/button-view-page-log.gif" ALT="View Page Log"
+CLASS="button"></A>
+</P>
+
+{SETTINGS_ERROR?<P>{SETTINGS_MESSAGE}</P>
+<BLOCKQUOTE>{SETTINGS_ERROR}</BLOCKQUOTE>:
+
+<FORM METHOD="POST" ACTION="/cgi-bin/admin.cgi">
+
+<P><B>Basic Server Settings:</B></P>
+
+<P><INPUT TYPE="HIDDEN" NAME="OP" VALUE="config-server">
+<INPUT TYPE="CHECKBOX" NAME="REMOTE_PRINTERS" {?remote_printers}> Show printers shared by other systems<BR>
+<INPUT TYPE="CHECKBOX" NAME="SHARE_PRINTERS" {?share_printers}> Share published printers connected to this system<BR>
+<INPUT TYPE="CHECKBOX" NAME="REMOTE_ADMIN" {?remote_admin}> Allow remote administration<BR>
+<INPUT TYPE="CHECKBOX" NAME="USER_CANCEL_ANY" {?user_cancel_any}> Allow users to cancel any job (not just their own)<BR>
+<INPUT TYPE="CHECKBOX" NAME="DEBUG_LOGGING" {?debug_logging}> Save debugging information for troubleshooting</P>
+
+<P><INPUT TYPE="IMAGE" SRC="/cups/images/button-change-settings.gif" ALT="Change Settings"></P>
+
+</FORM>}
+
+</TD></TR>
+</TABLE>

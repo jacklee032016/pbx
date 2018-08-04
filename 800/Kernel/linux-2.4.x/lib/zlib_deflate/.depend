@@ -1,0 +1,11 @@
+deflate.o: deflate.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/zutil.h \
+   defutil.h
+deflate_syms.o: deflate_syms.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/zlib.h
+deftree.o: deftree.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/zutil.h \
+   defutil.h

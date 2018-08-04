@@ -1,0 +1,191 @@
+acpiphp_core.o: acpiphp_core.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   pci_hotplug.h \
+   acpiphp.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hotplug/pci/acpi/module.h)
+acpiphp_glue.o: acpiphp_glue.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   pci_hotplug.h \
+   acpiphp.h
+acpiphp.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/acpi.h \
+   pci_hotplug.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi_bus.h
+	@touch acpiphp.h
+acpiphp_pci.o: acpiphp_pci.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   pci_hotplug.h \
+   acpiphp.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ia64.h)
+acpiphp_res.o: acpiphp_res.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   pci_hotplug.h \
+   acpiphp.h
+cpqphp_core.o: cpqphp_core.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/miscdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   cpqphp.h \
+   cpqphp_nvram.h
+cpqphp_ctrl.o: cpqphp_ctrl.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   cpqphp.h
+cpqphp.h: \
+   pci_hotplug.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hotplug/pci/compaq/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+	@touch cpqphp.h
+cpqphp_nvram.o: cpqphp_nvram.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/miscdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   cpqphp.h \
+   cpqphp_nvram.h
+cpqphp_nvram.h: \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hotplug/pci/compaq/nvram.h)
+	@touch cpqphp_nvram.h
+cpqphp_pci.o: cpqphp_pci.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   cpqphp.h \
+   cpqphp_nvram.h
+cpqphp_proc.o: cpqphp_proc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   cpqphp.h
+ibmphp_core.o: ibmphp_core.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   ibmphp.h
+ibmphp_ebda.o: ibmphp_ebda.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   ibmphp.h
+ibmphp.h: \
+   pci_hotplug.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hotplug/pci/ibm/module.h)
+	@touch ibmphp.h
+ibmphp_hpc.o: ibmphp_hpc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/time.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   ibmphp.h
+ibmphp_pci.o: ibmphp_pci.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   ibmphp.h
+ibmphp_res.o: ibmphp_res.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   ibmphp.h
+pci_hotplug_core.o: pci_hotplug_core.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/dnotify.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   pci_hotplug.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hotplug/pci/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+pci_hotplug_util.o: pci_hotplug_util.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   pci_hotplug.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hotplug/pci/module.h)
+.PRECIOUS:	acpiphp.h \
+	cpqphp.h \
+	cpqphp_nvram.h \
+	ibmphp.h \
+

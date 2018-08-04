@@ -1,0 +1,113 @@
+#
+# $Id: Makefile.pre,v 1.10 2007/09/15 19:45:14 lizhijie Exp $
+
+
+# for release 
+BUILDTIME := $(shell TZ=UTC date -u "+%Y_%m_%d-%H_%M")
+ASSIST_RELEASES_NAME=assist_samba_$(BUILDTIME).tar 
+
+ARCH=arm
+
+# 发行版，以区别调试信息和日志信息，2007.03.15
+EDITION=release
+
+# 使用新版的STC单片机程序，2007.05.02
+STC_LCD_HOME=$(ROOT_DIR)/as600_StcLcd
+
+ASSIST_SHARED=yes
+RELEASES_DIR=../releases
+C_FLAGS += -Wall
+
+# MESH Support is YES/NO
+MESH_SUPPORT=NO
+
+ifeq ($(LINK), static)
+	ASSIST_SHARED=
+	LDFLAGS+= -Wl,-static
+	# C_CFLAGS+=-Wl, static
+else
+	#LDFLAGS+= -shared
+	#C_CFLAGS+=-Wl, shared
+endif
+
+ifeq ($(ARCH),arm)
+	C_FLAGS += -mbig-endian -D__ARM_IXP__=1 
+	CXX_FLAGS = -mbig-endian -D__ARM_IXP__=1 
+	CROSS_COMPILER=arm-linux-
+	LDFLAGS+= -mbig-endian 
+	#ASSIST_SHARED= 
+	flag=-mbig-endian
+else
+	ARCH=i686
+endif
+
+ifeq ($(MESH_SUPPORT),YES)
+	C_FLAGS += -DWITH_MESH=1  
+else
+	C_FLAGS += -DWITH_MESH=0 
+endif
+
+ifeq ($(STC_NEW),yes)
+	C_FLAGS += -D__WITH_NEW_STC__=1 -I$(STC_HOME)/new/include 
+endif
+C_FLAGS += -I$(STC_LCD_HOME)/include 
+
+ifeq ($(EDITION),release)
+	C_FLAGS += -D__AS_RELEASE__
+endif 
+
+C_FLAGS += -I$(ROOT_DIR)/include -I$(ROOT_DIR)/as600_SharedLib/include -I. $(OPTIONS)
+C_FLAGS += -I$(ROOT_DIR)/common_Mesh/tools/include -I$(ROOT_DIR)/common_Video/include 
+
+CXXFLAGS += $(C_FLAGS)
+
+#ifneq ("","$(ASSIST_SHARED)")
+#	#LDFLAGS+=  -mbig-endian #-Wl,-Bdynamic 
+#else
+#	LDFLAGS+=  # -Wl,-Bstatic
+#endif
+
+LDFLAGS += -L$(ROOT_DIR)/as600_SharedLib/binary -L$(BIN_DIR)/lib
+LDFLAGS += -L$(ROOT_DIR)/common_Wifi/Binary/lib -lwifi
+ifeq ($(MESH_SUPPORT),YES)
+	LDFLAGS += -L$(ROOT_DIR)/common_Mesh/binary -lmeshw
+endif
+
+LDFLAGS+= -lpthread -laslib -lm
+# -lm 
+
+BIN_DIR=$(ROOT_DIR)/Linux.bin.$(ARCH)
+OBJ_DIR=Linux.obj.$(ARCH)
+
+CGI_BIN_DIR=$(BIN_DIR)/var/admin/cgi-bin
+
+
+CC	= $(CROSS_COMPILER)gcc
+CXX 	= $(CROSS_COMPILER)g++ 
+STRIP	= $(CROSS_COMPILER)strip
+LD	= $(CROSS_COMPILER)ld
+RANLIB 	= $(CROSS_COMPILER)ranlib
+STRIP 	= $(CROSS_COMPILER)strip
+AR 	= $(CROSS_COMPILER)ar
+
+RM	= rm -r -f
+MKDIR	= mkdir -p
+MODE	= 700
+OWNER	= root
+CHOWN	= chown
+CHMOD	= chmod
+COPY	= cp
+MOVE	= mv
+
+LN		= ln -sf
+
+INSTALL			=	/usr/bin/install -c
+INSTALL_DIR		=	$(INSTALL) -d
+INSTALL_DATA	=	$(INSTALL) -m 644
+INSTALL_CONFIG	=	$(INSTALL) -m 640
+INSTALL_BIN		=	$(INSTALL) -m 755
+INSTALL_MAN		=	$(INSTALL) -m 644
+
+ARFLAGS		= crus
+
+GENERIC_INC_DIR = include

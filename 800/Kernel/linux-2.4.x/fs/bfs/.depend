@@ -1,0 +1,22 @@
+dir.o: dir.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bfs_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   bfs_defs.h
+file.o: file.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bfs_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   bfs_defs.h
+inode.o: inode.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bfs_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   bfs_defs.h

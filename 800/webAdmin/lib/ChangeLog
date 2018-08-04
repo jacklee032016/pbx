@@ -1,0 +1,113 @@
+$Log: ChangeLog,v $
+Revision 1.1.1.1  2006/11/29 17:06:59  lizhijie
+AS600 WebAdmin
+
+Revision 1.1.1.1  2006/09/14 07:57:26  lizhijie
+remove locale engine based on multi-directories
+
+Revision 1.1.1.1  2006/08/09 17:47:37  lizhijie
+rebuild
+
+Revision 1.1.1.1  2006/07/13 13:27:12  lizhijie
+rename it
+
+Revision 1.1.1.1  2006/07/03 06:32:10  lizhijie
+New WebAdmin
+
+Revision 1.29  2005/12/16 05:26:36  hgp
+add dmalloc information
+
+Revision 1.28  2005/08/24 08:53:06  xixudong
+add cgi_log.c  modify makefile
+
+Revision 1.27  2005/07/15 10:08:28  xixudong
+add kill_process()
+
+Revision 1.26  2005/07/15 07:59:53  xixudong
+modify func readline()
+
+Revision 1.25  2005/06/28 07:38:14  xixudong
+add func:get_ethInfo_by_parseIfconfig(interface_info  * peth,char * eth_name);
+         get_WAN_interface(char * wan_interface);
+
+Revision 1.24  2005/06/16 04:08:09  gongyahui
+enable the reset button
+
+Revision 1.23  2005/04/05 04:08:18  xixudong
+add get_pid_name();process_is_run();
+
+Revision 1.22  2005/01/27 06:34:06  xixudong
+<cgi_lib.c> modify fun:(readconfig_raw())
+
+Revision 1.21  2005/01/12 07:59:21  xixudong
+<cgi_lib.c>modify read mode(ITEM_EQU)for delete '\n''\r'and so.
+
+Revision 1.20  2005/01/11 16:13:36  tangr
+<cgi_lib.c> revised in readline() & writeconfig()
+
+Revision 1.19  2005/01/11 06:31:18  xixudong
+<cgi_lib.c> add redline mode blck_list
+
+Revision 1.18  2005/01/10 06:01:41  xixudong
+<cgi_lib.c>add strcpy(entry->name,"blck_list");
+
+Revision 1.17  2005/01/10 05:36:27  tangr
+<cgi_lib.c> ITEM_EQU add
+<cgi_llist.c> list_traverse revised
+
+Revision 1.16  2005/01/08 09:33:41  xixudong
+<cgi_lib.c>add read and write mode(ITEM_blck_LIST)
+
+Revision 1.15  2005/01/06 10:25:58  tangr
+<Makefile> add striping share lib
+
+Revision 1.14  2005/01/05 09:41:12  tangr
+<cgi_lib.c> a few todo
+
+Revision 1.13  2005/01/05 05:36:19  tangr
+<cgi_lib.c> wrapper_malloc add
+
+Revision 1.12  2004/12/28 11:47:04  tangr
+<cgi_html_lib.c> in cgi_html_output(), close file
+
+Revision 1.11  2004/12/27 07:56:31  tangr
+<cgi_llist.c> optimize codes in list_extract_cmdline()
+
+Revision 1.10  2004/12/21 01:48:05  tangr
+<cgi_llist.c> list_travers() updated, list_extract_cmdline() add
+<cgi_lib.c> global var err defined
+<cgi_html_lib.c> cgi_err() & cgi_html_output() updated
+
+Revision 1.9  2004/12/16 02:19:28  tangr
+<cgi_html_lib.c> add cgi_html_output( )
+<cgi_lib.c> add cgi_locatename( ), change the old one to cgi_locatename_raw( )
+            define external err[100]
+
+Revision 1.8  2004/12/13 06:29:09  tangr
+<Makefile> cp libassistcgi.so to /lib
+<cgi_lib.c> add funcs
+   writeconfig_no_override()
+   readconfig_raw()
+   cgi_locatename()
+   to deal writing but no overriding
+
+Revision 1.7  2004/12/09 09:40:22  tangr
+<cgi_html_lib.c> add include "cgi_lib.h"
+
+Revision 1.6  2004/12/09 09:38:09  tangr
+<cgi_html_lib.c> add cgi_error()
+
+Revision 1.5  2004/12/09 06:08:10  tangr
+<cgi_lib.c> bug fixed in readline()
+
+Revision 1.4  2004/12/09 03:44:24  tangr
+<cgi_lib.c> add ITEM_TRI to deal sip configfile
+
+Revision 1.3  2004/12/08 02:26:07  tangr
+<cgi_lib.c> handle type "password" in tag <input>
+
+Revision 1.2  2004/12/07 09:20:24  tangr
+cgi_lib.c: deal with more than one tag <input... in one line in cgi_html_parse_input()
+
+Revision 1.1  2004/11/16 02:34:44  tangr
+FILE ChangeLog add

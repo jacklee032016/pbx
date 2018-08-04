@@ -1,0 +1,83 @@
+# $Id: Config.in,v 1.1.1.1 2006/11/30 16:27:58 lizhijie Exp $
+# Assist Board device drvier configuration
+#
+
+# only included if CONFIG_ASSIST_BOARD != n
+
+define_bool CONFIG_ASSIST_BOARD_BOOL y
+
+#######################################################################
+# Assist ISDN subsystem
+mainmenu_option next_comment
+comment 'Assist ISDN Subsystem'
+	tristate 'Assist ISDN support' CONFIG_ASSIST_ISDN
+	if [ "$CONFIG_ASSIST_ISDN" != "n" ]; then
+		source drivers/assist/isdn/Config.in
+	fi
+endmenu
+
+
+########################################################################
+mainmenu_option next_comment
+comment 'Assist Telephone SubSystem'
+tristate 'Assist Telephone Support' CONFIG_ASSIST_PHONE 
+
+if [ "$CONFIG_ASSIST_PHONE" != "n" ]; then
+	mainmenu_option next_comment
+	comment ' Assist Telephone SLIC/DAA module'
+	dep_tristate 	'    Assist Phone--SLIC/DAA modules' CONFIG_ASSIST_PHONE_SLIC $CONFIG_ASSIST_PHONE 
+	if [ "$CONFIG_ASSIST_PHONE_SLIC" != "n" ]; then
+		dep_tristate 	'       Drvier Debug' CONFIG_ASSIST_PHONE_SLIC_DEBUG $CONFIG_ASSIST_SLIC
+		dep_tristate 	'       JATE Support' CONFIG_ASSIST_PHONE_JATE $CONFIG_ASSIST_SLIC
+		dep_tristate 	'       Hardware DSP' CONFIG_ASSIST_PHONE_HW_DSP $CONFIG_ASSIST_SLIC
+		dep_tristate 	'       Tiger Debug' CONFIG_ASSIST_PHONE_SLIC_TIGER_DEBUG $CONFIG_ASSIST_SLIC
+		dep_tristate 	'       Pulse Dialing Support' CONFIG_ASSIST_PHONE_SLIC_PULSE_DIALING $CONFIG_ASSIST_SLIC
+		dep_tristate 	'       Soft Gain Control Support' CONFIG_ASSIST_PHONE_SLIC_SOFT_GAIN $CONFIG_ASSIST_SLIC
+		dep_tristate 	'       Software Echo Canceler(8 taps)' CONFIG_ASSIST_PHONE_SLIC_SOFT_ECHO $CONFIG_ASSIST_SLIC
+	fi
+	endmenu
+
+
+#	if [ "$CONFIG_ASSIST_PHONE_SLIC" = "n" ]; then
+#		comment ' Assist Phone--PCM module'
+	mainmenu_option next_comment
+	comment ' Assist Telephone PCM module'
+
+		dep_tristate 	'    Assist Phone--PCM module' CONFIG_ASSIST_PHONE_PCM $CONFIG_ASSIST_PHONE
+		dep_tristate 	'       Drvier Debug' CONFIG_ASSIST_PHONE_PCM_DEBUG $CONFIG_ASSIST_SLIC
+	if [ "$CONFIG_ASSIST_PHONE_PCM" != "n" ]; then
+		dep_tristate 	'       Tiger Debug' CONFIG_ASSIST_PHONE_PCM_TIGER_DEBUG $CONFIG_ASSIST_PCM
+	fi
+
+#		if [ "$CONFIG_ASSIST_PHONE_PCM" == "n" ]; then
+#			define_bool CONFIG_ASSIST_PHONE_SLIC	m
+#		else
+#			define_bool CONFIG_ASSIST_PHONE_SLIC	n
+#		fi
+		
+#	fi
+	endmenu
+
+	
+#	comment 'Assist Echo Canceler module'
+	dep_tristate 	'    Echo Canceler modules' CONFIG_ASSIST_ECHO_CANCEL $CONFIG_ASSIST_PHONE 
+	if [ "$CONFIG_ASSIST_ECHO_CANCEL" != "n" ]; then
+#		dep_tristate 	'       ZL50234' CONFIG_ASSIST_ECHO_50234 $CONFIG_ASSIST_ECHO_CANCEL
+		dep_tristate 	'       16 Channels(default:8 Channels)' CONFIG_ASSIST_ECHO_16CH $CONFIG_ASSIST_ECHO_CANCEL
+	fi	
+fi
+endmenu
+
+mainmenu_option next_comment
+comment 'Assist Misc Device driver'
+tristate 'Assist Misc Device Support' CONFIG_ASSIST_MISC 
+
+	dep_tristate 	'    Beeper' 	CONFIG_ASSIST_MISC_BEEPER 		$CONFIG_ASSIST_MISC 
+	dep_tristate 	'    Button' 	CONFIG_ASSIST_MISC_BUTTON 		$CONFIG_ASSIST_MISC 
+	dep_tristate 	'    WatchDog' 	CONFIG_ASSIST_MISC_WATCHDOG 		$CONFIG_ASSIST_MISC 
+	dep_tristate 	'    EEPROM' 	CONFIG_ASSIST_MISC_EEPROM 		$CONFIG_ASSIST_MISC 
+	dep_tristate 	'    LED' 	CONFIG_ASSIST_MISC_LED 			$CONFIG_ASSIST_MISC
+	dep_tristate 	'    OnOffHook'	CONFIG_ASSIST_MISC_ONOFFHOOK 		$CONFIG_ASSIST_MISC  
+	dep_tristate 	'    Switch' 	CONFIG_ASSIST_MISC_SWITCH		$CONFIG_ASSIST_MISC 
+endmenu
+

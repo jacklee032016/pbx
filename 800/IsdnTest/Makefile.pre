@@ -1,0 +1,67 @@
+#
+# $Id: Makefile.pre,v 1.1.1.1 2006/11/30 16:21:59 lizhijie Exp $
+#
+
+# for release 
+BUILDTIME := $(shell TZ=UTC date -u "+%Y_%m_%d-%H_%M")
+ASSIST_RELEASES_NAME=assist_isdn_$(BUILDTIME).tar 
+
+ARCH=arm
+
+VOIPS_DIR=$(TOP_DIR)/voips
+DRIVER_HOME_DIR=$(TOP_DIR)/drivers
+
+ASSIST_SHARED=yes
+RELEASES_DIR=../releases
+C_CFLAGS = -Wall
+
+
+ifeq ($(ARCH),arm)
+	C_CFLAGS += -mbig-endian -D__ARM_IXP__=1 
+	CXX_FLAGS = -mbig-endian -D__ARM_IXP__=1 
+	CROSS_COMPILER=arm-linux-
+	LDFLAGS+= -mbig-endian 
+	#ASSIST_SHARED= 
+	flag=-mbig-endian
+	KINCLUDES=/works/kernel/linux-2.4.x/include
+else
+	ARCH=i686
+endif
+
+
+BIN_DIR=$(TOP_DIR)/Linux.bin.$(ARCH)
+OBJ_DIR=Linux.obj.$(ARCH)
+
+
+CC		= $(CROSS_COMPILER)gcc
+CXX 	= $(CROSS_COMPILER)g++ 
+STRIP	= $(CROSS_COMPILER)strip
+LD		= $(CROSS_COMPILER)ld
+RANLIB 	= $(CROSS_COMPILER)ranlib
+STRIP 	= $(CROSS_COMPILER)strip
+AR 		= $(CROSS_COMPILER)ar
+
+RM		= rm -r -f
+MKDIR	= mkdir -p
+MODE	= 700
+OWNER	= root
+CHOWN	= chown
+CHMOD	= chmod
+COPY	= cp
+MOVE	= mv
+
+ARFLAGS		= crus
+
+CFLAGS+= -O2 -Wall \
+	-I. -I$(TOP_DIR)/include  -I$(TOP_DIR)/build -I$(KINCLUDES) 
+
+
+GENERIC_INC_DIR = include
+BUILD		= $(TOP_DIR)/build
+UTILS_DIR	= $(TOP_DIR)/util
+
+# LIBS_DIR	= $(TOP_DIR)/shared_lib
+
+
+DRIVER_INC_DIR += -I$(KINCLUDES) -I$(TOP_DIR)  
+

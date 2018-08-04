@@ -1,0 +1,464 @@
+appl.o: appl.c \
+   m_capi.h \
+   helper.h \
+   debug.h \
+   mISDNManufacturer.h
+app_plci.o: app_plci.c \
+   m_capi.h \
+   helper.h \
+   debug.h \
+   dss1.h
+arcofi.o: arcofi.c \
+   dchannel.h \
+   layer1.h \
+   isac.h \
+   arcofi.h \
+   debug.h
+asn1_address.o: asn1_address.c \
+   asn1.h \
+   asn1_generic.h \
+   asn1_address.h
+asn1_aoc.o: asn1_aoc.c \
+   asn1.h \
+   asn1_generic.h \
+   asn1_address.h \
+   asn1_aoc.h
+asn1_basic_service.o: asn1_basic_service.c \
+   asn1.h \
+   asn1_generic.h \
+   asn1_basic_service.h
+asn1.o: asn1.c \
+   asn1.h
+asn1_comp.o: asn1_comp.c \
+   asn1.h \
+   asn1_comp.h \
+   asn1_generic.h \
+   asn1_aoc.h \
+   asn1_diversion.h
+asn1_comp.h: \
+   asn1.h
+	@touch asn1_comp.h
+asn1_diversion.o: asn1_diversion.c \
+   asn1.h \
+   asn1_generic.h \
+   asn1_address.h \
+   asn1_basic_service.h \
+   asn1_diversion.h
+asn1_enc.o: asn1_enc.c \
+   m_capi.h \
+   helper.h \
+   asn1_enc.h
+asn1_enc.h: \
+   asn1.h
+	@touch asn1_enc.h
+asn1_generic.o: asn1_generic.c \
+   asn1.h \
+   asn1_generic.h
+asn1_generic.h: \
+   asn1.h
+	@touch asn1_generic.h
+asn1.h: \
+   helper.h
+	@touch asn1.h
+assist_hfc_multi.o: assist_hfc_multi.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   dchannel.h \
+   bchannel.h \
+   layer1.h \
+   dsp.h \
+   helper.h \
+   debug.h \
+   hw_lock.h \
+   assist_hfc_multi.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hfcmulti/pcimem.h)
+assist_hfc_multi.h: \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hfcmulti/pcimem.h)
+	@touch assist_hfc_multi.h
+avm_fritz.o: avm_fritz.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isapnp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   dchannel.h \
+   bchannel.h \
+   isac.h \
+   layer1.h \
+   helper.h \
+   debug.h \
+   hw_lock.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/apus.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pnp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hotplug.h)
+bchannel.o: bchannel.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   layer1.h \
+   bchannel.h \
+   helper.h
+bchannel.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tqueue.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ptrace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   memdbg.h
+	@touch bchannel.h
+capi.o: capi.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   m_capi.h \
+   helper.h \
+   debug.h
+capi_enc.o: capi_enc.c \
+   m_capi.h \
+   asn1.h
+contr.o: contr.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   m_capi.h \
+   helper.h \
+   debug.h
+core.o: core.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stddef.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   core.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smp.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h
+core.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   helper.h \
+   memdbg.h
+	@touch core.h
+dchannel.o: dchannel.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   layer1.h \
+   helper.h \
+   dchannel.h
+dchannel.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tqueue.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ptrace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   memdbg.h
+	@touch dchannel.h
+debug.o: debug.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   debug.h
+dsp_audio.o: dsp_audio.c \
+   layer1.h \
+   helper.h \
+   debug.h \
+   dsp.h
+dsp_blowfish.o: dsp_blowfish.c \
+   layer1.h \
+   helper.h \
+   debug.h \
+   dsp.h
+dsp_cmx.o: dsp_cmx.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   layer1.h \
+   helper.h \
+   debug.h \
+   dsp.h \
+   hw_lock.h
+dsp_core.o: dsp_core.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   layer1.h \
+   helper.h \
+   debug.h \
+   dsp.h \
+   hw_lock.h
+dsp_dtmf.o: dsp_dtmf.c \
+   layer1.h \
+   helper.h \
+   debug.h \
+   dsp.h
+dsp.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tqueue.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   memdbg.h
+	@touch dsp.h
+dsp_tones.o: dsp_tones.c \
+   layer1.h \
+   helper.h \
+   debug.h \
+   dsp.h
+dtmf.o: dtmf.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   layer1.h \
+   helper.h \
+   debug.h
+faxl3.o: faxl3.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   layer1.h \
+   m_capi.h \
+   helper.h \
+   debug.h
+fsm.o: fsm.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   fsm.h
+fsm.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h
+	@touch fsm.h
+helper.o: helper.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   helper.h
+helper.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   memdbg.h
+	@touch helper.h
+hfc_multi.o: hfc_multi.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   dchannel.h \
+   bchannel.h \
+   layer1.h \
+   dsp.h \
+   helper.h \
+   debug.h \
+   hw_lock.h \
+   hfc_multi.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hfcmulti/pcimem.h)
+hfc_multi.h: \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hfcmulti/pcimem.h)
+	@touch hfc_multi.h
+hfc_pci.o: hfc_pci.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   dchannel.h \
+   bchannel.h \
+   hfc_pci.h \
+   layer1.h \
+   helper.h \
+   debug.h \
+   hw_lock.h
+hfcs_usb.o: hfcs_usb.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   dchannel.h \
+   bchannel.h \
+   layer1.h \
+   helper.h \
+   debug.h \
+   hw_lock.h \
+   hfcs_usb.h
+i4l_mISDN.o: i4l_mISDN.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   fsm.h \
+   helper.h \
+   dss1.h \
+   debug.h
+isac.o: isac.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   dchannel.h \
+   isac.h \
+   arcofi.h \
+   layer1.h \
+   helper.h \
+   debug.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h
+isar.o: isar.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   layer1.h \
+   helper.h \
+   bchannel.h \
+   isar.h \
+   debug.h
+l3helper.o: l3helper.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   dss1.h \
+   helper.h
+l3_udss1.o: l3_udss1.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   layer3.h \
+   helper.h \
+   debug.h \
+   dss1.h
+layer1.o: layer1.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   layer1.h \
+   helper.h \
+   debug.h
+layer1.h: \
+   fsm.h \
+   memdbg.h
+	@touch layer1.h
+layer2.o: layer2.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   layer2.h \
+   helper.h \
+   debug.h
+layer2.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   fsm.h \
+   memdbg.h
+	@touch layer2.h
+layer3.o: layer3.c \
+   layer3.h \
+   helper.h
+layer3.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   fsm.h \
+   memdbg.h
+	@touch layer3.h
+listen.o: listen.c \
+   m_capi.h \
+   helper.h \
+   debug.h
+m_capi.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/capi.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernelcapi.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/isdn/avmb1/../avmb1/capiutil.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/isdn/avmb1/../avmb1/capicmd.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/isdn/avmb1/../avmb1/capilli.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   asn1.h \
+   fsm.h \
+   memdbg.h
+	@touch m_capi.h
+memdbg.o: memdbg.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stddef.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bugs.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h
+memdbg.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h
+	@touch memdbg.h
+ncci.o: ncci.c \
+   m_capi.h \
+   helper.h \
+   debug.h \
+   dss1.h \
+   mISDNManufacturer.h
+plci.o: plci.c \
+   m_capi.h \
+   dss1.h \
+   helper.h \
+   debug.h
+sedl_fax.o: sedl_fax.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isapnp.h \
+   dchannel.h \
+   bchannel.h \
+   isac.h \
+   isar.h \
+   layer1.h \
+   helper.h \
+   debug.h \
+   hw_lock.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pnp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hotplug.h)
+stack.o: stack.c \
+   core.h
+supp_serv.o: supp_serv.c \
+   m_capi.h \
+   asn1_comp.h \
+   asn1_enc.h \
+   dss1.h \
+   helper.h
+tei.o: tei.c \
+   layer2.h \
+   helper.h \
+   debug.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/random.h
+udevice.o: udevice.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stddef.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   core.h
+w6692.o: w6692.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   dchannel.h \
+   bchannel.h \
+   layer1.h \
+   helper.h \
+   debug.h \
+   w6692.h \
+   hw_lock.h
+x25_dte.o: x25_dte.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   x25_l3.h \
+   helper.h \
+   debug.h
+x25_l3.o: x25_l3.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   x25_l3.h \
+   helper.h \
+   debug.h
+x25_l3.h: \
+   m_capi.h
+	@touch x25_l3.h
+.PRECIOUS:	asn1_comp.h \
+	asn1_enc.h \
+	asn1_generic.h \
+	asn1.h \
+	assist_hfc_multi.h \
+	bchannel.h \
+	core.h \
+	dchannel.h \
+	dsp.h \
+	fsm.h \
+	helper.h \
+	hfc_multi.h \
+	layer1.h \
+	layer2.h \
+	layer3.h \
+	m_capi.h \
+	memdbg.h \
+	x25_l3.h \
+

@@ -1,0 +1,27 @@
+# $Id: README,v 1.1.1.1 2006/11/29 09:50:50 lizhijie Exp $
+	README for IXP4xx DSP DTMF decoder
+				Li Zhijie, 2005.05.31
+
+IXP4xx上DSP解码不能解码的问题
+	修改assist/dsp/assist_dtmf_detect.c，在IXP方式下，不执行二次谐波的功率谱检查
+	在PC机上，照常进行。
+	
+	tone.data
+		包含u律的、DTMF号码为“54875“的数据文件，是由SLIC设备上录音获得的，可以用
+		程序直接解码此文件，测试算法的效果。
+		
+		
+	测试
+		分别编译PC和IXP4xx上的测试程序
+		
+		分别在PC和IXP4xx上，对tone.data文件作解码
+		
+		分别在PC和IXP4XX上，对SLIC设备发出的数据解码
+		
+		最后，测试PBX程序中，二次收号是否正确解码
+
+	比较
+		同样的解码程序在PC和IXP422上，程序执行的速度差别是明显的，这种速度对程序
+		并发运行的效果影响也必然是明显的。
+		
+		在多路通话时，一定注意这种不同。

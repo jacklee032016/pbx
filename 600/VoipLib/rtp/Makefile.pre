@@ -1,0 +1,132 @@
+# $Log: Makefile.pre,v $
+# Revision 1.1.1.1  2006/11/29 09:28:02  lizhijie
+# AS600 VoipLib
+#
+# Revision 1.1.1.1  2006/07/12 14:44:45  lizhijie
+# rebuild
+#
+# Revision 1.4  2005/09/30 09:38:07  wuaiwu
+# *** empty log message ***
+#
+# Revision 1.3  2005/07/05 07:27:56  tangr
+# update Makefile.pre and Makefile.post for bin releases
+#
+# Revision 1.2  2005/06/27 03:45:04  lizhijie
+# no message
+#
+# Revision 1.1.1.1  2005/06/09 05:37:05  tangr
+# version: 01.0.00-00
+#  -new voips libs and includes
+#  -extract include files into include/
+#  -update Makefiles in subdirs
+#
+# Revision 1.1.1.1  2005/03/14 07:15:16  lizhijie
+# common software packages for VOIPS
+#
+# Revision 1.2  2005/02/03 03:15:57  lizhijie
+# add debug symbol in object files
+#
+# Revision 1.1.1.1  2005/02/01 03:55:10  lizhijie
+# VOIP protocols soruces code from VOCAL
+#
+# $Id: Makefile.pre,v 1.1.1.1 2006/11/29 09:28:02 lizhijie Exp $
+
+
+CFLAGS= -Wall -g -I. -I$(TOPDIR)/include
+LFLAGS= -L.
+
+# 
+# for release 
+BUILDTIME := $(shell TZ=UTC date -u "+%Y_%m_%d-%H_%M")
+ASSIST_RELEASES_NAME=assist_rtp_$(BUILDTIME).tar 
+
+ARCH=
+ASSIST_SHARED=yes
+RELEASES_DIR=../releases
+C_CFLAGS = -Wall -g 
+EDITION=debug
+
+ifeq ($(LINK), static)
+	ASSIST_SHARED=
+	LDFLAGS+= -static
+	#C_CFLAGS+=-Wl, static
+else
+	#LDFLAGS+= -shared
+	#C_CFLAGS+=-Wl, shared
+endif
+
+ifeq ($(ARCH),arm)
+	C_CFLAGS += -mbig-endian 
+	CXX_FLAGS = -mbig-endian
+	CROSS_COMPILER=arm-linux-
+	LDFLAGS+= -mbig-endian 
+	#ASSIST_SHARED= 
+	flag=-mbig-endian
+else
+	ARCH=i686
+endif
+
+
+BIN_DIR=$(TOP_DIR)/../bin/$(ARCH)
+OBJ_DIR=Linux.obj.$(ARCH)$(CODE)
+
+
+CC	= $(CROSS_COMPILER)gcc
+CXX 	= $(CROSS_COMPILER)g++ 
+STRIP	= $(CROSS_COMPILER)strip
+LD	= $(CROSS_COMPILER)ld
+RANLIB 	= $(CROSS_COMPILER)ranlib
+STRIP 	= $(CROSS_COMPILER)strip
+AR	= $(CROSS_COMPILER)ar
+
+RM	= rm -r -f
+MKDIR	= mkdir -p
+MODE	= 700
+OWNER	= root
+CHOWN	= chown
+CHMOD	= chmod
+COPY	= cp
+MOVE	= mv
+
+ARFLAGS	= crus
+
+		
+UTILS_INC_DIR+=-I$(BUILD) \
+	-I$(UTILS_DIR) \
+	-I$(UTILS_DIR)/threads \
+	-I$(UTILS_DIR)/logging \
+	-I$(UTILS_DIR)/crypto \
+	-I$(UTILS_DIR)/statistics \
+	-I$(UTILS_DIR)/snmp \
+	-I$(UTILS_DIR)/signals \
+	-I$(UTILS_DIR)/behavior \
+	-I$(UTILS_DIR)/io \
+	-I$(UTILS_DIR)/services \
+	-I$(UTILS_DIR)/transport \
+	-I$(UTILS_DIR)/config \
+	-I$(UTILS_DIR)/dnssrv \
+	-I$(UTILS_DIR)/deprecated \
+	-I$(UTILS_DIR)/adt 
+
+RTP_INC_DIR+=-I$(RTP_DIR) -I$(RTP_DIR)/codec 
+
+INCLUDE_DIR= $(UTILS_INC_DIR) $(RTP_INC_DIR) 
+
+
+C_CFLAGS = -Wall -fPIC -Wno-deprecated -D_REENTRANT -DUSE_PTHREADS -g 
+
+ifeq ($(ARCH),arm)
+	C_CFLAGS += -mbig-endian 
+endif
+
+C_CFLAGS+= $(INCLUDE_DIR) 
+C_CFLAGS+= -DVOCAL_USE_DEPRECATED -DUSE_CRYPTO_RANDOM 
+
+ifeq ($(EDITION),release)
+	C_CFLAGS += -D__AS_RELEASE__
+	CXX_FLAGS += -D__AS_RELEASE__ 
+else
+	CXX_FLAGS += -D__AS_DEBUG__
+endif
+
+LD_INC_DIR= -L$(TOP_DIR) -L$(BIN_DIR)

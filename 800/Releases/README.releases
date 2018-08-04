@@ -1,0 +1,43 @@
+		IXP422应用软件和根文件系统发布说明
+				李志杰  2005.01.04
+
+
+原则：
+1、所有公共模块和公共配置文件全部建立在此目录中
+	公共模块包括：libc、其他的库、ldconfig等
+	公共配置文件：passwd、resolv.conf、网络地址配置等
+
+本部分的程序和配置管理由网管组维护
+
+
+2、各个软件包的安装和配置文件由各个软件包自行完成
+	例如pppd、boa等的配置由pppd和boa自行完成
+
+
+3、Flash中建立默认的文件系统
+	FLASH中的默认文件系统完成的任务
+a、启动kernel
+b、启动init后，将根文件系统切换到CF卡
+c、CF卡中配置数据出错后，可以使用FLASH中的程序来恢复
+d、CF卡中根文件系统出错或崩溃后，可以使用FLASH来恢复
+
+
+4、CF卡和FLASH的文件系统的建立
+	主要使用脚本从本目录中生成，两个脚本的名称分贝为mkjffs_releases.sh
+和mkcompactlfash_releases.sh。	
+	FLASH文件系统特殊的配置文件在flash目录中单独维护，例如启动的初始
+脚本/etc/init.d/rcS，两个文件系统各自保存一份
+
+
+5、各个软件包的维护
+要求：
+a、尽量支持能够编译PC和IXP422的版本
+b、各个软件包的目录结构这包含releases子目录
+	这个子目录中包含完整的程序发布时的目录结构，如果目录中没有文件，在
+提交CVS时，一定包含一个readme的文件。此文件可以为空，但必须是全部小写字母。
+	配置文件全部由各个软件包自行维护。
+b、make ARCH=arm install命令
+	能够生成assist_$PACKAGE_$DATE.tar的文件
+	将此文件拷贝到$(ASSIST_IXP_RELEASES_HOME)目录（这个目录一般指向
+/works/ixp_releases）。
+					

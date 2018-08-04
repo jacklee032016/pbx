@@ -1,0 +1,79 @@
+#
+# $Id: Makefile.pre,v 1.5 2007/09/14 19:53:05 lizhijie Exp $
+
+
+# for release 
+
+ARCH=arm
+OS		= linux
+
+# 发行版，以区别调试信息和日志信息，2007.03.15
+EDITION=release
+
+
+# 串口的握手方式：硬件握手或软件握手
+TYPE=
+
+ifeq ($(ARCH),arm)
+	C_FLAGS += -mbig-endian -D__ARM_IXP__=1 
+	CXXFLAGS = -mbig-endian -D__ARM_IXP__=1 
+	CROSS_COMPILER=arm-linux-
+	LDFLAGS+= -mbig-endian 
+	flag=-mbig-endian
+	
+	ZARLINK_SUPPORT=yes
+# add following for support ZarLink driver check in IXP422 board, 2005.05.26, Li Zhijie	
+	ifeq ($(ZARLINK_SUPPORT),yes)
+		C_FLAGS += -DZARLINK_SUPPORT=1 
+	endif
+	
+else
+	ARCH=i686
+endif
+
+# AS600明确地使用硬件握手方式，李志杰
+ifeq ($(TYPE), software)
+	CFLAGS += -D__USE_SOFTWARE__=1 
+else
+	CFLAGS += -D__USE_SOFTWARE__=0 
+endif
+
+ifeq ($(STC_NEW),yes)
+	C_FLAGS += -D__WITH_NEW_STC__=1 -I$(STC_HOME)/include 
+endif 
+
+ifeq ($(EDITION),release)
+	C_FLAGS += -D__AS_RELEASE__
+endif 
+
+DRIVER_HOME=$(ROOT_DIR)/as600_Drivers
+
+C_FLAGS +=  -O2 -Wall \
+	-I. -I$(ROOT_DIR)/include \
+	-I$(DRIVER_HOME)/pcm/include -I$(DRIVER_HOME)/misc/include   
+
+# CXXFLAGS += -Wall 
+
+
+BIN_DIR=$(ROOT_DIR)/Linux.bin.$(ARCH)
+OBJ_DIR=Linux.obj.$(ARCH)
+
+
+CC	= $(CROSS_COMPILER)gcc
+CXX 	= $(CROSS_COMPILER)g++ 
+STRIP	= $(CROSS_COMPILER)strip
+LD	= $(CROSS_COMPILER)ld
+RANLIB 	= $(CROSS_COMPILER)ranlib
+STRIP 	= $(CROSS_COMPILER)strip
+AR 	= $(CROSS_COMPILER)ar
+
+RM	= rm -r -f
+MKDIR	= mkdir -p
+MODE	= 700
+OWNER	= root
+CHOWN	= chown
+CHMOD	= chmod
+COPY	= cp
+MOVE	= mv
+
+LN		= ln -sf

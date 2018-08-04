@@ -1,0 +1,8 @@
+		---ChangeLog for kernel\ixp400_xscale_sw--
+					wangwei,2005.12.1,
+			
+2005.12.01   wangwei
+	在src/ethMii中增加现在现在能够读出的网口芯片PHY值
+	修改文件：
+		src/ethMii/IxEthMii_p.h
+		src/ethMii/IxEthMii.c

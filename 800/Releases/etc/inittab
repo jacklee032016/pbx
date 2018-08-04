@@ -1,0 +1,17 @@
+# this is the first task must be taken
+::sysinit:/etc/init.d/rcS
+
+
+#::respawn:/usr/sbin/telnetd
+
+# This line us mandidate for shell running..
+::askfirst:-/bin/sh
+
+# tty0::askfirst:-/bin/sh
+# tty1::askfirst:-/bin/sh
+
+
+# ::ctrlaltdel:/sbin/reboot
+::restart:/sbin/init
+
+login

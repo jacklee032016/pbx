@@ -1,0 +1,38 @@
+#
+# $Author: lizhijie $
+# $Log: Readme,v $
+# Revision 1.2  2006/12/03 08:25:27  lizhijie
+# dd
+#
+# Revision 1.1.1.1  2006/11/29 08:35:30  lizhijie
+# AS600 Shared Library
+#
+# Revision 1.1.1.1  2006/07/12 09:12:53  lizhijie
+# rebuild as600 shared library
+#
+# Revision 1.2  2005/07/15 08:26:10  wuaiwu
+# no message
+#
+# Revision 1.1.1.1  2005/05/27 08:43:37  lizhijie
+# add shared library and programs depend on it
+#
+# $Revision: 1.2 $
+# $Id: Readme,v 1.2 2006/12/03 08:25:27 lizhijie Exp $
+#
+
+		Readme
+				Li Zhijie, 2005.05.26
+
+使用共享库的程序
+
+src/recorder
+	录音程序
+						
+src/selftest
+	硬件自检程序
+
+src/uartd
+	串口通讯的daemon程序
+		
+src/setup
+    出厂前的设置程序，设置用户的MAC地址，IP地址、用户名/口令等

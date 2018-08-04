@@ -1,0 +1,211 @@
+daisy.o: daisy.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h
+ieee1284.o: ieee1284.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/threads.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/lp/console.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/1284.h)
+ieee1284_ops.o: ieee1284_ops.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/lp/console.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/1284.h)
+init.o: init.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/threads.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/pc.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sysctl.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/dragonix.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/amiga.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/mfc3.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/atari.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/arc.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/sunbpp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/hd64465.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/1284.h)
+parport_amiga.o: parport_amiga.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/setup.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h
+parport_arc.o: parport_arc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/threads.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/ptrace.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/arch/irqs.h
+parport_atari.o: parport_atari.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/setup.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h
+parport_cs.o: parport_cs.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ptrace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport_pc.h \
+   /works/isdn/kernel/linux-2.4.x/include/pcmcia/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/pcmcia/cs_types.h \
+   /works/isdn/kernel/linux-2.4.x/include/pcmcia/cs.h \
+   /works/isdn/kernel/linux-2.4.x/include/pcmcia/cistpl.h \
+   /works/isdn/kernel/linux-2.4.x/include/pcmcia/ds.h \
+   /works/isdn/kernel/linux-2.4.x/include/pcmcia/cisreg.h \
+   /works/isdn/kernel/linux-2.4.x/include/pcmcia/ciscode.h
+parport_dragonix.o: parport_dragonix.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/setup.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h
+parport_gsc.o: parport_gsc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/dma.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h
+parport_hd64465.o: parport_hd64465.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/malloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sh/keywest.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sh/hd64465.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hd64465/iobase.h)
+parport_mfc3.o: parport_mfc3.c \
+   multiface.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mc6821.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/zorro.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/setup.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h
+parport_pc.o: parport_pc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/dma.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport_pc.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/parport.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/pc/fifo.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/pc/superio.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/1284.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pci.h)
+parport_serial.o: parport_serial.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport_pc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/serial.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/serialP.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/serial.h
+parport_sunbpp.o: parport_sunbpp.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/ptrace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/dma.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h
+probe.o: probe.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ctype.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h
+procfs.o: procfs.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ctype.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sysctl.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/1284.h)
+share.o: share.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/threads.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/1284.h)

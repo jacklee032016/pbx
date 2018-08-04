@@ -1,0 +1,171 @@
+afs.o: afs.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/map.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/partitions.h
+cmdlinepart.o: cmdlinepart.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/partitions.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/setup.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bootmem.h
+ftl.o: ftl.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/compatmac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ptrace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hdreg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/ftl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h
+inftlcore.o: inftlcore.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hdreg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/nand.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/nftl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/inftl.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hdreg.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h)
+inftlmount.o: inftlmount.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/miscdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/nftl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/inftl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/compatmac.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mtd/debug/verbose.h)
+mtdblock.o: mtdblock.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/compatmac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/devfs/fs.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h
+mtdblock_ro.o: mtdblock_ro.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/compatmac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h
+mtdchar.o: mtdchar.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/devfs/fs.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h
+mtdconcat.o: mtdconcat.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/concat.h
+mtdcore.o: mtdcore.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ptrace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/compatmac.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pm.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pm.h
+mtdpart.o: mtdpart.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/partitions.h
+nftlcore.o: nftlcore.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/miscdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/nand.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/nftl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/compatmac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hdreg.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/nftl/rw.h)
+nftlmount.o: nftlmount.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/miscdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/nand.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/nftl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/compatmac.h
+redboot.o: redboot.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/partitions.h

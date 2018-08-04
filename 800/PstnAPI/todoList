@@ -1,0 +1,24 @@
+# $Id: todoList,v 1.1.1.1 2006/11/30 16:22:45 lizhijie Exp $		
+# $Author: lizhijie $
+
+		todo List
+		        Mar,2006  John, Lee  Assist Corp. 
+
+
+2006.03.17
+    Call Progress Tone Detect(Except BT)
+    Debug DP20 on FXS port
+    FSK modem with Japanese Parameters
+    Caller ID with PBX/Switch
+    CAR With PBX/Switch
+    DP10/20 on FXO port
+    
+
+2006.03.10
+    Busy Tone Detect
+    FSK Modulation and Demodulation
+    Modify parameters (such as frequency, mark and space duraiotn) for audible tones
+    DP/DP20 API and test code
+    FXO Link status test
+    Add other audible tone definations for DSP software
+		        

@@ -1,0 +1,385 @@
+addr.o: addr.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   signaling.h \
+   addr.h
+addr.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h
+	@touch addr.h
+atm_misc.o: atm_misc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sonet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/errno.h
+br2684.o: br2684.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/arp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/rtnetlink.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/arp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmbr2684.h \
+   common.h \
+   ipcommon.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/br2684/ipfilter.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/br2684/fast/trans.h)
+clip.o: clip.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_arp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/notifier.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmclip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmarp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/in.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/inetdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/route.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/icmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/param.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   common.h \
+   resources.h \
+   ipcommon.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/atmclip.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/clip/no/icmp.h)
+common.o: common.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/net.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmclip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmarp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sonet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/capability.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/time.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/ioctls.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/lane.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/lane/module.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmlec.h \
+   lec.h \
+   lec_arpc.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/mpoa/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/mpoa.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmmpc.h \
+   mpc.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/tcp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/tcp/module.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm_tcp.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/clip.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/clip/module.h) \
+   /works/isdn/kernel/linux-2.4.x/include/net/atmclip.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pppoatm.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pppoatm/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/br2684.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/br2684/module.h) \
+   resources.h \
+   common.h \
+   protocols.h \
+   addr.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/atmclip.h \
+   signaling.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bridge.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bridge/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+common.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/net.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h
+	@touch common.h
+ipcommon.o: ipcommon.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/in.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmclip.h \
+   common.h \
+   ipcommon.h
+ipcommon.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h
+	@touch ipcommon.h
+lec_arpc.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_ether.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmlec.h
+	@touch lec_arpc.h
+lec.o: lec.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_ether.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/rtnetlink.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/arp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/dst.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tr.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/trdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmlec.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bridge.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bridge/module.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_bridge.h \
+   ../bridge/br_private.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   lec.h \
+   lec_arpc.h \
+   resources.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/param.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/inetdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/route.h
+lec.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmlec.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bridge.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bridge/module.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_bridge.h
+	@touch lec.h
+mpc.o: mpc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_ether.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/checksum.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/arp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/dst.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmlec.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmmpc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   lec.h \
+   mpc.h \
+   resources.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+mpc.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmmpc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   mpoa_caches.h
+	@touch mpc.h
+mpoa_caches.o: mpoa_caches.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmmpc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/time.h \
+   mpoa_caches.h \
+   mpc.h
+mpoa_caches.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmmpc.h
+	@touch mpoa_caches.h
+mpoa_proc.o: mpoa_proc.c \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/time.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmmpc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   mpc.h \
+   mpoa_caches.h
+pppoatm.o: pppoatm.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ppp_defs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_ppp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ppp_channel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmppp.h \
+   common.h
+proc.o: proc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmclip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmarp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_arp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/param.h \
+   resources.h \
+   common.h \
+   signaling.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/clip.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/clip/module.h) \
+   /works/isdn/kernel/linux-2.4.x/include/net/atmclip.h \
+   ipcommon.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/lane.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/lane/module.h) \
+   lec.h \
+   lec_arpc.h
+pvc.o: pvc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/net.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   resources.h \
+   common.h
+raw.o: raw.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   common.h \
+   protocols.h
+resources.o: resources.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ctype.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sonet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   common.h \
+   resources.h \
+   addr.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+resources.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h
+	@touch resources.h
+signaling.o: signaling.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmsap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmsvc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   resources.h \
+   signaling.h
+signaling.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmsvc.h
+	@touch signaling.h
+svc.o: svc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/net.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmsap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmsvc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   resources.h \
+   common.h \
+   signaling.h \
+   addr.h
+.PRECIOUS:	addr.h \
+	common.h \
+	ipcommon.h \
+	lec_arpc.h \
+	lec.h \
+	mpc.h \
+	mpoa_caches.h \
+	resources.h \
+	signaling.h \
+

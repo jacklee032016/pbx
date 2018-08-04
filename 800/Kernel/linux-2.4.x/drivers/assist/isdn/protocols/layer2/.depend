@@ -1,0 +1,20 @@
+layer2.o: layer2.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   layer2.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/as_isdn_version.h
+layer2.h: \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/asISDN.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/fsm.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/memdbg.h
+	@touch layer2.h
+tei.o: tei.c \
+   layer2.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/random.h
+.PRECIOUS:	layer2.h \
+

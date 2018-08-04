@@ -1,0 +1,875 @@
+acm.o: acm.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty_driver.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty_flip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+aiptek.o: aiptek.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/input.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+audio.o: audio.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sound.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/soundcard.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wrapper.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   audio.h
+auerbuf.o: auerbuf.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   auerbuf.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h
+auerbuf.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+	@touch auerbuf.h
+auerchain.o: auerchain.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   auerchain.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h
+auerchain.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+	@touch auerchain.h
+auerchar.o: auerchar.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   auerchar.h \
+   auermain.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h
+auerchar.h: \
+   auerchain.h \
+   auerbuf.h \
+   auerserv.h
+	@touch auerchar.h
+auerisdn_b.o: auerisdn_b.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   auerisdn.h \
+   auermain.h
+auerisdn_b.h: \
+   /works/isdn/kernel/linux-2.4.x/include/../drivers/isdn/hisax/hisax_if.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   auerbuf.h \
+   /works/isdn/kernel/linux-2.4.x/include/../drivers/isdn/hisax/isdnhdlc.h
+	@touch auerisdn_b.h
+auerisdn.o: auerisdn.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   auerisdn.h \
+   auermain.h
+auerisdn.h: \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/auerisdn.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/auerisdn/module.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   auerserv.h \
+   auerisdn_b.h
+	@touch auerisdn.h
+auermain.o: auermain.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   auerchain.h \
+   auerbuf.h \
+   auerchar.h \
+   auerserv.h \
+   auermain.h \
+   auerisdn.h
+auermain.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   auerchain.h \
+   auerbuf.h \
+   auerserv.h \
+   auerisdn.h
+	@touch auermain.h
+auerserv.h: \
+   auerbuf.h
+	@touch auerserv.h
+ax8817x.o: ax8817x.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ethtool.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mii.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h
+bluetooth.o: bluetooth.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty_driver.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty_flip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+brlvger.o: brlvger.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/brlvger.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/devfs/fs.h)
+catc.o: catc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ethtool.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+CDCEther.o: CDCEther.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ethtool.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   CDCEther.h
+dabusb.o: dabusb.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/miscdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   dabusb.h \
+   dabfirmware.h
+dc2xx.o: dc2xx.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/miscdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/random.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/debug.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+devices.o: devices.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usbdevice_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   hcd.h
+devio.o: devio.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usbdevice_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h
+drivers.o: drivers.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usbdevice_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h
+dsbr100.o: dsbr100.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/input.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/videodev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h
+emi26.o: emi26.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   emi26_fw.h
+hcd.o: hcd.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/completion.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/uts.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/debug.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   hcd.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pci.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pm.h)
+hcd.h: \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pci.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pm.h) \
+   hub.h
+	@touch hcd.h
+hid-core.o: hid-core.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/input.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   hid.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hiddev.h
+hiddev.o: hiddev.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/input.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   hid.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hiddev.h
+hid.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   hid-debug.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/hidinput.h)
+	@touch hid.h
+hid-input.o: hid-input.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/input.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   hid.h
+hpusbscsi.o: hpusbscsi.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   ../scsi/scsi.h \
+   ../scsi/hosts.h \
+   ../scsi/sd.h \
+   hpusbscsi.h
+hub.o: hub.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/completion.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/debug.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usbdevice_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   hub.h
+hub.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/compiler.h
+	@touch hub.h
+ibmcam.o: ibmcam.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wrapper.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   usbvideo.h
+inode.o: inode.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usbdevice_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+kaweth.o: kaweth.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ethtool.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   kawethfw.h
+kbtab.o: kbtab.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/input.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+konicawc.o: konicawc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/input.h \
+   usbvideo.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/debug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/input.h)
+mdc800.o: mdc800.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/random.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+microtek.o: microtek.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/random.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   ../scsi/scsi.h \
+   ../scsi/hosts.h \
+   ../scsi/sd.h \
+   microtek.h
+ov511.o: ov511.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ctype.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/processor.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wrapper.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   ov511.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/video/proc/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+ov511.h: \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/videodev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+	@touch ov511.h
+pegasus.o: pegasus.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ethtool.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mii.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   pegasus.h \
+   pegasus.h \
+   pegasus.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mii.h)
+powermate.o: powermate.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/input.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+printer.o: printer.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/lp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+pwc-ctrl.o: pwc-ctrl.c \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/errno.h \
+   pwc.h \
+   pwc-ioctl.h \
+   pwc-uncompress.h \
+   pwc_nala.h \
+   pwc_timon.h \
+   pwc_kiara.h
+pwc.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/videodev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/errno.h
+	@touch pwc.h
+pwc-if.o: pwc-if.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wrapper.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   pwc.h \
+   pwc-ioctl.h \
+   pwc-uncompress.h
+pwc-misc.o: pwc-misc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   pwc.h
+pwc-uncompress.o: pwc-uncompress.c \
+   /works/isdn/kernel/linux-2.4.x/include/asm/types.h \
+   pwc.h \
+   pwc-uncompress.h
+pwc-uncompress.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   pwc.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/pwcx.h)
+	@touch pwc-uncompress.h
+rio500.o: rio500.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/miscdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/random.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   rio500_usb.h
+rtl8150.o: rtl8150.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mii.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ethtool.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h
+scanner.o: scanner.c \
+   scanner.h
+scanner.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb_scanner_ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+	@touch scanner.h
+se401.o: se401.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wrapper.h \
+   se401.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/video/proc/fs.h)
+se401.h: \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/videodev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h
+	@touch se401.h
+speedtch.o: speedtch.c \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/atmdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+stv680.o: stv680.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wrapper.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/videodev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   stv680.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/video/proc/fs.h)
+tiglusb.o: tiglusb.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/miscdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ticable.h \
+   tiglusb.h
+ultracam.o: ultracam.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wrapper.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   usbvideo.h
+usb.o: usb.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/debug.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   hcd.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/bandwidth.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hotplug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/devicefs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+usb-debug.o: usb-debug.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/debug.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+usbkbd.o: usbkbd.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/input.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+usblcd.o: usblcd.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+usb-midi.o: usb-midi.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wrapper.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sound.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   usb-midi.h
+usbmouse.o: usbmouse.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/input.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+usbnet.o: usbnet.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/random.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ethtool.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mii.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tqueue.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/debug.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/net1080.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/an2720.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/ax8817x.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/belkin.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/epson2888.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/genesys.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/pl2301.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/armlinux.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/zaurus.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h
+usb-skeleton.o: usb-skeleton.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/usb/debug.h)
+usbvideo.o: usbvideo.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wrapper.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   usbvideo.h
+usbvideo.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/videodev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/video/proc/fs.h)
+	@touch usbvideo.h
+uss720.o: uss720.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+vicam.o: vicam.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wrapper.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/videodev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   usbvideo.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+w9968cf.o: w9968cf.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ctype.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wrapper.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/page.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   w9968cf.h \
+   w9968cf_decoder.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/video/proc/fs.h)
+w9968cf_externaldef.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/videodev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/i2c.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/types.h
+	@touch w9968cf_externaldef.h
+w9968cf.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/videodev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/i2c.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/types.h \
+   w9968cf_externaldef.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/video/proc/fs.h)
+	@touch w9968cf.h
+wacom.o: wacom.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/input.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/usb.h
+.PRECIOUS:	auerbuf.h \
+	auerchain.h \
+	auerchar.h \
+	auerisdn_b.h \
+	auerisdn.h \
+	auermain.h \
+	auerserv.h \
+	hcd.h \
+	hid.h \
+	hub.h \
+	ov511.h \
+	pwc.h \
+	pwc-uncompress.h \
+	scanner.h \
+	se401.h \
+	usbvideo.h \
+	w9968cf_externaldef.h \
+	w9968cf.h \
+

@@ -1,0 +1,34 @@
+$Id: README,v 1.1.1.1 2006/11/30 16:22:46 lizhijie Exp $
+$Author: lizhijie $
+
+		README for Call Progress Detect
+		             Assist Corp.  Li Zhijie, 2006.04.25
+
+0000000014.ntt.data
+      FSK data file in NTT format with phone number '0000000014' is modulated in.
+      In this file, silence data has been remove.
+
+0000000014_all.ntt.data
+      FSK data file in NTT format with phone number '0000000014' is modulated in.
+      All data about 3 seconds are contained in this file.
+
+ntt_12_did_5678.data
+      Caller with phone number '0000000012' and Called phone number 5678 are contained
+      in this file.
+
+Binary : ntt_data    
+Source : test_catch_modem_data.c
+    read and store NTT Caller ID modem data into a file
+
+Binary : ntt_detect
+Source : test_ntt_detect.c
+    Demodulate NTT Caller ID from modem data stored in a file
+
+Binary : ntt_dem
+Source : test_ntt_detect_buf.c
+    Demodulate NTT Caller ID from modem data, where data are passed as raw data buffer.
+
+
+Note: 
+    Now, FSK modulated Caller ID can be detected on-line. Refer to device/fso
+		             

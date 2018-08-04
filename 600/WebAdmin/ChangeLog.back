@@ -1,0 +1,468 @@
+###############################################################################
+#
+#			Webadmin ChangLog
+#				~tangr
+#
+#	请在提交代码文件后，单独强制提交此文件
+#	注意：　＊只需在提交log里详细写明每次代码提交的内容，本文件无需修改＊
+#
+###############################################################################
+
+李志杰  2006.07.03
+
+重建CVS上的仓储，并增加Samba的管理页面，修改其他的bug
+
+
+$Log: ChangeLog.back,v $
+Revision 1.1.1.1  2006/11/29 17:06:59  lizhijie
+AS600 WebAdmin
+
+Revision 1.1.1.1  2006/09/14 07:57:26  lizhijie
+remove locale engine based on multi-directories
+
+Revision 1.1  2006/08/21 13:58:33  lizhijie
+dd
+
+Revision 1.1.1.1  2006/08/09 17:47:12  lizhijie
+rebuild
+
+Revision 1.1.1.1  2006/07/13 13:27:12  lizhijie
+rename it
+
+Revision 1.1.1.1  2006/07/03 06:32:09  lizhijie
+New WebAdmin
+
+Revision 1.63  2006/04/19 09:40:59  lijiyi
+version:01-0-08-23
+修改的内容：1．新增加网管测试系统。
+            2．新增加网管查看AODV状态信息功能。
+            3．在原有的无线路由基础上进行完善。
+            4．修改shared_lib模块下的录音功能，以及移植到VPBX模块。
+            5．解决测试过程中出现的BUG。
+
+Revision 1.62  2006/02/08 06:48:53  lijiyi
+version:01-0-08-19
+修改的内容：1．添加新功能-RIP。
+            2．修改了BUGLIST上反映的问题。
+
+Revision 1.61  2006/01/21 07:58:50  lijiyi
+version:01-0-08-18
+修改的内容：1．网管添加三个新功能.PPTP\NTP\QOS。
+            2．根据上次日本小正来提出的意见进行修改，以符合日本方的习惯。
+            3．添加了路由的脚本文件，以便每次开机能够添加上一次的路由。解决buglist上的问题。
+
+Revision 1.60  2006/01/20 09:02:56  yeyu
+version 1.60:
+creat upnp and cgi
+
+Revision 1.59  2006/01/11 06:58:30  lijiyi
+version:01-0-08-16
+提交的内容：1．完善恢复出厂设置功能。（主要是开机时从flush中读MAC地址引起错误的问题）。
+            2．调试通过PBX话机可以实现的所有功能。
+            3．解决测试过程中的bug。
+            4．补充完善启动脚本。
+
+Revision 1.58  2006/01/06 06:17:52  yeyu
+version:01.0.08-15
+modify:
+1.modify Japanese pages showing manner error.
+2.added wireless help pages
+3.taken out some otiose pages
+
+Revision 1.57  2005/12/28 09:27:36  yeyu
+version:01-0-08-14
+修改内容：
+1．	日文页面
+2．	修改所有输入格式不正确的网页（中文）
+3．	后台信息处理
+
+Revision 1.56  2005/12/27 05:35:17  lijiyi
+version:01-0-08-13
+修改的内容：1．	防火墙功能的增强。
+            2．	零配置功能、恢复、备份数据功能的完善。
+            3．	调试网管程序适应多网口板子。
+            4．	解决测试过程中的bug。
+            5．	补充完善启动脚本。
+
+Revision 1.55  2005/12/16 05:44:01  hgp
+Version 01-0-08-12
+
+补上版本号
+
+Revision 1.54  2005/12/16 05:34:53  hgp
+1 cgi_lib 库增加dmalloc 调试信息
+2 cgipbx 程序增加调试信息
+3 get_mac_address 修正一个bug
+
+编译dmalloc 调试版本 请使用 选项 ： DML=y
+
+Revision 1.53  2005/12/12 08:01:31  yeyu
+Version 01-0-08-11
+修改内容：
+   1.屏蔽了上传文件及系统恢复中一些无用代码，增加了一些修改
+   2.新加无线cgi及配置文档
+
+Revision 1.52  2005/12/05 10:03:08  lijiyi
+version:01-0-08-10
+修改的确内容：
+1．解决测试过程中的bug。
+2．Cgi程序适应新的AN电话编程，解决通过话机与页面设置以后，在实际通话过程中出现的问题。
+3．增加一些新的功能。
+
+Revision 1.51  2005/12/01 04:49:39  hgp
+Revision 1.49 by hgp
+Version 01-0-08-08
+修改内容：
+ 1.misc 目录下新建get_mac_address.c文件
+  功能: 读取FLASH 中的MAC地址,并写入到hwcfg-eth0与hwcfg-eth1文件
+ 2.install 目录下 新建 download-file.c文件
+  功能: 生成本地恢复调用的cgi程序.
+ 3.install 目录下 修改restore-conf.c文件
+  功能: 生产软件恢复页面,实现从服务器恢复备份的cgi程序
+ 4.state 目录下 修改 lcd.c文件
+  功能 : 正常显示
+ 5.release/var/www/systemconfig 目录下 添加 restore-file.html
+     restore-sr-file.html文件
+ 功能: 作为运行结果的输出页面
+ 6.release/var/www/zh_GB.2312/systemconfig/ 目录下
+   添加 display-sr-file.html
+   功能; 显示服务器恢复结果的提示信息页面
+       restore-sr-file.html  restore-file.html文件
+   功能: 作为运行结果的输出中文页面
+   修改 cover.html
+   功能: 软件恢复的选择方式页面
+
+Revision 1.50  2005/11/30 06:42:33  chenke
+Version 01-0-08-09
+修改内容：
+Webadmin/install2
+   restore_deft.c---增加函数restore_hosts()定义和调用。
+   restore_deft.h---增加restore_hosts()声明。
+
+Revision 1.49  2005/11/28 05:45:34  yeyu
+Version 01-0-08-07
+修改内容：
+1.增加了ip最大连接数与最大服务器连接数限制
+2.对快速拨号中处理modify信息作了相关限制
+
+Revision 1.48  2005/11/21 08:32:42  chenke
+Version 01-0-08-07
+Webadmin/pbx/:
+   pbx_main.c－修正了pbx_read_com()内一些未释放指针;
+          去除pbx_link_modify()无用代码；
+          增加dmalloc条件编译项。
+
+   Webadmin/cgi_lib/cgi_lib.c
+       修正print_entries()中未释放指针。
+
+
+Revision 1.47  2005/11/17 05:48:57  yeyu
+Version 01-0-08-06
+修改内容：1.对upload_file.c中上传增加了限制
+          2.新增了日文网页界面及翻译文件
+          3.修改"录音设置"中出现的英文提示及添加相关帮助内容
+
+Revision 1.46  2005/11/11 05:53:20  yeyu
+version 1.46
+修改内容：1.在快速拨号网页中对添加数据处理作了修改，增强了功能
+          2.在“软件备份”和“软件升级”中加入了帮助说明，并增加了两个静态帮助网页
+
+Revision 1.45  2005/11/04 07:24:25  lijiyi
+version:01-0-08-04
+修改内容：1．对网管中开启停止进程一类的函数进行了修改，提高程序运行的效率。
+          2．修改了路由器功能、NAT功能以及防火墙功能中的BUG。
+          3．对于拨号一类的程序在程序中增加了其检查机制，使功能更完善。
+          4．对于网管程序中合法性检查一类的函数初步有了统一，还在不断完善，以后将作为库函数来使用，是代码更加规范。
+另外就是对应的页面上也做了相应的修改。
+
+Revision 1.44  2005/10/14 07:01:30  chenke
+version:01-0-08-03
+
+Webadmin/install:
+   Makefile---增加编译项：restore_deft(恢复出厂默认设置)，
+              restore_conf.cgi（软件恢复CGI）
+   restore_deft.c---新增。
+   restore_deft.h---新增。
+   restore_conf.c---新增。
+Webadmin/release/sbin/:
+   Webadmin_setup---增加调用restore_deft程序和renew程序。
+Webadmin/doc/:
+  test_webadmin .doc-测试用例，增加修改部分条目，版本更新为4.2。详见文档
+                    Modify Log.
+
+Revision 1.43  2005/10/13 03:44:48  chenke
+version:01-0-08-02
+
+补上版本号
+
+Revision 1.42  2005/10/13 03:41:04  chenke
+Webadmin/pppoe/:
+  Makefile---增加ppp_up_check的编译。
+  pppoe.c---修改main()中拨号处理。
+  pppoe.h---增加两个宏：拨号日志和拨号检测
+  ppp_up_check.c---新增。
+Webadmin/install:
+  upgrade_backup.h---修改宏"FILE_NAME_PRE"为"assist_back"。
+  upgrade_backup.c---更新取serial NO处理。
+  get_config_data.c---更新取serial NO处理。
+Webadmin/release/sbin/:
+  Webadmin_setup---在adsl-connect之后增加调用ppp_up_check；修改调用
+  get_config方式。
+Webadmin/doc/:
+  test_webadmin .doc-测试用例，增加修改部分条目，版本更新为4.1。详见文档
+                    Modify Log.
+
+Revision 1.41  2005/10/10 05:18:14  lijiyi
+version:01-0-08-01
+修改的内容：1.对相关的代码进行了补充完善。主要涉及misc、sip、pbx三个模块中的代码。
+            2.对页面来说，涉及代码的页面改动较多。主要的改动多在与AN电话编程有关的页面。另外的改动就是针对页面上不合理或会造成错误的地方。
+
+Revision 1.40  2005/09/21 10:11:19  chenke
+no message
+
+Revision 1.39  2005/09/21 10:08:41  chenke
+version:01-0-08-00
+1.Webadmin/install/:
+  Makefile---去除无用EXECS项，修改编译顺序。
+  get_config_data.c---修改下载，释放代码；增加解包失败的回滚(/etc/sys)；
+  增加创建标志/etc/default.flag 等。
+  get_config_data.h---新增。
+  Upgrade_backup.c---修改备份代码；屏蔽自动升级；排除deviceID等指针错误；
+  代码优化。
+  Upgrade_backup.h---修改小部分宏定义（如配置文件包名，网页显示等等）；增加函数原型说明。
+  test_deviceID.c---新增。写deviceID 到422板FLASH中，用于测试。
+  Make_test_deviceID---新增。test_deviceID.c对应的project file.
+
+2.Webadmin/release/sbin/
+  Webadmin_setup---增加调用零配置程序get_config -s (IP)。IP是测试地址，以后可能更改。并且在调用get_config之前加入了一条route路由。
+
+3.Webadmin/doc/:
+  test_webadmin .doc-测试用例，增加、修改部分条目，版本更新为4.0。详见此文档Modify Log.
+
+Revision 1.38  2005/09/06 09:59:28  lijiyi
+version:01-0-07-02
+修改的内容：1．	完善帮助页面,增加一些后来新增功能的描述.让用户使用更方便.
+            2．	CGI程序的修改.解决一些出错的问题.
+            3．	采纳测试小组提出的一些建议.
+            4． 对查询版本号的程序做了改动.
+
+Revision 1.37  2005/09/02 03:25:41  lijiyi
+version:01-0-07-01
+新功能：通过液晶屏输出网管信息。
+
+Revision 1.36  2005/08/26 08:35:39  lijiyi
+version:01-0-06-01
+修改内容：
+1．涉及到CGI程序的主要是修改了SIP拨号规则等。使在页面输入的相同规则无效、修改为相同规则无效、不合逻辑的规则无效等。
+2．涉及到页面的修改，主要是通过脚本控制规则的正确性、以及帮助页面中说明不清楚的地方。
+3．统一了CGI程序中配置文件与临时文件的路径。
+
+Revision 1.35  2005/08/24 09:20:26  xixudong
+version:01-0-06-00
+*增加备份和数据恢复和软件升级功能 模块 /install/upgrade_backup.*
+*增加对aslib.so 动态库的支持 日志功能需要
+*增加零配置获取配置数据功能  /install/get_config_data.*
+*增加恢复出厂配置功能       /install/webadmin_main.*
+*修改bug
+
+Revision 1.34  2005/08/19 08:22:50  lijiyi
+version:01-00-05-11：
+修改的内容：1．防止用户在设置电话号码、规则时，输入了非法数据。
+            2．在国际化版本中加入了英文版本。英文版本主要是用来发布的。
+            3．通过页面录音以及通过页面设置时间，修改了一点问题。
+
+Revision 1.33  2005/08/19 08:19:59  lijiyi
+no message
+
+Revision 1.32  2005/08/19 07:49:50  lijiyi
+no message
+
+Revision 1.31  2005/08/05 09:41:55  lijiyi
+version:01-00-05-10
+新增的内容：1.通过页面设置partysip功能并对配置进行修改。
+            2.通过页面可以查询文件系统、程序、配置数据的版本号。
+
+Revision 1.30  2005/08/02 05:22:05  lijiyi
+version:01-00-04-10
+修改的内容:1．SIP配置中增加一些新的设置。对配置文件进行读写。
+           2．录音功能的修改。现在通过页面用户不需要再进行输入，只需点击播放与录音按钮，就可以进行相关操作。CGI程序会对配置进行修改，并执行命令。
+           3．对库函数进行了一些需要的修改。
+
+Revision 1.29  2005/07/27 09:33:21  xixudong
+version:01-00-03-09
+1)修改webadmin/pbx代码 (解决设置pbx出错的问题,和王守雷调试全面通过)
+2)修改webadmin_setup,network-setup(解决系统启动时的报错问题,和syslogd启动时的报错问题)
+3)修改拨号规则设置中的问题
+4)修改Webadmin/upload代码(根据上传升级包的大小来动态加载tmpfs文件系统(内存),
+  测试后可以稳定的一次上传20M的数据.
+5)增加脚本webserver(用来启动boa)
+6)修改网管代码的一些小bug
+
+Revision 1.28  2005/07/19 07:43:03  lijiyi
+version:01-00-03-08
+修改的内容：修改了相关的CGI程序，主要关于MAC地址、时间设置、录音设置。
+增加的内容：增加了回拨功能，增加了关于无线路由功能的大概框架。
+
+Revision 1.27  2005/07/15 08:21:38  xixudong
+版本:version:01-00-03-07
+增加:
+    1 auto_iptables模块(主要是系统配置好重启后来根据上网方式和
+      网络地址来添加nat和filter.
+    2 增加脚本webadmin_setup(用来在系统启动的时候来调用)主要负责
+      开启网络服务,使得以前的配置参数在启动后生效)
+修改:
+   webadmin模块的路由设置,网络设置等多哥文件主要是解决alpha 0.9
+   发布系统上测试出来的bug
+
+Revision 1.26  2005/07/05 06:35:43  lijiyi
+本次提交CVS的内容：
+1.由于上次提交CVS时，在网络配置方面由于页面和程序提交的不一致，把出现的一些问题进行了修改。
+2.完成了BUGLIST上还没有解决的问题。
+具体内容见网管测试用例条目NM_all.31,NM_all.32.
+版本号没有变化。
+
+Revision 1.25  2005/07/05 06:28:36  lijiyi
+no message
+
+Revision 1.24  2005/07/04 06:17:49  xixudong
+version:01-00-03-06
+增加:1 在快速安装中对信息的提取和显示
+     2 对网管的一些小细节的修改和调试
+     3 对WAN口增加默认路由(网关)
+     4 iptabes配置脚本的添加
+
+Revision 1.23  2005/06/28 07:56:40  xixudong
+version:01-00-03-04
+*添加网络接口自动检测函数，对用户来说只有WAN（由程序来关心是ppp0还是eth0）和LAN口。
+*修改makefile 以支持sharled_lib库。
+*修改network－etup脚本（增加对文件/etc/sys/ppp0的检测，如果文件存在则执行adsl－connect。
+*修改/pbx/* (使用shared_lib库函数）
+*修改快速安装代码 只要是对系统重启后自动拨号的支持。
+
+Revision 1.22  2005/06/17 02:32:45  xixudong
+version:01-00-03-03
+1 新增快速安装模块
+2 修改了一些小bug
+
+Revision 1.21  2005/06/16 04:08:09  gongyahui
+enable the reset button
+
+
+enable the reset button
+
+Revision 1.20  2005/06/15 06:25:20  lijiyi
+本次提交CVS的内容:
+对程序（pbxphone.c）来说内容上新的。但是程序名还是用以前的，放的位置也不变。程序（sysconf.c）是在原来的代码中添加的代码。
+对网页来说,新增了帮助页面。每个帮助页面都放在与之对应的目录下。还有就是根据需要增加了快速安装页面等。
+对于其他网页来说多是一些修改和补充,这里不一一举出.
+版本号已修改为01.0.02-00
+
+Revision 1.19  2005/05/12 04:29:28  xixudong
+＃新增功能iptables简化配置 /webadmin/nat/common_iptables.*
+＃更新webadmin（去掉了和串口信号通信机制改用线程轮询）。
+版本：01.0.01-01
+
+Revision 1.18  2005/05/10 07:10:05  lijiyi
+version:01.0.01-00
+本次CVS提交内容：
+1。本次提交CVS的内容,对程序来说不存在修改内容,因为是新功能.主要是state.c(/state)和pbxphone.c(/pbxphone)，用于查询系统的初始信息以及话机的通话信息。新功能的开发文档放在/doc目录下。
+2。对网页来说,新增了all_state.html(/systemconfig)，并在页面中加入了一段Javascript使其主动的读取数据并显示出来；phone.html(/pbx)；format.html
+(/wizard)；common_iptables.html,load_iptables.html,save_iptables.html(service).
+对于其他网页来说多是一些修改和补充,这里不一一举出.
+3.本次提交CVS时，把网管最新的测试用例一并提交,放在/doc目录下。对应本次新功能的测试内容是条目NM_state_27.
+
+Revision 1.17  2005/04/26 08:58:17  vivian
+no message
+
+Revision 1.16  2005/04/12 09:55:39  lijiyi
+完成任务新框架下网页测试与PBX分机显示问题:
+*完成网页测试,补充了测试用例.
+*解决了PBX分机显示问题.在程序中添加的代码(/pbx/pbx_set.c以及/pbx/pbx_set.h)使新添的网页(/release/var/www/zh_CN.GB2312/pbx/branch_number_spec.html)能够正确显示,在配置中的读写也是正确的.
+
+Revision 1.15  2005/04/07 09:45:26  lijiyi
+SIP协议字段的修改与添加：
+1.完成了SIP字段的添加和修改。添加的代码使程序（sip/sip_set.c）适应新的配置文件。
+2.经过修改的SIP页面（/release/var/www/sip/sipset.html）已完成。页面上已有现阶协议所需要的全部设置。页面上的设置在新的配置文件中同样生效。
+
+Revision 1.14  2005/03/30 09:39:53  lijiyi
+实现新的网管框架结构：
+*基于新的网管框架结构的中文版本的页面已完成。整体放在/release/var/www/zh_CN.GB2312路径下，原来的中文版本已被覆盖。
+*访问时不需要做任何改动，只需按照前一版访问中文版本的方法进行即可。
+
+Revision 1.13  2005/03/24 02:37:21  lijiyi
+CGI代码、make命令的完善与修改以及一些文件的调整：
+*去掉了CGI代码编译过程中出现的警告。
+*对make命令进行了统一。make 编译pc机（动态），make LINK=static 编译pc机（静态）。在这些命令中再加入 ARCH=arm 即编译422版本。详细内容请参考顶层目录中的readme。
+*对原来放于网管顶层目录的文件进行了调整。新建doc文件夹于顶层目录中。把文档test_webadmin、i18n、VOIP用户手册移动到了新建doc目录下。
+*对上传文件的程序进行了一些修改（程序名为upload_file.c，放于顶层misc目录下），现在只支持上传文件名含web的tar或tar.gz包。
+*把原word版本的测试用例改为了excel版本，便于测试人员填写测试结果。
+
+Revision 1.12  2005/03/10 12:15:36  lijiyi
+新增日文版本的页面：
+*新增的日文版本已完成包括页面上的日文注释。整体放在了/var/www/ja目录下。
+*如何改变环境变量访问不同版本的页面已在测试用例中说明。
+
+Revision 1.11  2005/03/07 10:20:29  xixudong
+新增mac过滤和定时防火墙功能：
+*mac过滤功能：支持mac过滤和mac绑定
+*定时防火墙：可以对一些防火墙规则指定生效的时间。
+
+Revision 1.10  2005/02/28 08:53:01  xixudong
+增加：IPtables模块 模块文件/webadmin/iptables/iptables.*
+*nat功能：目前只做了最常用的源地址转换。可以指定网口，协议，
+          内部地址，内部端口范围，出口地址，出口端口范围。
+*filter功能：包括（INPUT，OUTPUT，FORWARD三个过滤链）
+          可以指定过滤规则，过滤动作，网口，协议，源地址，
+          源端口范围，目的地址，目的端口范围。
+          目的端口范围，状态，
+
+Revision 1.9  2005/02/25 10:24:37  lijiyi
+网页国际化代码的完成：
+* 中文版本的页面整体放在了/var/www/zh_CN.GB2312.英文版本的页面
+放在/var/www.
+* 通过设置不同的环境变量，可以实现访问中文与英文版本的页面。
+
+Revision 1.8  2005/02/24 14:19:20  tangr
+国际化代码的简化：
+* include/cgi_lib.h:　增加宏 _ 以代替gettext，以后凡输出的地方可用 _ 来代替gettext
+* Makefile中增加关键字 _
+
+Revision 1.7  2005/02/18 11:07:36  lijiyi
+add internation code
+
+Revision 1.7  2005/02/18  19：09 lijiyi
+在CGI代码中添加了GETTEXT函数。添加了iptable的网页。
+Revision 1.6  2005/02/06 03:13:06  xixudong
+新增iptables 的NAT配置功能：
+*NAT的配置文件/webadmin/nat 配置文件/etc/rc.d/rc.local
+ 功能：NAT的源地址转换，可以指定此规则匹配的端口（eth0,eth1,ppp0)
+       NAT的规则可以指定协议（all，TCP，UDP，ICMP）可以指定
+       端口范围，和地址范围。
+       配置后可以通过iptables －L －t nat 来看配置是否生效。
+
+Revision 1.5  2005/02/03 09:13:42  xixudong
+修改：
+*网管和下层处理pbx命令中的目标分机号码不一致的问题。
+*增加对离位转移等设置目标分机号码的检查，如果当前没
+ 有此分机号码则丢弃此命令
+
+Revision 1.4  2005/02/02 05:35:13  tangr
+重新部署sip的配置文件gua.conf：
+* 所有有关sip的配置文件均存放于/etc/sip/目录
+
+Revision 1.3  2005/02/02 03:38:31  xixudong
+添加新SIP规则程序<dial_rule_conf.* dial_rule_main.c>
+                 配置文件/etc/sip/dialrules.conf
+
+Revision 1.2  2005/02/02 03:35:04  xixudong
+no message
+
+Revision 1.1  2005/02/01 18:23:18  tangr
+增加国际化功能：
+* 代码gettext增加在cgi_lib
+* releases/var/www目录下增加子目录locale，存放中文和日文翻译文件
+* Makefile增加目标res
+* 更新README
+
+
+

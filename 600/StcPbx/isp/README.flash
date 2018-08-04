@@ -1,0 +1,13 @@
+# $Id: README.flash,v 1.1 2007/05/03 19:52:57 lizhijie Exp $
+			README for STC89C51RD+ Flash
+			          Li Zhijie 2007.05.03
+
+64K Flash，每个扇区512字节，共128个扇区
+
+固化系统使用扇区    ：2个，  即1K， 地址：0XFC00～0XFFFF
+ISP可以使用的扇区为 ：8个，  即4K， 地址：0XCE00～0XFBFF
+IAP可以占用的扇区为 ：118个，即59K，地址：0X0000～0XCDFF
+
+可以用作Data Flash（EEPROM）的扇区为8个，4K空间
+占用的地址为0X2000～0X2FFF
+

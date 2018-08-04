@@ -1,0 +1,97 @@
+#
+# $Author: lizhijie $
+# $Log: Makefile.post,v $
+# Revision 1.1.1.1  2006/11/30 16:24:17  lizhijie
+# AS800 SharedLib
+#
+# Revision 1.1.1.1  2006/02/21 09:38:37  wangwei
+# no message
+#
+# Revision 1.4  2005/10/28 05:13:47  tangr
+# fix version info when no as_version.h found
+#
+# Revision 1.3  2005/10/28 04:01:53  tangr
+# a concise version
+#
+# Revision 1.2  2005/09/01 08:59:58  tangr
+# deal version
+#
+# Revision 1.1.1.1  2005/05/27 08:43:37  lizhijie
+# add shared library and programs depend on it
+#
+# $Revision: 1.1.1.1 $
+# $Id: Makefile.post,v 1.1.1.1 2006/11/30 16:24:17 lizhijie Exp $
+#
+
+OBJS := $(patsubst %.c,$(OBJ_DIR)/%.o,$(patsubst %.cxx,$(OBJ_DIR)/%.o,$(SRC))) $(EXTRA_OBJS)
+
+VFILE=$(shell find . -name as_version.h)
+ifneq ($(VFILE),)
+V1TMP=$(shell grep AS_VERSION_MAJOR "$(VFILE)")
+V2TMP=$(shell grep AS_VERSION_MINOR "$(VFILE)")
+V3TMP=$(shell grep AS_VERSION_RELEASE "$(VFILE)")
+V4TMP=$(shell grep AS_VERSION_MODIFY "$(VFILE)")
+
+V1INDEXTMP=$(shell expr index '$(V1TMP)' '"')
+V1INDEX=$(shell expr "$(V1INDEXTMP)" + 1)
+V1=$(shell expr substr "$(V1TMP)" "$(V1INDEXTMP)" 2)
+
+V2INDEXTMP=$(shell expr index '$(V2TMP)' '"')
+V2INDEX=$(shell expr "$(V2INDEXTMP)" + 1)
+V2=$(shell expr substr "$(V2TMP)" "$(V2INDEXTMP)" 1)
+
+V3INDEXTMP=$(shell expr index '$(V3TMP)' '"')
+V3INDEX=$(shell expr "$(V3INDEXTMP)" + 1)
+V3=$(shell expr substr "$(V3TMP)" "$(V3INDEXTMP)" 2)
+
+V4INDEXTMP=$(shell expr index '$(V4TMP)' '"')
+V4INDEX=$(shell expr "$(V4INDEXTMP)" + 1)
+V4=$(shell expr substr "$(V4TMP)" "$(V4INDEXTMP)" 2)
+endif
+
+PWD=$(shell pwd)
+VNAME=$(shell basename "$(PWD)")
+VTIME=$(shell date "+%F %T")
+
+all:$(BIN_DIR) $(OBJ_DIR) $(LOCAL_ALL) $(TARGET_LIB) $(LOCAL_LAST) ver
+
+$(OBJ_DIR):
+	-if [ -d $(OBJ_DIR) ] ; then : ; else $(MKDIR) $(OBJ_DIR); fi	
+ifdef CODE_SUBDIRS
+	-@ for subdir in $(CODE_SUBDIRS) ; do ( mkdir -p $(OBJ_DIR)/$$subdir ) ; done
+endif
+
+$(BIN_DIR):
+	-if [ -d $(BIN_DIR) ] ; then : ; else $(MKDIR) $(BIN_DIR); fi
+#ifdef CODE_SUBDIRS
+#	-@ for subdir in $(CODE_SUBDIRS) ; do ( mkdir -p $(BIN_DIR)/$$subdir ) ; done
+#endif
+
+$(TARGET_LIB): $(OBJS)  
+	$(AR) $(ARFLAGS) $@ $^ 
+	$(RANLIB) $@
+	$(MOVE) $(TARGET_LIB) $(BIN_DIR)/
+
+$(KERNEL_LIB): $(KOBJS) 
+	$(LD) $(K_LDFLAGS) $^ -o $@
+	$(MOVE) $(KERNEL_LIB) $(BIN_DIR)/
+
+
+clean:$(LOCAL_CLEAN)
+	-if [ -d $(BIN_DIR) ] ; then $(RM) $(BIN_DIR) ; fi
+	-if [ -d $(OBJ_DIR) ] ; then $(RM) $(OBJ_DIR) ; fi
+
+ver:
+	@echo Create version info of $(VNAME):
+	@if [ -z "$(VFILE)" ]; then echo "No version info found, Skip"; else  \
+	echo "$(VNAME) (version: $(V1).$(V2).$(V3)-$(V4) $(VTIME))" > $(TOP_DIR)/$(VNAME).ver; \
+	echo "$(VNAME) (version: $(V1).$(V2).$(V3)-$(V4) $(VTIME))";  \
+	fi
+
+ifeq ($(KERNEL),yes)
+$(OBJ_DIR)/%.o: %.c
+	$(CC) $(K_CFLAGS) -c $< -o $(OUTPUT_FLAG)$@ 
+else
+$(OBJ_DIR)/%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $(OUTPUT_FLAG)$@ 
+endif

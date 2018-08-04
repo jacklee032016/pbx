@@ -1,0 +1,28 @@
+<FORM METHOD="POST" ACTION="/cgi-bin/admin.cgi">
+<INPUT TYPE="HIDDEN" NAME="OP" VALUE="{op}">
+
+<H2 CLASS="title">新增打印机</H2>
+
+<TABLE>
+<TR>
+<TH CLASS="label">名称:</TH>
+<TD><INPUT TYPE="TEXT" NAME="PRINTER_NAME" SIZE="40" MAXLENGTH="127"><BR>
+<SMALL>(可以包含除"/"、"#"和空白以外的任何字符)</SMALL></TD>
+</TR>
+<TR>
+<TH CLASS="label">位置:</TH>
+<TD><INPUT TYPE="TEXT" NAME="PRINTER_LOCATION" SIZE="40" MAXLENGTH="127"><BR>
+<SMALL>(容易理解的位置信息，例如"Lab 1")</SMALL></TD>
+</TR>
+<TR>
+<TH CLASS="label">描述:</TH>
+<TD><INPUT TYPE="TEXT" NAME="PRINTER_INFO" SIZE="40" MAXLENGTH="127"><BR>
+<SMALL>(容易理解的描述信息，例如"HP激光打印机")</SMALL></TD>
+</TR>
+<TR>
+<TD></TD>
+<TD><INPUT TYPE="IMAGE" SRC="/cups/images/button-continue.gif" ALT="继续"></TD>
+</TR>
+</TABLE>
+
+</FORM>

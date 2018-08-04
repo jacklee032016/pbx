@@ -1,0 +1,111 @@
+appl.o: appl.c \
+   m_capi.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h \
+   asISDNManufacturer.h
+app_plci.o: app_plci.c \
+   m_capi.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dss1.h
+asn1_address.o: asn1_address.c \
+   asn1.h \
+   asn1_generic.h \
+   asn1_address.h
+asn1_aoc.o: asn1_aoc.c \
+   asn1.h \
+   asn1_generic.h \
+   asn1_address.h \
+   asn1_aoc.h
+asn1_basic_service.o: asn1_basic_service.c \
+   asn1.h \
+   asn1_generic.h \
+   asn1_basic_service.h
+asn1.o: asn1.c \
+   asn1.h
+asn1_comp.o: asn1_comp.c \
+   asn1.h \
+   asn1_comp.h \
+   asn1_generic.h \
+   asn1_aoc.h \
+   asn1_diversion.h
+asn1_comp.h: \
+   asn1.h
+	@touch asn1_comp.h
+asn1_diversion.o: asn1_diversion.c \
+   asn1.h \
+   asn1_generic.h \
+   asn1_address.h \
+   asn1_basic_service.h \
+   asn1_diversion.h
+asn1_enc.o: asn1_enc.c \
+   m_capi.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   asn1_enc.h
+asn1_enc.h: \
+   asn1.h
+	@touch asn1_enc.h
+asn1_generic.o: asn1_generic.c \
+   asn1.h \
+   asn1_generic.h
+asn1_generic.h: \
+   asn1.h
+	@touch asn1_generic.h
+asn1.h: \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h
+	@touch asn1.h
+capi.o: capi.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   m_capi.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h
+capi_enc.o: capi_enc.c \
+   m_capi.h \
+   asn1.h
+contr.o: contr.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   m_capi.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h
+listen.o: listen.c \
+   m_capi.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h
+m_capi.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/capi.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernelcapi.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/capi/capi/capiutil.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/capi/capi/capicmd.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/capi/capi/capilli.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   asn1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/fsm.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/memdbg.h
+	@touch m_capi.h
+ncci.o: ncci.c \
+   m_capi.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dss1.h \
+   asISDNManufacturer.h
+plci.o: plci.c \
+   m_capi.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dss1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h
+supp_serv.o: supp_serv.c \
+   m_capi.h \
+   asn1_comp.h \
+   asn1_enc.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dss1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h
+.PRECIOUS:	asn1_comp.h \
+	asn1_enc.h \
+	asn1_generic.h \
+	asn1.h \
+	m_capi.h \
+

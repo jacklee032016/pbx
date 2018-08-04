@@ -1,0 +1,206 @@
+background.o: background.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/unistd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/completion.h \
+   nodelist.h
+build.o: build.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   nodelist.h
+compr.o: compr.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h
+compr_rtime.o: compr_rtime.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h
+compr_rubin.o: compr_rubin.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   compr_rubin.h \
+   histo_mips.h
+compr_rubin.h: \
+   pushpull.h
+	@touch compr_rubin.h
+comprtest.o: comprtest.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/types.h
+compr_zlib.o: compr_zlib.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/compatmac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/zlib.h \
+   nodelist.h
+dir.o: dir.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/compatmac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2_fs_i.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2_fs_sb.h \
+   nodelist.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h
+erase.o: erase.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   nodelist.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h
+file.o: file.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/compatmac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   nodelist.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h
+fs.o: fs.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   nodelist.h
+gc.o: gc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   nodelist.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h
+ioctl.o: ioctl.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h
+malloc.o: malloc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   nodelist.h
+nodelist.o: nodelist.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   nodelist.h
+nodelist.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2_fs_sb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2_fs_i.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/jffs2/fs/debug.h)
+	@touch nodelist.h
+nodemgmt.o: nodemgmt.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   nodelist.h
+os-linux.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/jffs2/fs/nand.h)
+	@touch os-linux.h
+pushpull.o: pushpull.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   pushpull.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h
+read.o: read.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   nodelist.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h
+readinode.o: readinode.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   nodelist.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h
+scan.o: scan.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   nodelist.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h
+super.o: super.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   nodelist.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/jffs2/fs/debug.h)
+super-v24.o: super-v24.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   nodelist.h
+symlink.o: symlink.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   nodelist.h
+wbuf.o: wbuf.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/nand.h \
+   nodelist.h
+write.o: write.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/jffs2.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   nodelist.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h
+writev.o: writev.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   nodelist.h
+.PRECIOUS:	compr_rubin.h \
+	nodelist.h \
+	os-linux.h \
+

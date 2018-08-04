@@ -1,0 +1,166 @@
+balloc.o: balloc.c \
+   udfdecl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/quotaops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h \
+   udf_i.h \
+   udf_sb.h
+crc.o: crc.c \
+   udfdecl.h
+dir.o: dir.c \
+   udfdecl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   udf_i.h \
+   udf_sb.h
+directory.o: directory.c \
+   udfdecl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h
+ecma_167.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h
+	@touch ecma_167.h
+file.o: file.c \
+   udfdecl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/udf_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   udf_i.h \
+   udf_sb.h
+fsync.o: fsync.c \
+   udfdecl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h
+ialloc.o: ialloc.c \
+   udfdecl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/quotaops.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/udf_fs.h \
+   udf_i.h \
+   udf_sb.h
+inode.o: inode.c \
+   udfdecl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   udf_i.h \
+   udf_sb.h
+lowlevel.o: lowlevel.c \
+   udfdecl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/cdrom.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/scsi/scsi.h \
+   /works/isdn/kernel/linux-2.4.x/include/scsi/scsi_ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/udf_fs.h \
+   udf_sb.h
+misc.o: misc.c \
+   udfdecl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/udf_fs.h \
+   udf_i.h \
+   udf_sb.h
+namei.o: namei.c \
+   udfdecl.h \
+   udf_i.h \
+   udf_sb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/quotaops.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h
+osta_udf.h: \
+   ecma_167.h
+	@touch osta_udf.h
+partition.o: partition.c \
+   udfdecl.h \
+   udf_sb.h \
+   udf_i.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/udf_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h
+super.o: super.c \
+   udfdecl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/cdrom.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/nls.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/udf_fs.h \
+   udf_sb.h \
+   udf_i.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/nls.h)
+symlink.o: symlink.c \
+   udfdecl.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/udf_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   udf_i.h
+truncate.o: truncate.c \
+   udfdecl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/udf_fs.h \
+   udf_i.h \
+   udf_sb.h
+udfdecl.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/udf_fs.h \
+   ecma_167.h \
+   osta_udf.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/udf/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/udf/fs/module.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/udf_fs_i.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/udf_fs_sb.h \
+   udfend.h
+	@touch udfdecl.h
+udfend.h: \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h
+	@touch udfend.h
+udftime.o: udftime.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   udfdecl.h
+unicode.o: unicode.c \
+   udfdecl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/nls.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/udf_fs.h \
+   udf_sb.h
+.PRECIOUS:	ecma_167.h \
+	osta_udf.h \
+	udfdecl.h \
+	udfend.h \
+

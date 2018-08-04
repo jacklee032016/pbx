@@ -1,0 +1,40 @@
+accel.o: accel.c \
+   rivafb.h
+fbdev.o: fbdev.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/selection.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/console.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mtrr.h) \
+   rivafb.h \
+   nvreg.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pci.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/all/ppc.h)
+rivafb.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fb.h \
+   /works/isdn/kernel/linux-2.4.x/include/video/fbcon.h \
+   /works/isdn/kernel/linux-2.4.x/include/video/fbcon-cfb4.h \
+   /works/isdn/kernel/linux-2.4.x/include/video/fbcon-cfb8.h \
+   /works/isdn/kernel/linux-2.4.x/include/video/fbcon-cfb16.h \
+   /works/isdn/kernel/linux-2.4.x/include/video/fbcon-cfb32.h \
+   riva_hw.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mtrr.h)
+	@touch rivafb.h
+riva_hw.o: riva_hw.c \
+   riva_hw.h \
+   riva_tbl.h
+riva_hw.h: \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h
+	@touch riva_hw.h
+.PRECIOUS:	rivafb.h \
+	riva_hw.h \
+

@@ -1,0 +1,63 @@
+REM @echo off
+
+REM build all program for Analog PBX based on STC C51
+REM Li Zhijie,2007.04.04
+
+
+echo build All Asemble modules
+
+REM a51 src/asm/asm.asm
+REM a51 src/asm/startup.asm
+
+echo build All C modules
+c51 src\main.c
+
+c51 src\init\pbx_init.c
+c51 src\init\cfg_default.c
+c51 src\init\fm24c08.c
+c51 src\init\ht1381.c
+c51 src\init\pbx_hw_ctl.c
+
+c51 src\hw\pbx_tone_if.c
+c51 src\hw\pbx_cfg_default.c
+c51 src\hw\pbx_hw_dtmf.c
+c51 src\hw\pbx_channel_if.c
+c51 src\hw\pbx_isrs.c
+c51 src\hw\pbx_voice_channels.c
+c51 src\hw\pbx_selftest.c
+
+c51 src\state\pbx_statemachine.c
+c51 src\state\pbx_state_idle.c
+c51 src\state\pbx_state_dialing.c
+c51 src\state\pbx_state_trying.c
+c51 src\state\pbx_state_ringing.c
+c51 src\state\pbx_state_incall.c
+c51 src\state\pbx_state_busy.c
+c51 src\state\pbx_state_wait.c
+c51 src\state\pbx_state_programing.c
+
+c51 src\features\pbx_fea_phonenumber.c
+c51 src\features\pbx_timer_task.c
+c51 src\features\call_process.c
+
+c51 src\callerid\pbx_caller_id.c
+
+c51 src\lines\pbx_lines_device.c
+c51 src\lines\pstn_detect.c
+
+c51 src\uart\uart_rx.c
+c51 src\uart\uart_tx.c
+c51 src\uart\nvram_store.c
+
+c51 src\ip\uart_calls_rx.c
+c51 src\ip\uart_calls_tx.c
+
+c51 src\program\program_cmds.c
+c51 src\program\program_cmd_cfgs.c
+
+c51 src\utils\pbx_utils.c
+
+rem c51 src\state\pbx_state_redialing.c
+REM bl51  TO a.abs  RAMSIZE(256)
+REM bl51  @link.lst
+REM oh51 a.abs HEXFILE (pbx.hex)

@@ -1,0 +1,132 @@
+#
+# $Id: Makefile.pre,v 1.5 2007/09/14 20:41:18 lizhijie Exp $
+
+# for release 
+
+ARCH=arm
+
+# CDR的打开和关闭
+# CDR=open
+CDR=close
+# cpDebug的发布版
+# EDITION=debug
+EDITION=release
+
+
+VOIPS_DIR=$(ROOT_DIR)/as600_VoipLib
+DRIVER_HOME_DIR=$(ROOT_DIR)/as600_Drivers
+
+ASSIST_SHARED=yes
+RELEASES_DIR=../releases
+C_CFLAGS = -Wall 
+
+ifeq ($(LINK), static)
+	ASSIST_SHARED=
+#	LDFLAGS+= -Wl,-static
+	# C_CFLAGS+=-Wl, static
+else
+	#LDFLAGS+= -shared
+	#C_CFLAGS+=-Wl, shared
+endif
+
+ifeq ($(ARCH),arm)
+	C_CFLAGS += -mbig-endian -D__ARM_IXP__=1 
+	CXX_FLAGS = -mbig-endian -D__ARM_IXP__=1 
+	CROSS_COMPILER=arm-linux-
+	LDFLAGS+= -mbig-endian 
+	#ASSIST_SHARED= 
+	flag=-mbig-endian
+else
+	ARCH=i686
+endif
+
+ifeq ($(CDR),open)
+	C_CFLAGS += -D__CDR_OPEN__=1
+else
+	C_CFLAGS += -D__CDR_OPEN__=0
+endif
+
+# 使用新版的STC单片机程序，2007.05.06
+ifeq ($(STC_NEW),yes)
+	C_CFLAGS += -D__WITH_NEW_STC__=1 -I$(STC_HOME)/new/include 
+endif 
+
+ifeq ($(EDITION),release)
+	C_CFLAGS += -D__AS_RELEASE__
+endif 
+
+BIN_DIR=$(ROOT_DIR)/Linux.bin.$(ARCH)
+OBJ_DIR=Linux.obj.$(ARCH)
+
+CC		= $(CROSS_COMPILER)gcc
+CXX 	= $(CROSS_COMPILER)g++ 
+STRIP	= $(CROSS_COMPILER)strip
+LD		= $(CROSS_COMPILER)ld
+RANLIB 	= $(CROSS_COMPILER)ranlib
+STRIP 	= $(CROSS_COMPILER)strip
+AR 		= $(CROSS_COMPILER)ar
+
+RM		= rm -r -f
+MKDIR	= mkdir -p
+MODE	= 700
+OWNER	= root
+CHOWN	= chown
+CHMOD	= chmod
+COPY	= cp
+MOVE	= mv
+
+ARFLAGS	= crus
+
+DRIVER_DIR =  $(DRIVER_HOME_DIR)/slic
+# DRIVER_DIR =  $(DRIVER_HOME_DIR)/pcm
+
+GENERIC_INC_DIR = include
+BUILD		= $(VOIPS_DIR)/$(GENERIC_INC_DIR)/build
+UTILS_DIR	= $(VOIPS_DIR)/$(GENERIC_INC_DIR)/util
+SDP_DIR		= $(VOIPS_DIR)/$(GENERIC_INC_DIR)/sdp
+RTP_DIR		= $(VOIPS_DIR)/$(GENERIC_INC_DIR)/rtp
+SIPSTACK_DIR	= $(VOIPS_DIR)/$(GENERIC_INC_DIR)/sipstack
+
+BASE_DIR	= $(ROOT_DIR)/base
+UA_DIR		= $(ROOT_DIR)/ua
+UA_STATE_DIR= $(ROOT_DIR)/state
+UA_OP_DIR	= $(ROOT_DIR)/op
+
+LIBS_DIR	= $(ROOT_DIR)/as600_SharedLib
+
+ASSIST_DIR		= $(ROOT_DIR)/assist
+
+
+DRIVER_INC_DIR += -I$(DRIVER_DIR)/include/driver
+
+UTILS_INC_DIR+=-I$(BUILD) \
+	-I$(UTILS_DIR) \
+	-I$(UTILS_DIR)/threads \
+	-I$(UTILS_DIR)/logging \
+	-I$(UTILS_DIR)/crypto \
+	-I$(UTILS_DIR)/statistics \
+	-I$(UTILS_DIR)/snmp \
+	-I$(UTILS_DIR)/signals \
+	-I$(UTILS_DIR)/behavior \
+	-I$(UTILS_DIR)/io \
+	-I$(UTILS_DIR)/services \
+	-I$(UTILS_DIR)/transport \
+	-I$(UTILS_DIR)/config \
+	-I$(UTILS_DIR)/dnssrv \
+	-I$(UTILS_DIR)/deprecated \
+	-I$(UTILS_DIR)/adt 
+
+SDP_INC_DIR		+= -I$(SDP_DIR)/sdp2
+RTP_INC_DIR		+= -I$(RTP_DIR) -I$(RTP_DIR)/codec
+BUILD_INC_DIR 		+= -I$(BUILD)
+SIPSTACK_INC_DIR 	+= -I$(SIPSTACK_DIR)
+
+BASE_INC_DIR		+= -I$(BASE_DIR) 
+# eg 'include' is only needed by UA
+UA_INC_DIR		+= -I$(UA_DIR) -I$(UA_DIR)/assist -I$(UA_DIR)/../include -I$(LIBS_DIR)/libs/include
+UA_STATE_INC_DIR+= -I$(UA_STATE_DIR) -I$(UA_STATE_DIR)/pbx
+UA_OP_INC_DIR	+= -I$(UA_OP_DIR) -I$(UA_OP_DIR)/pbx
+
+ASSIST_INC_DIR 	+= -I$(ASSIST_DIR)/include -I$(LIBS_DIR)/include
+
+LDFLAGS+= -L$(LIBS_DIR)/binary -laslib 

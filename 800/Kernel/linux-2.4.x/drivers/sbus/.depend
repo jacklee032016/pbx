@@ -1,0 +1,21 @@
+dvma.o: dvma.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/dma.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sun4.h)
+sbus.o: sbus.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/dma.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sparc32.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pci.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sun/auxio.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sun4.h)

@@ -1,0 +1,150 @@
+dir.o: dir.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ncp_fs.h \
+   ncplib_kernel.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/extras.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/strong.h)
+file.o: file.c \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ncp_fs.h \
+   ncplib_kernel.h
+inode.o: inode.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/file.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ncp_fs.h \
+   ncplib_kernel.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/extras.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/strong.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/packet/signing.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/nls.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/smalldos.h)
+ioctl.o: ioctl.c \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/highuid.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ncp_fs.h \
+   ncplib_kernel.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/packet/signing.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/ioctl/locking.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/nls.h)
+mmap.o: mmap.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/shm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mman.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ncp_fs.h \
+   ncplib_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h
+ncplib_kernel.o: ncplib_kernel.c \
+   ncplib_kernel.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/nfs/ns.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/os2/ns.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/debugdentry.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/ioctl/locking.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/nls.h)
+ncplib_kernel.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/string.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/nls.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/nls.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ctype.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ncp_fs.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/ioctl/locking.h)
+	@touch ncplib_kernel.h
+ncpsign_kernel.o: ncpsign_kernel.c \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/packet/signing.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ncp.h \
+   ncpsign_kernel.h
+ncpsign_kernel.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ncp_fs.h
+	@touch ncpsign_kernel.h
+sock.o: sock.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/in.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/net.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/scm.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipx.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/file.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ncp_fs.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/packet/signing.h) \
+   ncpsign_kernel.h
+symlink.o: symlink.c \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ncpfs/extras.h) \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ncp_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stat.h \
+   ncplib_kernel.h
+.PRECIOUS:	ncplib_kernel.h \
+	ncpsign_kernel.h \
+

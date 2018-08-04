@@ -1,0 +1,245 @@
+aten.o: aten.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   paride.h
+bpck6.o: bpck6.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   ppc6lnx.c \
+   paride.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/pc/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/pc.h)
+bpck.o: bpck.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   paride.h
+comm.o: comm.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   paride.h
+dstr.o: dstr.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   paride.h
+epat.o: epat.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   paride.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/epatc8.h)
+epia.o: epia.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   paride.h
+fit2.o: fit2.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   paride.h
+fit3.o: fit3.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   paride.h
+friq.o: friq.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   paride.h
+frpw.o: frpw.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   paride.h
+kbic.o: kbic.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   paride.h
+ktti.o: ktti.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   paride.h
+on20.o: on20.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   paride.h
+on26.o: on26.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   paride.h
+paride.o: paride.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parport.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/parport.h \
+   paride.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/aten.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/bpck.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/comm.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/dstr.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/epat.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/epia.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/frpw.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/friq.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/fit2.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/fit3.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/kbic.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/ktti.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/on20.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/on26.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/pd.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/pcd.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/pf.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/pt.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/paride/pg.h)
+pcd.o: pcd.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/cdrom.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   setup.h \
+   paride.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   pseudo.h
+pd.o: pd.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hdreg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/cdrom.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   setup.h \
+   paride.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   pseudo.h
+pf.o: pf.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hdreg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/cdrom.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   setup.h \
+   paride.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   pseudo.h
+pg.o: pg.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtio.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   setup.h \
+   paride.h
+pseudo.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tqueue.h
+	@touch pseudo.h
+pt.o: pt.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtio.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   setup.h \
+   paride.h
+setup.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ctype.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h
+	@touch setup.h
+.PRECIOUS:	pseudo.h \
+	setup.h \
+

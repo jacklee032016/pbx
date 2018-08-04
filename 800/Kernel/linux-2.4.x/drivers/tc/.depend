@@ -1,0 +1,56 @@
+lk201.o: lk201.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kbd_ll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kbd_kern.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vt_kern.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/keyboard.h \
+   zs.h \
+   lk201.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/magic/sysrq.h)
+tc.o: tc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/ptrace.h
+zs.o: zs.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty_flip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/serial/dec/console.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/console.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/decstation.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/baget/mips.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kgdb.h) \
+   /works/isdn/kernel/linux-2.4.x/include/asm/kgdb.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/magic/sysrq.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysrq.h \
+   zs.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/devfs/fs.h)

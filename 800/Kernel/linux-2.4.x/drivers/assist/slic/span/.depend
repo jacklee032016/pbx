@@ -1,0 +1,4 @@
+as_tel_init.o: as_tel_init.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/slic/include/asstel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/include/as_version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h

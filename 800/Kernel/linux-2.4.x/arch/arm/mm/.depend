@@ -1,0 +1,320 @@
+alignment.o: alignment.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/compiler.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ptrace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mman.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   fault.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/arm922t.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/arm920t.h)
+consistent.o: consistent.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pci.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sa1111.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/ixp425.h)
+discontig.o: discontig.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bootmem.h
+extable.o: extable.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/modules.h)
+fault-armo.o: fault-armo.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ptrace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mman.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h
+fault-armv.o: fault-armv.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ptrace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   fault.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kgdb.h)
+fault-common.o: fault-common.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ptrace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/kgdb.h \
+   fault.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/26.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/32.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kgdb.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/debug/user.h)
+init.o: init.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ptrace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mman.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bootmem.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach-types.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/dma.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/setup.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/arch.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/map.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/discontigmem.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/32.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/no/pgt/cache.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/initrd.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sa1111.h)
+ioremap.o: ioremap.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/page.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h
+mm-armo.o: mm-armo.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bootmem.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/page.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/arch/memory.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/map.h
+mm-armv.o: mm-armv.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bootmem.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/page.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/setup.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/map.h
+mm-clps7500.o: mm-clps7500.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/page.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/proc/domain.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/setup.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/map.h
+mm-ftvpci.o: mm-ftvpci.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/page.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/map.h
+mm-l7200.o: mm-l7200.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/page.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/proc/domain.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/map.h
+mm-riscstation.o: mm-riscstation.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/page.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/proc/domain.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/setup.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/map.h
+mm-rpc.o: mm-rpc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/page.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/proc/domain.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/setup.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/map.h
+mm-tbox.o: mm-tbox.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/page.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/map.h
+proc-arm1020.o: proc-arm1020.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/constants.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/procinfo.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/bpredict/disable.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/dcache/disable.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/icache/disable.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/dcache/writethrough.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/cache/round/robin.h)
+proc-arm1026.o: proc-arm1026.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/constants.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/procinfo.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/dcache/writethrough.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/arm1026/writethrough.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/icache/disable.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/dcache/disable.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/bpredict/disable.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/cache/round/robin.h)
+proc-arm2,3.o: proc-arm2,3.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/constants.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/procinfo.h
+proc-arm6,7.o: proc-arm6,7.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/constants.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/procinfo.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/riscstation.h)
+proc-arm720.o: proc-arm720.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/constants.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/procinfo.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h
+proc-arm920.o: proc-arm920.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/constants.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/procinfo.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/dcache/writethrough.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/arm920/writethrough.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/icache/disable.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/dcache/disable.h)
+proc-arm922.o: proc-arm922.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/constants.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/procinfo.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/dcache/writethrough.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/arm922/writethrough.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/icache/disable.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/dcache/disable.h)
+proc-arm925.o: proc-arm925.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/constants.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/procinfo.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/arm925/cpu/idle.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/arm925/writethrough.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/arm925/i/cache/on.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/arm925/d/cache/on.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/arm925/non/streaming/on.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/arm925/transparent/on.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/arm925/writebuffer/on.h)
+proc-arm926.o: proc-arm926.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/constants.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/procinfo.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/dcache/writethrough.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/arm926/writethrough.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/icache/disable.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/dcache/disable.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/cache/round/robin.h)
+proc-sa110.o: proc-sa110.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/constants.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/procinfo.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h
+proc-syms.o: proc-syms.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/proc-fns.h
+proc-xscale.o: proc-xscale.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/constants.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/procinfo.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/proc/pgtable.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/xscale/xbit.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/xscale/cache/errata.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/ixdp2400.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/ixdp2401.h)
+small_page.o: small_page.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ptrace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mman.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h
+xscale-lock.o: xscale-lock.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/cache.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/cpu-single.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/xscale-lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/proc/cache.h

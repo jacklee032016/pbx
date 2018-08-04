@@ -1,0 +1,23 @@
+dir.o: dir.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/efs_fs.h
+file.o: file.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/efs_fs.h
+inode.o: inode.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/efs_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/efs_fs_sb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h
+namei.o: namei.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/efs_fs.h
+super.o: super.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/efs_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/efs_vh.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/efs_fs_sb.h
+symlink.o: symlink.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/efs_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h

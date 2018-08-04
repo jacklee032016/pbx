@@ -1,0 +1,159 @@
+arch.o: arch.c \
+   /works/isdn/kernel/linux-2.4.x/include/asm/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/setup.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/memory.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach-types.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/arch.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/ixdp425.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/ixcdp1100.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/prpmc1100.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/adi/coyote.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/se4000.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mach/ess710.h)
+coyote-pci.o: coyote-pci.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/arch/pci.h
+dallas_rtc.o: dallas_rtc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h
+gpio.o: gpio.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h
+ixdp425-pci.o: ixdp425-pci.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/arch/pci.h
+ixp425-irq.o: ixp425-irq.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach-types.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h
+ixp425-pci.o: ixp425-pci.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/sizes.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/arch/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/arch/pci_auto.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/arch/pci-bridge.h
+ixp425-time.o: ixp425-time.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/time.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timex.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h
+ixp4xx_watchdog.o: ixp4xx_watchdog.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/time.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timex.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h
+kgdb.o: kgdb.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/serial.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/serialP.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/serial_reg.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/atomic.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unistd.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/kgdb.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/serial.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm-arm/arch/ixp425.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/serial_reg.h
+mm.o: mm.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach-types.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/page.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/map.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h
+pci-auto.o: pci-auto.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/arch/pci-bridge.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/arch/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/arch/pci_auto.h
+pcibuf.o: pcibuf.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/sizes.h
+pci.o: pci.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/arch/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/arch/pci-bridge.h
+pci-io.o: pci-io.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h
+prpmc1100-pci.o: prpmc1100-pci.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mach/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/arch/pci.h

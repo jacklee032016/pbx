@@ -1,0 +1,54 @@
+#
+# $Id: Makefile.post,v 1.2 2007/03/02 04:19:27 lizhijie Exp $
+
+C_CFLAGS += $(INCLUDE_DIR) 
+CC_CFLAGS+= -Wno-deprecated
+
+
+OBJS = $(patsubst %.c,$(OBJ_DIR)/%.o,$(patsubst %.cxx,$(OBJ_DIR)/%.o,$(SRC))) $(EXTRA_OBJS)
+
+all:$(BIN_DIR) $(OBJ_DIR) $(LOCAL_ALL) $(TARGET_LIB)
+
+$(OBJ_DIR):
+	-if [ -d $(OBJ_DIR) ] ; then : ; else $(MKDIR) $(OBJ_DIR); fi
+ifdef CODE_SUBDIRS
+	-@ for subdir in $(CODE_SUBDIRS) ; do ( mkdir -p $(OBJ_DIR)/$$subdir ) ; done
+endif
+
+$(BIN_DIR):
+	-if [ -d $(BIN_DIR) ] ; then : ; else $(MKDIR) $(BIN_DIR)/usr/bin;$(MKDIR) $(BIN_DIR)/lib; fi
+#ifdef CODE_SUBDIRS
+#	-@ for subdir in $(CODE_SUBDIRS) ; do ( mkdir -p $(BIN_DIR)/$$subdir ) ; done
+#endif
+
+clean:$(LOCAL_CLEAN)
+	-if [ -d $(BIN_DIR) ] ; then $(RM) $(BIN_DIR) ; fi
+	-if [ -d $(OBJ_DIR) ] ; then $(RM) $(OBJ_DIR) ; fi
+
+TARGET_LIB_SHARED:=$(TARGET_LIB).so
+
+$(TARGET_LIB):$(TARGET_LIB_SHARED) #$(TARGET_LIB_STATIC) 
+
+$(TARGET_LIB_SHARED):$(OBJS)  
+	$(CC) $(LDFLAGS) -shared  $(SHARED_LD_FLAGS) $(LIBS) $^ -o $@ 
+	$(STRIP)  $@
+	$(MOVE) $(TARGET_LIB_SHARED) $(BIN_DIR)/lib 
+#	tar cvzf $(TARGET_LIB_SHARED).tar.gz $(BIN_DIR)/$(TARGET_LIB_SHARED)
+#	$(MOVE) $(TARGET_LIB_SHARED).tar.gz $(BIN_DIR)
+#-Wl,-soname 
+
+$(TARGET_LIB_STATIC):$(OBJS)  
+	$(AR) $(ARFLAGS) $@ $^ 
+	$(RANLIB) $@
+	$(MOVE) $(TARGET_LIB_STATIC) $(BIN_DIR)
+
+$(OBJ_DIR)/%.o:%.cxx
+	$(CXX) $(CXXFLAGS) $(C_CFLAGS) $(CC_CFLAGS) -pipe -c  $< -o $(OUTPUT_FLAG)$@ 
+
+$(OBJ_DIR)/%.o:%.c 
+	$(CC)  $(C_CFLAGS) -pipe -c $< -o $(OUTPUT_FLAG)$@ 
+
+.o.cxx :
+	$(CXX) $(C_CFLAGS) $(CC_CFLAGS) -g $(CFLAGS) -c $<
+
+	

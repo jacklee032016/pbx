@@ -1,0 +1,25 @@
+as_fxs.o: as_fxs.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/slic/include/as_fxs_common.h
+as_fxs_device_init.o: as_fxs_device_init.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/slic/include/as_fxs_common.h
+as_fxs_dtmf.o: as_fxs_dtmf.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/slic/include/as_fxs_common.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/slic/include/as_dev_ctl.h
+as_fxs_handler.o: as_fxs_handler.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/slic/include/as_fxs_common.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/slic/include/as_dev_ctl.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/slic/include/as_ring_param.h
+as_fxs_init.o: as_fxs_init.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/slic/include/as_fxs_common.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/include/as_version.h
+as_fxs_isr.o: as_fxs_isr.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/slic/include/as_fxs_common.h
+as_fxs_proslic.o: as_fxs_proslic.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/slic/include/as_fxs_common.h
+as_fxs_tiger.o: as_fxs_tiger.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/slic/include/as_fxs_common.h
+as_fxs_tone.o: as_fxs_tone.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/slic/include/asstel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/slic/include/as_fxs_common.h
+as_fxs_voicedaa.o: as_fxs_voicedaa.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/slic/include/as_fxs_common.h

@@ -1,0 +1,68 @@
+{printer_type?:}{#printer_name=0?:
+{[printer_name]
+<H2 CLASS="title"><A HREF="{printer_uri_supported}">{printer_name}</A>{default_name={printer_name}? (Default Printer):}
+{?printer_state_message=?:<SPAN CLASS="message">"{printer_state_message}"</SPAN>}</H2>
+
+<TABLE WIDTH="100%" CLASS="button" CELLSPACING="0" CELLPADDING="0" SUMMARY="{printer_name}">
+<TR>
+<TD VALIGN="TOP"><A HREF="{printer_uri_supported}">
+<IMG SRC="/cups/images/printer-{printer_state=3?idle:{printer_state=4?processing:stopped}}.gif" CLASS="button" ALT=""></A>
+</TD>
+<TD VALIGN="TOP"><B>描述信息:</B> {printer_info}<BR>
+<B>位置:</B> {printer_location}<BR>
+<B>厂商:</B> {printer_make_and_model}<BR>
+<B>状态:</B> {printer_state=3?空闲:{printer_state=4?处理中:已停止}},
+{printer_is_accepting_jobs=0?拒绝作业:接收作业}, {printer_is_shared=0?未:} 发布.
+{?device_uri=?:<BR><B>设备URI:</B> {device_uri}}
+
+<P>
+<!--
+<A HREF="{printer_uri_supported}?op=print-test-page">
+<IMG SRC="/cups/images/button-print-test-page.gif" ALT="Print Test Page" CLASS="button"></A>
+-->
+<A HREF="printers.cgi?op=print-test-page&amp;printer_name={%printer_name}">
+<IMG SRC="/cups/images/button-print-test-page.gif" ALT="打印测试页" CLASS="button"></A>
+{?cupscommand=1?<A HREF="printers.cgi?op=clean-print-heads&amp;printer_name={%printer_name}">
+<IMG SRC="/cups/images/button-clean-print-heads.gif" ALT="清除打印头信息" CLASS="button"></A>
+<A HREF="printers.cgi?op=print-self-test-page&amp;printer_name={%printer_name}">
+<IMG SRC="/cups/images/button-print-self-test-page.gif" ALT="打印自检页" CLASS="button"></A>:}
+{printer_state=5?
+<A HREF="{admin_uri}?op=start-printer&amp;printer_name={%printer_name}">
+<IMG SRC="/cups/images/button-start-printer.gif" ALT="启动打印机" CLASS="button"></A>
+:
+<A HREF="{admin_uri}?op=stop-printer&amp;printer_name={%printer_name}">
+<IMG SRC="/cups/images/button-stop-printer.gif" ALT="停止打印机" CLASS="button"></A>
+}
+{printer_is_accepting_jobs=0?
+<A HREF="{admin_uri}?op=accept-jobs&amp;printer_name={%printer_name}">
+<IMG SRC="/cups/images/button-accept-jobs.gif" ALT="接收打印作业" CLASS="button"></A>
+:
+<A HREF="{admin_uri}?op=reject-jobs&amp;printer_name={%printer_name}">
+<IMG SRC="/cups/images/button-reject-jobs.gif" ALT="拒绝打印作业" CLASS="button"></A>
+}
+<A HREF="{printer_uri_supported}?op=move-jobs&amp;printer_name={%printer_name}">
+<IMG SRC="/cups/images/button-move-jobs.gif" ALT="移动全部作业" CLASS="button"></A>
+<A HREF="{admin_uri}?op=purge-jobs&amp;printer_name={%printer_name}">
+<IMG SRC="/cups/images/button-cancel-all-jobs.gif" ALT="取消全部作业" CLASS="button"></A>
+{printer_is_shared=0?
+<A HREF="{admin_uri}?op=set-sharing&amp;printer_name={%printer_name}&amp;shared=1">
+<IMG SRC="/cups/images/button-publish-printer.gif" ALT="发布打印机" CLASS="button"></A>
+:
+<A HREF="{admin_uri}?op=set-sharing&amp;printer_name={%printer_name}&amp;shared=0">
+<IMG SRC="/cups/images/button-unpublish-printer.gif" ALT="不发布打印机" CLASS="button"></A>
+}
+<A HREF="{admin_uri}?op=modify-printer&amp;printer_name={%printer_name}">
+<IMG SRC="/cups/images/button-modify-printer.gif" ALT="修改打印机" CLASS="button"></A>
+<A HREF="{admin_uri}?op=set-printer-options&amp;printer_name={%printer_name}">
+<IMG SRC="/cups/images/button-set-printer-options.gif" ALT="设置打印机选项" CLASS="button"></A>
+<A HREF="{admin_uri}?op=delete-printer&amp;printer_name={%printer_name}">
+<IMG SRC="/cups/images/button-delete-printer.gif" ALT="删除打印机" CLASS="button"></A>
+<A HREF="{admin_uri}?op=set-as-default&amp;printer_name={%printer_name}">
+<IMG SRC="/cups/images/button-set-as-default.gif" ALT="设置为默认打印机" CLASS="button"></A>
+<A HREF="{admin_uri}?op=set-allowed-users&amp;printer_name={%printer_name}">
+<IMG SRC="/cups/images/button-set-allowed-users.gif" ALT="设置打印用户" CLASS="button"></A>
+</P>
+</TD>
+</TR>
+</TABLE>
+}}

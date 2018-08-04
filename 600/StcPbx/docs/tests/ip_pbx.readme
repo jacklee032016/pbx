@@ -1,0 +1,11 @@
+# $Id: ip_pbx.readme,v 1.2 2007/05/14 08:30:37 lizhijie Exp $
+          STC PBX  <-->  IP Call Process
+                          Li Zhijie 2007.05.05
+
+IP-->PSTN
+    加拨0，在IP侧表示IP拨打PSTN外线
+    IP侧指定拨打PSTN外线所使用的PSTN外线设备号（或者PSTN信道号，矩阵的行号）
+    IP传给STC的号码中，如果第一位号码为0，则删除
+    STC把所有的IP传入的号码均发给PSTN外线上
+
+                          

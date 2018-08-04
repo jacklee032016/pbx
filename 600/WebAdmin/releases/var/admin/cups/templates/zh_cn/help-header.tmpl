@@ -1,0 +1,47 @@
+<FORM ACTION="/cgi-bin/help.cgi{?HELPFILE}" METHOD="GET">
+{TOPIC?<INPUT TYPE="HIDDEN" NAME="TOPIC" VALUE="{TOPIC}">:}
+
+<P ALIGN="CENTER"><B>在查找
+{HELPTITLE?{HELPTITLE}:{TOPIC?{TOPIC}:All Documents}}:</B> <INPUT
+TYPE="TEXT" NAME="QUERY" VALUE="{?QUERY}" SIZE="60"> <INPUT
+TYPE="IMAGE" SRC="/cups/images/button-search.gif" ALT="Search">
+<A HREF="/cgi-bin/help.cgi{?HELPFILE}{QUERY?{TOPIC??TOPIC={TOPIC}:}:}"><IMG
+SRC="/cups/images/button-clear.gif" ALT="Clear" CLASS="button"></A></P>
+
+</FORM>
+
+<!-- Bookmarks -->
+<DIV CLASS="sidebar">
+<H3 CLASS="title">在线帮助文档</H3>
+
+<P CLASS="l0"><A HREF="/help{QUERY??QUERY={QUERY}:}">全部文档</A></P>
+<HR>
+
+{[BMTEXT]<P CLASS="l{BMINDENT}"><A HREF="{BMLINK}">{BMTEXT}</A></P>
+}
+</DIV>
+
+{QUERY?<P>Search Results in {HELPFILE?{HELPTITLE}:{TOPIC?{TOPIC}:All Documents}}\:</P>
+{QTEXT?<UL>
+{[QTEXT]<LI><A HREF="{QLINK}">{QTEXT}</A>{QPTEXT? (in <I><A HREF="{QPLINK}">{QPTEXT}</A></I>):}</LI>}
+{QTEXT?</UL>:}
+:<P>No matches found.</P>}
+<HR NOSHADE>:}
+{HELPTITLE?<H1>{HELPTITLE}
+<A HREF="/cgi-bin/help/{HELPFILE}?PRINTABLE=YES" TARGET="_blank"><IMG
+SRC="/cups/images/button-view-printable-version.gif" ALT="View Printable Version"
+CLASS="button"></A></H1>:<H1>CUPS Help Pages</H1>
+
+<P>This is the CUPS on-line help interface. Enter search words
+above or click on any of the documentation links to display
+on-line help information.</P>
+
+<P>If you are new to CUPS, read the "<a
+href="overview.html">Overview of CUPS</a>" page. Veteran users
+should read the "<a href="whatsnew.html">What's New in CUPS
+1.2</a>" page.</P>
+
+<P>The <A HREF="http://www.cups.org/">CUPS Home Page</A> also
+provides many resources including user discussion forums, answers
+to frequently-asked questions, and a form for submitting bug
+reports and feature requests.</P>}

@@ -1,0 +1,31 @@
+adapter.o: adapter.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mii.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   xemac.h \
+   xemac_i.h
+xemac.o: xemac.c \
+   xemac_i.h
+xemac_g.o: xemac_g.c \
+   xemac.h
+xemac_i.h: \
+   xemac.h \
+   xemac_l.h
+	@touch xemac_i.h
+xemac_intr.o: xemac_intr.c \
+   xemac_i.h
+xemac_intr_dma.o: xemac_intr_dma.c \
+   xemac_i.h
+xemac_intr_fifo.o: xemac_intr_fifo.c \
+   xemac_i.h
+xemac_options.o: xemac_options.c \
+   xemac_i.h
+xemac_phy.o: xemac_phy.c \
+   xemac_i.h
+.PRECIOUS:	xemac_i.h \
+

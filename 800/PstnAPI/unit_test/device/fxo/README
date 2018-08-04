@@ -1,0 +1,58 @@
+# $Author: lizhijie $
+# $Id: README,v 1.1.1.1 2006/11/30 16:22:46 lizhijie Exp $
+ 
+		README for FXO DP10/20 Dialing
+		                       Assist Corp.  Li Zhijie, 2006.04.17
+
+Binary : fxo_call
+Source : test_fxo_calling.c
+Purpose: A call is inited by a FXO port. After call is connected, DT is play
+         in this FXO port.
+
+Binary : fxo_callee
+Source : test_fxo_callee.c
+Purpose: display the call process where a FXO port player as a callee.
+         After call has disconnected, a busy tone detect algorithm can
+         be test.(Now this algorithm is deprecated)
+
+
+Binary : fxo_cid
+Source : test_fxo_rx_data.c
+Purpose: waiting CAR and demodulate the real-time Caller ID.
+
+
+Binary : fxo_line
+Source : test_fxo_line.c 
+Purpose: Check whether line is plugin the FXO port.
+
+
+Binary : fxo_dp
+Source : test_fxo_dp.c
+Purpose: Dial in 10pp or 20 pp in a FXO port 
+
+
+Binary : caller
+Source : fxo_caller.c 
+Purpose: A call inited from telephone connect in FXS port and out this call
+         to the FXO port. 
+         Called phone number can be defined in command line parameters or dialed
+         when DT is heard by telephone.    
+
+Binary : callee
+Source : fxo_callee.c
+Purpose: receive a call come from FXO port and ring the telephone connect to a FXS
+         port. After off-hook the telephone, voice conversation can be continue.
+         It is tested in Chinese telecommunication environments.
+
+Binary : fxo_ncid
+Source : test_fxo_rx_cid.c
+Purpose: waiting CAR and demodulate the real-time Caller ID without save file.
+
+Binary : fxo_ccid
+Source : test_fxo_rx_chinese_cid.c
+Purpose: waiting RING and demodulate the real-time Caller ID in Chinese format 
+         without save file.
+         If running this program with more than 1 parameter, then it will use 
+         local disk file as FSK input file.
+
+		                       

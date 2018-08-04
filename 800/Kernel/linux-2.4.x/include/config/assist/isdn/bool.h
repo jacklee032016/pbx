@@ -1,0 +1,1 @@
+#define CONFIG_ASSIST_ISDN_BOOL 1

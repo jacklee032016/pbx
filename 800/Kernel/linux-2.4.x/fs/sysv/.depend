@@ -1,0 +1,42 @@
+balloc.o: balloc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysv_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h
+dir.o: dir.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysv_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h
+file.o: file.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysv_fs.h
+ialloc.o: ialloc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysv_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stddef.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h
+inode.o: inode.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysv_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/highuid.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h
+itree.o: itree.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysv_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h
+namei.o: namei.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysv_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h
+super.o: super.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysv_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h
+symlink.o: symlink.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h

@@ -1,0 +1,87 @@
+bfind.o: bfind.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   hfsplus_fs.h
+bnode.o: bnode.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   hfsplus_fs.h \
+   hfsplus_raw.h
+brec.o: brec.c \
+   hfsplus_fs.h \
+   hfsplus_raw.h
+btree.o: btree.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/div64.h \
+   hfsplus_fs.h \
+   hfsplus_raw.h
+catalog.o: catalog.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   hfsplus_fs.h \
+   hfsplus_raw.h
+dir.o: dir.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/random.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   hfsplus_fs.h \
+   hfsplus_raw.h
+extents.o: extents.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   hfsplus_fs.h \
+   hfsplus_raw.h
+hfsplus_fs.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   hfsplus_raw.h
+	@touch hfsplus_fs.h
+hfsplus_raw.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h
+	@touch hfsplus_raw.h
+inode.o: inode.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   hfsplus_fs.h \
+   hfsplus_raw.h
+options.o: options.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   hfsplus_fs.h
+super.o: super.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vfs.h \
+   hfsplus_fs.h
+tables.o: tables.c \
+   hfsplus_fs.h
+unicode.o: unicode.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/nls.h \
+   hfsplus_fs.h \
+   hfsplus_raw.h
+wrapper.o: wrapper.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   hfsplus_fs.h \
+   hfsplus_raw.h
+.PRECIOUS:	hfsplus_fs.h \
+	hfsplus_raw.h \
+

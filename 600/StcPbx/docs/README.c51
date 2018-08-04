@@ -1,0 +1,67 @@
+# $Id: README.c51,v 1.2 2007/05/16 21:12:28 lizhijie Exp $
+		README for C51 Program
+		        Li Zhijie, 2007.04.22
+
+2007.05.16
+    C51编译器的问题
+        寻址数组的地址，必须使用如下形式：
+            &extTransfers.leftTransfers[i]
+        而不能使用 extTransfers.leftTransfers+i
+        从语法上看，两者是完全一样的，但是后一种情况下，代码出错，这是编译器造成的
+    
+    数据结构大小的问题
+        C51因为内存有限，当数据结构需要的空间过大时，进行传指针形式的数据操作可能
+        会有问题，特别是在多层嵌套的数据结构中
+    
+
+2007.05.01
+link时的溢出问题
+    Link时产生的错误，例如
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA
+    SEGMENT: ?DT?_IPDIGIT_2_PBXDIGIT?PBX_UTILS
+    LENGTH:  0004H
+
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA
+    SEGMENT: ?DT?_DECODINGCHANNEL_RESUME?PBX_CHANNEL_IF
+    LENGTH:  0002H
+
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA
+    SEGMENT: ?DT?_START_CGY?PBX_TONE_IF
+    LENGTH:  0001H
+
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA
+    SEGMENT: ?DT?_PBX_TX_CALL_OFFHOOK_AS_CALLER?UART_CALLS_TX
+    LENGTH:  0001H
+
+Program Size: data=151.6 xdata=969 code=14374
+LINK/LOCATE RUN COMPLETE.  13 WARNING(S),  4 ERROR(S)
+这里报告的是某个函数使用的内部数据段的溢出，是针对每个函数的，而不是针对文件的。
+这是由于在link时，需要创建函数执行关系的一棵树，每个函数都会成为树上调用关系的一个节点
+1.
+在同一个调用关系树的函数所占的内存可以是overlay的
+同一个树根下的函数报告为溢出时，需要查找该函数的调用关系，优化并减少占用的内存数目。
+
+2.
+不被任何地方调用函数是根节点，需要与其他的根节点并列计算需要的内存大小，所以不被任何地方
+调用的函数可能会造成内存的溢出；但是一旦把它调用后，可能溢出就不存在了。
+
+所以针对这样的溢出错误，必须针对具体的每一个函数及其在调用树上的关系，一个一个地优化，以
+减少内存的使用。
+
+优化的方式可以是：
+    使用宏：宏增加了编译后生成代码的数量，但是可以有效地减少函数的调用层次，从而减少
+    造成溢出的可能
+
+
+2007.04.22		        
+函数参数
+    指针形式的函数参数必须明确指定指针的类型，在函数声明中，也需要明确指定
+    一般数据的函数参数，只需要指定参数的数据类型就可以了
+
+自动变量（局部变量）
+    必须明确指定局部变量使用的内存类型
+    

@@ -1,0 +1,17 @@
+# $Id: tests_uart.readme,v 1.1 2007/05/03 19:51:44 lizhijie Exp $
+                Test Cases for UART
+                          Li Zhijie, 2007.05.03
+
+2007.05.03
+串口向IXP发出的信息
+    配置的起至标志：2
+    全局选项：7
+    其他全局项：
+        PSTN、IP前缀、系统口令、line2line口令、系统时间、夜服时间
+        共6项
+    外线：3×4
+    帐号：1×2
+    特服：1×6
+    分机：17×8
+总共171(0xAB)项
+

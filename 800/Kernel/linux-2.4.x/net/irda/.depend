@@ -1,0 +1,284 @@
+af_irda.o: af_irda.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sockios.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_arp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/net.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/iriap.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irias_object.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irttp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/discovery.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/ultra.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/debug.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+crc.o: crc.c \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/crc.h
+discovery.o: discovery.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/discovery.h
+irda_device.o: irda_device.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_ether.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_arp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wireless.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/ioctls.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/dma.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/pkt_sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda_device.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/wrapper.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/debug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irtty/sir.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/winbond/fir.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sa1100/fir.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/nsc/fir.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/toshiba/old.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smc/ircc/fir.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/esi/dongle.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tekram/dongle.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/actisys/dongle.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/girbil/dongle.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/litelink/dongle.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/old/belkin.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ep7211/ir.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mcp2120/dongle.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h)
+iriap.o: iriap.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irttp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irias_object.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/iriap_event.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/iriap.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/debug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/ultra.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+iriap_event.o: iriap_event.c \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/iriap.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/iriap_event.h
+irias_object.o: irias_object.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irias_object.h
+irlap.o: irlap.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/random.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda_device.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irqueue.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp_frame.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap_frame.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/qos.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/debug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/ultra.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/dynamic/window.h)
+irlap_event.o: irlap_event.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap_event.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap_frame.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/qos.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/parameters.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda_device.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/fast/rr.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/debug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/ultra.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/dynamic/window.h)
+irlap_frame.o: irlap_frame.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_ether.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/pkt_sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda_device.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/wrapper.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap_frame.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/qos.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/dynamic/window.h)
+irlmp.o: irlmp.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/random.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/qos.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/iriap.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp_frame.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/cache/last/lsap.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/ultra.h)
+irlmp_event.o: irlmp_event.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp_frame.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp_event.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/debug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/ultra.h)
+irlmp_frame.o: irlmp_frame.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp_frame.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/discovery.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/ultra.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/cache/last/lsap.h)
+irproc.o: irproc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/miscdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp.h
+irqueue.o: irqueue.c \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irqueue.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irmod.h
+irsyms.o: irsyms.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/iriap.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irias_object.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irttp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda_device.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/wrapper.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/parameters.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/crc.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/debug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irtty.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sysctl.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irlan.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ircomm.h)
+irsysctl.o: irsysctl.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ctype.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irias_object.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/debug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/fast/rr.h)
+irttp.o: irttp.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/parameters.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irttp.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+parameters.o: parameters.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/parameters.h
+qos.o: qos.c \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/parameters.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/qos.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/irda/dynamic/window.h)
+timer.o: timer.c \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irtty.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlmp_event.h
+wrapper.o: wrapper.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/wrapper.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irtty.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/crc.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irlap_frame.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/irda/irda_device.h

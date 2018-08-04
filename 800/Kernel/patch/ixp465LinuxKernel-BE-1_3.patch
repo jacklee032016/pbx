@@ -1,0 +1,177 @@
+diff -Naur old/arch/arm/config.in new/arch/arm/config.in
+--- old/arch/arm/config.in	2004-12-29 15:11:52.000000000 +0800
++++ new/arch/arm/config.in	2004-12-30 14:30:58.000000000 +0800
+@@ -326,6 +326,8 @@
+    fi
+ 
+    define_bool CONFIG_XSCALE_PMU_TIMER n
++
++   dep_tristate 'Build IXP400 Access Library' CONFIG_IXP400_LIB $CONFIG_IXP400 m
+ fi
+ 
+ if [ "$CONFIG_ARCH_ADIFCC" = "y" ]; then
+diff -Naur old/arch/arm/def-configs/ixdp465 new/arch/arm/def-configs/ixdp465
+--- old/arch/arm/def-configs/ixdp465	2004-12-29 15:11:46.000000000 +0800
++++ new/arch/arm/def-configs/ixdp465	2004-12-30 14:33:36.000000000 +0800
+@@ -66,6 +66,7 @@
+ #
+ # CONFIG_ARCH_IXDP425 is not set
+ CONFIG_ARCH_IXDP465=y
++CONFIG_IXP400_LIB=m
+ # CONFIG_ARCH_IXCDP1100 is not set
+ # CONFIG_ARCH_PRPMC1100 is not set
+ # CONFIG_ARCH_ADI_COYOTE is not set
+@@ -444,6 +445,7 @@
+ # CONFIG_NE2K_PCI is not set
+ # CONFIG_NE3210 is not set
+ # CONFIG_ES3210 is not set
++CONFIG_IXP400_ETH=m
+ # CONFIG_8139CP is not set
+ # CONFIG_8139TOO is not set
+ # CONFIG_8139TOO_PIO is not set
+@@ -911,3 +913,13 @@
+ # CONFIG_CRC32 is not set
+ CONFIG_ZLIB_INFLATE=y
+ CONFIG_ZLIB_DEFLATE=y
++
++#
++# ixdp465 related entries
++#
++CONFIG_MTD_REDBOOT_PARTS_UNALLOCATED=N
++CONFIG_MTD_REDBOOT_PARTS_READONLY=N
++CONFIG_I2C_IOP3XX=N
++CONFIG_IXP400_ETH_ALL=y
++CONFIG_IXP400_ETH_SKB_RECYCLE=n
++CONFIG_IXP400_ETH_QDISC_ENABLED=n
+diff -Naur old/Documentation/Configure.help new/Documentation/Configure.help
+--- old/Documentation/Configure.help	2004-12-29 15:09:39.000000000 +0800
++++ new/Documentation/Configure.help	2004-12-30 14:30:58.000000000 +0800
+@@ -571,6 +571,32 @@
+   on the Alpha. The only time you would ever not say Y is to say M in
+   order to debug the code. Say Y unless you know what you are doing.
+ 
++IXP400 Access Library
++CONFIG_IXP400_LIB
++  If you select M here, the Intel IXP400 Access Library will be
++  compiled as part of the build.
++
++  In order for the library to build correctly you must set up some
++  environment variables before building the kernel. See the README
++  files included in the IXP400 software distribution for details.
++
++  Note that this library is Intel proprietary code and must be
++  obtained from Intel Corp. See the README files included in the
++  IXP400 software distribution for details.
++
++  The library can be compiled only as a module, as linking it
++  statically into the kernel would violate the GPL. The library module
++  will be called ixp400.o. The demo codelets included with the library
++  will be built in seperate modules. See the documentation included in
++  the IXP400 software distribution for details.
++
++  Note that the access library build is not compatible with the
++  CONFIG_MODVERSIONS option (Controlled by the "set version information
++  on all symbols" option in the "loadable module support" section).
++
++  Select M if you have the IXP400 source code and wish to include it
++  in your build.
++
+ # Choice: himem
+ High Memory support
+ CONFIG_NOHIGHMEM
+diff -Naur old/drivers/ixp400/Makefile new/drivers/ixp400/Makefile
+--- old/drivers/ixp400/Makefile	1970-01-01 08:00:00.000000000 +0800
++++ new/drivers/ixp400/Makefile	2004-12-30 14:30:58.000000000 +0800
+@@ -0,0 +1,79 @@
++# "Adapter" makefile
++#
++# This makefile serves as the interface between the linux kernel
++# makefiles and Intel's xscale_sw makefile. It's purpose is to allow
++# the 'make modules' rule to build the access library modules, and to
++# get them included in the ramdisk image produced by the 'make
++# ramdisk' rules.
++#
++
++# The kernel makefiles override the value of CFLAGS on the make
++# commandline. Because the xscale_sw makefile is supposed to be
++# stand-alone, we don't want this. So we reset the special variable
++# MAKEOVERRIDES (See the make manual, section 5 "Communicating Options
++# to a Sub-make"). This will affect all invocations of make from this
++# makefile.
++MAKEOVERRIDES=
++
++ifdef CONFIG_MODVERSIONS
++Makefile: force
++	$(error The IXP400 Access library cannot be built with CONFIG_MODVERSIONS enabled. You need to disable either "Set version information on all module symbols" or "Build IXP400 Access Library" in your kernel configuration)
++endif
++
++# A rule to test the IX_XSCALE_SW is set
++ifndef IX_XSCALE_SW
++Makefile: force
++	$(error IX_XSCALE_SW must be set to the absolute path of the xscale_sw directory)
++endif
++
++# 'component_list.mk' defines COMPONENTS as a list of component
++# names. It's generated from the xscale_sw makefile by the rule below.
++include component_list.mk
++
++# Extract the list of components to build from the xscale_sw makefile.
++#
++# The reason we use '&&' instead of a pipe to connect the $(MAKE) and
++# 'tail' commands is that we don't want the 'tail' to execute if the
++# $(MAKE) fails.
++component_list.mk : $(IX_XSCALE_SW)/Makefile $(TOPDIR)/.config Makefile
++	echo 'COMPONENTS := \' > $@ # ' for syntax highlighting
++	$(MAKE) -C $(IX_XSCALE_SW) --no-print-directory showmacro MACRO=COMPONENTS IX_BYPASS_DEPS=1\
++		> $@.tmp && tail -n 1 < $@.tmp >> $@
++	echo 'CODELETS_COMPONENTS := \' >> $@ # ' for syntax highlighting
++	$(MAKE) -C $(IX_XSCALE_SW) --no-print-directory showmacro MACRO=CODELETS_COMPONENTS IX_BYPASS_DEPS=1\
++		> $@.tmp && tail -n 1 < $@.tmp >> $@
++	rm $@.tmp
++
++# These are the module files we can build
++IXP400_MODULES := ixp400.o $(COMPONENTS:%=ixp400_%.o) $(CODELETS_COMPONENTS:%=ixp400_codelets_%.o)
++
++# This is where they're located in the xscale_sw tree
++REAL_IXP400_MODULES := $(IXP400_MODULES:%=$(IX_XSCALE_SW)/$(IX_DEVICE)/lib/linuxbe/%) 
++
++# Having the modules depend on the build_ixp400_modules rule instead of
++# putting the commands in this rule means the commands are executed
++# only once for all of the modules.
++$(REAL_IXP400_MODULES): build_ixp400_modules
++
++.PHONY : force
++force:
++# This rule builds the modules.
++# The dependency on modversions.h is needed here so it'll be built for
++# us in a 'make modules'.
++build_ixp400_modules: force $(TOPDIR)/include/linux/modversions.h
++	cd $(IX_XSCALE_SW); $(MAKE) IX_NOSYM=1 $(REAL_IXP400_MODULES:$(IX_XSCALE_SW)/%=%) 
++
++# After building the modules, we copy them to this directory as that's
++# where the kernel makefiles expect to find them. We can't use
++# symlinks, as Jungo's 'make ramdisk' rule would just copy the links.
++$(IXP400_MODULES): $(REAL_IXP400_MODULES)
++	cp $(IX_XSCALE_SW)/$(IX_DEVICE)/lib/linuxbe/$@ $@ 
++
++# This macro is the interface to the rules in $(TOPDIR)/Rules.make. It
++# contains the names of all module files that can be built in this
++# directory. Note that they must be filenames in this directory - the
++# ramdisk rules cannot handle paths in this list.
++obj-m := $(IXP400_MODULES)
++
++# Include the generic kernel build system rules
++include $(TOPDIR)/Rules.make
+diff -Naur old/drivers/Makefile new/drivers/Makefile
+--- old/drivers/Makefile	2004-12-29 15:23:44.000000000 +0800
++++ new/drivers/Makefile	2004-12-30 14:30:58.000000000 +0800
+@@ -64,6 +64,9 @@
+ subdir-$(CONFIG_MMC)		+= mmc
+ subdir-$(CONFIG_MMCPXA250)	+= mmcpxa250
+ subdir-$(CONFIG_SSI)		+= ssi
++ifdef CONFIG_IXP400_LIB
++subdir-$(CONFIG_IXP400_LIB)	+= ixp400
++endif
+ subdir-$(CONFIG_MAPLE)		+= maple
+ subdir-$(CONFIG_VMEBUS)		+= vme
+ subdir-$(CONFIG_ARCH_CAMELOT)   += pld

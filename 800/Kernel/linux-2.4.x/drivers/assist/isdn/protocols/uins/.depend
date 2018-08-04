@@ -1,0 +1,35 @@
+l3_fsm.o: l3_fsm.c \
+   l3.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h
+l3.h: \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/asISDN.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/fsm.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/memdbg.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dss1.h
+	@touch l3.h
+l3_ie.o: l3_ie.c \
+   l3.h
+l3_ins_data_states.o: l3_ins_data_states.c \
+   l3.h
+l3_ins_down_states.o: l3_ins_down_states.c \
+   l3.h
+l3_ins_global_handler.o: l3_ins_global_handler.c \
+   l3.h
+l3_ins_process_mgr.o: l3_ins_process_mgr.c \
+   l3.h
+l3_msg.o: l3_msg.c \
+   l3.h
+l3_uins_if.o: l3_uins_if.c \
+   l3.h
+l3_uins_init.o: l3_uins_init.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   l3.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/as_isdn_version.h
+l3_utils.o: l3_utils.c \
+   l3.h
+.PRECIOUS:	l3.h \
+

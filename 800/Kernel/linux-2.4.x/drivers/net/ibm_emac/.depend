@@ -1,0 +1,81 @@
+ibm_emac.h: \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ibm/emac4.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/440gp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/440gx.h)
+	@touch ibm_emac.h
+ibm_ocp_debug.o: ibm_ocp_debug.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   ibm_ocp_mal.h \
+   ibm_ocp_zmii.h \
+   ibm_ocp_enet.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/40x.h)
+ibm_ocp_enet.o: ibm_ocp_enet.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ptrace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ethtool.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mii.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/processor.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/dma.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h \
+   ibm_ocp_enet.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ibm/ocp/enet/gap.h)
+ibm_ocp_enet.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mmu.h \
+   ibm_emac.h \
+   ibm_ocp_phy.h \
+   ibm_ocp_zmii.h \
+   ibm_ocp_mal.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ibm/ocp/enet/tx/buff.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ibm/ocp/enet/rx/buff.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ibm/ocp/enet/skb/res.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ibm/ocp/enet/error/msg.h)
+	@touch ibm_ocp_enet.h
+ibm_ocp_mal.o: ibm_ocp_mal.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   ibm_ocp_mal.h
+ibm_ocp_mal.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h
+	@touch ibm_ocp_mal.h
+ibm_ocp_phy.o: ibm_ocp_phy.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mii.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ethtool.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   ibm_ocp_phy.h
+.PRECIOUS:	ibm_emac.h \
+	ibm_ocp_enet.h \
+	ibm_ocp_mal.h \
+

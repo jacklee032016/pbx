@@ -1,0 +1,73 @@
+ataraid.o: ataraid.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kdev_t.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   ataraid.h
+ataraid.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h
+	@touch ataraid.h
+hptraid.o: hptraid.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   ataraid.h \
+   hptraid.h
+pdcraid.o: pdcraid.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   ataraid.h \
+   pdcraid.h
+silraid.o: silraid.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   ataraid.h \
+   silraid.h
+.PRECIOUS:	ataraid.h \
+

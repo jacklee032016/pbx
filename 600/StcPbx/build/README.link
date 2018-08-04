@@ -1,0 +1,25 @@
+# $Id: README.link,v 1.1.1.1 2007/05/02 19:02:31 lizhijie Exp $
+ 			README for Link our program
+ 			                Li Zhijie, 2007.04.23
+
+关于link时的函数调用树和函数参数/变量的覆盖
+    OVERLAY (main ~ (indirectfunc1, indirectfunc2),
+       execute ! (indirectfunc1, indirectfunc2))
+
+以上的directive表示：
+    取消main函数对函数indirectfunc1和indirectfunc2的调用关系
+    建立execute函数对indirectfunc1和indirectfunc2的调用关系，即在覆盖上，
+    函数indirectfunc1和indirectfunc2不能覆盖execute函数的变量和参数
+
+以下directive的意义
+    SPEEDOVL
+    在常量段不建立覆盖的关系，这对于状态机转换表操作使用，因为状态机转换
+    表实际上就是一个常量数组。
+    
+在C51下实现状态机的技巧
+    在状态机的转换表定义为常量，即code存储类型
+    
+    speedovl：防止常量段的覆盖
+    
+    建立状态机函数和各个状态处理函数的正确调用关系，即覆盖表
+    

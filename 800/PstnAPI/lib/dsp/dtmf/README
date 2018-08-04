@@ -1,0 +1,63 @@
+#
+# $Id: README,v 1.1.1.1 2006/11/30 16:22:45 lizhijie Exp $
+# $Author: lizhijie $
+		README for DTMF Detect
+		                Li Zhijie, 2006.03.20
+
+控制台二次收号优化的DTMF解码算法
+    基本解码算法
+       计算102个采样数据在8个频率分量上的能量值和总的能量值
+       找出能量值最大的行频率和列频率
+       判断的条件
+           1、功率绝对值判断
+               最大行频率和列频率的能量值均需大于门限：8.0e7(即系数C1/C2)
+           2、行频率和列频率的关系判断
+               因为电路的特性，在同一个电路上，高频信号（列频率）比低频信号（行频率）有更大的衰减
+               行频率×正向Twist > 列频率
+               列频率×反向Twist > 行频率
+               正向Twist（6.3, 8dB） > 反向Twist（4dB）
+               
+               日本制式的正向和反向Twist相等，为5dB
+          3、峰值测试
+               其余各行/各列的能量值×峰值系数 < 最大行/列
+               峰值系数（6.3, 8dB）
+          4、最大行和最大列能量值的和×系数（C3) >  总能量
+               C3取值为42     
+      号码决策
+          只有在连续两次解码得到的字符都相等时，才认为当前解码成功
+          
+    性能优化
+        控制台拨号一般是人的动作，比较慢，所以同一次拨号参数的数据比较多
+        号码决策时，引入时间戳机制
+            解码器当前的时间戳current_time：从第一次开始解码计算实际
+            上一次解码命中的时间戳lastHitTime
+            每一次解码成功的时间戳lastTime
+            
+        使用时间戳
+            本次命中后，丢弃本次剩余的数据，最大丢弃数据长度：1020-2*102
+            解码器当前的时间戳与上一次命中的时间戳小于门限T1时，丢弃数据
+            本次命中的时间减上一次成功的时间小于门限T2,丢弃字符
+            解码成功，保存两个时间戳：上一次解码成功的时间戳和该字符的时间戳
+            新解码的字符的时间戳与上一次解码的时间戳小于门限T2时，丢弃字符，并更新上一次解码的时间戳，实际也要丢弃后面的数据
+            
+       原始数据的采集
+            10*102字节的缓冲区（约127.5ms）
+                    
+
+参考
+    Real-Time Digital Signal Processing, Sen M.Kuo, Bob H.Lee
+
+DTMF NTT Specs
+    Signal Output time	:	50ms or more
+    Mininum Pause	:	30ms or more
+    Cycle		:	120ms or more
+
+
+Fault Tolerance
+    Parse 2 times within 45ms
+    Followed a pause duration
+    
+Performance Optimization
+    Parse one time for 100ms(only 160bytes of 160*20=3200bytes are used)
+    A DTMF Parse step is 102 bytes, eg. only 102 bytes of 160 bytes are used    
+		                

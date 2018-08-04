@@ -1,0 +1,64 @@
+bnep.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/bluetooth/bluetooth.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h
+	@touch bnep.h
+core.o: core.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/net.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/file.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/bluetooth/bluetooth.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/bluetooth/l2cap.h \
+   bnep.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bluez/bnep/debug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bluez/bnep/proto/filter.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bluez/bnep/mc/filter.h)
+netdev.o: netdev.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/bluetooth/bluetooth.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/bluetooth/hci_core.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/bluetooth/l2cap.h \
+   bnep.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bluez/bnep/debug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bluez/bnep/mc/filter.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bluez/bnep/proto/filter.h)
+sock.o: sock.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/file.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   bnep.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bluez/bnep/debug.h)
+.PRECIOUS:	bnep.h \
+

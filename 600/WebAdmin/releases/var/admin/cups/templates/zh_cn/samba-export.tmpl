@@ -1,0 +1,55 @@
+<SCRIPT TYPE="text/javascript"><!--
+function select_printers() {
+  var list = document.export_samba.EXPORT_NAME;
+  var sel = document.export_samba.EXPORT_ALL.checked;
+
+  for (i = 0; i < list.length; i ++) {
+    list.options[i].selected = sel;
+  }
+}
+--></SCRIPT>
+
+<FORM METHOD="POST" ACTION="/cgi-bin/admin.cgi" NAME="export_samba">
+<INPUT TYPE="HIDDEN" NAME="OP" VALUE="export-samba">
+
+<H2 CLASS="title">输出打印机到文件服务</H2>
+
+{error?<P>不能输出打印机:</P>
+<BLOCKQUOTE>{error}</BLOCKQUOTE>
+<P>查看日志 <A HREF="/admin/log/error_log"
+TARGET="_blank">error_log</A> 文件.</P>:
+<P>这个页面允许您输出打印机到文件服务器，这样
+Windows可以通过其桌面系统的<VAR>Network
+网上邻居</VAR> 或 <VAR>网络位置</VAR> 图标使用。
+必须事先安装Windows的PostScript打印驱动程序。参考
+<A
+HREF="/help/man-cupsaddsmb.html"
+TARGET="_blank">cupsaddsmb(8)</A>命令.</P>}
+
+<TABLE>
+<TR>
+<TH CLASS="label">打印机:</TH>
+<TD>
+<SELECT NAME="EXPORT_NAME" SIZE="10" MULTIPLE>
+{[printer_name]<OPTION VALUE="{printer_name}"{export_all? SELECTED:{printer_export? SELECTED:}}>{printer_name}}
+</SELECT><BR>
+<INPUT TYPE="CHECKBOX" NAME="EXPORT_ALL"{export_all? CHECKED:}
+onChange="select_printers()"> Export All Printers
+</TD>
+</TR>
+<TR>
+<TH CLASS="label">文件服务器用户名:</TH>
+<TD><INPUT TYPE="TEXT" NAME="USERNAME" VALUE="{?USERNAME}"> (required)</TD>
+</TR>
+<TR>
+<TH CLASS="label">文件服务器口令:</TH>
+<TD><INPUT TYPE="PASSWORD" NAME="PASSWORD" VALUE=""> (required)</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD><INPUT TYPE="IMAGE" SRC="/cups/images/button-export-samba.gif"
+ALT="输出打印机到文件服务器"></TD>
+</TR>
+</TABLE>
+
+</FORM>

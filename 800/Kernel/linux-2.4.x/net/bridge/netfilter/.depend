@@ -1,0 +1,73 @@
+ebtable_broute.o: ebtable_broute.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebtables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_bridge.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/brlock.h
+ebtable_filter.o: ebtable_filter.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebtables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h
+ebtable_nat.o: ebtable_nat.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebtables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h
+ebtables.o: ebtables.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebtables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   ../br_private.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv4/listhelp.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/netfilter/debug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h)
+ebt_arp.o: ebt_arp.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebtables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebt_arp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_arp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h
+ebt_dnat.o: ebt_dnat.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebtables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebt_nat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h
+ebt_ip.o: ebt_ip.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebtables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebt_ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/in.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h
+ebt_log.o: ebt_log.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebtables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebt_log.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_arp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h
+ebt_mark.o: ebt_mark.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebtables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebt_mark_t.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h
+ebt_mark_m.o: ebt_mark_m.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebtables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebt_mark_m.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h
+ebt_redirect.o: ebt_redirect.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebtables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebt_redirect.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   ../br_private.h
+ebt_snat.o: ebt_snat.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebtables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebt_nat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h
+ebt_vlan.o: ebt_vlan.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_ether.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_vlan.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebtables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_bridge/ebt_vlan.h

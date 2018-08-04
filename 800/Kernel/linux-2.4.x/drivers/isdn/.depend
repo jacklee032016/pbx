@@ -1,0 +1,140 @@
+isdn_audio.o: isdn_audio.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isdn.h \
+   isdn_audio.h \
+   isdn_common.h
+isdn_bsdcomp.o: isdn_bsdcomp.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ptrace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/in.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_ether.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/inet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ppp_defs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isdn.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isdn_ppp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tcp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_arp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ppp-comp.h \
+   isdn_ppp.h
+isdn_common.o: isdn_common.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isdn.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   isdn_common.h \
+   isdn_tty.h \
+   isdn_net.h \
+   isdn_ppp.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/isdn/audio.h) \
+   isdn_audio.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/isdn/diversion/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/isdn/diversion.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isdn_divertif.h \
+   isdn_v110.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/isdn/ppp.h) \
+   avmb1/capicmd.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/isdn/x25.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/isdn/tty/fax.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/netdevices.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/devfs/fs.h)
+isdn_concap.o: isdn_concap.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isdn.h \
+   isdn_x25iface.h \
+   isdn_net.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/concap.h \
+   isdn_concap.h
+isdn_net.o: isdn_net.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isdn.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/arp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/dst.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/pkt_sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/inetdevice.h \
+   isdn_common.h \
+   isdn_net.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/isdn/ppp.h) \
+   isdn_ppp.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/isdn/x25.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/concap.h \
+   isdn_concap.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ippp/filter.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/inet.h)
+isdn_ppp.o: isdn_ppp.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isdn.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ppp-comp.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ippp/filter.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/filter.h \
+   isdn_common.h \
+   isdn_ppp.h \
+   isdn_net.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/isdn/mpp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/isdn/ppp/vj.h)
+isdn_ppp.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ppp_defs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isdn_ppp.h
+	@touch isdn_ppp.h
+isdn_tty.o: isdn_tty.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isdn.h \
+   isdn_common.h \
+   isdn_tty.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/isdn/audio.h) \
+   isdn_audio.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/devfs/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/isdn/tty/fax.h) \
+   avmb1/capicmd.h
+isdn_ttyfax.o: isdn_ttyfax.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isdn.h \
+   isdn_common.h \
+   isdn_tty.h \
+   isdn_ttyfax.h
+isdn_tty.h: \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/isdn/tty/fax.h)
+	@touch isdn_tty.h
+isdn_v110.o: isdn_v110.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isdn.h \
+   isdn_v110.h
+isdn_x25iface.o: isdn_x25iface.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/concap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wanrouter.h \
+   isdn_x25iface.h
+isdn_x25iface.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wanrouter.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isdn.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/concap.h
+	@touch isdn_x25iface.h
+.PRECIOUS:	isdn_ppp.h \
+	isdn_tty.h \
+	isdn_x25iface.h \
+

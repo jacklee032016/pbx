@@ -1,0 +1,51 @@
+#
+# $Id: Makefile.post,v 1.1.1.1 2006/11/30 16:21:59 lizhijie Exp $
+
+C_CFLAGS += $(INCLUDE_DIR) 
+CC_CFLAGS+= -Wno-deprecated
+
+
+OBJS = $(patsubst %.c,$(OBJ_DIR)/%.o,$(patsubst %.cxx,$(OBJ_DIR)/%.o,$(SRC))) $(EXTRA_OBJS)
+
+all:$(BIN_DIR) $(OBJ_DIR) $(TARGET_LIB) $(LOCAL_ALL)
+
+$(OBJ_DIR):
+	-if [ -d $(OBJ_DIR) ] ; then : ; else $(MKDIR) $(OBJ_DIR); fi
+ifdef CODE_SUBDIRS
+	-@ for subdir in $(CODE_SUBDIRS) ; do ( mkdir -p $(OBJ_DIR)/$$subdir ) ; done
+endif
+
+$(BIN_DIR):
+	-if [ -d $(BIN_DIR) ] ; then : ; else $(MKDIR) $(BIN_DIR); fi
+#ifdef CODE_SUBDIRS
+#	-@ for subdir in $(CODE_SUBDIRS) ; do ( mkdir -p $(BIN_DIR)/$$subdir ) ; done
+#endif
+
+clean:$(LOCAL_CLEAN)
+	-if [ -d $(BIN_DIR) ] ; then $(RM) $(BIN_DIR) ; fi
+	-if [ -d $(OBJ_DIR) ] ; then $(RM) $(OBJ_DIR) ; fi
+
+
+$(TARGET_LIB):$(TARGET_LIB_SHARED) #$(TARGET_LIB_STATIC) 
+
+$(TARGET_LIB_SHARED):$(OBJS)  
+	$(CC) $(LDFLAGS) -shared  $(SHARED_LD_FLAGS) $^ -o $@  
+	$(MOVE) $(TARGET_LIB_SHARED) $(BIN_DIR) 
+#-Wl,-soname 
+
+$(TARGET_LIB_STATIC):$(OBJS)  
+	$(AR) $(ARFLAGS) $@ $^ 
+	$(RANLIB) $@
+	$(MOVE) $(TARGET_LIB_STATIC) $(BIN_DIR)
+
+
+$(OBJ_DIR)/%.o:%.cxx
+	$(CXX) $(CXXFLAGS) $(C_CFLAGS) $(CC_CFLAGS) -c  $< -o $(OUTPUT_FLAG)$@ 
+
+$(OBJ_DIR)/%.o:%.c 
+	$(CC)  $(C_CFLAGS) $(CFLAGS) -c $< -o $(OUTPUT_FLAG)$@ 
+
+.o.cxx :
+	$(CXX) $(CXXFLAGS) $(CC_CFLAGS) -g $(CFLAGS) -c $<
+
+	

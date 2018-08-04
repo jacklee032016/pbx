@@ -1,0 +1,16 @@
+#
+# $Id: README,v 1.1.1.1 2006/11/30 16:22:45 lizhijie Exp $
+# $Author: lizhijie $
+		README for DSP Library
+		                Li Zhijie, 2006.03.20
+
+DSP is composed from following components:
+    Tone Generator
+    BT(Busy Tone) Detector
+    DTMF Detector
+    Modem(FSK) Generator
+    Modem(FSK) Detector
+    G.711 Decode/Encoder(Mu/A Law<--> 16 bits Linear)
+    Call Progress Tone Detect
+    
+FAQ:

@@ -1,0 +1,69 @@
+hil_kbd.o: hil_kbd.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hil.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/input.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/serio.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h
+hilkbd.o: hilkbd.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci_ids.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/input.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hil.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/parisc.h) \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hp300.h)
+hil_mlc.o: hil_mlc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hil_mlc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h
+hil_ptr.o: hil_ptr.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hil.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/input.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/serio.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h
+hp_sdc.o: hp_sdc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hp_sdc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/time.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hil.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h
+hp_sdc_mlc.o: hp_sdc_mlc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hil_mlc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hp_sdc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h
+hp_sdc_rtc.o: hp_sdc_rtc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hp_sdc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/time.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/miscdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/rtc.h

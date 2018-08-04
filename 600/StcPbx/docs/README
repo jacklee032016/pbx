@@ -1,0 +1,8 @@
+# $Id: README,v 1.1.1.1 2007/05/02 19:02:31 lizhijie Exp $
+
+                       README for C51 Build Environments
+                                 Li Zhijie 2007.04.04
+
+汇编程序汇编时，只需要C51系统自带的头文件，不需要用户自定义的头文件
+
+                                 

@@ -1,0 +1,16 @@
+faxl3.o: faxl3.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/capi/mcapi/m_capi.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h
+i4l_mISDN.o: i4l_mISDN.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/fsm.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dss1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h

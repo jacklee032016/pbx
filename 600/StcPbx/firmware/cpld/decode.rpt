@@ -1,0 +1,496 @@
+Project Information          f:\cz\cpldprogram\ippbx408\ippbx\ippbx\decode.rpt
+
+MAX+plus II Compiler Report File
+Version 10.2 07/10/2002
+Compiled: 06/20/2005 12:01:29
+
+Copyright (C) 1988-2002 Altera Corporation
+Any megafunction design, and related net list (encrypted or decrypted),
+support information, device programming or simulation file, and any other
+associated documentation or information provided by Altera or a partner
+under Altera's Megafunction Partnership Program may be used only to
+program PLD devices (but not masked PLD devices) from Altera.  Any other
+use of such megafunction design, net list, support information, device
+programming or simulation file, or any other related documentation or
+information is prohibited for any other purpose, including, but not
+limited to modification, reverse engineering, de-compiling, or use with
+any other silicon devices, unless such use is explicitly licensed under
+a separate agreement with Altera or a megafunction partner.  Title to
+the intellectual property, including patents, copyrights, trademarks,
+trade secrets, or maskworks, embodied in any such megafunction design,
+net list, support information, device programming or simulation file, or
+any other related documentation or information provided by Altera or a
+megafunction partner, remains with Altera, the megafunction partner, or
+their respective licensors.  No other licenses, including any licenses
+needed under any third party's intellectual property, are provided herein.
+
+
+
+***** Project compilation was successful
+
+
+
+
+** DEVICE SUMMARY **
+
+Chip/                     Input   Output   Bidir         Shareable
+POF       Device          Pins    Pins     Pins     LCs  Expanders  % Utilized
+
+decode    EPM7032SLC44-5   6        9        0      16      0           50 %
+
+User Pins:                 6        9        0  
+
+
+
+Project Information          f:\cz\cpldprogram\ippbx408\ippbx\ippbx\decode.rpt
+
+** AUTO GLOBAL SIGNALS **
+
+
+
+INFO: Signal 'ale' chosen for auto global Clock
+
+
+Device-Specific Information: f:\cz\cpldprogram\ippbx408\ippbx\ippbx\decode.rpt
+decode
+
+***** Logic for device 'decode' compiled without errors.
+
+
+
+
+Device: EPM7032SLC44-5
+
+Device Options:
+    Turbo Bit                                    = ON
+    Security Bit                                 = OFF
+    Enable JTAG Support                        = ON
+    User Code                                  = ffff
+
+                                         d  d  
+                                         e  e  
+                                         c  c  
+                                         o  o  
+                                         d  d  
+              p  p  p  V  G  G  G  a  G  e  e  
+              2  2  2  C  N  N  N  l  N  2  2  
+              0  2  1  C  D  D  D  e  D  3  2  
+            -----------------------------------_ 
+          /   6  5  4  3  2  1 44 43 42 41 40   | 
+    #TDI |  7                                39 | decode21 
+     p23 |  8                                38 | #TDO 
+      cs |  9                                37 | decode20 
+     GND | 10                                36 | decode10 
+RESERVED | 11                                35 | VCC 
+RESERVED | 12         EPM7032SLC44-5         34 | decode13 
+    #TMS | 13                                33 | decode11 
+RESERVED | 14                                32 | #TCK 
+     VCC | 15                                31 | RESERVED 
+RESERVED | 16                                30 | GND 
+RESERVED | 17                                29 | decode24 
+         |_  18 19 20 21 22 23 24 25 26 27 28  _| 
+           ------------------------------------ 
+              R  R  R  R  G  V  R  R  R  d  R  
+              E  E  E  E  N  C  E  E  E  e  E  
+              S  S  S  S  D  C  S  S  S  c  S  
+              E  E  E  E        E  E  E  o  E  
+              R  R  R  R        R  R  R  d  R  
+              V  V  V  V        V  V  V  e  V  
+              E  E  E  E        E  E  E  1  E  
+              D  D  D  D        D  D  D  2  D  
+
+
+N.C. = No Connect. This pin has no internal connection to the device.
+VCC = Dedicated power pin, which MUST be connected to VCC.
+GND = Dedicated ground pin or unused dedicated input, which MUST be connected to GND.
+RESERVED = Unused I/O pin, which MUST be left unconnected.
+
+^ = Dedicated configuration pin.
++ = Reserved configuration pin, which is tri-stated during user mode.
+* = Reserved configuration pin, which drives out in user mode.
+PDn = Power Down pin. 
+@ = Special-purpose pin. 
+# = JTAG Boundary-Scan Testing/In-System Programming or Configuration Pin. The JTAG inputs TMS and TDI should be tied to VCC and TCK should be tied to GND when not in use.
+& = JTAG pin used for I/O. When used as user I/O, JTAG pins must be kept stable before and during configuration.  JTAG pin stability prevents accidental loading of JTAG instructions.
+
+
+Device-Specific Information: f:\cz\cpldprogram\ippbx408\ippbx\ippbx\decode.rpt
+decode
+
+** RESOURCE USAGE **
+
+                                                Shareable     External
+Logic Array Block     Logic Cells   I/O Pins    Expanders   Interconnect
+
+A:     LC1 - LC16     0/16(  0%)   7/16( 43%)   0/16(  0%)   0/36(  0%) 
+B:    LC17 - LC32    16/16(100%)  11/16( 68%)   0/16(  0%)  21/36( 58%) 
+
+
+Total dedicated input pins used:                 1/4      ( 25%)
+Total I/O pins used:                            18/32     ( 56%)
+Total logic cells used:                         16/32     ( 50%)
+Total shareable expanders used:                  0/32     (  0%)
+Total Turbo logic cells used:                   16/32     ( 50%)
+Total shareable expanders not available (n/a):   0/32     (  0%)
+Average fan-in:                                  5.12
+Total fan-in:                                    82
+
+Total input pins required:                       6
+Total fast input logic cells required:           0
+Total output pins required:                      9
+Total bidirectional pins required:               0
+Total reserved pins required                     4
+Total logic cells required:                     16
+Total flipflops required:                       16
+Total product terms required:                   36
+Total logic cells lending parallel expanders:    0
+Total shareable expanders in database:           0
+
+Synthesized logic cells:                         0/  32   (  0%)
+
+
+
+Device-Specific Information: f:\cz\cpldprogram\ippbx408\ippbx\ippbx\decode.rpt
+decode
+
+** INPUTS **
+
+                                         Shareable
+                                         Expanders     Fan-In    Fan-Out
+ Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
+  43      -   -       INPUT  G            0      0   0    0    0    0    0  ale
+   9    (6)  (A)      INPUT               0      0   0    0    0    9    1  cs
+   6    (3)  (A)      INPUT               0      0   0    0    0    0    1  p20
+   4    (1)  (A)      INPUT               0      0   0    0    0    0    1  p21
+   5    (2)  (A)      INPUT               0      0   0    0    0    0    1  p22
+   8    (5)  (A)      INPUT               0      0   0    0    0    0    1  p23
+
+
+Code:
+
+s = Synthesized pin or logic cell
+t = Turbo logic cell
++ = Synchronous flipflop
+/ = Slow slew-rate output
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+G = Global Source. Fan-out destinations counted here do not include destinations
+that are driven using global routing resources. Refer to the Auto Global Signals,
+Clock Signals, Clear Signals, Synchronous Load Signals, and Synchronous Clear Signals
+Sections of this Report File for information on which signals' fan-outs are used as
+Clock, Clear, Preset, Output Enable, and synchronous Load signals.
+
+
+Device-Specific Information: f:\cz\cpldprogram\ippbx408\ippbx\ippbx\decode.rpt
+decode
+
+** OUTPUTS **
+
+                                         Shareable
+                                         Expanders     Fan-In    Fan-Out
+ Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
+  36     22    B         FF   +  t        0      0   0    1    5    1    0  decode10
+  33     24    B         FF   +  t        0      0   0    1    5    1    0  decode11
+  27     29    B         FF   +  t        0      0   0    1    5    1    0  decode12
+  34     23    B         FF   +  t        0      0   0    1    5    1    0  decode13
+  37     21    B         FF   +  t        0      0   0    1    6    1    0  decode20
+  39     19    B         FF   +  t        0      0   0    1    6    1    0  decode21
+  40     18    B         FF   +  t        0      0   0    1    6    1    0  decode22
+  41     17    B         FF   +  t        0      0   0    1    6    1    0  decode23
+  29     27    B         FF   +  t        0      0   0    1    6    1    0  decode24
+
+
+Code:
+
+s = Synthesized pin or logic cell
+t = Turbo logic cell
++ = Synchronous flipflop
+/ = Slow slew-rate output
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+
+
+Device-Specific Information: f:\cz\cpldprogram\ippbx408\ippbx\ippbx\decode.rpt
+decode
+
+** BURIED LOGIC **
+
+                                         Shareable
+                                         Expanders     Fan-In    Fan-Out
+ Pin     LC  LAB  Primitive    Code   Total Shared n/a INP  FBK  OUT  FBK  Name
+ (28)    28    B       DFFE   +  t        0      0   0    1    0    9    0  data3 (:20)
+ (31)    26    B       DFFE   +  t        0      0   0    1    0    9    0  data2 (:21)
+ (24)    32    B       DFFE   +  t        0      0   0    1    0    9    0  data1 (:22)
+ (38)    20    B       DFFE   +  t        0      0   0    1    0    9    0  data0 (:23)
+ (32)    25    B       DFFE   +  t        0      0   0    1    0    0    1  cs1 (:134)
+ (26)    30    B       DFFE   +  t        0      0   0    0    1    0    1  cs2 (:136)
+ (25)    31    B       DFFE   +  t        0      0   0    0    1    5    0  cs3 (:138)
+
+
+Code:
+
+s = Synthesized pin or logic cell
+t = Turbo logic cell
++ = Synchronous flipflop
+/ = Slow slew-rate output
+! = NOT gate push-back
+r = Fitter-inserted logic cell
+
+
+Device-Specific Information: f:\cz\cpldprogram\ippbx408\ippbx\ippbx\decode.rpt
+decode
+
+** LOGIC CELL INTERCONNECTIONS **
+
+Logic Array Block 'B':
+
+                                         Logic cells placed in LAB 'B'
+        +------------------------------- LC22 decode10
+        | +----------------------------- LC24 decode11
+        | | +--------------------------- LC29 decode12
+        | | | +------------------------- LC23 decode13
+        | | | | +----------------------- LC21 decode20
+        | | | | | +--------------------- LC19 decode21
+        | | | | | | +------------------- LC18 decode22
+        | | | | | | | +----------------- LC17 decode23
+        | | | | | | | | +--------------- LC27 decode24
+        | | | | | | | | | +------------- LC28 data3
+        | | | | | | | | | | +----------- LC26 data2
+        | | | | | | | | | | | +--------- LC32 data1
+        | | | | | | | | | | | | +------- LC20 data0
+        | | | | | | | | | | | | | +----- LC25 cs1
+        | | | | | | | | | | | | | | +--- LC30 cs2
+        | | | | | | | | | | | | | | | +- LC31 cs3
+        | | | | | | | | | | | | | | | | 
+        | | | | | | | | | | | | | | | |   Other LABs fed by signals
+        | | | | | | | | | | | | | | | |   that feed LAB 'B'
+LC      | | | | | | | | | | | | | | | | | A B |     Logic cells that feed LAB 'B':
+LC22 -> * - - - - - - - - - - - - - - - | - * | <-- decode10
+LC24 -> - * - - - - - - - - - - - - - - | - * | <-- decode11
+LC29 -> - - * - - - - - - - - - - - - - | - * | <-- decode12
+LC23 -> - - - * - - - - - - - - - - - - | - * | <-- decode13
+LC21 -> - - - - * - - - - - - - - - - - | - * | <-- decode20
+LC19 -> - - - - - * - - - - - - - - - - | - * | <-- decode21
+LC18 -> - - - - - - * - - - - - - - - - | - * | <-- decode22
+LC17 -> - - - - - - - * - - - - - - - - | - * | <-- decode23
+LC27 -> - - - - - - - - * - - - - - - - | - * | <-- decode24
+LC28 -> * * * * * * * * * - - - - - - - | - * | <-- data3
+LC26 -> * * * * * * * * * - - - - - - - | - * | <-- data2
+LC32 -> * * * * * * * * * - - - - - - - | - * | <-- data1
+LC20 -> * * * * * * * * * - - - - - - - | - * | <-- data0
+LC25 -> - - - - - - - - - - - - - - * - | - * | <-- cs1
+LC30 -> - - - - - - - - - - - - - - - * | - * | <-- cs2
+LC31 -> - - - - * * * * * - - - - - - - | - * | <-- cs3
+
+Pin
+43   -> - - - - - - - - - - - - - - - - | - - | <-- ale
+9    -> * * * * * * * * * - - - - * - - | - * | <-- cs
+6    -> - - - - - - - - - - - - * - - - | - * | <-- p20
+4    -> - - - - - - - - - - - * - - - - | - * | <-- p21
+5    -> - - - - - - - - - - * - - - - - | - * | <-- p22
+8    -> - - - - - - - - - * - - - - - - | - * | <-- p23
+
+
+* = The logic cell or pin is an input to the logic cell (or LAB) through the PIA.
+- = The logic cell or pin is not an input to the logic cell (or LAB).
+
+
+Device-Specific Information: f:\cz\cpldprogram\ippbx408\ippbx\ippbx\decode.rpt
+decode
+
+** EQUATIONS **
+
+ale      : INPUT;
+cs       : INPUT;
+p20      : INPUT;
+p21      : INPUT;
+p22      : INPUT;
+p23      : INPUT;
+
+-- Node name is ':134' = 'cs1' 
+-- Equation name is 'cs1', location is LC025, type is buried.
+cs1      = DFFE( cs $  GND, GLOBAL( ale),  VCC,  VCC,  VCC);
+
+-- Node name is ':136' = 'cs2' 
+-- Equation name is 'cs2', location is LC030, type is buried.
+cs2      = DFFE( cs1 $  GND, GLOBAL( ale),  VCC,  VCC,  VCC);
+
+-- Node name is ':138' = 'cs3' 
+-- Equation name is 'cs3', location is LC031, type is buried.
+cs3      = DFFE( cs2 $  GND, GLOBAL( ale),  VCC,  VCC,  VCC);
+
+-- Node name is ':23' = 'data0' 
+-- Equation name is 'data0', location is LC020, type is buried.
+data0    = DFFE( p20 $  GND, GLOBAL( ale),  VCC,  VCC,  VCC);
+
+-- Node name is ':22' = 'data1' 
+-- Equation name is 'data1', location is LC032, type is buried.
+data1    = DFFE( p21 $  GND, GLOBAL( ale),  VCC,  VCC,  VCC);
+
+-- Node name is ':21' = 'data2' 
+-- Equation name is 'data2', location is LC026, type is buried.
+data2    = DFFE( p22 $  GND, GLOBAL( ale),  VCC,  VCC,  VCC);
+
+-- Node name is ':20' = 'data3' 
+-- Equation name is 'data3', location is LC028, type is buried.
+data3    = DFFE( p23 $  GND, GLOBAL( ale),  VCC,  VCC,  VCC);
+
+-- Node name is 'decode10' = ':127' 
+-- Equation name is 'decode10', type is output 
+ decode10 = TFFE( _EQ001, GLOBAL( ale),  VCC,  VCC, !cs);
+  _EQ001 =  data0 &  data1 &  data2 &  data3 &  decode10
+         # !data0 &  data1 & !data2 &  data3 &  decode10
+         #  data0 & !data1 & !data2 &  data3 & !decode10;
+
+-- Node name is 'decode11' = ':126' 
+-- Equation name is 'decode11', type is output 
+ decode11 = TFFE( _EQ002, GLOBAL( ale),  VCC,  VCC, !cs);
+  _EQ002 =  data0 &  data1 &  data2 &  data3 &  decode11
+         #  data0 &  data1 & !data2 &  data3 & !decode11
+         # !data0 & !data1 &  data2 &  data3 &  decode11;
+
+-- Node name is 'decode12' = ':125' 
+-- Equation name is 'decode12', type is output 
+ decode12 = TFFE( _EQ003, GLOBAL( ale),  VCC,  VCC, !cs);
+  _EQ003 =  data0 & !data1 &  data2 & !data3 &  decode12
+         #  data0 &  data2 &  data3 & !decode12;
+
+-- Node name is 'decode13' = ':124' 
+-- Equation name is 'decode13', type is output 
+ decode13 = TFFE( _EQ004, GLOBAL( ale),  VCC,  VCC, !cs);
+  _EQ004 = !data0 &  data1 &  data2 & !data3 &  decode13
+         #  data1 &  data2 &  data3 & !decode13;
+
+-- Node name is 'decode20' = ':254' 
+-- Equation name is 'decode20', type is output 
+ decode20 = TFFE( _EQ005, GLOBAL( ale),  VCC,  VCC,  VCC);
+  _EQ005 = !cs &  cs3 &  data0 &  data1 &  data2 &  data3 &  decode20
+         # !cs &  cs3 & !data0 & !data1 & !data2 & !data3 & !decode20
+         #  cs & !cs3 &  decode20;
+
+-- Node name is 'decode21' = ':253' 
+-- Equation name is 'decode21', type is output 
+ decode21 = TFFE( _EQ006, GLOBAL( ale),  VCC,  VCC,  VCC);
+  _EQ006 = !cs &  cs3 &  data0 &  data1 &  data2 &  data3 &  decode21
+         # !cs &  cs3 &  data0 & !data1 & !data2 & !data3 & !decode21
+         #  cs & !cs3 &  decode21;
+
+-- Node name is 'decode22' = ':252' 
+-- Equation name is 'decode22', type is output 
+ decode22 = TFFE( _EQ007, GLOBAL( ale),  VCC,  VCC,  VCC);
+  _EQ007 = !cs &  cs3 &  data0 &  data1 &  data2 &  data3 &  decode22
+         # !cs &  cs3 & !data0 &  data1 & !data2 & !data3 & !decode22
+         #  cs & !cs3 &  decode22;
+
+-- Node name is 'decode23' = ':251' 
+-- Equation name is 'decode23', type is output 
+ decode23 = TFFE( _EQ008, GLOBAL( ale),  VCC,  VCC,  VCC);
+  _EQ008 = !cs &  cs3 &  data0 &  data1 &  data2 &  data3 &  decode23
+         # !cs &  cs3 &  data0 &  data1 &  data2 & !data3 & !decode23
+         #  cs & !cs3 &  decode23;
+
+-- Node name is 'decode24' = ':250' 
+-- Equation name is 'decode24', type is output 
+ decode24 = TFFE( _EQ009, GLOBAL( ale),  VCC,  VCC,  VCC);
+  _EQ009 = !cs &  cs3 &  data0 &  data1 &  data2 &  data3 &  decode24
+         # !cs &  cs3 & !data0 & !data1 & !data2 &  data3 & !decode24
+         #  cs & !cs3 &  decode24;
+
+
+
+--     Shareable expanders that are duplicated in multiple LABs:
+--     (none)
+
+
+
+
+Project Information          f:\cz\cpldprogram\ippbx408\ippbx\ippbx\decode.rpt
+
+** COMPILATION SETTINGS & TIMES **
+
+Processing Menu Commands
+------------------------
+
+Design Doctor                             = off
+
+Logic Synthesis:
+
+   Synthesis Type Used                    = Standard
+
+   Default Synthesis Style                = NORMAL
+
+      Logic option settings in 'NORMAL' style for 'MAX7000S' family
+
+      DECOMPOSE_GATES                     = on
+      DUPLICATE_LOGIC_EXTRACTION          = on
+      MINIMIZATION                        = full
+      MULTI_LEVEL_FACTORING               = on
+      NOT_GATE_PUSH_BACK                  = on
+      PARALLEL_EXPANDERS                  = off
+      REDUCE_LOGIC                        = on
+      REFACTORIZATION                     = on
+      REGISTER_OPTIMIZATION               = on
+      RESYNTHESIZE_NETWORK                = on
+      SLOW_SLEW_RATE                      = off
+      SOFT_BUFFER_INSERTION               = on
+      SUBFACTOR_EXTRACTION                = on
+      TURBO_BIT                           = on
+      XOR_SYNTHESIS                       = on
+      IGNORE_SOFT_BUFFERS                 = off
+      USE_LPM_FOR_AHDL_OPERATORS          = off
+
+   Other logic synthesis settings:
+
+      Automatic Global Clock              = on
+      Automatic Global Clear              = on
+      Automatic Global Preset             = on
+      Automatic Global Output Enable      = on
+      Automatic Fast I/O                  = off
+      Automatic Register Packing          = off
+      Automatic Open-Drain Pins           = on
+      Automatic Implement in EAB          = off
+      One-Hot State Machine Encoding      = off
+      Optimize                            = 5
+
+Default Timing Specifications: None
+
+Cut All Bidir Feedback Timing Paths       = on
+Cut All Clear & Preset Timing Paths       = on
+
+Ignore Timing Assignments                 = off
+
+Functional SNF Extractor                  = off
+
+Linked SNF Extractor                      = off
+Timing SNF Extractor                      = on
+Optimize Timing SNF                       = off
+Generate AHDL TDO File                    = off
+Fitter Settings                           = NORMAL
+Smart Recompile                           = off
+Total Recompile                           = off
+
+Interfaces Menu Commands
+------------------------
+
+EDIF Netlist Writer                       = off
+Verilog Netlist Writer                    = off
+VHDL Netlist Writer                       = off
+
+Compilation Times
+-----------------
+
+   Compiler Netlist Extractor             00:00:01
+   Database Builder                       00:00:00
+   Logic Synthesizer                      00:00:00
+   Partitioner                            00:00:01
+   Fitter                                 00:00:01
+   Timing SNF Extractor                   00:00:00
+   Assembler                              00:00:02
+   --------------------------             --------
+   Total Time                             00:00:05
+
+
+Memory Allocated
+-----------------
+
+Peak memory allocated during compilation  = 6,403K

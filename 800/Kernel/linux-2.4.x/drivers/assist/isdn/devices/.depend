@@ -1,0 +1,94 @@
+ashfc_bh.o: ashfc_bh.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/bchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/hw_lock.h \
+   ashfc.h
+ashfc.o: ashfc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/bchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/dsp/dsp/dsp.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/hw_lock.h \
+   ashfc.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hfcmulti/pcimem.h)
+ashfc.h: \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hfcmulti/pcimem.h) \
+   ashfc_macro.h
+	@touch ashfc.h
+ashfc_hw_init.o: ashfc_hw_init.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/bchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/hw_lock.h \
+   ashfc.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hfcmulti/pcimem.h)
+ashfc_hw_utils.o: ashfc_hw_utils.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/bchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/hw_lock.h \
+   ashfc.h
+ashfc_init.o: ashfc_init.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/bchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/hw_lock.h \
+   ashfc.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/as_isdn_version.h
+ashfc_init_utils.o: ashfc_init_utils.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/bchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/hw_lock.h \
+   ashfc.h
+ashfc_ioctl.o: ashfc_ioctl.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/as_isdn_ctrl.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/bchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/hw_lock.h \
+   ashfc.h
+ashfc_isr.o: ashfc_isr.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/bchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/hw_lock.h \
+   ashfc.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hfcmulti/pcimem.h)
+ashfc_signal.o: ashfc_signal.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/dchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/bchannel.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/dsp/dsp/dsp.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/hw_lock.h \
+   ashfc.h
+.PRECIOUS:	ashfc.h \
+

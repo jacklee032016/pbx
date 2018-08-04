@@ -1,0 +1,105 @@
+# $Log: Makefile.pre,v $
+# Revision 1.1.1.1  2006/11/30 16:27:09  lizhijie
+# AS800 VPBX_Support
+#
+# Revision 1.1.1.1  2006/06/03 11:55:33  lizhijie
+# build a independent directory for VPBX support libraris
+#
+# $Id: Makefile.pre,v 1.1.1.1 2006/11/30 16:27:09 lizhijie Exp $
+
+CFLAGS= -Wall -g -I. -I$(TOPDIR)/include
+LFLAGS= -L.
+
+# 
+# for release 
+BUILDTIME := $(shell TZ=UTC date -u "+%Y_%m_%d-%H_%M")
+ASSIST_RELEASES_NAME=assist_sdp_$(BUILDTIME).tar 
+
+ARCH=arm
+ASSIST_SHARED=yes
+RELEASES_DIR=../releases
+EDITION=debug
+
+ifeq ($(LINK), static)
+	ASSIST_SHARED=
+	LDFLAGS+= -static
+	#C_CFLAGS+=-Wl, static
+else
+	#LDFLAGS+= -shared
+	#C_CFLAGS+=-Wl, shared
+endif
+
+ifeq ($(ARCH),arm)
+	C_CFLAGS += -mbig-endian 
+	CXX_FLAGS = -mbig-endian
+	CROSS_COMPILER=arm-linux-
+	LDFLAGS+= -mbig-endian 
+	#ASSIST_SHARED= 
+	flag=-mbig-endian
+else
+	ARCH=i686
+endif
+
+
+BIN_DIR=$(TOP_DIR)/../../releases/libs/bin/$(ARCH)
+OBJ_DIR=Linux.obj.$(ARCH)
+
+
+CC	= $(CROSS_COMPILER)gcc
+CXX 	= $(CROSS_COMPILER)g++ 
+STRIP	= $(CROSS_COMPILER)strip
+LD	= $(CROSS_COMPILER)ld
+RANLIB 	= $(CROSS_COMPILER)ranlib
+STRIP 	= $(CROSS_COMPILER)strip
+AR	= $(CROSS_COMPILER)ar
+
+RM	= rm -r -f
+MKDIR	= mkdir -p
+MODE	= 700
+OWNER	= root
+CHOWN	= chown
+CHMOD	= chmod
+COPY	= cp
+MOVE	= mv
+
+ARFLAGS		= crus
+
+		
+UTILS_INC_DIR+=-I$(BUILD) \
+	-I$(UTILS_DIR) \
+	-I$(UTILS_DIR)/threads \
+	-I$(UTILS_DIR)/logging \
+	-I$(UTILS_DIR)/crypto \
+	-I$(UTILS_DIR)/statistics \
+	-I$(UTILS_DIR)/snmp \
+	-I$(UTILS_DIR)/signals \
+	-I$(UTILS_DIR)/behavior \
+	-I$(UTILS_DIR)/io \
+	-I$(UTILS_DIR)/services \
+	-I$(UTILS_DIR)/transport \
+	-I$(UTILS_DIR)/config \
+	-I$(UTILS_DIR)/dnssrv \
+	-I$(UTILS_DIR)/deprecated \
+	-I$(UTILS_DIR)/adt 
+
+
+INCLUDE_DIR= $(UTILS_INC_DIR) 
+INCLUDE_DIR+= -I$(SDP_DIR) -I$(SDP_DIR)/sdp2
+
+C_CFLAGS = -Wall -fPIC -Wno-deprecated -D_REENTRANT -DUSE_PTHREADS -g 
+
+ifeq ($(ARCH),arm)
+	C_CFLAGS += -mbig-endian 
+endif
+
+C_CFLAGS+= $(INCLUDE_DIR) 
+C_CFLAGS+= -DASSIST_USE_DEPRECATED -DUSE_CRYPTO_RANDOM 
+
+ifeq ($(EDITION),release)
+	C_CFLAGS += -D__AS_RELEASE__
+	CXX_FLAGS += -D__AS_RELEASE__ 
+else
+	CXX_FLAGS += -D__AS_DEBUG__
+endif
+		 
+LD_INC_DIR= -L$(TOP_DIR) -L$(BIN_DIR)

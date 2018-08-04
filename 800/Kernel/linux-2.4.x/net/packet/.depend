@@ -1,0 +1,40 @@
+af_packet.o: af_packet.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/in.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/inet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_packet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wireless.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/protocol.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/ioctls.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_bridge.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net/divert.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/divert.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/inet.h) \
+   /works/isdn/kernel/linux-2.4.x/include/net/inet_common.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/dlci.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/packet/multicast.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/packet/mmap.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sock/packet.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/filter.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bridge.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bridge/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net/radio.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)

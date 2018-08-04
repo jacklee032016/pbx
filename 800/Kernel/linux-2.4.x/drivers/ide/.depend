@@ -1,0 +1,410 @@
+ide.o: ide.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/completion.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/reboot.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h \
+   ide_modes.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/idedma/auto.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/hd.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/ide/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/amiga.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mac.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/dma/nonpci.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idepci.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idecs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/dtc2278.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idescsi.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idecd.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idedisk.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idefloppy.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idetape.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ide/task/ioctl.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pkt/task/ioctl.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idedoubler.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/pdc4030.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/ali14xx.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/umc8672.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/cmd640.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/ht6560b.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/qd65xx.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/4drives.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/etrax/ide.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/ide/pmac.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/ide/sibyte.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/ide/icside.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/ide/rapide.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/gayle.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/falcon/ide.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/mac/ide.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/uclinux/ide.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/q40ide.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/buddha.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/ocidec.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/scsi.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/ide.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/isapnp.h)
+ide-cd.o: ide-cd.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/cdrom.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/completion.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   ide-cd.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idedma.h)
+ide-cd.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/cdrom.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h
+	@touch ide-cd.h
+ide-default.o: ide-default.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/cdrom.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h
+ide-disk.o: ide-disk.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   legacy/pdc4030.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ide/taskfile/io.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idedma.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/idedisk/stroke.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+ide-dma.o: ide-dma.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/idedma/new/drive/listings.h)
+ide-floppy.o: ide-floppy.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/cdrom.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idedma.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ppc.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+ide-geometry.o: ide-geometry.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mc146818rtc.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h
+ide-io.o: ide-io.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/completion.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/reboot.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/cdrom.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/seq_file.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h \
+   ide_modes.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idepci.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/pdc4030.h)
+ide-iops.o: ide-iops.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hdreg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atari.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/q40.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/idepci/share/irq.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/idedma/ivb.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idedma.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/dma/nonpci.h)
+ide-lib.o: ide-lib.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hdreg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h \
+   ide_modes.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idedma.h)
+ide-pnp.o: ide-pnp.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/isapnp.h
+ide-probe.o: ide-probe.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/dma.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/scsi/eata/dma.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/scsi/eata/pio.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/scsi/eata.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/pdc4030.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ppc.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/cmd640.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/coldfire.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/amiga.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mac.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/idedma/onlydisk.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/ide.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/apus.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/idepci/share/irq.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/uclinux/ide.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/hd.h)
+ide-probe-mini.o: ide-probe-mini.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h
+ide-proc.o: ide-proc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ctype.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hdreg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/all/ppc.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idepci.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/apus.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/ide/pmac.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pci.h)
+ide-tape.o: ide-tape.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/completion.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtio.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idedma.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+ide-taskfile.o: ide-taskfile.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hdreg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/bitops.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ide/task/ioctl/debug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idedma.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pkt/task/ioctl.h)
+ide-timing.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hdreg.h
+	@touch ide-timing.h
+ocidec.o: ocidec.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hdreg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   ide_modes.h \
+   ocidec.h
+setup-pci.o: setup-pci.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pci.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/idedma/forced.h)
+.PRECIOUS:	ide-cd.h \
+	ide-timing.h \
+

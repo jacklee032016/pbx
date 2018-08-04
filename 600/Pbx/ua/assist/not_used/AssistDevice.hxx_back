@@ -1,0 +1,124 @@
+#ifndef __ASSIST_DEVICE_H__
+#define __ASSIST_DEVICE_H__
+
+#include <VMutex.h>
+#include "VException.hxx"
+
+#include <Sptr.hxx>
+#include <SipProxyEvent.hxx>
+#include <SipCallId.hxx>
+
+#include "ResGwDevice.hxx"
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include "pbx_globals.h"
+
+namespace Vocal
+{
+
+enum AssistDeviceErrorType
+{
+	NO_DEVICE,
+	BUFFER_ERROR	
+};
+
+///
+class AssistDeviceException : public VException
+{
+    public:
+        ///
+	AssistDeviceException( const string& msg,
+                               const string& file,
+                               const int line,
+                               const int error = 0 );
+    
+        ///
+	AssistDeviceException( const string& msg,
+                               const string& file,
+                               const int line,
+                               AssistDeviceErrorType i)
+        : VException( msg, file, line, static_cast < int > (i))
+        {
+            value = i;
+        }
+		
+        AssistDeviceErrorType getError() const
+        {
+            return value;
+        }
+
+        string getName() const ;
+    private:
+	AssistDeviceErrorType value;
+
+};
+
+
+class  AssistDevice
+{
+	public:
+
+		AssistDevice(char *devicename,Sptr < Fifo < Sptr < SipProxyEvent > > > sessionQ) 
+			throw(AssistDeviceException &) ;
+		
+		~AssistDevice();
+
+		int getFd();
+
+		bool getstatus();
+	protected:
+        /**      */
+		void startSendRingback()
+		{
+			sendRingback = true;
+		};
+
+		/**    */
+		void stopSendRingback()
+		{
+			sendRingback = false;
+		};
+
+		void provideDialToneStart();
+		void provideDialToneStop();
+
+		void provideRingStart();
+		void provideRingStop();
+
+		void provideLocalRingbackStart();
+		void provideLocalRingbackStop();
+
+		void provideBusyToneStart();
+		void provideBusyToneStop();
+
+		void provideFastBusyToneStart();
+		void provideFastBusyToneStop();
+
+		void provideCallWaitingBeepStart();
+		void provideCallWaitingBeepStop();
+
+		void provideCallInfo(string, string, string);
+		void provideDtmf(DeviceSignalType);
+		
+
+		/// Current call id
+		Sptr<SipCallId> myCallId;
+		int myFd;
+		char *myDeviceName;
+
+		Sptr < Fifo < Sptr < SipProxyEvent > > > callProcessingQueue;
+
+		RtpSession* audioStack;
+		RtpPacket* inRtpPkt;
+
+		bool hookStateOffhook;
+		bool sendRingback;
+		
+		VMutex deviceMutex;
+};
+
+}
+#endif
+

@@ -1,0 +1,27 @@
+		README for Call Progress Detect
+		             Assist Corp.  Li Zhijie, 2006.04.25
+
+File List:
+    busy.tone.u : Data file for busy tone(BT)
+    dial.tone.u : Data File for Dial Tone(DT)
+    ringback.tone.u : Data file for ringback tone(RBT)
+    seconddial.tone.u : Data file for second dial tone(SDT)
+
+Binary : tone_make
+Source : test_tones_create.c
+    Create BT/DT/SDT/RBT tone data file which are used in our algorithm design
+
+Binary : progress    
+Source : test_progress_detect.c
+    Test out algorithm based on data files created by 'test_tones_create.c'
+
+Binary : progress_fxo
+Source : test_progress_fxo.c
+    Test Call Progress Tone Detect with a FXO port. A FXO call progress is executed
+    with our Call Progress Tone Detect algorithm used in evert step.
+
+
+Note: 
+    With the BT detect algorithm here, the BT detect defined in 'lib/dsp/busy'
+    is deprecated.
+		             

@@ -1,0 +1,103 @@
+# $Id: ChangeLog,v 1.1.1.1 2006/11/30 16:22:44 lizhijie Exp $
+# $Author: lizhijie $
+#
+		ChangeLog for PSTN APIs
+		                  Mar.2006, John Lee, Assist Corp.
+
+2006.05.29
+    Optimized robust DTMF decoder for Console and other application:
+        add lib/dsp/dtmf/as_dtmf_decoder.h/c
+        add unit_test/dsp/test_dtmf_decoder.c
+             test program of concurrent mulitiple thread DTMF decoder.
+
+    Add configuration interface for Software DSP engine which can be 
+    localizable with different DSP papameters defined by end user.
+
+2006.05.24
+    add lib/dsp/fsk/as_fsk_demodule_buf_both.c and remove lib/dsp/fsk/as_fsk_demodule_buf.c
+    add configuration interface of driver for Chinese PSTN standard.
+    add VAD detect for FSK demodulation.
+    
+    add FSK decode for Chinese 
+          fxo_ccid : unit_test/device/fxo/test_fxo_rx_chinese_cid.c
+              parse Chinese FSK CallerID with buffer mechanism.
+          china_cid:unit_test/dsp/fsk/test_fsk_chinese_id.c  
+              encode Chinese FSK modem CallerID with buffer machanism
+
+
+2006.05.23
+    add FSK modulation and demodulation based on buffer. 
+         lib/dsp/fsk/as_fsk_encoder_buf.c
+         lib/dsp/fsk/as_fsk_demodule_buf.c
+         
+         and test programs for it 
+            ntt_bcid : unit_test/dsp/fsk/test_fsk_ntt_callerid_buf.c 
+            ntt_dem	 : unit_test/dsp/ntt/test_ntt_detect_buf.c
+            
+
+2006.05.17
+    add rapid algorithm for Progress Detect: 
+         tone detect without frequency of 400Hz 
+
+2006.04.29 
+    Version 0.95.00
+    
+    Add 'readme' for all sub-directories in 'unit_test' 
+    
+    CAR Signal
+        Send CAR signal on FXS
+        Detect CAR on FXO
+        
+    DP10/20
+        FXS DP10/20 Detect
+        FXO DP10/20 Dial
+        
+    DSP Enhances
+        FSK Modem Caller Data Demodulation and Enmodulation
+            apply to ITU-T Recommendation V.23
+            comply to NTT Telephone Service Interface Edtion 5
+        
+        Call Progress Tone Detect    
+    
+        Optimized performance of DSP initialization.
+    
+        Add line plugin state detect of FXO port
+
+2006.03.20
+    Add concurrent and re-entry support for DSP library
+    Debug DSP DT,BT,RBT,SDT player
+    Add as_dsp.c and visuable interface for external client program
+    Unified the name rule for functions and files name
+    Remove odd files not used now.
+    Simplify the Call Interface in assist_lib.h
+    Add Call Progress Detect framework
+   
+
+Version : 00.08.02  (2006.03.17)
+    Add DP detect on FXS device
+        refer to unit_test/device/test_rx_dp.c.
+        Test on telephone which only support DP10. Some test need continued on DP20.
+    
+    Add FSK Modulation/Demodulation functions
+        Refer to unit_test/dsp/fsk/README and lib/dsp/busy/README.  
+        FSK functions has been test with Chinese telephone(2200HZ/1200HZ).
+
+    Add BT Detect functions
+        refer to unit_test/dsp/busy/test_busy_detect.c and unit_test/dsp/busy/test_busy_fxo.c  
+
+    Add and Modify Tone of NFT,SDT,IIT for both FXS hardware and DSP Software
+        refer to unit_test/device/test_tones.c and unit_test/dsp/test_dsp_tones.c
+    
+    Debug problem of DTMF DSP Detect 
+        refer to unit_test/dsp/test_dtmf_detect.c
+        
+    Debug Flash Signal (<700ms)
+        refer to unit_test/test_flash.c 
+        
+    Debug problem of device status    
+        refer to unit_test/test_device_status.c
+
+2006.03.10
+    Primitive version as the requirement of client
+
+    

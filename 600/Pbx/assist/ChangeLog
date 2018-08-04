@@ -1,0 +1,23 @@
+#
+# $Id: ChangeLog,v 1.1.1.1 2006/11/29 09:50:50 lizhijie Exp $
+#
+
+ChangeLog for pbx/assist
+	这个目录是所有的C语音接口程序的目录
+2005.05.31
+	解决IXP422上软件DSP无法解码DTMF号码的问题
+		在assist/test下增加文件
+			readme
+			tone.data
+		修改
+			assist/Makefile
+			assist/dsp/assist_dtmf_detect.c
+			assist/test/test_dsp_dtmf_detect.c
+			
+	
+2005.02.24
+	重新规划、修改DSP程序的框架结构，并增加了not_used目录
+	
+
+todo List
+	在新的DSP框架下，增加忙音检测程序

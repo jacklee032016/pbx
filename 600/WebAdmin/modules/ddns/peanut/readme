@@ -1,0 +1,60 @@
+花生壳客户端启动后，首先以TCP方式登录PH002.ORAY.NET服务器，端口号5050，
+连接过程记录如下（方括号内容是加上去的，以区分是哪一方发送的数据）：
+
+[SERVER]220 oray.net DHRP Server Ready
+[CLIENT]auth cram-md5
+[SERVER]334 239QBbj4H3nXQkoE7i9xJQ==
+
+[CLIENT]S04STkVUIIBqzS5XbP/NwNchq5g62wI=
+[SERVER]250 Authentication passed
+[SERVER]sample.vicp.net
+[SERVER]
+
+[CLIENT]regi a sample.vicp.net
+[SERVER]cnfm
+[SERVER]250 Register successfully
+[SERVER]250 1382418101 887031714
+
+[CLIENT]Quit
+[SERVER]221 Good bye
+
+从上面的记录可以看出，
+
+&cNW供o[)育e网v网%业|
+花生壳的登录认证采用的是CRAM-MD5方式，即服务器发一个
+KEY给客户端，客户端用这个KEY用MD5加密登录口令，然后以“用户名+空格+
+加密后的登录口令”的格式发送登录数据给服务器。注意：服务器发来的KEY是用
+base64编码的，使用前要先用base64解码还原，同样客户端发过去的登录数据也要
+先用base64编码。
+
+服务器收到客户端发来的登录数据后，N中r,kT#@Pp先用base64解码还原，分解出用户名和密码，
+核对用户名和密码都正确后，发250通知客户端认证通过，同时发此用户注册的域名。
+
+客户端发regi命令选择使用其中一个域名，然后服务器发来两个整数数字，供客户端
+以后刷新IP地址时使用。
+
+以上就完成了TCP登录过程，以后客户端每分钟发送一个20字节的UDP数据包给服务器，
+以便保持在线状态和刷新IP地址，UDP端口号5050，数据格式如下：
+
+struct UDP_DATA
+{
+   unsigned int LoginId;
+   unsigned int DataType;      //0x0A或者0x0B，BKr'FZW^DbP
+
+Nu7~7J&G育j1UL无.中|
+
+表示在线或者注销
+   unsigned int Sequence;      //每发一次加1
+   unsigned int Data1;         //Data1=-(Seq+DataType)
+   unsigned int Data2;         //Data2=0
+}
+
+其中LoginId，中:Na`'供VeHW`教Y'u4-Sequence就是TCP登录时收到的那两个整数，DataType+Sequence+
++Data1+Data2必须等于0。发送前用Blowfish加密方式对DataType以下的16字节进行
+加密，H教+络WPy:;S]件所用的KEY就是在TCP登录中收到的那个KEY。
+
+服务器收到后，会应答一个20字节的UPD包，格式同上，表示动态域名解析正常。
+客户端接收、解码，核对LoginId和Sequence，如果不对或者5分钟以上收不到应答包，
+就会重新进行TCP登录，重发UDP包，以保持在线状态。
+
+

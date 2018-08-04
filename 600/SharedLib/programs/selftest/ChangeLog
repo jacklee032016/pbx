@@ -1,0 +1,8 @@
+ChangeLog for shared_lib/programs/src/selftest
+
+
+2005.09.05
+	增加在自检完成后输入序列号存入FLASH中，成为产品的唯一号码标识
+2005.06.24
+	增加ChangeLog for shared_lib/programs/src/selftest
+	增加自检程序中对CompactFlash Card的检测程序

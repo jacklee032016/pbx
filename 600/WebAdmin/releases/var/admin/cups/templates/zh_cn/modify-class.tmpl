@@ -1,0 +1,34 @@
+<FORM METHOD="POST" ACTION="/cgi-bin/admin.cgi">
+<INPUT TYPE="HIDDEN" NAME="OP" VALUE="{op}">
+
+<H2 CLASS="title">修改打印机组 {printer_name}</H2>
+
+<TABLE>
+<TR>
+<TH CLASS="label">名称:</TH>
+<TD><INPUT TYPE="HIDDEN" NAME="PRINTER_NAME" VALUE="{printer_name}">
+{printer_name}</TD>
+</TR>
+<TR>
+<TH CLASS="label">位置:</TH>
+<TD><INPUT TYPE="TEXT" NAME="PRINTER_LOCATION" VALUE="{?printer_location}" SIZE="40" MAXLENGTH="127"></TD>
+</TR>
+<TR>
+<TH CLASS="label">描述信息:</TH>
+<TD><INPUT TYPE="TEXT" NAME="PRINTER_INFO" VALUE="{?printer_info}" SIZE="40" MAXLENGTH="127"></TD>
+</TR>
+<TR>
+<TH CLASS="label">成员:</TH>
+<TD>
+<SELECT NAME="MEMBER_URIS" SIZE="10" MULTIPLE>
+{[member_uris]<OPTION VALUE="{member_uris}" {?member_selected}>{member_names}}
+</SELECT>
+</TD>
+</TR>
+<TR>
+<TD></TD>
+<TD><INPUT TYPE="IMAGE" SRC="/cups/images/button-modify-class.gif" ALT="修改打印机组"></TD>
+</TR>
+</TABLE>
+
+</FORM>

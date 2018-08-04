@@ -1,0 +1,329 @@
+acct.o: acct.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bsd/process/acct.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/acct.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/file.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h
+capability.o: capability.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h
+context.o: context.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/unistd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/completion.h
+dma.o: dma.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/dma.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/m5307.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/m5407.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/uclinux.h)
+exec_domain.o: exec_domain.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/personality.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h)
+exit.o: exit.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/completion.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/personality.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/namespace.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bsd/process/acct.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/acct.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mmu_context.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/syscalltimer.h)
+fork.o: fork.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/unistd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/completion.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/namespace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/personality.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/compiler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mmu_context.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/processor.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/uclinux.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/syscalltimer.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smp.h)
+info.o: info.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/unistd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h
+itimer.o: itimer.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h
+kmod.o: kmod.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/unistd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/namespace.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/completion.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hotplug.h)
+ksyms.o: ksyms.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/cdrom.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel_stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sys.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/utsname.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/serial.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/random.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/reboot.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hdreg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ctype.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/file.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/iobuf.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/console.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mmzone.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/capability.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/highuid.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/brlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/in6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/completion.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/seq_file.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/dnotify.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/firmware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/checksum.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/modversions.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/highmem.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ia64.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/s390.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/generic/isa/dma.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cancam.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/uid16.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/crc32.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/fw/loader.h)
+module.o: module.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/seq_file.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/modules.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kallsyms.h)
+panic.o: panic.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/reboot.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/notifier.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysrq.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/console.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/s390.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/vt.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/x86.h)
+pm.o: pm.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h
+printk.o: printk.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty_driver.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/console.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/log/buf/shift.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/multiquad.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ia64.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/s390.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smp.h) \
+   ../cmdline/parse_kernel_cmdline.c \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/uclinux.h)
+ptrace.o: ptrace.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/highmem.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smp.h)
+resource.o: resource.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/seq_file.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h
+sched.o: sched.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/nmi.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel_stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/completion.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/prefetch.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/compiler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mmu_context.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/syscalltimer.h)
+signal.o: signal.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/unistd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smp.h)
+softirq.o: softirq.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel_stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tqueue.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/compiler.h
+sys.o: sys.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/utsname.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mman.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/notifier.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/reboot.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/prctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/highuid.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h
+sysctl.o: sysctl.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swapctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ctype.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/utsname.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/capability.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysrq.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/highuid.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/root/nfs.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/nfs_fs.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sysctl.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hotplug.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/chr/dev/sg.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sysvipc.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/s390.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mathemu.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ppc32.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bsd/process/acct.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/initrd.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/magic/sysrq.h)
+time.o: time.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timex.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h
+timer.o: timer.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timex.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel_stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smp.h)
+uid16.o: uid16.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/utsname.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mman.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/notifier.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/reboot.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/prctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/highuid.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h
+user.o: user.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h

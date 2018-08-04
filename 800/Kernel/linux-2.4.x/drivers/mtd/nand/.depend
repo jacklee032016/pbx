@@ -1,0 +1,46 @@
+autcpu12.o: autcpu12.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/nand.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/partitions.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/arch/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/sizes.h
+edb7312.o: edb7312.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/nand.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/partitions.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/arch/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/sizes.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware/clps7111.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mtd/partitions.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mtd/cmdline/parts.h)
+nand.o: nand.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/nand.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/nand_ecc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mtd/nand/verify/write.h)
+nand_ecc.o: nand_ecc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h
+nand_ids.o: nand_ids.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/nand.h
+spia.o: spia.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/mtd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/nand.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtd/partitions.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h

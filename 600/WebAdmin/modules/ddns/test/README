@@ -1,0 +1,27 @@
+# $Id: README,v 1.1 2007/05/30 19:20:19 lizhijie Exp $
+              README for Blowfish test
+                        Li Zhijie, 2007.05.30
+                        
+Following Data is come from use of our program on x86 platform
+                        
+Before Blow dump
+2e 4f 37 4e 0a 00 00 00 3b 25 2f 3a bb da d0 c5 00 00 00 00
+2e 4f 37 4e 0a 00 00 00 3b 25 2f 3a bb da d0 c5 00 00 00 00
+
+After Blow dump : Length is 20 
+2e 4f 37 4e 2a af a2 46 eb 2b aa c2 ac ed 5b 0b df 66 84 6b
+2e 4f 37 4e 2a af a2 46 eb 2b aa c2 ac ed 5b 0b df 66 84 6b 
+
+
+2e 4f 37 4e 2a af a2 46 eb 2b aa c2 ac ed 5b 0b df 66 84 6b
+
+
+RX before decrypt:
+6b a0 81 b1 44 6f be ef 86 39 2b 48 8f ae 9b b9
+
+RX after decrypt
+32 00 00 00 3b 25 2f 3a 93 da d0 c5 00 00 00 00
+32 00 00 00 3b 25 2f 3a 93 da d0 c5 00 00 00 00 
+
+操作码50
+填充数据为0

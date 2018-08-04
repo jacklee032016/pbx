@@ -1,0 +1,109 @@
+dac3550a.o: dac3550a.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/i2c.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   dmasound.h
+dmasound_atari.o: dmasound_atari.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/soundcard.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   dmasound.h
+dmasound_awacs.o: dmasound_awacs.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/soundcard.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/adb.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/nvram.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vt_kern.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/adb/cuda.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/cuda.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/adb/pmu.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pmu.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/i2c-dev.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   awacs_defs.h \
+   dmasound.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/pmac/pbook.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h)
+dmasound_core.o: dmasound_core.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sound.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/soundcard.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   dmasound.h
+dmasound.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/dmasound/atari.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/dmasound/atari/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/dmasound/paula.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/dmasound/paula/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/dmasound/q40.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/dmasound/q40/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/dmasound/pmac.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/dmasound/pmac/module.h)
+	@touch dmasound.h
+dmasound_paula.o: dmasound_paula.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/soundcard.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/setup.h \
+   dmasound.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/heartbeat.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/apus.h)
+dmasound_q40.o: dmasound_q40.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/soundcard.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   dmasound.h
+tas3001c.o: tas3001c.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/i2c.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   dmasound.h \
+   tas3001c.h
+trans_16.o: trans_16.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/soundcard.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   dmasound.h
+.PRECIOUS:	dmasound.h \
+

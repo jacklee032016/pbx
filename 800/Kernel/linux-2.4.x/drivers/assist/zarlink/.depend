@@ -1,0 +1,23 @@
+as_zarlink.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/delay.h
+	@touch as_zarlink.h
+as_zl_if.o: as_zl_if.c \
+   as_zarlink.h
+as_zl_init.o: as_zl_init.c \
+   as_zarlink.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   zl_version.h
+as_zl_zarlink.o: as_zl_zarlink.c \
+   as_zarlink.h
+.PRECIOUS:	as_zarlink.h \
+

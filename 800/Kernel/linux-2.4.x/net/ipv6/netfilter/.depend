@@ -1,0 +1,173 @@
+ip6_queue.o: ip6_queue.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/notifier.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netlink.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/brlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ip6_route.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv4/ip_queue.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv4/ip_tables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h
+ip6table_filter.o: ip6table_filter.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h
+ip6table_mangle.o: ip6table_mangle.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h
+ip6_tables.o: ip6_tables.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tcp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/udp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/icmpv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/netfilter/debug.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv4/lockhelp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv4/listhelp.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+ip6t_ah.o: ip6t_ah.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/checksum.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6t_ah.h
+ip6t_dst.o: ip6t_dst.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/checksum.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6t_opts.h
+ip6t_esp.o: ip6t_esp.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/checksum.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6t_esp.h
+ip6t_eui64.o: ip6t_eui64.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_ether.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h
+ip6t_frag.o: ip6t_frag.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/checksum.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6t_frag.h
+ip6t_hbh.o: ip6t_hbh.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/checksum.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6t_opts.h
+ip6t_hl.o: ip6t_hl.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6t_hl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h
+ip6t_ipv6header.o: ip6t_ipv6header.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/checksum.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6t_ipv6header.h
+ip6t_length.o: ip6t_length.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6t_length.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h
+ip6t_limit.o: ip6t_limit.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6t_limit.h
+ip6t_LOG.o: ip6t_LOG.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/icmpv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/udp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/tcp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/route.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6t_LOG.h
+ip6t_mac.o: ip6t_mac.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_ether.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6t_mac.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h
+ip6t_mark.o: ip6t_mark.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6t_mark.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h
+ip6t_multiport.o: ip6t_multiport.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/udp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/in.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6t_multiport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h
+ip6t_owner.o: ip6t_owner.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/file.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6t_owner.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h
+ip6t_rt.o: ip6t_rt.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/checksum.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6_tables.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv6/ip6t_rt.h

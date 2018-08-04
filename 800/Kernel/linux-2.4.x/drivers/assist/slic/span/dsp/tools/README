@@ -1,0 +1,23 @@
+#
+# $Author: lizhijie $
+# $Log: README,v $
+# Revision 1.1.1.1  2006/11/30 16:27:59  lizhijie
+# AS800 Kernel
+#
+# Revision 1.1  2006/03/13 02:44:58  lizhijie
+# no message
+#
+# $Revision: 1.1.1.1 $
+#
+		README for DSP Tools
+		         Li Zhijie, 2006.03.13
+
+为增强对日本NTT制式的tone的定义，增加这个目录，由于在主机平台上生成目标平台的tone定义文件
+
+当前主要修改使用的是各种tone的定义，DTMF的号码仍然使用原有的定义
+
+直接在目录下，输入‘make’就可以完成生成新的tone定义文件的任务
+
+将生成的文件拷贝到 ../dsp/user，重新编译驱动就可以完成tone的修改
+
+当前主要修改的NTT制式的tone为IIT、SDT、NFT、CPT

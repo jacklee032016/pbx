@@ -1,0 +1,53 @@
+# $Id: README,v 1.1 2007/03/24 18:35:39 lizhijie Exp $
+
+               README for IPCS
+                  Li Zhijie 2007.03.24
+
+Add it into our releases version to debug the SysV Message Queue
+It come from util-linux-2.12 version
+
+使用
+查看消息的基本信息
+# ipcs -q 
+------ Message Queues --------
+key        msqid      owner      perms      used-bytes   messages    
+0x01080184 0          root       0          1440         90          
+0x02080185 32769      root       0          0            0           
+0x02080183 65538      root       0          0            0           
+
+当前使用系统消息的基本配置
+# ipcs -q -l
+------ Messages: Limits --------
+max queues system wide = 16
+max size of message (bytes) = 8192
+default max size of queue (bytes) = 16384
+
+
+当前系统消息的使用信息
+# ipcs -q -u
+------ Messages: Status --------
+allocated queues = 3
+used headers = 90
+used space = 1440 bytes
+
+
+信息的进程情况
+# ipcs -q -p
+------ Message Queues PIDs --------
+msqid      owner      lspid      lrpid     
+0        root          888（pbx）       870（uartd）：这个消息队列是SIP/CGI-->UARTD,实际发送进程是变化的
+32769    root          868（uartd）       892（cgipbx）：这个消息队列是UARTD-->CGI
+65538    root          868（uartd）       883（pbx）：这个队列是UARTD-->SIP
+这三个队列的顺序是消息队列的初始化函数决定的
+
+从以上可以看出，以uartd接收消息的线程并没有把消息接收下来，造成CGI配置错误和SIP无法呼叫
+
+
+注：
+   三个消息队列均由uartd创建，但是uartd被kill后，三个队列仍然存在，
+   重新启动uartd，三个没有删除（程序编程决定的）。
+   操作系统创建的消息ID，在每次系统启动后，都是一样的。
+   但是被阻塞的消息全部被重启后的uartd读出。
+   
+   uartd杀掉后，CGI和SIP程序写入的消息仍旧会保存在操作系统内部，等待uartd来读取
+

@@ -1,0 +1,30 @@
+表：
+    默认可以操作的表为mangle、Filter和NAT
+链：
+    NAT表有PREROUTING、POSTROUTING和OUTPUT三个链
+    Mangle表增加了INPUT和FORWARD表，共五个表
+    Filter表：FORWARD、INPUT、OUTPUT三个表
+规则和target
+    Drop、Log、Accept、Reject、Jump等    
+    
+
+增加NAT的命令及其说明
+/usr/sbin/iptables -t nat -A POSTROUTING %s(Local Address) %s(Device) 
+      -p %s(TCP/UDP/ICMP/null) %s(Local Port) -j %s(action) %s%s(External Address and Port)
+    操作的表是NAT
+    在POSTROUTING链中增加
+
+一个源NAT的例子
+iptables -t nat -A POSTROUTING -p tcp -o eth0(外网接口) -j SNAT 
+     --to-source 194.236.50.155-194.236.50.160:1024-32000(外网的地址和端口号)
+
+一个MASQUERADE的例子
+   iptables -t nat -A POSTROUTING -p TCP -j MASQUERADE --to-ports 1024-31000  
+   无需使用--to-source 
+   
+   增加MASQUERADE的最简单的脚本：
+      iptables -t nat -A POSTROUTING -j MASQUERADE  
+      iptables -t nat -D POSTROUTING -j MASQUERADE  
+      
+   
+     

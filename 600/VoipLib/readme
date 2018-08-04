@@ -1,0 +1,34 @@
+# $Id: readme,v 1.2 2007/06/05 11:33:25 lizhijie Exp $
+
+	VOIP电话应用中使用的代码（从Vocal中移植）				
+		李志杰  2005.02.01 2005.02.02	
+
+2007.06.05
+    总是警告主机名为无效IP地址的问题
+        NetworkAddress类的默认构造函数的参数是端口号
+            这时需要调用getIpName时会首先驱动主机名，然后再将主机名解析为IP地址
+            在将主机名解析为IP地址时，首先会判断主机名是否已经是IP地址，这样就会
+            产生告警信息。
+            这种方式得到的IP地址是主机名在/etc/hosts文件的第一个匹配项，一般解析
+            为WAN的地址
+            
+            为通过NetworkAddress得到LAN地址：一般的使用方式为
+                创建NetworkAddress对象，调用setHostName方法，此时设置的就是IP地址
+                
+
+2005.06.27
+	修改、增加对动态库的支持
+
+
+所有的编译命令中增加调试信息:“-g”	
+修改所有的共享库link命令为gcc，而不再使用g++	
+重新编译并发布所有版本（IXP/PC、共享/静态）的二进制文件这些代码是vocal中的，在IXP422上应用暂时还没有任何改动的代码
+
+模块功能:
+	VOIP系统中rtp,sdp,sip支撑协议库,voip util库
+	
+编译顺序:	util、rtp、sdp和sipstack；	
+编译后将各个目录Linux.bin.$(ARCH)的二进制代码分别拷贝到bin/arm或bin/i686中		
+make ARCH=arm；make ARCH=arm clean。两个命令分别编译和清除IXP422版本的代码
+
+这部分代码建立CVS仓储的目的是一版情况下，不编译这部分代码					

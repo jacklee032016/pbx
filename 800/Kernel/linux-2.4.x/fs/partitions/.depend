@@ -1,0 +1,209 @@
+acorn.o: acorn.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kdev_t.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   check.h \
+   acorn.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/mfm.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acorn/partition/riscix.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acorn/partition/cumana.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acorn/partition/adfs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acorn/partition/ics.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acorn/partition/powertec.h)
+acorn.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/adfs_fs.h
+	@touch acorn.h
+amiga.o: amiga.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/affs_hardblocks.h \
+   check.h \
+   amiga.h
+atari.o: atari.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ctype.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   check.h \
+   atari.h
+check.o: check.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/raid/md.h \
+   check.h \
+   acorn.h \
+   amiga.h \
+   atari.h \
+   ldm.h \
+   mac.h \
+   msdos.h \
+   osf.h \
+   sgi.h \
+   sun.h \
+   ibm.h \
+   ultrix.h \
+   efi.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acorn/partition.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/efi/partition.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ldm/partition.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/msdos/partition.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/osf/partition.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sun/partition.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/amiga/partition.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atari/partition.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/mac/partition.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sgi/partition.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ultrix/partition.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ibm/partition.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arch/s390.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/devfs/fs.h)
+efi.o: efi.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/crc32.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   check.h \
+   efi.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/md.h)
+efi.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/efi.h
+	@touch efi.h
+ibm.o: ibm.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hdreg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   ibm.h \
+   check.h
+ldm.o: ldm.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/stringify.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   ldm.h \
+   check.h \
+   msdos.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ldm/debug.h)
+ldm.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h
+	@touch ldm.h
+mac.o: mac.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ctype.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   check.h \
+   mac.h
+msdos.o: msdos.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/ide.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ide.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/ide/module.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   check.h \
+   msdos.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/md.h) \
+   /works/isdn/kernel/linux-2.4.x/include/asm/unaligned.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/devfs/fs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/solaris/x86/partition.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bsd/disklabel.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/unixware/disklabel.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/minix/subpartition.h)
+osf.o: osf.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   check.h \
+   osf.h
+sgi.o: sgi.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/byteorder.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   check.h \
+   sgi.h
+sun.o: sun.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   check.h \
+   sun.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/blk/dev/md.h)
+ultrix.o: ultrix.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/genhd.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   check.h
+.PRECIOUS:	acorn.h \
+	efi.h \
+	ldm.h \
+

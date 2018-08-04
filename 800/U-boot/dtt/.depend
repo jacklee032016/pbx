@@ -1,0 +1,75 @@
+lm75.o: lm75.c /home/wangwei/123/u-boot/include/common.h \
+  /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h \
+  /home/wangwei/123/u-boot/include/linux/bitops.h \
+  /home/wangwei/123/u-boot/include/asm/bitops.h \
+  /home/wangwei/123/u-boot/include/linux/types.h \
+  /home/wangwei/123/u-boot/include/linux/config.h \
+  /home/wangwei/123/u-boot/include/linux/posix_types.h \
+  /home/wangwei/123/u-boot/include/linux/stddef.h \
+  /home/wangwei/123/u-boot/include/asm/posix_types.h \
+  /home/wangwei/123/u-boot/include/asm/types.h \
+  /home/wangwei/123/u-boot/include/linux/string.h \
+  /home/wangwei/123/u-boot/include/asm/string.h \
+  /home/wangwei/123/u-boot/include/asm/ptrace.h \
+  /home/wangwei/123/u-boot/include/asm/proc/ptrace.h \
+  /arm-linux/lib/gcc-lib/arm-linux/3.3.2/include/stdarg.h \
+  /home/wangwei/123/u-boot/include/part.h \
+  /home/wangwei/123/u-boot/include/ide.h \
+  /home/wangwei/123/u-boot/include/flash.h \
+  /home/wangwei/123/u-boot/include/image.h \
+  /home/wangwei/123/u-boot/include/asm/u-boot.h \
+  /home/wangwei/123/u-boot/include/asm/global_data.h \
+  /home/wangwei/123/u-boot/include/asm/setup.h \
+  /home/wangwei/123/u-boot/include/asm/u-boot-arm.h
+ds1621.o: ds1621.c /home/wangwei/123/u-boot/include/common.h \
+  /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h \
+  /home/wangwei/123/u-boot/include/linux/bitops.h \
+  /home/wangwei/123/u-boot/include/asm/bitops.h \
+  /home/wangwei/123/u-boot/include/linux/types.h \
+  /home/wangwei/123/u-boot/include/linux/config.h \
+  /home/wangwei/123/u-boot/include/linux/posix_types.h \
+  /home/wangwei/123/u-boot/include/linux/stddef.h \
+  /home/wangwei/123/u-boot/include/asm/posix_types.h \
+  /home/wangwei/123/u-boot/include/asm/types.h \
+  /home/wangwei/123/u-boot/include/linux/string.h \
+  /home/wangwei/123/u-boot/include/asm/string.h \
+  /home/wangwei/123/u-boot/include/asm/ptrace.h \
+  /home/wangwei/123/u-boot/include/asm/proc/ptrace.h \
+  /arm-linux/lib/gcc-lib/arm-linux/3.3.2/include/stdarg.h \
+  /home/wangwei/123/u-boot/include/part.h \
+  /home/wangwei/123/u-boot/include/ide.h \
+  /home/wangwei/123/u-boot/include/flash.h \
+  /home/wangwei/123/u-boot/include/image.h \
+  /home/wangwei/123/u-boot/include/asm/u-boot.h \
+  /home/wangwei/123/u-boot/include/asm/global_data.h \
+  /home/wangwei/123/u-boot/include/asm/setup.h \
+  /home/wangwei/123/u-boot/include/asm/u-boot-arm.h
+adm1021.o: adm1021.c /home/wangwei/123/u-boot/include/common.h \
+  /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h \
+  /home/wangwei/123/u-boot/include/linux/bitops.h \
+  /home/wangwei/123/u-boot/include/asm/bitops.h \
+  /home/wangwei/123/u-boot/include/linux/types.h \
+  /home/wangwei/123/u-boot/include/linux/config.h \
+  /home/wangwei/123/u-boot/include/linux/posix_types.h \
+  /home/wangwei/123/u-boot/include/linux/stddef.h \
+  /home/wangwei/123/u-boot/include/asm/posix_types.h \
+  /home/wangwei/123/u-boot/include/asm/types.h \
+  /home/wangwei/123/u-boot/include/linux/string.h \
+  /home/wangwei/123/u-boot/include/asm/string.h \
+  /home/wangwei/123/u-boot/include/asm/ptrace.h \
+  /home/wangwei/123/u-boot/include/asm/proc/ptrace.h \
+  /arm-linux/lib/gcc-lib/arm-linux/3.3.2/include/stdarg.h \
+  /home/wangwei/123/u-boot/include/part.h \
+  /home/wangwei/123/u-boot/include/ide.h \
+  /home/wangwei/123/u-boot/include/flash.h \
+  /home/wangwei/123/u-boot/include/image.h \
+  /home/wangwei/123/u-boot/include/asm/u-boot.h \
+  /home/wangwei/123/u-boot/include/asm/global_data.h \
+  /home/wangwei/123/u-boot/include/asm/setup.h \
+  /home/wangwei/123/u-boot/include/asm/u-boot-arm.h

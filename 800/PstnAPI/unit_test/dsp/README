@@ -1,0 +1,27 @@
+# $Id: README,v 1.1.1.1 2006/11/30 16:22:46 lizhijie Exp $
+# $Author: lizhijie $
+
+		README for FSK Test
+		             Assist Corp.  Li Zhijie, 2006.03.17
+
+
+Binary : dsp_dtmf_gen
+Source : test_dsp_dtmf_gen.c
+     Send DTMF Caller ID to a telephone for the purpose of Caller ID display.
+     Only be used in China.
+
+Binary : dsp_tones
+Source : test_dsp_tones.c
+     send DP, BT, RBT, SDT, CPT, NF, IIT tones in DSP algorithm.
+     
+Binary : dtmf_dsp_detect
+Source : test_dtmf_detect.c
+     Decode DTMF Caller ID from real-time data read from our device.
+     
+Binary : dtmf_dsp_decoder
+Source : test_dtmf_decoder.c
+     Decode DTMF Caller ID from real-time data read from our device.
+     It is implemented in multiple thread environments and robust decoder
+     algorithm.    
+
+    

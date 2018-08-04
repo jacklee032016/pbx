@@ -1,0 +1,46 @@
+dsp_audio.o: dsp_audio.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h \
+   dsp.h
+dsp_blowfish.o: dsp_blowfish.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h \
+   dsp.h
+dsp_cmx.o: dsp_cmx.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h \
+   dsp.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/hw_lock.h
+dsp_core.o: dsp_core.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h \
+   dsp.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/hw_lock.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/as_isdn_version.h
+dsp_dtmf.o: dsp_dtmf.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h \
+   dsp.h
+dsp.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tqueue.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/memdbg.h
+	@touch dsp.h
+dsp_tones.o: dsp_tones.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/layer1.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/helper.h \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/isdn/include/debug.h \
+   dsp.h
+.PRECIOUS:	dsp.h \
+

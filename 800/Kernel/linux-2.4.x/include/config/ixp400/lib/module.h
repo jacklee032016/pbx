@@ -1,0 +1,1 @@
+#define CONFIG_IXP400_LIB_MODULE 1

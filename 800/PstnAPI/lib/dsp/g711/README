@@ -1,0 +1,20 @@
+# $Id: README,v 1.1.1.1 2006/11/30 16:22:45 lizhijie Exp $
+# 
+
+			README for DSP DTMF Data
+					李志杰  2006.03.24
+
+在PC平台下编译并运行程序（dtmf），生成DSP引擎需要的DSP DTMF数据文件 dtmf_u.c
+
+这个文件包含16个DTMF字符和静音的数据文件，每个DTMF字符的数据长度为200毫秒；静音数据的
+长度为20ms。
+
+数据文件编译到libpstn.so库中，as_dsp_t初始化时，创建相应的数据结构，并从这些数组中拷
+贝静音数据
+
+
+使用：
+在这个目录下，直接make，就可以编译并生成dtmf_u.c文件
+
+在模块的根目录下，就可以直接编译生成的dtmf_u.c文件到libpstn,so中
+

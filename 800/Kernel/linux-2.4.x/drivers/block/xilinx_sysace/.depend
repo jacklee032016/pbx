@@ -1,0 +1,38 @@
+adapter.o: adapter.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hdreg.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkpg.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/irq.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blk.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkdev.h \
+   xsysace.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+xsysace.o: xsysace.c \
+   xsysace.h \
+   xsysace_l.h
+xsysace_compactflash.o: xsysace_compactflash.c \
+   xsysace.h \
+   xsysace_l.h
+xsysace_g.o: xsysace_g.c \
+   xsysace.h
+xsysace.h: \
+   xsysace_l.h
+	@touch xsysace.h
+xsysace_intr.o: xsysace_intr.c \
+   xsysace.h \
+   xsysace_l.h
+xsysace_jtagcfg.o: xsysace_jtagcfg.c \
+   xsysace.h \
+   xsysace_l.h
+xsysace_l.o: xsysace_l.c \
+   xsysace_l.h
+xsysace_selftest.o: xsysace_selftest.c \
+   xsysace.h \
+   xsysace_l.h
+.PRECIOUS:	xsysace.h \
+

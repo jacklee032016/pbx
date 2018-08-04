@@ -1,0 +1,50 @@
+# $Id: README,v 1.1.1.1 2006/11/30 16:22:46 lizhijie Exp $
+# $Author: lizhijie $
+
+		README for FSK Test
+		             Assist Corp.  Li Zhijie, 2006.03.17
+
+File List:
+    fsk_4123456.data : Data file for FSK MDMF format with content of '4123456'
+                       This file can only be used in Chinese telephone.
+
+Binary : fsk_crc
+Source : test_fsk_crc.c
+     Test CRC algorithm of FSK modem data. It is only used in our development stage.
+     
+
+Binary : fsk_detect
+Source : test_fsk_detect.c
+     Decode Caller ID from a data file which is in MDMF format, not used in Japan.
+     
+Binary : fsk_file
+Source : test_fsk_file.c
+     Read and send FSK Caller ID data into a FXS Port, then make the phone number is 
+     displayed in telephone screeen.
+     This program is only used in China and other countries.
+     
+Binary : fsk_gen
+Source : test_fsk_caller_id.c
+     generate and send real-time FSK Caller ID data to a telephone connected to our 
+     FXS port. 
+     Only used in China.
+
+Binary : ntt_cid
+Source : test_fsk_ntt_callerid.c    
+     generate and send real-time FSK Caller ID data to a telephone connected to our 
+     FXS port. 
+     Only used in Japan.
+
+
+Binary : ntt_bcid
+Source : test_fsk_ntt_callerid_buf.c    
+     generate FSK Caller ID data based on buffer and send to a telephone connected to our 
+     FXS port. 
+     Only used in Japan.
+ 
+Binary : china_cid
+Source : test_fsk_chinese_id.c  
+     generate Chinese FSK modem CallerID with buffer machanism. This program is also used to
+     create local disk file which contained FSK data.
+     Only used in China.
+    

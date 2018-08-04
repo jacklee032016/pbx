@@ -1,0 +1,120 @@
+netsyms.o: netsyms.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/net.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/in.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/inetdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fddidevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/trdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/tty.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ethtool.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/neighbour.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/snmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/dst.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/checksum.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/etherdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/route.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/hippi.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/hippidevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/pkt_sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/scm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_bridge.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/if_vlan.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/random.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net/divert.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/divert.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/inet.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/protocol.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/arp.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/clip.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atm/clip/module.h) \
+   /works/isdn/kernel/linux-2.4.x/include/net/atmclip.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/udp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/tcp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/icmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/inet_common.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/inet.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mroute.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/igmp.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ipv6.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ipv6/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/khttpd.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/khttpd/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ip/sctp/module.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/in6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/icmpv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ndisc.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/transp_v6.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/addrconf.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/rtnetlink.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ipx/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/atalk/module.h) \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/sysctl.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/filter.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/arpd.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/vlan/8021q.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/vlan/8021q/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bridge.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bridge/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/dlci/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/netlink/dev.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/netlink/dev/module.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tr.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/fddi.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net/hw/flowcontrol.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net/fastroute.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net/sched.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net/estimator.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net/cls/police.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net/cls.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/netfilter.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter_ipv4.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net/radio.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net/pcmcia/radio.h) \
+   /works/isdn/kernel/linux-2.4.x/include/net/iw_handler.h
+socket.o: socket.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/file.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/net.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/proc_fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wanrouter.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netlink.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/rtnetlink.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/cache.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/highmem.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/scm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netfilter.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/wan/router.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/bluez.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/netlink/dev.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/netfilter.h)
+sysctl_net.o: sysctl_net.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysctl.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/inet.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/net.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ipv6.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tr.h)

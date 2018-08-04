@@ -1,0 +1,70 @@
+ipmi_devintf.o: ipmi_devintf.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipmi.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h
+ipmi_kcs_intf.o: ipmi_kcs_intf.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timer.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/delay.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioport.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/high/res/timers.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipmi_smi.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   ipmi_kcs_sm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ipmi/kcs.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/acpi/interpreter.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/acpi.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/acpi.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/actypes.h \
+   /works/isdn/kernel/linux-2.4.x/include/acpi/actbl.h
+ipmi_kcs_sm.o: ipmi_kcs_sm.c \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/string.h \
+   ipmi_kcs_sm.h
+ipmi_msghandler.o: ipmi_msghandler.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/rwsem.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipmi.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipmi_smi.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/notifier.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ipmi/panic/event.h)
+ipmi_watchdog.o: ipmi_watchdog.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipmi.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipmi_smi.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/watchdog.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/miscdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/rwsem.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/notifier.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/nmi.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/reboot.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/x86/local/apic.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/watchdog/nowayout.h)

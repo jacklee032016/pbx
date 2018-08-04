@@ -1,0 +1,1 @@
+#undef  CONFIG_ASSIST_MISDN_L1

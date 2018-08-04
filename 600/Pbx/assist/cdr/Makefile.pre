@@ -1,0 +1,75 @@
+# Makefile.pre for Cdr
+
+ARCH=arm
+LINK=
+RELEASES_DIR=../releases
+
+ifeq ($(ARCH),arm)
+	CFLAGS = -mbig-endian
+	CROSS_COMPILER=arm-linux-
+  	LDFLAGS+= -mbig-endian 
+ 	K_CFLAGS+= -mbig-endian          
+else
+	ARCH=i686
+endif
+
+ifneq ("static","$(LINK)")
+	LDFLAGS+=  #-Wl,-shared -Wl,-static 
+else
+	LDFLAGS+=  -Wall -static        
+endif
+
+ifeq ("y","$(DEBUG)")
+	DEBUG_SWITCH=1 
+else
+	DEBUG_SWITCH=0        
+endif
+
+
+
+BUILDTIME := $(shell TZ=UTC date -u "+%Y_%m_%d-%H_%M")
+ASSIST_RELEASES_NAME=assist_cdr_$(ARCH)_$(BUILDTIME).tar 
+TOPDIR:=$(shell pwd)
+LOCAL_RELEASE_DIR=$(TOPDIR)/releases
+CFLAGS+=  -O2  -c  -DD_BUG=$(DEBUG_SWITCH) -Wall
+
+
+BIN_DIR:=$(TOP_DIR)/Linux.bin.$(ARCH)
+OBJ_DIR:=Linux.obj.$(ARCH)
+
+
+CC	= $(CROSS_COMPILER)gcc
+CXX 	= $(CROSS_COMPILER)g++ 
+STRIP	= $(CROSS_COMPILER)strip
+LD	= $(CROSS_COMPILER)ld
+RANLIB 	= $(CROSS_COMPILER)ranlib
+AR 	= $(CROSS_COMPILER)ar
+
+
+HOSTCC	= gcc
+
+RM	= rm -r -f
+MKDIR	= mkdir -p
+MODE	= 700
+OWNER	= root
+CHOWN	= chown
+CHMOD	= chmod
+COPY	= cp
+MOVE	= mv
+
+ARFLAGS	= crv
+
+
+
+HOST_CFLAGS+=  -O2 -I$(TOP_DIR) -I$(TOP_DIR)/include 
+HOST_CFLAGS+= $(INCLUDE_DIR) 
+
+
+C_CFLAGS+= 
+C_CFLAGS+= -O2 -I$(TOP_DIR) 
+C_CFLAGS+= $(INCLUDE_DIR) 
+C_CFLAGS+= #-Wno-deprecated 
+
+CFLAGS+=$(C_CFLAGS)	$(MACRO_CFLAGS)
+L_LIBS+= -lpthread
+#LDFLAGS+=  -L$(BIN_DIR)

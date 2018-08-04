@@ -1,0 +1,195 @@
+bootmem.o: bootmem.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel_stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swapctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bootmem.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mmzone.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/dma.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h
+filemap.o: filemap.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/shm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mman.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/file.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swapctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/iobuf.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/mman.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/highmem.h
+highmem.o: highmem.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/highmem.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h
+memory.o: memory.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mman.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swapctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/iobuf.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/highmem.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/tlb.h
+mlock.o: mlock.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/shm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mman.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h
+mmap.o: mmap.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/shm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mman.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swapctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/file.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/personality.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h
+mprotect.o: mprotect.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/shm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mman.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h
+mremap.o: mremap.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/shm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mman.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h
+numa.o: numa.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bootmem.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mmzone.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/discontigmem.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/numa.h)
+oom_kill.o: oom_kill.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swapctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/timex.h
+page_alloc.o: page_alloc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swapctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/bootmem.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/discontigmem.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/highmem.h)
+page_io.o: page_io.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel_stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swapctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h
+shmem.o: shmem.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/file.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/locks.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/div64.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/tmpfs.h)
+slab.o: slab.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/compiler.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/seq_file.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/debug/slab.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/smp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/proc/fs.h)
+swap.o: swap.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel_stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swapctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/dma.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h
+swapfile.o: swapfile.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel_stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swapctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/blkdev.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/shm.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h
+swap_state.o: swap_state.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel_stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swapctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h
+vmalloc.o: vmalloc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/spinlock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/highmem.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h
+vmscan.o: vmscan.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel_stat.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/swapctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/pagemap.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/highmem.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/file.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgalloc.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/quota.h)

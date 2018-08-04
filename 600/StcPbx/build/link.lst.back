@@ -1,0 +1,113 @@
+src\asm\asm.obj, src\asm\startup.obj,
+src\main.obj,
+
+src\init\pbx_init.obj,
+src\init\cfg_default.obj,
+src\init\fm24c08.obj,
+src\init\ht1381.obj,
+src\init\pbx_hw_ctl.obj,
+
+src\hw\pbx_tone_if.obj,
+src\hw\pbx_cfg_default.obj,
+src\hw\pbx_hw_dtmf.obj,
+src\hw\pbx_channel_if.obj,
+src\hw\pbx_isrs.obj,
+src\hw\pbx_voice_channels.obj,
+src\hw\pbx_selftest.obj,
+
+src\state\pbx_statemachine.obj,
+src\state\pbx_state_idle.obj,
+src\state\pbx_state_dialing.obj,
+src\state\pbx_state_trying.obj,
+src\state\pbx_state_ringing.obj,
+src\state\pbx_state_incall.obj,
+src\state\pbx_state_busy.obj,
+src\state\pbx_state_wait.obj,
+src\state\pbx_state_programing.obj,
+
+src\features\pbx_fea_phonenumber.obj,
+src\features\pbx_timer_task.obj,
+src\features\call_process.obj,
+
+src\callerid\pbx_caller_id.obj,
+
+src\lines\pbx_lines_device.obj,
+src\lines\pstn_detect.obj,
+
+src\uart\uart_rx.obj,
+src\uart\uart_tx.obj,
+src\uart\nvram_store.obj,
+
+src\ip\uart_calls_rx.obj,
+src\ip\uart_calls_tx.obj,
+
+src\program\program_cmds.obj,
+src\program\program_cmd_cfgs.obj,
+
+src\utils\pbx_utils.obj
+
+TO a.abs
+
+
+RAMSIZE(256)
+
+OVERLAY (
+_pbx_state_handle ! 
+	(ext_idle_state_offhook, ext_idle_state_timeout, ext_idle_state_ringing, 
+	ext_idle_state_digits, ext_idle_state_car, 
+	ext_idle_state_ringeron, ext_idle_state_ringeroff,
+	ext_dialing_state_digits, ext_dialing_state_onhook, ext_dialing_state_timeout,
+	ext_trying_state_timeout, ext_trying_state_onhook, ext_trying_state_OK,
+	ext_trying_state_flash,
+	ext_ringing_state_timeout, ext_ringing_state_offhook, ext_ringing_state_cancel,
+	ext_incall_state_timeout, ext_incall_state_onhook, ext_incall_state_cancel,
+	ext_incall_state_flash,
+	ext_busy_state_timeout, ext_busy_state_onhook, ext_dialing_state_ringing,
+	ext_wait_state_onhook, ext_wait_state_offhook,
+	ext_wait_state_ok, ext_wait_state_cancel,
+	ext_wait_state_timeout,
+	ext_offhook_state_flash,
+	ext_programing_state_digits, ext_programing_state_onhook,
+	ext_programing_state_timeout,
+	ext_rering_state_onhook ), 
+
+pbx_statemachine_handle !(ext_idle_state_enter, ext_dialing_state_enter,
+	ext_trying_state_enter, ext_ringing_state_enter,
+	ext_incall_state_enter, ext_busy_state_enter,
+	ext_wait_state_enter,
+	ext_programing_state_enter), 
+
+uart_call_rx_handle !(_ip_call_rx_reset_all_signal, _ip_call_rx_offhook_signal,
+	_ip_call_rx_trying_signal, _ip_call_rx_busy_signal,
+	_ip_call_rx_cancel_signal, _ip_call_rx_callee_digits_signal,
+	_ip_call_rx_caller_digits_signal, _ip_call_rx_dialing_signal,
+	_ip_call_rx_onhook_signal ),
+
+
+self_test_handle !(_check_ringer, _check_realtime2,
+	_check_nvram, 
+	_check_dtmf_chips,
+	_check_pcm_channel ),
+
+self_test_exit_handle !(_check_dtmf_exit,
+	_check_pcm_exit ),
+
+
+pbx_program_enter_handle !(_program_recording_start, 
+	_program_playrecord_start,
+	_program_get_my_phonenumber,
+	_program_reset_pbx,
+	program_cfg_global_options,
+	program_cfg_passwd,
+	program_cfg_index_value,
+	program_cfg_index_time_value,
+	program_cfg_night_service_time,
+	program_cfg_2_params ),
+
+pbx_program_exit_handle !(_program_recording_end, 
+	_program_playrecord_end,
+	_program_get_my_phonenumber_exit )  )
+
+
+SPEEDOVL
+

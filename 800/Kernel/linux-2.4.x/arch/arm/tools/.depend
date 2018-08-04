@@ -1,0 +1,7 @@
+constants.h: getconstants.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/pgtable.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/26.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/32.h)

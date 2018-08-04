@@ -1,0 +1,92 @@
+double_cpdo.o: double_cpdo.c \
+   fpa11.h \
+   softfloat.h \
+   fpopcode.h
+entry26.o: entry26.S \
+   /works/isdn/kernel/linux-2.4.x/include/asm/constants.h
+extended_cpdo.o: extended_cpdo.c \
+   fpa11.h \
+   softfloat.h \
+   fpopcode.h
+fpa11.o: fpa11.c \
+   fpa11.h \
+   fpopcode.h \
+   fpmodule.h \
+   fpmodule.inl \
+   /works/isdn/kernel/linux-2.4.x/include/asm/system.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/fpe/nwfpe/xp.h)
+fpa11_cpdo.o: fpa11_cpdo.c \
+   fpa11.h \
+   fpopcode.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/fpe/nwfpe/xp.h)
+fpa11_cpdt.o: fpa11_cpdt.c \
+   fpa11.h \
+   softfloat.h \
+   fpopcode.h \
+   fpmodule.h \
+   fpmodule.inl \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/fpe/nwfpe/xp.h)
+fpa11_cprt.o: fpa11_cprt.c \
+   fpa11.h \
+   fpopcode.h \
+   fpa11.inl \
+   fpmodule.h \
+   fpmodule.inl \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/fpe/nwfpe/xp.h)
+fpa11.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   fpsr.h \
+   milieu.h \
+   softfloat.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/fpe/nwfpe/xp.h)
+	@touch fpa11.h
+fpmodule.o: fpmodule.c \
+   fpa11.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   softfloat.h \
+   fpopcode.h \
+   fpmodule.h \
+   fpa11.inl \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/fpe/nwfpe/xp.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/debug/user.h)
+fpmodule.h: \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/32.h)
+	@touch fpmodule.h
+fpopcode.o: fpopcode.c \
+   fpa11.h \
+   softfloat.h \
+   fpopcode.h \
+   fpsr.h \
+   fpmodule.h \
+   fpmodule.inl \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/fpe/nwfpe/xp.h)
+fpopcode.h: \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/fpe/nwfpe/xp.h)
+	@touch fpopcode.h
+milieu.h: \
+   ARM-gcc.h
+	@touch milieu.h
+single_cpdo.o: single_cpdo.c \
+   fpa11.h \
+   softfloat.h \
+   fpopcode.h
+softfloat.o: softfloat.c \
+   fpa11.h \
+   softfloat-macros \
+   softfloat-specialize
+softfloat.h: \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/fpe/nwfpe/xp.h)
+	@touch softfloat.h
+.PRECIOUS:	fpa11.h \
+	fpmodule.h \
+	fpopcode.h \
+	milieu.h \
+	softfloat.h \
+

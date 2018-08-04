@@ -1,0 +1,15 @@
+# $Id: README,v 1.1 2007/06/22 20:24:26 lizhijie Exp $
+         README for State of PBX Program
+                     Li Zhijie, 2007.06.22
+
+话机编程的README文件
+
+状态切换
+    在DIALING状态发现拨号为“**”,就进入环境编程状态
+    
+    在PROGRAM状态，检查拨号是否与某个规则匹配，如果匹配就调用该规则的函数
+    
+    在PROGRAM状态，响应digit、timeout、onhook事件
+    
+    事件的影响由各个命令自己决定，各个命令返回的状态驱动状态机流转
+    

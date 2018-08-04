@@ -1,0 +1,169 @@
+zftape-buffers.o: zftape-buffers.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/zftape.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/vmalloc.h \
+   ../zftape/zftape-init.h \
+   ../zftape/zftape-eof.h \
+   ../zftape/zftape-ctl.h \
+   ../zftape/zftape-write.h \
+   ../zftape/zftape-read.h \
+   ../zftape/zftape-rw.h \
+   ../zftape/zftape-vtbl.h
+zftape-ctl.o: zftape-ctl.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/zftape.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   ../zftape/zftape-init.h \
+   ../zftape/zftape-eof.h \
+   ../zftape/zftape-ctl.h \
+   ../zftape/zftape-write.h \
+   ../zftape/zftape-read.h \
+   ../zftape/zftape-rw.h \
+   ../zftape/zftape-vtbl.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/zft/dflt/blk/sz.h)
+zftape-ctl.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ioctl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mtio.h \
+   ../zftape/zftape-rw.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/zftape/module.h)
+	@touch zftape-ctl.h
+zftape-eof.o: zftape-eof.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/zftape.h \
+   ../zftape/zftape-init.h \
+   ../zftape/zftape-rw.h \
+   ../zftape/zftape-eof.h
+zftape-eof.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ftape-header-segment.h \
+   ../zftape/zftape-buffers.h
+	@touch zftape-eof.h
+zftape-init.o: zftape-init.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/version.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/signal.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/major.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/kmod.h) \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kmod.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wrapper.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/smp_lock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/devfs_fs_kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/zftape.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   ../zftape/zftape-init.h \
+   ../zftape/zftape-read.h \
+   ../zftape/zftape-write.h \
+   ../zftape/zftape-ctl.h \
+   ../zftape/zftape-buffers.h \
+   ../zftape/zftape_syms.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/zft/compressor.h)
+zftape-init.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ftape-header-segment.h \
+   ../lowlevel/ftape-tracing.h \
+   ../lowlevel/ftape-ctl.h \
+   ../lowlevel/ftape-read.h \
+   ../lowlevel/ftape-write.h \
+   ../lowlevel/ftape-bsm.h \
+   ../lowlevel/ftape-io.h \
+   ../lowlevel/ftape-buffer.h \
+   ../lowlevel/ftape-format.h \
+   ../zftape/zftape-rw.h \
+   ../zftape/zftape-vtbl.h
+	@touch zftape-init.h
+zftape-read.o: zftape-read.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/zftape.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   ../zftape/zftape-init.h \
+   ../zftape/zftape-eof.h \
+   ../zftape/zftape-ctl.h \
+   ../zftape/zftape-write.h \
+   ../zftape/zftape-read.h \
+   ../zftape/zftape-rw.h \
+   ../zftape/zftape-vtbl.h
+zftape-read.h: \
+   ../lowlevel/ftape-read.h
+	@touch zftape-read.h
+zftape-rw.o: zftape-rw.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/zftape.h \
+   ../zftape/zftape-init.h \
+   ../zftape/zftape-eof.h \
+   ../zftape/zftape-ctl.h \
+   ../zftape/zftape-write.h \
+   ../zftape/zftape-read.h \
+   ../zftape/zftape-rw.h \
+   ../zftape/zftape-vtbl.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/zft/dflt/blk/sz.h)
+zftape-rw.h: \
+   ../zftape/zftape-buffers.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/zft/dflt/blk/sz.h)
+	@touch zftape-rw.h
+zftape_syms.o: zftape_syms.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/zftape.h \
+   ../zftape/zftape-init.h \
+   ../zftape/zftape-read.h \
+   ../zftape/zftape-buffers.h \
+   ../zftape/zftape-ctl.h
+zftape_syms.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h
+	@touch zftape_syms.h
+zftape-vtbl.o: zftape-vtbl.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/zftape.h \
+   ../zftape/zftape-init.h \
+   ../zftape/zftape-eof.h \
+   ../zftape/zftape-ctl.h \
+   ../zftape/zftape-write.h \
+   ../zftape/zftape-read.h \
+   ../zftape/zftape-rw.h \
+   ../zftape/zftape-vtbl.h
+zftape-vtbl.h: \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   ../lowlevel/ftape-tracing.h \
+   ../zftape/zftape-eof.h \
+   ../zftape/zftape-ctl.h \
+   ../zftape/zftape-rw.h
+	@touch zftape-vtbl.h
+zftape-write.o: zftape-write.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/mm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/zftape.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/segment.h \
+   ../zftape/zftape-init.h \
+   ../zftape/zftape-eof.h \
+   ../zftape/zftape-ctl.h \
+   ../zftape/zftape-write.h \
+   ../zftape/zftape-read.h \
+   ../zftape/zftape-rw.h \
+   ../zftape/zftape-vtbl.h
+.PRECIOUS:	zftape-ctl.h \
+	zftape-eof.h \
+	zftape-init.h \
+	zftape-read.h \
+	zftape-rw.h \
+	zftape_syms.h \
+	zftape-vtbl.h \
+

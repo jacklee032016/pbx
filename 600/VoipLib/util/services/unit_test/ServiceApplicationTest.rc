@@ -1,0 +1,35 @@
+#
+#   $Id: ServiceApplicationTest.rc,v 1.1.1.1 2006/11/29 09:28:02 lizhijie Exp $
+#
+H323Gatekeeper_Identifier:          myGkId
+
+#
+#
+H323Gatekeeper_EndpointIdentifier:  endpoint_id_
+
+#
+#
+H323Gatekeeper_RASAddress:  192.168.5.10:1719
+H323Gatekeeper_RASAddress:  192.168.5.11:1719
+H323Gatekeeper_RASAddress:  17190
+H323Gatekeeper_RASAddress:  17191
+H323Gatekeeper_RASAddress:  17192
+
+#
+#
+H323Gatekeeper_MCastRASAddress: 1718
+
+#
+#
+H323Gatekeeper_CallSignalAddress:   1720
+H323Gatekeeper_CallSignalAddress:   17200
+H323Gatekeeper_CallSignalAddress:   17201
+H323Gatekeeper_CallSignalAddress:   17202
+
+debugger
+
+pserver:    192.168.5.166:6005
+pserver:    192.168.5.166:6006
+pserver:    192.168.5.166:6007
+
+loglevel:   verbose

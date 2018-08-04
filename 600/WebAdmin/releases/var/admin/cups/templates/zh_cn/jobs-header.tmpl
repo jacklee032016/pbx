@@ -1,0 +1,15 @@
+<P>{?which_jobs=?<A
+HREF="{?printer_name=?jobs.cgi:{printer_uri_supported}}?which_jobs=completed"><IMG
+SRC="/cups/images/button-show-completed.gif" CLASS="button" ALT="显示已完成的作业"></A>
+<A HREF="{?printer_name=?jobs.cgi:{printer_uri_supported}}?which_jobs=all"><IMG
+SRC="/cups/images/button-show-all.gif" CLASS="button" ALT="显示全部作业">:{which_jobs=all?<A
+HREF="{?printer_name=?jobs.cgi:{printer_uri_supported}}?which_jobs=completed"><IMG
+SRC="/cups/images/button-show-completed.gif" CLASS="button" ALT="显示完成的作业"></A>
+<A HREF="{?printer_name=?jobs.cgi:{printer_uri_supported}}"><IMG
+SRC="/cups/images/button-show-active.gif" CLASS="button" ALT="显示当前作业">:<A
+HREF="{?printer_name=?jobs.cgi:{printer_uri_supported}}"><IMG
+SRC="/cups/images/button-show-active.gif" CLASS="button" ALT="显示当前作业"></A>
+<A HREF="{?printer_name=?jobs.cgi:{printer_uri_supported}}?which_jobs=all"><IMG
+SRC="/cups/images/button-show-all.gif" CLASS="button" ALT="显示全部作业">}}</A></P>
+
+<P ALIGN="CENTER">{total=0?无打印作业:打印作业 {#job_id} ，共{total} {?which_jobs=?active:{which_jobs=all?:completed}} job{total=1?:s}}.</P>

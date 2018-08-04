@@ -1,0 +1,80 @@
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%" SUMMARY="Administration Tasks">
+<TR><TD VALIGN="TOP" NOWRAP>
+
+<H2 CLASS="title">打印机</H2>
+
+<P>
+<A HREF="/cgi-bin/admin.cgi?op=add-printer"><IMG
+SRC="/cups/images/button-add-printer.gif" ALT="增加打印机" CLASS="button"></A>
+<A HREF="/cgi-bin/printers.cgi"><IMG SRC="/cups/images/button-manage-printers.gif"
+ALT="管理打印机" CLASS="button"></A>
+{have_samba?<A HREF="/cgi-bin/admin.cgi?op=export-samba"><IMG
+SRC="/cups/images/button-export-samba.gif" ALT="输出打印机到文件服务器"
+CLASS="button"></A>:}
+</P>
+
+{#device_uri=0?:<P><B>找到的新打印机:</B></P><UL>{[device_uri]
+<LI><A HREF="/cgi-bin/admin.cgi?op=add-printer&amp;{device_options}"><IMG
+SRC="/cups/images/button-add-this-printer.gif" ALT="增加此打印机" CLASS="button"
+ALIGN="MIDDLE"></A>
+{device_make_and_model} ({device_info})</LI>
+}</UL>}
+
+<!--
+<H2 CLASS="title">打印机组</H2>
+
+<P>
+<A HREF="/cgi-bin/admin.cgi?op=add-class"><IMG SRC="/cups/images/button-add-class.gif"
+ALT="Add Class" CLASS="button"></A>
+<A HREF="/cgi-bin/classes.cgi"><IMG SRC="/cups/images/button-manage-classes.gif"
+ALT="管理打印机组" CLASS="button"></A>
+</P>
+-->
+
+<H2 CLASS="title">打印作业</H2>
+
+<P>
+<A HREF="/cgi-bin/jobs.cgi"><IMG SRC="/cups/images/button-manage-jobs.gif" ALT="管理打印作业" CLASS="button"></A>
+</P>
+
+</TD><TD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD VALIGN="TOP">
+
+<H2 CLASS="title">服务器</H2>
+
+<P>
+<A HREF="/cgi-bin/admin.cgi?op=config-server"><IMG
+SRC="/cups/images/button-edit-configuration-file.gif" ALT="编辑配置文件" CLASS="button"></A>
+<A HREF="/cgi-bin/admin.cgi?op=log&file=access_log"><IMG
+SRC="/cups/images/button-view-access-log.gif" ALT="查看访问日志"
+CLASS="button"></A>
+<!--
+<A HREF="/cgi-bin/admin.cgi?op=log&file=error_log" TARGET="_blank"><IMG
+SRC="/cups/images/button-view-error-log.gif" ALT="查看错误日志"
+CLASS="button"></A>
+<A HREF="/cgi-bin/admin.cgi/log/page_log" TARGET="_blank"><IMG
+SRC="/cups/images/button-view-page-log.gif" ALT="查看页面日志"
+CLASS="button"></A>
+-->
+
+</P>
+
+{SETTINGS_ERROR?<P>{SETTINGS_MESSAGE}</P>
+<BLOCKQUOTE>{SETTINGS_ERROR}</BLOCKQUOTE>:
+
+<FORM METHOD="POST" ACTION="/cgi-bin/admin.cgi">
+
+<P><B>基本的服务器配置:</B></P>
+
+<P><INPUT TYPE="HIDDEN" NAME="OP" VALUE="config-server">
+<INPUT TYPE="CHECKBOX" NAME="REMOTE_PRINTERS" {?remote_printers}>显示与其他系统共享的打印机<BR>
+<INPUT TYPE="CHECKBOX" NAME="SHARE_PRINTERS" {?share_printers}>显示连接到此系统上发布的打印机<BR>
+<INPUT TYPE="CHECKBOX" NAME="REMOTE_ADMIN" {?remote_admin}>允许远程管理<BR>
+<INPUT TYPE="CHECKBOX" NAME="USER_CANCEL_ANY" {?user_cancel_any}>允许用户取消所有打印作业(非自己的)<BR>
+<INPUT TYPE="CHECKBOX" NAME="DEBUG_LOGGING" {?debug_logging}>保存调试信息以用于错误跟踪</P>
+
+<P><INPUT TYPE="IMAGE" SRC="/cups/images/button-change-settings.gif" ALT="修改配置"></P>
+
+</FORM>}
+
+</TD></TR>
+</TABLE>

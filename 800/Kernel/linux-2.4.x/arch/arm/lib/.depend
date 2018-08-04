@@ -1,0 +1,156 @@
+ashldi3.o: ashldi3.c \
+   gcclib.h
+ashrdi3.o: ashrdi3.c \
+   gcclib.h
+backtrace.o: backtrace.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/frame/pointer.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/32.h)
+changebit.o: changebit.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+clearbit.o: clearbit.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+copy_page.o: copy_page.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/constants.h
+csumipv6.o: csumipv6.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+csumpartialcopy.o: csumpartialcopy.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   csumpartialcopygeneric.S
+csumpartialcopyuser.o: csumpartialcopyuser.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/constants.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/32.h) \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/26.h) \
+   csumpartialcopygeneric.S
+csumpartial.o: csumpartial.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+delay.o: delay.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/delay.h
+ecard.o: ecard.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/26.h)
+findbit.o: findbit.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+floppydma.o: floppydma.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+getuser.o: getuser.S \
+   /works/isdn/kernel/linux-2.4.x/include/asm/constants.h
+io-acorn.o: io-acorn.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/26.h)
+io-readsb.o: io-readsb.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+io-readsl-armv3.o: io-readsl-armv3.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h
+io-readsl-armv4.o: io-readsl-armv4.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+io-readsw-armv3.o: io-readsw-armv3.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h
+io-readsw-armv4.o: io-readsw-armv4.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+io-shark.o: io-shark.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/io.h
+io-writesb.o: io-writesb.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+io-writesl.o: io-writesl.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+io-writesw-armv3.o: io-writesw-armv3.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h
+io-writesw-armv4.o: io-writesw-armv4.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+kbd.o: kbd.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kd.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/magic/sysrq.h)
+lib1funcs.o: lib1funcs.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/hardware.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/cpu/26.h)
+lshrdi3.o: lshrdi3.c \
+   gcclib.h
+memchr.o: memchr.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+memcpy.o: memcpy.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+memset.o: memset.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+memzero.o: memzero.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+muldi3.o: muldi3.c \
+   gcclib.h
+putuser.o: putuser.S \
+   /works/isdn/kernel/linux-2.4.x/include/asm/constants.h
+setbit.o: setbit.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+strchr.o: strchr.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+strncpy_from_user.o: strncpy_from_user.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/errno.h
+strnlen_user.o: strnlen_user.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/errno.h
+strrchr.o: strrchr.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+testchangebit.o: testchangebit.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+testclearbit.o: testclearbit.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+testsetbit.o: testsetbit.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+uaccess-armo.o: uaccess-armo.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h
+uaccess.o: uaccess.S \
+   /works/isdn/kernel/linux-2.4.x/include/linux/linkage.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/assembler.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/errno.h
+ucmpdi2.o: ucmpdi2.c \
+   gcclib.h
+udivdi3.o: udivdi3.c \
+   gcclib.h \
+   longlong.h

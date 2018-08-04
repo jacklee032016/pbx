@@ -1,0 +1,203 @@
+
+#include <AssistDevice.hxx>
+
+using namespace Vocal;
+
+string AssistDeviceException::getName( void ) const
+{
+    return "AssistDeviceException";
+}
+
+AssistDevice::	AssistDevice(char *devicename,Sptr < Fifo < Sptr < SipProxyEvent > > > sessionQ)
+	throw(AssistDeviceException &)
+	:myCallId(0),
+	callProcessingQueue(sessionQ)
+{
+	myFd = open(devicename, O_RDWR);
+	if (myFd < 0)
+	{
+		throw AssistDeviceException("failed in open device", __FILE__, devicename, NO_DEVICE );
+	}
+
+//	as_dsp_set_gain(myFd, U_LAW_CODE, GAIN_8_TIMES, GAIN_NO_CHANGE);
+	as_dsp_set_gain(myFd, U_LAW_CODE,  GAIN_NO_CHANGE, GAIN_8_TIMES);
+#if __WITH_SLIC__
+	as_device_t  state  = as_device_check_state( myFd, devicename);
+	if(state == AS_DEVICE_STATE_ONHOOK )
+		hookStateOffhook = false;
+	else
+		hookStateOffhook = true;
+#else
+	hookStateOffhook = false;
+#endif
+
+	myDeviceName = devicename;
+
+}
+
+
+AssistDevice::~AssistDevice()
+{
+	close(myFd);
+}
+
+void AssistDevice::provideDialToneStart()
+{
+	cpDebug(LOG_DEBUG, "***  Start dial tone on %s ***" ,myDeviceName);
+	deviceMutex.lock();
+	as_tone_play_dial(myFd);
+	deviceMutex.unlock();
+}
+
+
+void AssistDevice::provideDialToneStop()
+{
+	cpDebug(LOG_DEBUG, "***  Stop dial tone on %s ***", myDeviceName);
+	deviceMutex.lock();
+	as_tone_play_stop(myFd);
+	deviceMutex.unlock();
+}
+
+
+void AssistDevice::provideRingStart()
+{
+	cpDebug(LOG_DEBUG, "***  Start Ringing on %s ***" , myDeviceName );
+	deviceMutex.lock();
+	as_ring_start(myFd, myDeviceName);
+	deviceMutex.unlock();
+}
+
+
+void AssistDevice::provideRingStop()
+{
+	cpDebug(LOG_DEBUG, "***  Stop Ringing on %s ***" , myDeviceName );
+	deviceMutex.lock();
+	as_ring_stop(myFd, myDeviceName);
+	deviceMutex.unlock();
+}
+
+void AssistDevice::provideLocalRingbackStart()
+{
+	cpDebug(LOG_DEBUG, "***  Start local ringback on %s ***" ,myDeviceName);
+	deviceMutex.lock();
+	as_tone_play_ringback(myFd);
+	deviceMutex.unlock();
+}
+
+
+void AssistDevice::provideLocalRingbackStop()
+{
+	cpDebug(LOG_DEBUG, "***  Stop local ringback on %s ***" , myDeviceName);
+	deviceMutex.lock();
+	as_tone_play_stop( myFd);
+	deviceMutex.unlock();
+}
+
+
+void AssistDevice::provideBusyToneStart()
+{
+	cpDebug(LOG_DEBUG, "***  Start busy tone on %s ***" , myDeviceName);
+	deviceMutex.lock();
+	as_tone_play_busy( myFd);
+	deviceMutex.unlock();
+}
+
+
+void AssistDevice::provideBusyToneStop()
+{
+	cpDebug(LOG_DEBUG, "***  Stop busy tone on %s ***" ,myDeviceName);
+	deviceMutex.lock();
+	as_tone_play_stop( myFd);
+	deviceMutex.unlock();
+}
+
+
+void AssistDevice::provideFastBusyToneStart()
+{
+	cpDebug(LOG_DEBUG, "***  Start fast busy tone on %s ***" ,myDeviceName);
+	deviceMutex.lock();
+	//for now using regular busy tone
+	as_tone_play_busy(myFd);
+	deviceMutex.unlock();
+}
+
+
+void AssistDevice::provideFastBusyToneStop()
+{
+	cpDebug(LOG_DEBUG, "***  Stop fast busy tone on %s ***" ,myDeviceName);
+	deviceMutex.lock();
+	as_tone_play_stop( myFd);
+	deviceMutex.unlock();
+}
+
+
+void AssistDevice::provideCallWaitingBeepStart()
+{
+	cpDebug(LOG_DEBUG, "***  Start call waiting beep on %s ***" ,myDeviceName);
+	deviceMutex.lock();
+	as_tone_play_callwait(myFd);
+	deviceMutex.unlock();
+}
+
+
+void AssistDevice::provideCallWaitingBeepStop()
+{
+	cpDebug(LOG_DEBUG, "***  Stop call waiting beep on %s ***" ,myDeviceName);
+	deviceMutex.lock();
+	as_tone_play_stop(myFd);
+	deviceMutex.unlock();
+}
+
+/* send DTMF signal in the method of RFC2833 */
+void AssistDevice::provideDtmf(DeviceSignalType signal)
+{
+	char digit = ' ';
+	int dtmfEvent = 0;
+
+	switch( signal )
+	{
+		case DeviceSignalDigitStar: 
+			digit = '*';
+			dtmfEvent = 10;
+			break;
+		case DeviceSignalDigitHash:
+			digit = '#';
+			dtmfEvent = 11;
+			break;
+		case DeviceSignalDigit0:
+		case DeviceSignalDigit1:
+		case DeviceSignalDigit2:
+		case DeviceSignalDigit3:
+		case DeviceSignalDigit4:
+		case DeviceSignalDigit5:
+		case DeviceSignalDigit6:
+		case DeviceSignalDigit7:
+		case DeviceSignalDigit8:
+		case DeviceSignalDigit9:
+			digit = '0' + signal - DeviceSignalDigit0;
+			dtmfEvent = signal - DeviceSignalDigit0;
+			break;
+		default:
+			cpDebug(LOG_DEBUG, "Unknown DTMF Signal %d", signal );
+			return;
+	}
+
+	if( audioStack )
+	{
+		cpDebug(LOG_DEBUG, "DTMF %c sent out in RTP ", digit );
+		audioStack->transmitEvent( dtmfEvent );
+	}
+	else
+	{
+		cpDebug(LOG_DEBUG, "No audio stack existing to send DTMF event" );
+	}
+}
+
+
+void AssistDevice::provideCallInfo(string callerNum, string calleeNum, string reason)
+{
+	cpDebug(LOG_DEBUG, "Caller is '%s',\t\tCallee is '%s',\t\treason is '%s'\r\n" , 
+		callerNum.c_str(), calleeNum.c_str(), reason.c_str() );
+}
+
+

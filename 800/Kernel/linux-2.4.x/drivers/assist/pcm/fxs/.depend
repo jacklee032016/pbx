@@ -1,0 +1,8 @@
+as_fxs_device_init.o: as_fxs_device_init.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/pcm/include/as_fxs_common.h
+as_fxs_init.o: as_fxs_init.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/pcm/include/as_fxs_common.h
+as_fxs_isr.o: as_fxs_isr.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/pcm/include/as_fxs_common.h
+as_fxs_tiger.o: as_fxs_tiger.c \
+   /works/isdn/kernel/linux-2.4.x/drivers/assist/pcm/include/as_fxs_common.h

@@ -1,0 +1,1 @@
+#define CONFIG_EEPRO100 1

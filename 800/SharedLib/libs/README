@@ -1,0 +1,57 @@
+		
+		
+----------------------------------README for shared_lib/libs-------------------------------------
+				     						
+	说明
+		共享库程序，生成共享库文件libaslib.so
+	
+	内容
+		1). 写flash的程序 
+			libs/src/flash/flash.c
+		2). LED显示的程序 			----2006.02.15增加
+			libs/src/lcd/as_lcd.c
+		3). 烧录EEPROM 93LC66的程序      	----2005.11.30增加
+			libs/src/m93lc66/as_93lc66.c
+		4). 蜂鸣器的程序
+			libs/src/pbx/as_beep.c
+		5). 按钮的程序，用于恢复出厂默认配置
+			libs/src/pbx/as_button.c
+		6). 摘挂机检测的程序
+			libs/src/pbx/as_onoffhook.c
+		7). 串口通讯的程序
+			libs/src/pbx/as_pbx_cmd.c
+		8). GPIO通过138扩展进行LED显示的程序
+			libs/src/pbx/as_sn138.c
+		9). 控制继电器使其在PSTN和IP之间跳转的程序
+			libs/src/pbx/as_switch.c
+		10).看门狗的程序
+			libs/src/pbx/as_watchdog.c
+		11).语音录制的程序
+			libs/src/recorder/as_taper.c
+		12).串口程序
+			libs/src/uart/as_uart.c
+		13).读写序列号程序
+			libs/src/serialno/as_serialno.c
+	
+	编译条件
+		WITH_93LC66=no		关闭读写93LC66的程序	
+		
+	测试程序
+		1). 蜂鸣器的测试 		test_beep.c
+		2). 按钮的测试			test_button.c
+		3). FLASH写入读出序列号的测试	test_serialno.c
+		4). 摘挂机的测试		test_onoffhook.c
+		5). 读EEPROM 93LC66的测试	test_read_93lc66.c
+		6). 写EEPROM 93LC66的测试	test_write_93lc66.c
+		7). FLASH写入出厂信息的测试   	test_flash.c	
+		8). 通过138对LED的测试		test_sn138.c
+		9). 继电器转接的测试		test_switch.c
+		10).看门狗的测试		test_watchdog.c
+		11).日志的测试			test_utils.c		
+		
+		
+								wangwei, 2006.02.21	
+----------------------------------Chengdu R&D Center----------------------------------
+				    
+
+

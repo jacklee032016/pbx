@@ -1,0 +1,70 @@
+skge.o: skge.c /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h
+skaddr.o: skaddr.c /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h
+skgehwt.o: skgehwt.c /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h
+skgeinit.o: skgeinit.c /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h
+skgepnmi.o: skgepnmi.c /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h
+skgesirq.o: skgesirq.c /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h
+ski2c.o: ski2c.c /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h
+sklm80.o: sklm80.c /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h
+skqueue.o: skqueue.c /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h
+skrlmt.o: skrlmt.c /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h
+sktimer.o: sktimer.c /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h
+skvpd.o: skvpd.c /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h
+skxmac2.o: skxmac2.c /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h
+skcsum.o: skcsum.c /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h
+uboot_skb.o: uboot_skb.c /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h
+uboot_drv.o: uboot_drv.c /home/wangwei/123/u-boot/include/common.h \
+  /home/wangwei/123/u-boot/include/config.h \
+  /home/wangwei/123/u-boot/include/configs/ixdp425.h \
+  /home/wangwei/123/u-boot/include/cmd_confdefs.h \
+  /home/wangwei/123/u-boot/include/linux/bitops.h \
+  /home/wangwei/123/u-boot/include/asm/bitops.h \
+  /home/wangwei/123/u-boot/include/linux/types.h \
+  /home/wangwei/123/u-boot/include/linux/config.h \
+  /home/wangwei/123/u-boot/include/linux/posix_types.h \
+  /home/wangwei/123/u-boot/include/linux/stddef.h \
+  /home/wangwei/123/u-boot/include/asm/posix_types.h \
+  /home/wangwei/123/u-boot/include/asm/types.h \
+  /home/wangwei/123/u-boot/include/linux/string.h \
+  /home/wangwei/123/u-boot/include/asm/string.h \
+  /home/wangwei/123/u-boot/include/asm/ptrace.h \
+  /home/wangwei/123/u-boot/include/asm/proc/ptrace.h \
+  /arm-linux/lib/gcc-lib/arm-linux/3.3.2/include/stdarg.h \
+  /home/wangwei/123/u-boot/include/part.h \
+  /home/wangwei/123/u-boot/include/ide.h \
+  /home/wangwei/123/u-boot/include/flash.h \
+  /home/wangwei/123/u-boot/include/image.h \
+  /home/wangwei/123/u-boot/include/asm/u-boot.h \
+  /home/wangwei/123/u-boot/include/asm/global_data.h \
+  /home/wangwei/123/u-boot/include/asm/setup.h \
+  /home/wangwei/123/u-boot/include/asm/u-boot-arm.h

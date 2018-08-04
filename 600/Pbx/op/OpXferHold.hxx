@@ -1,0 +1,29 @@
+#ifndef OpXferHold_HXX
+#define OpXferHold_HXX
+/*
+ * $Id: OpXferHold.hxx,v 1.2 2007/03/02 04:19:28 lizhijie Exp $
+ */
+
+#include "UaOperator.hxx"
+#include <SipProxyEvent.hxx>
+
+
+namespace Vocal
+{
+
+class OpXferHold : public UaOperator
+{
+    public:
+        ///
+        OpXferHold();
+        ///
+        virtual ~OpXferHold();
+        ///
+        const char* const name() const;
+        ///
+        const Sptr < State > process( const Sptr < SipProxyEvent > event );
+};
+ 
+}
+
+#endif

@@ -1,0 +1,19 @@
+# $Id: README,v 1.2 2007/06/18 08:10:28 lizhijie Exp $
+
+                  README for STC Analog PBX project
+                           Li Zhijie 2007.04.07
+
+
+通过IXP4XX上传binary文件到STC单片机的流程
+    1、编译生成HEX格式的程序:使用程序hexbin2.exe
+    2、转换为binary格式的文件，文件的大小是link时实际显示的code的大小
+    转换时，指定二进制的起始地址为0X0000
+    指定文件的格式为Intel格式，而不是Motorola格式  
+    即：全部使用默认的选项  
+    3、上传到IXP4XX上，使用isp程序上传到STC单片机上
+
+build:
+    modify envs.bat
+    execute envs.bat initializing environments
+                               
+

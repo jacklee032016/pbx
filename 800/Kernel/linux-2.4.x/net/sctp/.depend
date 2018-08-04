@@ -1,0 +1,232 @@
+adler32.o: adler32.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h
+associola.o: associola.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/in.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h
+bind_addr.o: bind_addr.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/in.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/if_inet6.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sm.h
+command.o: command.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sm.h
+crc32c.o: crc32c.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h
+debug.o: debug.c \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h
+endpointola.o: endpointola.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/slab.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/in.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/random.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sm.h
+hashdriver.o: hashdriver.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sla1.h
+input.o: input.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/time.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/icmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/snmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipsec.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sm.h
+inqueue.o: inqueue.c \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sm.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/interrupt.h
+ipv6.o: ipv6.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/errno.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sockios.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/net.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/in.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/in6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipsec.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/icmpv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/random.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/protocol.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/tcp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ndisc.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/transp_v6.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/addrconf.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ip6_route.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/inet_common.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/inet_ecn.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/uaccess.h
+objcnt.o: objcnt.c \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h
+output.o: output.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/time.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/inet_ecn.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/icmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/tcp.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sm.h
+outqueue.o: outqueue.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h
+primitive.o: primitive.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/list.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/time.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sm.h
+proc.o: proc.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/semaphore.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/seq_file.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h
+protocol.o: protocol.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/module.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/netdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/inetdevice.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/protocol.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/addrconf.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/inet_common.h
+sla1.o: sla1.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/string.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sched.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/in.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sla1.h
+sm_make_chunk.o: sm_make_chunk.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/net.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/inet.h \
+   /works/isdn/kernel/linux-2.4.x/include/asm/scatterlist.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/random.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sm.h
+sm_sideeffect.o: sm_sideeffect.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sm.h
+sm_statefuns.o: sm_statefuns.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/net.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/inet.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/inet_ecn.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sm.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/structs.h
+sm_statetable.o: sm_statetable.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sm.h
+socket.o: socket.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/kernel.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/wait.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/time.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/fcntl.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/poll.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/init.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ip.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/icmp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/route.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/ipv6.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/inet_common.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/socket.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   $(wildcard /works/isdn/kernel/linux-2.4.x/include/config/ip/sctp/addip.h)
+ssnmap.o: ssnmap.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sm.h
+sysctl.o: sysctl.c \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/structs.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/sysctl.h
+transport.o: transport.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h
+tsnmap.o: tsnmap.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sm.h
+ulpevent.o: ulpevent.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/structs.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sm.h
+ulpqueue.o: ulpqueue.c \
+   /works/isdn/kernel/linux-2.4.x/include/linux/types.h \
+   /works/isdn/kernel/linux-2.4.x/include/linux/skbuff.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sock.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/structs.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sctp.h \
+   /works/isdn/kernel/linux-2.4.x/include/net/sctp/sm.h

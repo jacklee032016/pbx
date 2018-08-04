@@ -1,0 +1,1 @@
+#define CONFIG_ASSIST_BOARD_BOOL 1

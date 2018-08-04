@@ -1,0 +1,48 @@
+#!/bin/sh
+
+echo "Intel XScale IXP422, NPEs(Chengdu@Assistcn.com)"
+
+/bin/mount -t proc proc /proc
+
+# mount tmpfs file system into /tmp
+mount -t tmpfs -o size=12M tmpfs /tmp
+
+mkdir -p /tmp/log/boa
+touch    /tmp/log/boa/error_log
+touch    /tmp/log/boa/access_log
+
+touch 	 /var/run/ftpd.pid
+
+mkdir -p /tmp/dhcpd
+touch 	 /tmp/dhcpd/udhcpd.leases
+
+# /bin/ls /proc
+
+/bin/hostname IXP422
+
+/sbin/unlock /dev/mtd2
+mount -o remount,rw /dev/mtdblock2 / 
+
+touch /etc/ld.so.conf
+touch /etc/ld.so.cache
+
+
+/sbin/ifconfig lo 127.0.0.1
+/sbin/route add -net 127.0.0.0 netmask 255.255.255.0 lo
+
+/sbin/insmod /lib/modules/ixp400.o
+/sbin/insmod /lib/modules/ixp400_ethMii.o
+/sbin/insmod /lib/modules/ixp425_eth.o
+
+/sbin/network-setup
+
+echo "1" > /proc/sys/net/ipv4/ip_forward
+
+
+/usr/sbin/telnetd
+
+/usr/sbin/udhcpd &
+
+/usr/sbin/boa -c /etc/boa
+
+/usr/sbin/vsftpd &

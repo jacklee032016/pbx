@@ -1,0 +1,7 @@
+这个目录下是花生壳原始代码，只可以在PC机是运行
+
+测试的方式
+    make -f MakefileX86
+    updatednsip hphwebservice.oray.net 6060 assistcn assist
+    
+可以使用此目录下的代码调试认证阶段的加密    
