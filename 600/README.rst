@@ -1,5 +1,4 @@
 .. highlight:: rst
-
 ===============
 600 version PBX
 ===============
