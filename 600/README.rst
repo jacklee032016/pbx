@@ -1,16 +1,17 @@
 .. highlight:: rst
-===============
+
+================
 600 version PBX
-===============
+================
 
 Big-Endian ARM System(Intel ixp422-xscale chipsets)
 PTSN from independent C51 board with call audio switch matrix chips through PCM 2M bus;
 
 Contains:
 
----------
+--------
 Modules
----------
+--------
 
 ^^^^^
 ICE
@@ -126,4 +127,3 @@ STD LCD
 * LCD displayer for PBX based on STC C51 board;
 * Control LCD to display calling and configuration data;
 * Connect to ARM board through RS232 port;
-  
