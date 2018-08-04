@@ -1,7 +1,7 @@
 .. highlight:: rst
 
 ================
-600 version PBX
+PBX Version 600
 ================
 
 Big-Endian ARM System(Intel ixp422-xscale chipsets)
@@ -74,10 +74,11 @@ VoIP Library
   - SIP;
   - SDP;
   - RTP;
+
   
-^^^^^^
+^^^
 PBX
-^^^^^  
+^^^  
 
 * Calls, States, Operations, Events, and FSM(Finite State Machine);
 * Support VoIP;
@@ -88,6 +89,7 @@ PBX
    - Call Rule;
    - Signal control,
    - etc.
+
 
 ^^^^^^^^^
 WebAdmin
@@ -104,11 +106,11 @@ WebAdmin
   - Hardware Monitoring and Controlling;
   - PBX Management: 
   
-    = Extension Setup, Trunck Setup, Night Service,
-    = Alert, CDR, Recording, Black List;
-    = Call Forward, Ext Transfer,
-    = SIP Server configuration, Party Server,
-    = etc.
+    - Extension Setup, Trunck Setup, Night Service,
+    - Alert, CDR, Recording, Black List;
+    - Call Forward, Ext Transfer,
+    - SIP Server configuration, Party Server,
+    - etc.
     
      
 ^^^^^^^^
@@ -127,3 +129,4 @@ STD LCD
 * LCD displayer for PBX based on STC C51 board;
 * Control LCD to display calling and configuration data;
 * Connect to ARM board through RS232 port;
+  
