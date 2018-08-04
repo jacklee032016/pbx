@@ -1,0 +1,35 @@
+$Id: README,v 1.1.1.1 2006/11/29 18:55:32 lizhijie Exp $
+
+					AS600/AS800 公共模块列表REAME 
+					                    李志杰 2006.07.11
+
+公共模块列表
+    库模块
+            C库
+            Cap
+            Gsm
+            Pam
+            Upnp
+            Z
+            
+    程序模块
+            BusyBox
+            Boa 
+            E2FsProgs 
+            ReiserFsUtils 
+            FtpServer 
+            IpRoute2 
+            IpTables 
+            Lrz 
+            MtdUtils 
+            Ntp 
+            PortMap 
+            Pppd 
+            Ripd 
+            RpPPPoE 
+            STrace 
+            SysKLogd 
+            UnRar 
+            UpnpIGD    
+
+					

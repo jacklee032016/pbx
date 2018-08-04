@@ -1,0 +1,13 @@
+# $Id: readme,v 1.1 2007/01/18 07:36:06 lizhijie Exp $
+                      README
+                               Li Zhijie 2007.01.14
+
+增加此目录，保存在PC机上建立开放环境，需要安装的软件包、配置的环境说明及脚本
+
+这些程序均拷贝、安装到/arm-linux/bin目录下
+
+sharutils-4.6.3.tar.bz2
+     wifi驱动解码uudecode程序
+
+mtd-utils-1.0.0.tar.gz
+     创建JFFS2文件系统、并正确padding的工具

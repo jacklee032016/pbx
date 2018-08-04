@@ -1,0 +1,125 @@
+# Shell script
+# This script can be only executed one time when boot up
+# Li Zhijie  2005.01.04
+
+# Set to "C" locale so we can parse messages from commands
+LANG=C
+export LANG
+
+if [ -f /etc/mtab ] ; then
+	rm -rf /etc/mtab
+fi
+
+ln -s /proc/mounts /etc/mtab
+
+/sbin/hddisk.sh
+
+if [ ! -d /tmp/log/samba ] ; then
+	mkdir -p /tmp/log/samba
+fi
+
+# must before NETWORK setup 
+CONFIG_DATA=/etc/sys/data.conf
+if [ ! -f "$CONFIG_DATA" -o ! -r "$CONFIG_DATA" ] ; then
+	echo " Config Data Server Configuration file is not exist" >& 2
+else
+	. $CONFIG_DATA
+	if [ $RESET_FLAG = "FLASH" ]; then
+		echo " Reset Configration for Factory Default" >& 2
+		/usr/bin/restore_deft
+     	fi	
+fi
+
+#¡¡/usr/bin/get_mac_address
+
+#/sbin/route restore
+if [ -f /etc/tmp/route_script ]; then
+	/etc/tmp/route_script
+fi
+
+/sbin/network_setup
+
+
+mkdir -p /usr/adm
+mkdir -p /var/adm
+
+# /usr/sbin/iptables -P FORWARD DROP
+
+/bin/chown root /var/ftp/pub
+
+mkdir -p /var/spool/cron/crontabs/
+
+
+/usr/sbin/crond
+if [ ! -d "/var/spool/cron/crontabs/root" ]; then                 
+touch /var/spool/cron/crontabs/root
+fi
+echo 'root'>/var/spool/cron/crontabs/cron.update
+
+#ip_forward
+CONFIG_IP_FORWARD=/etc/sys/ip_forward
+PROC_IP_FORWARD=/proc/sys/net/ipv4/ip_forward
+if [ -f "CONFIG_IP_FORWARD" ] ; then
+	cat $CONFIG_IP_FORWARD > $PROC_IP_FORWARD
+fi
+
+#/usr/bin/auto_iptables &
+# iptables -P FORWARD ACCEPT
+#wait
+#iptables rule -filter
+# SAVE_IPTABLES_RULE=/etc/iptables/rule.save
+# SAVE_IPTABLES_RULE_NAT=/etc/iptables/rule_nat.save
+# if [ -f "$SAVE_IPTABLES_RULE" ] ; then
+#       /usr/sbin/iptables-restore $SAVE_IPTABLES_RULE
+# fi
+#iptables rule -nat
+# if [ -f "$SAVE_IPTABLES_RULE_NAT" ] ; then
+#        /usr/sbin/iptables-restore $SAVE_IPTABLES_RULE_NAT
+# fi
+
+#Check reset action Daemon.
+/usr/bin/renew
+
+#Check flag.if it not exist, get configuration files from FTP server.
+# it must running after network configuration
+if [ $RESET_FLAG = "TFTP" ]; then
+#	route add -net 172.0.0.0 netmask 255.0.0.0 gw 192.168.3.164
+	echo " Reset Configuration from $DATA_SERVER " >& 2
+	/usr/bin/restore_tftp -s $DATA_SERVER
+fi
+
+
+UPNP_FLAG=/etc/sys/upnpflag
+if [ -f "$UPNP_FLAG" ] ; then
+        /sbin/route add -net 239.0.0.0 netmask 255.0.0.0 eth1
+        if [ -f "$PPPOE_FLAG" ] ; then
+                /usr/sbin/upnpd ppp0 eth1
+        else
+                /usr/sbin/upnpd eth0 eth1
+        fi
+fi
+
+#date from NTP server 
+if [ -f /etc/sys/locale.conf ] ; then
+	. /etc/sys/locale.conf
+	echo "Time Zone : $TZ"
+	export TZ
+	if [ $SYS_TIME_MODE = "NTP" ]; then
+		echo "Update System Time from NTP Server $NTP_SERVER" >& 2
+		/bin/ntpdate $NTP_SERVER &
+	fi
+fi
+
+/sbin/camera.sh
+
+#show the state of process
+# ./var/admin/cgi-bin/lcd.cgi
+
+echo "LCD Monitor"
+insmod pl2303
+/usr/bin/lcdd &
+
+/sbin/cdrom.sh
+
+/sbin/pbx_setup
+

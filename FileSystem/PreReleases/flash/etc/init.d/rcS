@@ -1,0 +1,73 @@
+#!/bin/sh
+
+echo "Starting ROOT File System..."
+
+DISK_ENABLE=NO
+
+start_flash()
+{
+	echo "USB and HD Disk not found. Flash Substitute."
+	. /etc/init.d/rcS0
+	exit 1
+}
+
+start_disk()
+{
+	echo "Startup Disk"
+	cd /
+	. /etc/init.d/rcS
+}
+
+start_hd_disk()
+{
+	mount -t reiserfs /dev/hda1 /mnt > /dev/null 2>&1
+	
+	if [ $? -ne 0 ] ; then
+		mount -t reiserfs /dev/hdc1 /mnt > /dev/null 2>&1
+	fi
+		
+	if [ $? -ne 0 ] ; then
+		start_flash
+	else
+		echo "HD Disk Enabled"
+		
+		cd /mnt
+		pivot_root . mnt > /dev/null 2>&1
+		
+		if [ $? -ne 0 ] ; then
+			echo "No root system is found on HD Disk, although it is formated correctly"
+			cd /
+			umount /mnt
+			start_flash
+		else	
+			start_disk
+		fi	
+	fi
+}
+
+/bin/mount -t proc proc /proc
+
+for i in 1 2 3
+do
+	sleep 2
+	mount -t ext3 /dev/sda1 /mnt > /dev/null 2>&1
+	[ $? -eq 0 ] && break
+done
+
+if [ $? -ne 0 ] ; then
+	start_hd_disk
+else
+	echo "USB Disk Enabled"
+
+	cd /mnt
+	pivot_root . mnt > /dev/null 2>&1
+	
+	if [ $? -ne 0 ] ; then
+		echo "No root system is found on USB Disk, although it is formated correctly"
+		cd /
+		umount /mnt
+		start_hd_disk
+	else
+		start_disk		
+	fi
+fi

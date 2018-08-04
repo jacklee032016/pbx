@@ -1,0 +1,2 @@
+/sbin/tc qdisc del dev eth0 root handle 1:0
+

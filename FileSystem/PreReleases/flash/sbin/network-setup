@@ -1,0 +1,32 @@
+# Shell script to config static IP address for both eth0 and eth1
+# and other operations which is response with network configuration
+# This script can be executed multiple time after boot up
+# Task of this script : 1. config network device
+# 2. write new configuration files with newly activated network config
+# 3. stop and restart all services that need startup
+# Li Zhijie  2005.01.04
+
+IFCONFIG=/sbin/ifconfig
+
+# Set to "C" locale so we can parse messages from commands
+LANG=C
+export LANG
+
+/sbin/wan.sh
+
+/sbin/lan.sh
+
+/bin/hostname IXP422
+
+. /etc/sys/ifcfg-eth0
+if [ $IPPROTO = "PPPOE" ]; then
+	WAN_PORT=ppp0
+else
+	WAN_PORT=eth0
+fi
+
+. /etc/sys/ifcfg-eth1
+
+echo " Default MASQURADE is enabled on $WAN_PORT for network of $NETWORK/$NETMASK" >& 2
+/usr/sbin/iptables  -t nat -A POSTROUTING  -s $NETWORK/$NETMASK -o $WAN_PORT -j MASQUERADE &
+

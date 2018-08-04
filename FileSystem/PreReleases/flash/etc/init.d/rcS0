@@ -1,0 +1,54 @@
+#!/bin/sh
+
+echo "Intel XScale IXP422, NPEs(Chengdu@Assistcn.com)"
+
+if [ ! -f /proc/mounts ] ; then
+	/bin/mount -t proc proc /proc
+fi
+
+/sbin/unlock /dev/mtd2
+mount -o remount,rw /dev/mtdblock2 / 
+
+/bin/mount -t usbfs usb /proc/bus/usb
+
+# mount tmpfs file system into /tmp
+mount -t tmpfs -o size=48M tmpfs /tmp
+
+if [ ! -f /etc/mtab ] ; then
+	ln -s /proc/mounts /etc/mtab
+fi
+
+mkdir -p /tmp/log/boa
+touch    /tmp/log/boa/error_log
+touch    /tmp/log/boa/access_log
+
+mkdir -p /tmp/dhcpd
+touch 	 /tmp/dhcpd/udhcpd.leases
+
+# /bin/ls /proc
+
+/bin/hostname IXP422
+
+touch /etc/ld.so.conf
+touch /etc/ld.so.cache
+
+
+/sbin/ifconfig lo 127.0.0.1
+/sbin/route add -net 127.0.0.0 netmask 255.255.255.0 lo
+
+/sbin/insmod /lib/modules/ixp400.o
+/sbin/insmod /lib/modules/ixp400_ethMii.o
+/sbin/insmod /lib/modules/ixp400_eth.o
+
+echo "1" > /proc/sys/net/ipv4/ip_forward
+echo "0" > /proc/sys/net/ipv4/route/min_delay
+
+# /sbin/udhcpc -h `hostname` -i eth1
+
+/sbin/network-setup
+
+/usr/sbin/telnetd
+
+#/usr/sbin/udhcpd &
+
+boa -f /etc/boa/boa.conf

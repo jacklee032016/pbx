@@ -1,0 +1,45 @@
+# $Id: readme,v 1.6 2007/01/09 18:15:51 lizhijie Exp $
+# 
+                    README for Flash根文件系统
+                                 李志杰 2006.12.03
+2007.01.10
+      add reiserfs utils and ext2fs utils in order to format 
+      hd disk into reiserfs and U disk into ext3 file syetem.
+
+
+模块列表：六个模块
+      flash_releases.tar.gz
+      SharedLib
+      WebAdmin
+      busybox
+      pppd
+      ep_pppoe
+      
+
+flash_releases.tar.gz
+	包含：
+	     libc（无stdc++）
+	     lrz/lsz
+	     pppoe
+	     必要的jffs2工具(lock、unlock和eraseall)
+
+busybox模块
+    重新专门为Flash文件系统编译的busybox模块
+    加载文件系统的脚本需要sleep命令
+
+2006.12.04 
+    以上两个模块安装后，空间使用为73%，基本满足使用
+    
+
+pppd模块和pppoe模块
+    需要busybox支持uname命令和test命令
+    两个模块都需要动态编译
+
+boa模块
+    boa模块需要单独编译，使用旧的IP地址指定方式；其用户的验证需要libboa_pwd库，
+    而不能使用libc的用户和口令管理函数库
+
+wizard模块
+
+共享库模块
+	     

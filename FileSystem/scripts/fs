@@ -1,0 +1,525 @@
+#/bin/sh
+# 创建CompactFlash卡文件系统的脚本
+
+CFS_VER='$Id: fs,v 1.2 2007/02/07 21:05:20 lizhijie Exp $'
+CFS_NAME="fs"
+RELEASES_DATE=`date +%F`
+RELEASES_HOME=`pwd`
+RELEASES_ROOT=$RELEASES_HOME/releases
+export RELEASES_ROOT
+PACK_FS_MINI=fs_mini.tar.gz
+MOD_FS_MINI=rel_mini
+VER_FS=etc/version.info
+ARCH="ARCH=arm"
+TARGET=arm
+DRIVER="pcm"
+DIR_WORK="$RELEASES_ROOT  $MOD_FS_MINI pppd rp-pppoe iptables vsftpd webadmin drivers shared_lib pbx"
+DIR_ALL="boa busybox drivers e2fsprogs ICE iptables libpam libupnp ixp_releases \
+ kernel linux-igd lrz misc mtd-utils pbx portmap pppd ripd rp-pppoe \
+ strace telnetd uartd u-boot voips vsftpd webadmin wizard WLAN zap zlib \
+ libpwdb libcap gsmlib shared_lib sip_server sysklogd vocal"
+ 
+echo
+echo "$CFS_NAME: Create CF FileSystem ($CFS_VER)"
+echo
+
+usage()
+{
+	echo "usage: $CFS_NAME [MODULE] ... [ARCH] [DRIVER] [clean] [d] [tag|untag]"
+	echo "       MODULE: anyone of boa sysklogd pppoe nat ftp webadmin web shared_lib pbx"
+	echo "       ARCH: either  arm or i686, arm is the default"
+	echo "       DRIVER: either pcm or slic, pcm is the default"
+	echo "       clean: delete working directories only, do not build"
+	echo "       d: debug mode, do not delete working directories"
+	echo "       tag|untag: add|remove a tag"
+	echo
+	echo
+	echo examples:
+	echo "      $CFS_NAME                    : create all for arm release"
+	echo "      $CFS_NAME i686               : create all for i686 release"
+	echo "      $CFS_NAME pppoe              : create pppd and rp-pppoe for arm release"
+	echo "      $CFS_NAME pppoe nat          : create pppd rp-pppoe and nat  for arm release"
+	echo "      $CFS_NAME webadmin           : create module webadmin for arm release"
+	echo "      $CFS_NAME web                : create module webadmin nat pppoe ftp for arm release"
+	echo "      $CFS_NAME web i686           : create module webadmin nat pppoe ftp for i686 release"
+	echo "      $CFS_NAME pbx                : create module pbx uartd drivers for arm release"
+	echo "      $CFS_NAME pbx i686           : create module pbx uartd drivers for i686 release"
+}
+
+dealtag()
+{
+			echo :::::: $TAG_ON in all modules ::::::
+			SURE="n"
+			while [ "$SURE" != "y" ]; do
+			echo "give me a TAG first"
+			read TAG
+			echo "$TAG_ON $TAG, are you sure(y/n)?"
+			read SURE
+			[ -z "$SURE" ] && SURE="y"
+			done
+			if [ -z "$TAG" ]; then echo "Error. TAG is null"; exit; fi
+			echo :::::: checkout all modules ::::::
+			[ -n "$DEBUG" ] && echo "cvs  co $DIR_ALL"
+			cvs -Q co $DIR_ALL
+			if [ $? -eq 0 ]; then echo OK.; else echo Error; exit; fi
+			echo :::::: $TAG_ON all modules ::::::
+			[ "$TAG_ON" = "untag" ] && TAGOPT="-d"
+			if [ -n "$DEBUG" ]; then echo "cvs  tag $TAGOPT $TAG"; fi
+			cvs -Q tag $TAGOPT $TAG
+			if [ $? -eq 0 ]; then echo OK.; else echo Error; exit; fi
+			if [ -z "$DEBUG" ]; then
+				echo :::::: remove all working directories ::::::
+				rm -rf $DIR_ALL
+			fi
+			echo :::::: $TAG_ON $TAG  OK. ::::::
+}
+
+
+	while [ $# -gt 0 ]; do
+		case $1 in
+		boa) MOD_BOA=boa
+			SEL=$SEL"_boa"
+			shift
+			;;
+		sysklogd) MOD_SYSKLOGD=sysklogd
+			SEL=$SEL"_sysklogd"
+			shift
+			;;
+		pppoe) MOD_PPPD=pppd
+			MOD_PPPOE=rp-pppoe
+			SEL=$SEL"_pppoe"
+			shift
+			;;
+		nat)	MOD_NAT=iptables
+			SEL=$SEL"_nat"
+			shift
+			;;
+		ftp)	MOD_FTP=vsftpd
+			SEL=$SEL"_ftp"
+			shift
+			;;
+		webadmin) MOD_WEBADMIN=webadmin
+			SEL=$SEL"_webadmin"
+			shift
+			;;
+		web)	MOD_WEBADMIN=webadmin
+			MOD_NAT=iptables
+			MOD_PPPD=pppd
+			MOD_PPPOE=rp-pppoe
+			MOD_FTP=vsftpd
+			SEL=$SEL"_web"
+			shift
+			;;
+		shared_lib) MOD_SHRLIB=shared_lib
+			MOD_DRIVERS=drivers
+			SEL=$SEL"_drivers"
+			shift
+			;;
+		pbx)	MOD_PBX=pbx
+			MOD_DRIVERS=drivers
+			MOD_SHRLIB=shared_lib
+			SEL=$SEL"_pbx"
+			shift
+			;;
+		i686)	ARCH=""
+			TARGET=i686
+			shift
+			;;
+		arm)	TARGET=arm
+			shift
+			;;
+		pcm)	DRIVER="pcm"
+			MOD_DRIVERS=drivers
+			shift
+			;;
+		slic)	DRIVER="slic"
+			MOD_DRIVERS=drivers
+			shift
+			;;
+		tag)	TAG_ON=tag
+			shift
+			;;
+		untag) TAG_ON=untag
+			shift
+			;;
+		clean) echo :::::: remove working directory ::::::
+			rm -rf $DIR_WORK
+			exit
+			;;
+		d)	DEBUG=d
+			shift
+			;;
+		-h|--help)	usage
+			exit
+			;;
+		*)	echo
+			echo  "*** wrong opt: $1 ***"
+			echo
+			usage
+			exit
+			;;
+		esac
+	done
+
+if [ -z "$SEL"  ]; then
+	SEL="_all"
+	MOD_BOA=boa
+	MOD_SYSKLOGD=sysklogd
+	MOD_PPPD=pppd
+	MOD_PPPOE=rp-pppoe
+	MOD_NAT=iptables
+	MOD_FTP=vsftpd
+	MOD_WEBADMIN=webadmin
+	MOD_SHRLIB=shared_lib
+	MOD_PBX=pbx
+	MOD_DRIVERS=drivers
+fi
+
+if [ -n "$TAG_ON" ]; then
+	dealtag
+	exit
+fi
+
+echo "please give a release TAG: (Enter = no tag )"
+read TAG
+RELEASES_TAG=$TAG
+if [ -n "$TAG" ]; then TAG="-r $TAG"; fi
+if [ -z "$RELEASES_TAG" ]; then 
+	RELEASES_TAG="exp"
+	DISP_TAG=$RELEASES_TAG
+else
+	LEN=`expr  length "$RELEASES_TAG"`
+	TOKEN=`expr index "$RELEASES_TAG" "_"`
+	SUBLEN=`expr "$TOKEN" - 1`
+	TAG0=`expr substr "$RELEASES_TAG" 1 "$SUBLEN"`
+	SUBLEN=`expr "$LEN" - "$TOKEN"`
+	TOKEN=`expr "$TOKEN" + 1`
+	TAG1=`expr substr "$RELEASES_TAG" "$TOKEN" "$SUBLEN"`
+	LEN=`expr  length "$TAG1"`
+	TOKEN=`expr index "$TAG1" "_"`
+	SUBLEN=`expr "$TOKEN" - 1`
+	SUBLEN2=`expr "$LEN" - "$TOKEN"`
+	TOKEN=`expr "$TOKEN" + 1`
+	TAG2=`expr substr "$TAG1" "$TOKEN" "$SUBLEN2"`
+	TAG1=`expr substr "$TAG1" 1 "$SUBLEN"`
+	DISP_TAG="$TAG0 $TAG1.$TAG2"
+	EDITION="EDITION=release"
+fi
+PACK_FS=fs$SEL-$RELEASES_TAG-$RELEASES_DATE-$DRIVER.$TARGET.tar.gz
+
+checkout()
+{
+	MODULE=$1
+	if [ -z $MODULE ]; then :
+	else 
+		MOD_DIR=$MODULE
+
+		if [ -d $MOD_DIR -o -f $MOD_DIR ]; then
+			echo :::::: Module $MOD_DIR existed ::::::
+			echo Ignore.
+		else
+			echo :::::: Check out $MOD_DIR ::::::
+			RTAG=$TAG
+#			[ "$MOD_DIR" = "$MOD_FS_MINI/$PACK_FS_MINI" ] && RTAG=""
+			if [ -n "$DEBUG" ]; then echo "cvs co $RTAG $MODULE"
+			fi
+			cvs -Q co $RTAG $MODULE
+			if [ $? -eq 0 ]; then 
+				echo OK.
+			else 
+				echo Error.
+				return 1
+#				exit
+			fi
+		fi
+	fi
+	return 0
+}
+
+build()
+{
+	MODULE=$1
+	if [ -z $MODULE ]; then :
+	else 
+	cd $RELEASES_HOME
+	shift
+	echo :::::: Build $MODULE ::::::
+	cd $MODULE
+	if [ -n "$DEBUG" ]; then
+	echo make $ARCH $EDITION $*
+	fi
+	make $ARCH $EDITION $*  1>/dev/null 2>&1
+	if [ $? -eq 0 ]; then echo OK.;else echo Error.;exit; fi
+	echo :::::: Install $MODULE ::::::
+	if [ -n "$DEBUG" ]; then
+	echo make install $ARCH $*
+	fi
+	find . -name "*.tar" -exec rm -f {} \;
+	make  install $ARCH $* 1>/dev/null 2>&1
+	if [ -n "$DEBUG" ]; then
+	tar xvf assist*.tar -C $RELEASES_ROOT
+	else
+	tar xf assist*.tar -C $RELEASES_ROOT
+	fi
+	if [ $? -eq 0 ]; then echo OK.;else echo Error.;exit; fi
+	cd $RELEASES_HOME
+	fi
+}
+
+install_drivers()
+{
+	if [ $# -lt 2 ]; then echo "drivers build Error."; exit; fi
+	MODULE=$1
+	TGT=$2
+	cd $MODULE
+	DRI_MISC=misc/src
+	DRI_Z=zarlink/src
+	CURR_DIR=`pwd`
+	echo :::::: Build $MODULE ::::::
+	if [ "$TGT" = "arm" ]; then
+		DRI_SUB="$DRIVER $DRI_MISC $DRI_Z"
+	else
+		if [ "$DRIVER" != "slic" ]; then echo "Error: ARCH=$TGT DRIVER=$DRIVER"; exit; fi
+		DRI_SUB="$DRIVER"
+	fi
+
+	for i in $DRI_SUB ; do
+		echo :::::: build $i ::::::
+		cd $i
+		make $ARCH 1>/dev/null 2>&1
+		if [ $? -eq 0 ]; then echo OK.;else echo Error.;exit; fi
+		cd $CURR_DIR
+	done
+	
+	for i in $DRI_SUB; do
+		echo :::::: install $i ::::::
+		cd $i
+		find . -name "*.gz" -exec rm -f {} \;
+		make install $ARCH 1>/dev/null 2>&1
+		if [ -n "$DEBUG" ]; then
+		tar zxvf assist*.tar.gz -C $RELEASES_ROOT
+		else
+		tar zxf assist*.tar.gz -C $RELEASES_ROOT
+		fi
+		if [ $? -eq 0 ]; then echo OK.;else echo Error.;exit; fi
+		cd $CURR_DIR
+	done
+	cd $RELEASES_HOME
+}
+
+ver()
+{
+	cd $RELEASES_HOME
+	MODULE=$1
+	if [ -d "$MODULE" ]; then
+	echo :::::: create version info of module $MODULE ::::::
+	cd $MODULE
+	if [ "$MODULE" = pbx ]; then
+		VFILE=`find . -name assist_version.h`
+	else
+		VFILE=`find . -name as_version.h`
+	fi
+	if [ -z "$VFILE" ]; then echo "Error: No version info found in module $MODULE"; exit; fi
+
+	V1=`grep AS_VERSION_MAJOR "$VFILE"`
+	V2=`grep AS_VERSION_MINOR "$VFILE"`
+	V3=`grep AS_VERSION_RELEASE "$VFILE"`
+	V4=`grep AS_VERSION_MODIFY "$VFILE"`
+	VINDEX=`expr index "$V1" '"'`
+	VINDEX=`expr "$VINDEX" + 1`
+	V1=`expr substr "$V1" "$VINDEX" 2`
+	VINDEX=`expr index "$V2" '"'`
+	VINDEX=`expr "$VINDEX" + 1`
+	V2=`expr substr "$V2" "$VINDEX" 1`
+	VINDEX=`expr index "$V3" '"'`
+	VINDEX=`expr "$VINDEX" + 1`
+	V3=`expr substr "$V3" "$VINDEX" 2`
+	VINDEX=`expr index "$V4" '"'`
+	VINDEX=`expr "$VINDEX" + 1`
+	V4=`expr substr "$V4" "$VINDEX" 2`
+	VNAME=`basename $MODULE`
+	VTMP=$LANG
+	LANG=en_US.UTF-8
+	VDATE=`date`
+	LANG=$VTMP
+	
+	echo "$VNAME (version: $V1.$V2.$V3-$V4 $VDATE)" >> $RELEASES_ROOT/$VER_FS
+
+	if [ $? -eq 0 ]; then echo OK.;else echo Error.;exit; fi
+	cd $RELEASES_HOME
+	fi
+}
+
+echo "############################################################"
+echo "STEP 1 : Check out MODULES ......"
+echo "############################################################"
+echo
+if [ $TARGET = "i686" ]; then
+	echo "build $TARGET release, we do not check out mini fs for 422"
+else
+	checkout $MOD_FS_MINI/$PACK_FS_MINI
+fi
+
+checkout $MOD_BOA
+if [ $? -ne 0 ]; then  unset MOD_BOA; fi
+
+checkout $MOD_SYSKLOGD
+if [ $? -ne 0 ]; then  unset MOD_SYSKLOGD; fi
+
+checkout $MOD_PPPD
+if [ $? -ne 0 ]; then  unset MOD_PPPD; fi
+
+checkout $MOD_PPPOE
+if [ $? -ne 0 ]; then unset MOD_PPPOE; fi
+
+checkout $MOD_NAT
+if [ $? -ne 0 ]; then unset MOD_NAT; fi
+
+checkout $MOD_FTP
+if [ $? -ne 0 ]; then unset MOD_FTP; fi
+
+checkout $MOD_WEBADMIN
+if [ $? -ne 0 ]; then unset MOD_WEBADMIN; fi
+
+checkout $MOD_DRIVERS
+if [ $? -ne 0 ]; then unset MOD_DRIVERS; fi
+
+checkout $MOD_SHRLIB
+if [ $? -ne 0 ]; then unset MOD_SHRLIB; fi
+
+checkout $MOD_PBX
+if [ $? -ne 0 ]; then unset MOD_PBX; fi
+
+echo
+echo End of STEP 1
+echo
+
+
+echo "############################################################"
+echo "STEP 2 : Prepare RELEASES ROOT ......"
+echo "############################################################"
+echo
+echo :::::: Creating releases_root: $RELEASES_ROOT ::::::
+if [ -d $RELEASES_ROOT ]; then rm -rf $RELEASES_ROOT; fi
+mkdir -p $RELEASES_ROOT
+if [ $? -eq 0 ]; then echo OK.;else echo Error.;exit; fi
+
+if [ "$TARGET" = "arm" ]; then
+	echo :::::: Extract files from $MOD_FS_MINI/$PACK_FS_MINI ::::::
+	tar zxf $MOD_FS_MINI/$PACK_FS_MINI -C $RELEASES_ROOT
+	if [ $? -eq 0 ]; then echo OK.;else echo Error.;exit; fi
+fi
+
+# add version info of components
+#echo :::::: Creating version info profile $RELEASES_ROOT/$VER_FS ::::::
+#[ -f $RELEASES_ROOT/$VER_FS ] && rm -f  $RELEASES_ROOT/$VER_FS
+#touch $RELEASES_ROOT/$VER_FS
+#if [ $? -eq 0 ]; then echo OK.;else echo Error.;exit; fi
+
+echo
+echo End of STEP 2
+echo
+
+
+echo "############################################################"
+echo "STEP 3 : Build and Install packages..."
+echo "############################################################"
+echo
+cd $RELEASES_HOME
+
+if [ -z $MOD_BOA ]; then :
+else build $MOD_BOA
+fi
+
+if [ -z $MOD_SYSKLOGD ]; then :
+else build $MOD_SYSKLOGD
+fi
+
+#echo "**********  Build and Install pppd...  *********"
+
+if [ -z $MOD_PPPD ]; then :
+else build $MOD_PPPD
+fi
+
+#echo "**********  Build and Install pppoe...  *********"
+if [ -z $MOD_PPPOE ]; then :
+else build $MOD_PPPOE
+fi
+
+#echo "**********  Build and Install NAT...  *********"
+if [ -z $MOD_NAT ]; then :
+else build $MOD_NAT
+fi
+
+#echo "**********  Build and Install ftpd...  *********"
+if [ -z $MOD_FTP ]; then :
+else build $MOD_FTP
+fi
+
+#echo "**********  Build and Install webadmin...  *********"
+if [ -z $MOD_WEBADMIN ]; then :
+else 
+	build $MOD_WEBADMIN
+#	ver $MOD_WEBADMIN
+fi
+
+#echo "**********   Install drivers...  *********"
+if [ -z $MOD_DRIVERS ]; then :
+else install_drivers  $MOD_DRIVERS $TARGET
+fi
+
+#echo "**********  Build and Install uart...  *********"
+if [ -z $MOD_SHRLIB ]; then :
+else 
+	build $MOD_SHRLIB/programs
+#	ver $MOD_SHRLIB/programs/src/recorder
+#	ver $MOD_SHRLIB/programs/src/selftest
+#	ver $MOD_SHRLIB/programs/src/uartd
+fi
+
+#echo "**********  Build and Install pbx...  *********"
+if [ -z $MOD_PBX ]; then :
+else 
+	build $MOD_PBX
+#	ver $MOD_PBX
+fi
+
+echo
+echo End of STEP 3
+echo	
+
+
+echo "############################################################"
+echo "STEP 4 : Create CF filesystem ..."
+echo "############################################################"
+echo
+echo :::::: Create CF release ::::::
+cd $RELEASES_ROOT
+find  . -name \CVS -exec rm -rf {} \; 1>/dev/null 2>&1
+find . -name "*setup" -exec chmod 755 {} \; 1>/dev/null 2>&1
+find . -name "*.script" -exec chmod 755 {} \; 1>/dev/null 2>&1
+if [ "$TARGET" = "arm" ]; then
+FS_VER_TAG="Assist Chengdu  Version $DISP_TAG build $RELEASES_DATE"
+echo "$FS_VER_TAG" > $RELEASES_ROOT/$VER_FS
+fi
+tar zcf $RELEASES_HOME/$PACK_FS *
+if [ $? -eq 0 ]; then echo OK.;else echo Error.;exit; fi 
+cd $RELEASES_HOME
+
+if [ -z "$DEBUG" ]; then
+echo :::::: Delete work directories ::::::
+cd $RELEASES_HOME
+echo delete $RELEASES_ROOT  $MOD_FS_MINI $MOD_BOA $MOD_SYSKLOGD $MOD_PPPD $MOD_PPPOE $MOD_NAT $MOD_FTP $MOD_WEBADMIN $MOD_SHRLIB $MOD_PBX $MOD_DRIVERS
+rm -r -f $RELEASES_ROOT  $MOD_FS_MINI $MOD_BOA $MOD_SYSKLOGD $MOD_PPPD $MOD_PPPOE $MOD_NAT $MOD_FTP $MOD_WEBADMIN $MOD_SHRLIB $MOD_PBX $MOD_DRIVERS
+if [ $? -eq 0 ]; then echo OK.;else echo Error.;exit; fi 
+fi
+
+echo
+echo "End of STEP 4"
+echo
+echo "::::::::::::::::::::::::::::::::::::"
+echo ":             Enjoy it             :"
+echo "::::::::::::::::::::::::::::::::::::"
+
+mkisofs -o cvs_backup_02_02_07.iso -J -r -v -V 2007_02_07 backup_2007_02_07
+

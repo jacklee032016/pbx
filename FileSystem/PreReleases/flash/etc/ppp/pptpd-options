@@ -1,0 +1,29 @@
+# $Id: pptpd-options,v 1.1 2006/12/22 04:02:15 lizhijie Exp $
+# pptpd程序使用的pppd及协议的配置
+# 李志杰，2006.12.08
+# 
+auth
+lock
+debug
+proxyarp
+name assistVpnServer
+multilink
+refuse-pap
+refuse-chap
+refuse-mschap
+refuse-eap
+# refuse-mschap-v2
+require-mschap-v2
+# Require MPPE 128-bit encryption
+# (note that MPPE requires the use of MSCHAP-V2 during authentication)
+# require-mppe-128
+# nomppe-40
+# -mppe-128
+
+require-mppe
+ms-wins 192.168.1.2 
+ms-dns 192.168.1.2
+dump
+logfile /tmp/log/pptpd.log
+# logfd 2
+ipparam 192.168.0.0

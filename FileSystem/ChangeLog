@@ -1,0 +1,119 @@
+###############################################################################
+# $Id: ChangeLog,v 1.11 2007/11/15 09:11:02 lizhijie Exp $
+#			FileSystem ChangLog
+###############################################################################
+说明：
+     此文件用于说明文件系统自身的更新情况，对应的Word文档说明文件系统中
+     各个软件包的的更新情况
+
+2007.11.15
+	修改网管程序
+		首页显示新的格式
+		解决分机转移提示信息不准确的问题
+		解决CDR提示信息不准确的问题
+	修改文件服务器
+		修改smb.conf文件，增加shared这个不需要认证的、公共共享目录
+	修改安装脚本 installdirs.sh
+
+
+2007.09.21
+	修改SIP UA程序，拨外线时自动增加一位号码，以避免模拟PBX删除第一位的号码
+	修改Sip Server，解决其他的用户名被Soft Phone使用时，能够注册但是不能发起呼叫的问题
+	修改文件服务器，使admin和guest1～20用户均可以打印	
+	修改camera.sh，使admin用户可以查看、管理文件服务器上的视频文件
+	修改ADSL的日志机制：
+	    修改common_Pptpd模块的ip-up和ip-down脚本，以支持vnpInfo.log文件
+	    修改网管的显示页面（WAN配置）
+	模拟PBX的配置和管理的更新：网管模块    
+
+
+2007.09.15
+     恢复使用宁波版的PBX：修改as600_Pbx、as600_SharedLib和as600_WebAdmin三个模块
+
+2007.04.03 增加单片机的PBX程序 NewStc
+
+2007.03.27
+     EPSON扫描仪增加对CX5900的支持
+     录音程序及其网管的重新编写
+     SIP UA程序的提示音配置信息及其激活
+     重新修改相关的网管程序
+
+2007.03.24
+     修改SysV消息队列文件的创建机制：文件系统上的固定文件
+     增加录音程序的配置文件/etc/pbx/record.conf
+     增加uartd程序和cgipbx程序调试等级的配置文件:/etc/pbx/uartd.conf
+
+2007.03.17
+     解决/etc/hosts文件配置不准确的问题：由脚本在每次启动时，自动创建此文件
+     这样保证每次启动时，主机名一定可以被/etc/hosts文件解析，解决了PBX可能
+     启动不起来的问题。
+     
+     修改wifi模块：wifi驱动在硬件不存在时，应该不能加载驱动，并卸载已经加载
+     的驱动。
+     wifi驱动不存在时，则不能加载wifi接口的地址期盼
+
+2007.02.07
+     Add libUsb and scanner for EPSON, total 2 modules
+     rename assist_jpeg module as assist_libjpeg
+     add /etc/sys/scanner.conf
+
+2007.01.28
+     add SCSI interface for CD-ROM in order to support cdrtools
+          modules :
+              ide-scsi.o
+              sg.o
+              sr_mod.o
+          Device files for /dev/srX and /dev/sgX 
+     add cdrtools modules into FileSystem Releases
+
+2007.01.25
+     add pl2303.o into modules releases directory
+
+2006.12.03
+      增加建立Flash根文件系统映像的功能及相关的软件包
+
+2006.12.01
+      增加bootloader的镜像文件
+
+2006.11.20
+      修改build.sh脚本，使Mail服务器默认的目录权限正确，保证默认安装时，
+      IMAP/POP工作正常
+
+2006.11.08
+     Add directory for Kernel Image releases
+
+2006.11.07
+     增加USB串口的设备文件：/dev/ttyUSB*
+     增加MESH设备的设备文件:/dev/mesh/*
+
+2006.11.04
+     增加在CF卡或U盘上发布文件系统的脚本：build.sh
+
+2006.11.03
+     增加wifi的DHCP服务进程使用的配置文件/etc/wdhcpd.conf
+     修改LAN和WIFI的启动脚本，使各自启动自己的DHCP服务器
+
+2006.10.30
+     增加对FileSystem模块自己的备份
+
+2006.10.22
+     增加CVS备份的脚本和修改Makefile
+
+2005.09.14
+     增加数据恢复和备份的配置文件/etc/sys/data.conf
+2006/09/12
+     增加VPN的配置文件/etc/iptables/vpn.conf
+
+2006.09.07
+     增加启动upnpd的脚本，并将upnpd的启动管理放到服务管理的配置项中，同时修改
+     网管中可以管理的服务列表：增加upnpd程序
+
+2006.08.31
+     路由维护需要的文件
+         增加/etc/sys/routes.conf文件
+         增加/sbin/routes.sh脚本
+
+2006.08.30
+     增加/etc/localetime文件
+     增加/etc/sys/locale.conf用于设置时区和NTP服务器的地址
+     修改/sbin/webadmin.sh判断是否使用NTP服务器和服务器的时间更新

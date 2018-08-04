@@ -1,0 +1,20 @@
+# /etc/sys/factory.default
+# Edit this file and run 'setdeft' ro burn configuration data in NVRAM
+# Li Zhijie, 2006.12.19
+# 
+
+# Global Configuration
+# device ID, total 20 bytes
+DEVICEID=86028885800010000001
+USER=lizhijie
+PASSWD=admin
+
+# WAN Configuration
+WAN_MAC=00:02:B3:01:01:01
+WAN_IP=219.111.2.40
+WAN_MASK=255.255.255.255
+
+#LAN Configuration
+LAN_MAC=00:02:B3:02:02:02
+LAN_IP=192.168.3.112
+LAN_MASK=255.255.255.0

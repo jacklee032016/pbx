@@ -1,0 +1,17 @@
+# $Id: as600Modules.list,v 1.1 2007/05/27 10:50:25 lizhijie Exp $
+# as600模块列表
+# 共10个，李志杰 2007.05.27
+
+AS600_MODULES="
+	Drivers
+	ICE
+	Kernel
+	Pbx
+	SharedLib
+	U-boot
+	VoipLib
+	WebAdmin
+	StcPbx
+	StcLcd"
+
+#	NewStc

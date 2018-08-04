@@ -1,0 +1,14 @@
+# $Id: wmnModules.list,v 1.1 2007/08/19 12:38:09 lizhijie Exp $
+
+# 2007.08.19 add 7 WMN modules
+# wmn_UBoot wmn_Kernel wmn_FileSystem wmn_WebAdmin wmn_Mesh wmn_Wifi wmn_Aodv
+
+WMN_MODULES="
+            FileSystem
+            WebAdmin
+            Kernel
+            Mesh
+            Wifi
+            UBoot
+            Aodv"
+

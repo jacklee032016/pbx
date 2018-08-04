@@ -1,0 +1,59 @@
+#!/bin/sh
+# 2005.06.15  xixudong
+DEFAULT_ROUTE_FLAG=
+
+if [ $interface ] ; then
+	echo interface=$interface
+fi
+
+if [ $siaddr ] ; then
+	echo siaddr=$siaddr
+fi
+
+if [ $snmae ] ; then
+	echo sname=$sname
+fi
+
+if [ $boot_file ] ; then
+	echo boot_file=$boot_file
+fi
+
+if [ $subnet ] ; then
+	echo subnet=$subnet
+fi
+
+if [ $swapsvr ] ; then
+	echo swapsvr=$swapsvr
+fi
+
+if [ $serverid ] ; then
+	echo serverid=$serverid
+fi
+
+if [ $wins ] ; then
+	echo wins=$wins
+fi
+
+if [ $ntpsrv ] ; then
+	echo ntpsrv=$ntpsrv
+fi
+if [ $ip ] ; then
+	echo "setup IP $ip"
+	/sbin/ifconfig $interface $ip  $subnet
+fi
+
+if [ $dns ] ; then
+	echo "setup DNS $dns"
+	echo nameserver $dns >/etc/reslov.conf
+fi
+
+DEFAULT_ROUTE_FLAG=`/sbin/route | grep default `
+if [ $DEFAULT_ROUTE_FLAG ] ; then
+	/sbin/route delete default
+fi
+
+if [ $serverid ] ; then
+	/sbin/route add -net 0.0.0.0 netmask 0.0.0.0 gw $serverid $interface
+fi
+
+

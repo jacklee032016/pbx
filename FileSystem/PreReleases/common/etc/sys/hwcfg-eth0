@@ -1,0 +1,4 @@
+# LAN hardware address configuration
+# Li Zhijie 2005.01.04
+DEVICE=eth0
+HWADDR=00:02:B3:01:01:01

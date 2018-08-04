@@ -1,0 +1,26 @@
+# $Id: README.releases,v 1.1 2007/09/06 06:40:15 lizhijie Exp $
+               Default Configuration of release version
+                             Li Zhijie 2007.09.06
+                             
+索引	用户名	系统口令	文件服务器口令	邮件口令
+1		Guest1		01		
+2		Guest2		02		
+3		Guest3		03		
+4		Guest4		04		
+5		Guest5		05		
+6		Guest6		06		
+7		Guest7		07		
+8		Guest8		08		
+9		Guest9		09		
+10		Guest10		10		
+11		Guest11		11		
+12		Guest12		12		
+13		Guest13		13		
+14		Guest14		14		
+15		Guest15		15		
+16		Guest16		16		
+17		Guest17		17		
+18		Guest18		18		
+19		Guest19		19		
+20		Guest20		20		
+21		admin		sys		

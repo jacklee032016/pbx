@@ -1,0 +1,56 @@
+#!/bin/sh
+
+cat /etc/motd
+echo
+cat /etc/version.info
+echo
+echo "Intel XScale IXP422, NPEs(Chengdu@Assistcn.com)"
+
+if [ ! -f /proc/mounts ] ; then
+	/bin/mount -t proc proc /proc
+fi
+
+/bin/mount -t usbfs usb /proc/bus/usb
+
+# /bin/mount -t ext3 -o rw -o remount /dev/hda1 /
+
+if [ ! -f /etc/mtab ] ; then
+	ln -s /proc/mounts /etc/mtab
+fi
+
+# mount tmpfs file system into /tmp
+# remount when used to load and update File System
+mount -t tmpfs -o size=16M tmpfs /tmp
+
+touch 	 /var/run/ftpd.pid
+
+mkdir -p /tmp/dhcpd
+touch 	 /tmp/dhcpd/udhcpd.leases
+touch 	 /tmp/dhcpd/wdhcpd.leases
+
+LD_LIBRARY_PATH=/lib
+export LD_LIBRARY_PATH
+
+touch /etc/ld.so.conf
+touch /etc/ld.so.cache
+
+/sbin/ifconfig lo 127.0.0.1
+/sbin/route add -net 127.0.0.0 netmask 255.255.255.0 lo
+
+/sbin/insmod ixp400.o
+/sbin/insmod ixp400_ethMii.o
+/sbin/insmod ixp400_eth.o
+/sbin/insmod span.o
+/sbin/insmod pcm.o
+/sbin/insmod zl.o
+/sbin/insmod as_misc.o
+
+echo "1" > /proc/sys/net/ipv4/ip_forward
+echo "0" > /proc/sys/net/ipv4/route/min_delay
+
+#¡¡echo "    Build Socket/Named Pipe of /dev/log"
+# mksock $1/dev/log
+# chmod 777 $1/dev/log
+
+
+/sbin/webadmin_setup

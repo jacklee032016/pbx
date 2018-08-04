@@ -1,0 +1,15 @@
+# $Id: README,v 1.1.1.1 2006/11/29 18:55:32 lizhijie Exp $
+
+			README for FileSystem
+
+格式化U盘
+    mke2fs /dev/sda1
+    tune2 -i -c 0 /dev/sda1
+
+加载并释放文件系统
+    mount /dev/sda1 /mnt
+    cd /mnt
+    tar xvzf $AS600_FileSystem_XXX.tar.gz     
+
+卸载
+    umount /dev/sda1 

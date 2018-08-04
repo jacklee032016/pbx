@@ -1,0 +1,15 @@
+########### start qos  send #################   
+#add a qdisc   
+/usr/sbin/tc qdisc add dev eth0 root handle 1:0 cbq bandwidth 5120Kbit avpkt 1000 allot 1514       
+#add root class   
+/usr/sbin/tc class add dev eth0 parent 1:0 classid 1:1 cbq bandwidth 5120Kbit rate 5120Kbit prio 8 avpkt 1000 maxburst 20 allot 1514
+#add first class prio 1   
+/usr/sbin/tc class add dev eth0 parent 1:1 classid 1:2 cbq bandwidth 5120Kbit rate 3840Kbit prio 1 avpkt 1000 maxburst 20 allot 1514
+#add second class prio 5   
+/usr/sbin/tc class add dev eth0 parent 1:1 classid 1:3 cbq bandwidth 5120Kbit rate 1280Kbit prio 5 avpkt 1000 maxburst 20 allot 1514
+#qdisc sfq   
+/usr/sbin/tc qdisc add dev eth0 parent 1:2 sfq quantum 1514 perturb 15          
+/usr/sbin/tc qdisc add dev eth0 parent 1:3 sfq quantum 1514 perturb 15          
+#filter data   
+/usr/sbin/tc filter add dev eth0 protocol ip prio 10 u32 match ip src 192.168.3.101 flowid 1:2      
+/usr/sbin/tc filter add dev eth0 protocol ip prio 20 u32 match ip src 255.0.0.0/16 flowid 1:3      

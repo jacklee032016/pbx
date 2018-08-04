@@ -1,0 +1,78 @@
+# Shell script to config static IP address for both eth0 and eth1
+# and other operations which is response with network configuration
+# This script can be executed multiple time after boot up
+# Task of this script : 1. config network device
+# 2. write new configuration files with newly activated network config
+# 3. stop and restart all services that need startup
+# Li Zhijie  2005.01.04
+
+IFCONFIG=/sbin/ifconfig
+
+# Set to "C" locale so we can parse messages from commands
+LANG=C
+export LANG
+
+WEB_HOST_NAME=/etc/web/hostname.conf
+if [ ! -f "$WEB_HOST_NAME" ] ; then
+	$ECHO " Some Error in your FileSystem, use default HOST_NAME: IXP422" >& 2
+	/bin/hostname IXP422
+else
+	. $WEB_HOST_NAME
+	. /etc/web/domain.conf
+	/bin/hostname $HOST_NAME.$DOMAIN_NAME
+	export HOST_NAME DOMAIN_NAME
+fi
+echo "127.0.0.1      localhost localhost.$DOMAIN_NAME" > /etc/hosts
+
+/sbin/wan.sh
+
+/sbin/lan.sh
+
+/sbin/wifi.sh
+
+/sbin/routes.sh
+
+IPTABLES_CONFIG=/etc/iptables/iptables.conf
+if [ ! -f "$IPTABLES_CONFIG" ] ; then
+	$ECHO " Some Error in your FileSystem, No Firewall Config is found" >& 2
+else
+	. $IPTABLES_CONFIG
+	if [ $DEFAULT_MASQURADE = "YES" ]; then
+		. /etc/sys/ifcfg-eth0
+		if [ $IPPROTO = "PPPOE" ]; then
+			WAN_PORT=ppp0
+		else
+			WAN_PORT=eth0
+	     	fi
+	     	
+		. /etc/sys/ifcfg-eth1
+
+		echo " Default MASQURADE is enabled on $WAN_PORT for network of $NETWORK/$NETMASK" >& 2
+		/usr/sbin/iptables  -t nat -A POSTROUTING  -s $NETWORK/$NETMASK -o $WAN_PORT -j MASQUERADE &
+
+		. /etc/sys/wifi.conf
+		if [ $WIFI_ONBOOT = "YES" ]; then
+			/sbin/ifconfig wifi0 > /dev/null 2>&1
+			if [ $? -eq 0 ] ; then
+				. /etc/sys/ifcfg-wifi
+		
+				echo " Default MASQURADE is enabled on $WAN_PORT for network of $NETWORK/$NETMASK" >& 2
+				/usr/sbin/iptables  -t nat -A POSTROUTING  -s $NETWORK/$NETMASK -o $WAN_PORT -j MASQUERADE &
+			fi
+		fi
+		
+	else 
+		echo " Default MASQURADE is disabled!" >& 2
+		echo " please check in WebAdmin in oder to access Internet in LAN" >& 2
+     	fi	
+fi
+
+
+
+# hostname must be setup before re-write configuration files
+# echo "write new configuration files with new network configuration"
+# not used. logic is put into boa,lizhijie,2006.11.21
+# /sbin/reconfig
+
+/sbin/services.sh
+

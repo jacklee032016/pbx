@@ -1,0 +1,63 @@
+# $Id: commonProgs.list,v 1.13 2007/08/19 12:38:09 lizhijie Exp $
+# 公共模块中，公共库的配置列表
+# 李志杰 2006.07.11
+# 共24个模块, 7.16
+# 2006.09.16 增加WiFi模块，共25个模块
+# 2006.11.03 增加Wireless_AODV模块，共26个模块
+# 2006.11.08 增加Mesh模块，共27个模块
+# 2006.11.13 增加Video模块，视频头及其服务器程序。共28个模块
+# 2006.11.26 增加Sasl模块，完成SASL认证。共29个模块
+# 2006.11.29 增加Sendmail模块。暂时不使用。共30个模块
+# 2006.12.08 增加Pptpd模块，包括PPTP的服务器和客户程序
+# 2006.12.13 Add Diskless Module, total 32 modules
+# 2006.12.31 Add OpenSSL module, total 33 modules
+# 2007.01.02 Add CdrTools module, total 34 modules
+# 2007.01.28 Add Scanner(SANE-backend 1.0.18) Module, total 35 modules
+
+# 2007.02.05 add NetPbm modules, total 36 modules
+# 2007.02.07 Add Epson(Scanner) module, total 37 modules
+# 2007.02.14 Add Hplip(HP Printer and Scanner) module for test, total 38 modules
+
+# 2007.07.20 add V4Lx modules, total 39 modules
+
+
+COM_PROGS="
+            Boa 
+            BusyBox
+            CdrTools
+            Db
+            Diskless 
+            E2FsProgs
+            Epson 
+            FileServer 
+            FtpServer 
+            IpRoute2 
+            IpTables 
+            Lrz 
+            MailServer 
+            Mesh
+            MtdUtils 
+            Ntp
+            NetPbm
+            OpenSSL
+            PopImapServer 
+            PortMap 
+            Pppd 
+            Pptpd
+            PrinterServer 
+            ReiserFsUtils 
+            Ripd 
+            RpPPPoE 
+            Sasl 
+            Scanner
+            Sendmail 
+            SipServer 
+            STrace 
+            SysKLogd 
+            UnRar 
+            UpnpIGD
+            Video
+            V4Lx
+            Wireless_AODV
+            Wifi"
+

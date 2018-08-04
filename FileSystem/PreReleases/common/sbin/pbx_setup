@@ -1,0 +1,21 @@
+#!/bin/sh
+
+mkdir -p /tmp/pbx
+
+CONFIG_UARTD=/etc/pbx/uartd.conf
+if [ ! -f "$CONFIG_UARTD" -o ! -r "$CONFIG_UARTD" ] ; then
+	echo " Use default Log Level for UARTD" >& 2
+	/usr/sbin/uartd
+	/usr/bin/cgipbx 
+	/usr/bin/pbx &
+else
+	. $CONFIG_UARTD
+	/usr/bin/uartd -d $UARTD_LOG_LEVEL
+	/usr/bin/cgipbx -d $CGIPBX_LOG_LEVEL
+	
+	if [ $PBX_ONBOOT = "YES" ]; then
+		/usr/bin/pbx &
+	fi
+fi
+
+
